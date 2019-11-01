@@ -22,25 +22,46 @@ find_package(OpenSSL REQUIRED)
 add_library(AdParser STATIC
     include/FacebookParser.h
     include/FacebookAd.h
+    include/Index.h
     internal_includes/FacebookAdJSON.h
     src/FacebookParser.cpp
     src/FacebookAd.cpp
 )
-
 target_link_libraries(AdParser PUBLIC
     FixedJSON::FixedJSON
     DevToolsLog::Log
 )
-
 target_include_directories(AdParser PUBLIC
     $<BUILD_INTERFACE:${ElectionDataAnal_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
-
 target_compile_features(AdParser PRIVATE cxx_std_17)
-
 set_property(TARGET AdParser PROPERTY PUBLIC_HEADER
     ${ElectionDataAnal_SOURCE_DIR}/include/FacebookAd.h
+)
+
+add_library(Db STATIC
+    include/AdDb.h
+    include/FacebookAdKey.h
+    include/FacebookAdStore.h
+    include/Index.h
+    include/Index.hpp
+    include/IndexConfig.h
+    src/AdDb.cpp
+    src/FacebookAdKey.cpp
+    src/FacebookAdStore.cpp
+    src/IndexConfig.cpp
+)
+target_link_libraries(Db PUBLIC
+    FixedJSON::FixedJSON
+    DevToolsLog::Log
+)
+target_include_directories(Db PUBLIC
+    $<BUILD_INTERFACE:${ElectionDataAnal_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+target_compile_features(Db PRIVATE cxx_std_17)
+set_property(TARGET Db PROPERTY PUBLIC_HEADER
 )
 
 
@@ -50,12 +71,27 @@ set_property(TARGET AdParser PROPERTY PUBLIC_HEADER
 find_package(GTest REQUIRED)
 
 add_executable(ad_parser test/ad_parser.cpp internal_includes/test_utils.h)
+add_executable(index test/index.cpp internal_includes/test_utils.h)
+add_executable(store test/store.cpp internal_includes/test_utils.h)
+add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h)
 
 enable_testing()
 add_test(ad_parser ad_parser)
+add_test(index index)
+add_test(store store)
+add_test(adDb adDb)
 
 target_compile_features(ad_parser PRIVATE cxx_std_17)
 target_link_libraries(ad_parser PUBLIC AdParser GTest::GTest GTest::Main)
+
+target_compile_features(index PRIVATE cxx_std_17)
+target_link_libraries(index PUBLIC AdParser Db GTest::GTest GTest::Main)
+
+target_compile_features(store PRIVATE cxx_std_17)
+target_link_libraries(store PUBLIC AdParser Db GTest::GTest GTest::Main)
+
+target_compile_features(adDb PRIVATE cxx_std_17)
+target_link_libraries(adDb PUBLIC AdParser Db GTest::GTest GTest::Main)
 
 #
 # Configure Coverage Build

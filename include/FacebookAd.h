@@ -52,6 +52,12 @@ std::ostream& operator<<(std::ostream& os, const AgeRangeCode & code);
 AgeRangeCode ParseAgeRangeCode(const std::string& code);
 
 struct  FacebookAd {
+    FacebookAd() = default;
+    FacebookAd(const FacebookAd& rhs) = default;
+    FacebookAd(FacebookAd&& rhs) = default;
+    FacebookAd& operator=(FacebookAd&& rhs) = default;
+    FacebookAd& operator=(const FacebookAd& rhs) = default;
+
     using Time = nstimestamp::Time;
 
     Time creationTime;
