@@ -1,0 +1,9 @@
+{
+  "consituencies": [
+    {
+         "id": "Search#0"
+    }, {
+         "id": "Search#1",
+         "keys": ["entity#1"]
+    }]
+}
