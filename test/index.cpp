@@ -68,7 +68,15 @@ protected:
         GenerateMatch("Everything's happening in Woking!");
         GenerateMatch("Everything's happening in wokIng!");
         GenerateMatch("Unicode check time: Zoëy");
+        GenerateMatch("Woking at the start!");
+        GenerateMatch("At the end: Woking");
+
         GenerateNonMatch("Not an interesting one at all!");
+
+        GenerateNonMatch("Attempted trap: Wokingham");
+        GenerateMatch("But don't throw the Wokingham baby out with the Woking bathwater");
+
+        GenerateNonMatch("Attempted trap: prefixWoking");
 
         auto wokingHits = index->Get("Woking");
         ASSERT_EQ(expectedWokingKeys.size(), wokingHits.size());
