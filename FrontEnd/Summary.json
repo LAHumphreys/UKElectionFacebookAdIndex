@@ -1,0 +1,13 @@
+{
+    "summary": [{
+        "name": "Woking",
+        "totalAds": 3,
+        "guestimateImpressions": 7000,
+        "guestimateSpendGBP": 2
+    }, {
+        "name": "Other and Alto",
+        "totalAds": 1,
+        "guestimateImpressions": 7000,
+        "guestimateSpendGBP": 2
+    }]
+}
