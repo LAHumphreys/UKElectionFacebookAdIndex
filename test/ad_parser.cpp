@@ -1,6 +1,8 @@
 #include <FacebookParser.h>
 #include "../internal_includes/test_utils.h"
 #include <gtest/gtest.h>
+#include <fstream>
+#include <OSTools.h>
 
 const std::string json = R"JSON(
 {
@@ -264,4 +266,35 @@ TEST_F(AdParserTest, Demographic) {
         val = ad.demographicDist[{GenderCode::MALE, AgeRangeCode::AGE_65_AND_OVER}];
         ASSERT_FLOAT_EQ(val , 0.136364);
     });
+}
+
+TEST_F(AdParserTest, LoadFile) {
+    std::vector<FacebookAd> ads;
+    std::ifstream wokingFile("../test/data/woking.json");
+    ASSERT_EQ(parser.Parse(wokingFile, ads), FacebookAdParser::ParseResult::VALID);
+    ASSERT_EQ(ads.size(), 2);
+
+    const auto& libDemAd = ads[0];
+    const auto& conAd = ads[1];
+
+    ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
+    ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
+}
+
+TEST_F(AdParserTest, LoadDirectory) {
+    std::vector<FacebookAd> ads;
+    auto files = OS::Glob("../test/data/test_run/*");
+    for (const std::string& path: files) {
+        std::ifstream file(path);
+        ASSERT_EQ(parser.Parse(file, ads), FacebookAdParser::ParseResult::VALID);
+    }
+    ASSERT_EQ(ads.size(), 2);
+
+    const auto& libDemAd = ads[0];
+    const auto& conAd = ads[1];
+
+    // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
+    // welcome to pull request a fix
+    ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
+    ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
 }

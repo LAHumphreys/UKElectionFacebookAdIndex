@@ -1,6 +1,7 @@
 #include <FacebookParser.h>
 #include <../internal_includes/FacebookAdJSON.h>
 #include <logger.h>
+#include <istream>
 
 using namespace FacebookAdJSON;
 using namespace FacebookAdJSON::data_fields;
@@ -121,11 +122,17 @@ Parser::ParseResult Parser::ParseFacebookAdQuery(const char *qryPage, std::vecto
                 "Failed to parse qry json: " << qryPage << std::endl
                  << "Error was: " << error);
     } else {
+        ads.reserve(ads.size() + parserData.NumAds());
         for (size_t i = 0; i < parserData.NumAds(); ++i) {
             ParseAd(i, ads, parserData);
         }
     }
 
     return result;
+}
+
+FacebookAdParser::ParseResult FacebookAdParser::Parse(std::istream &source, std::vector<FacebookAd> &ads) {
+    std::string result((std::istreambuf_iterator<char>(source)), std::istreambuf_iterator<char>());
+    return ParseFacebookAdQuery(result.c_str(), ads);
 }
 

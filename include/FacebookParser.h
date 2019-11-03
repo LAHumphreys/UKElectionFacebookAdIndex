@@ -15,6 +15,7 @@ public:
         PARSE_ERROR
     };
 
+    ParseResult Parse(std::istream& source, std::vector<FacebookAd>& ads);
     ParseResult ParseFacebookAdQuery(const char* qryPage, std::vector<FacebookAd>& ads);
 
     struct InternalDataHandle {
