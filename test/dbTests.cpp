@@ -2,6 +2,7 @@
 // Created by lukeh on 02/11/2019.
 //
 #include "../internal_includes/test_utils.h"
+#include "../internal_includes/DbUtils.h"
 #include <gtest/gtest.h>
 #include <AdDb.h>
 
@@ -104,4 +105,32 @@ TEST_F(TDb, ForEachConstituency_StopMidGroup) {
 
     AssertEq(*matches[0], ads[0]);
     AssertEq(*matches[1], ads[1]);
+}
+
+TEST(DbUtilsTest, NoSuchCfgFile) {
+    ASSERT_THROW(DbUtils::LoadDb("../test/data/not_a_file", "../test/data/full_day_run"), DbUtils::NoSuchCfgFile);
+}
+
+TEST(DbUtilsTest, InvalidCfgFile) {
+    ASSERT_THROW(DbUtils::LoadDb("../test/data/cfg/invalid.json", "../test/data/full_day_run"), AdDb::InvalidConfigError);
+}
+
+TEST(DbUtilsTest, NoData) {
+    ASSERT_THROW(DbUtils::LoadDb("../test/data/cfg/woking.json", "../test/data/not_a_dir"), DbUtils::NoData);
+}
+
+TEST(DbUtilsTest, WokingData) {
+    auto db = DbUtils::LoadDb("../test/data/cfg/woking.json", "../test/data/full_day_run");
+
+    auto results = db->GetConstituency("Woking");
+
+    ASSERT_EQ(results.size(), 2);
+
+    const auto& libDemAd = *results[0];
+    const auto& conAd = *results[1];
+
+    // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
+    // welcome to pull request a fix for this test only problem
+    ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
+    ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
 }

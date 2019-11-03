@@ -294,7 +294,7 @@ TEST_F(AdParserTest, LoadDirectory) {
     const auto& conAd = ads[1];
 
     // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
-    // welcome to pull request a fix
+    // welcome to pull request a fix for this test only problem
     ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
     ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
 }

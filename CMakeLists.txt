@@ -42,17 +42,20 @@ set_property(TARGET AdParser PROPERTY PUBLIC_HEADER
 
 add_library(Db STATIC
     include/AdDb.h
+    internal_includes/DbUtils.h
     include/FacebookAdKey.h
     include/FacebookAdStore.h
     include/Index.h
     include/Index.hpp
     include/IndexConfig.h
     src/AdDb.cpp
+    src/DbUtils.cpp
     src/FacebookAdKey.cpp
     src/FacebookAdStore.cpp
     src/IndexConfig.cpp
 )
 target_link_libraries(Db PUBLIC
+    AdParser
     FixedJSON::FixedJSON
     DevToolsLog::Log
 )
