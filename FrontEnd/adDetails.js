@@ -103,6 +103,29 @@ function GetAdList(ads) {
     return table;
 }
 
+function ConfigureViewAds(consolidation) {
+    var resultsTable = $("#resultsTable").DataTable();
+
+    // Replace the event handler (We don't want to fire twice!)
+    let buttons = $("#resultsTable").find("button");
+    buttons.off("click").click(function () {
+        var tr = $(this).closest('tr');
+        var row = resultsTable.row( tr );
+
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+        }
+        else {
+            // Open this row
+            let groupKey = tr.find("td").first().next().text();
+            row.child(GetAdList(consolidation[groupKey].ads));
+            row.child.show();
+        }
+    } );
+}
+
+
 function DrawResults(table, consolidation) {
     var data = [];
     for (let groupKey in consolidation) {
@@ -125,22 +148,10 @@ function DrawResults(table, consolidation) {
             data: data,
         });
     }
-    // Add event listener for opening and closing details
-    table.find("button").click(function () {
-        var tr = $(this).closest('tr');
-        var row = resultsTable.row( tr );
-
-        if ( row.child.isShown() ) {
-            // This row is already open - close it
-            row.child.hide();
-        }
-        else {
-            // Open this row
-            let groupKey = tr.find("td").first().next().text();
-            row.child(GetAdList(consolidation[groupKey].ads));
-            row.child.show();
-        }
-    } );
+    ConfigureViewAds(consolidation);
+    resultsTable.on('draw', function () {
+        ConfigureViewAds(consolidation);
+    });
 }
 
 function LoadResults(table, dataList) {
