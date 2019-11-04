@@ -48,6 +48,7 @@ public:
 
         FacebookAd& ad1 = ads.emplace_back();
         ad1.creationTime = nstimestamp::Time("2019-10-29T18:16:59+0000");
+        ad1.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
         ad1.fundingEntity = "Entity#1";
         ad1.pageName = "Page#1";
         ad1.linkTitle = "Title#1";
@@ -57,6 +58,8 @@ public:
 
         FacebookAd& ad2 = ads.emplace_back();
         ad2.creationTime = nstimestamp::Time("2019-10-29T18:17:59+0000");
+        ad1.deliveryStartTime = nstimestamp::Time("2019-10-29T18:18:60+0000");
+        ad2.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
         ad2.fundingEntity = "Entity#1";
         ad2.pageName = "Page#2";
         ad2.linkTitle = "Title#2";
@@ -262,6 +265,7 @@ TEST(DbUtilsTest, ConReport_Ads) {
         auto& ad = *reportWoking.ads[i].ad;
         ASSERT_EQ(fileAd.Get<ReportJSON::funding_entity>(), ad.fundingEntity);
         ASSERT_EQ(fileAd.Get<ReportJSON::ad_delivery_start_time>(), ad.deliveryStartTime.ISO8601Timestamp());
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_delivery_end_time>(), ad.deliveryEndTime.ISO8601Timestamp());
         ASSERT_EQ(fileAd.Get<ReportJSON::ad_creation_time>(), ad.creationTime.ISO8601Timestamp());
         ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_description>(), ad.linkDescription);
         ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_title>(), ad.linkTitle);

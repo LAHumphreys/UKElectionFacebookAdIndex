@@ -17,8 +17,8 @@ function LoadFilterTable(table, summary) {
         row = [checkbox];
         row.push(item.name);
         row.push(item.totalAds);
-        row.push(item.guestimateImpressions);
-        row.push(item.guestimateSpendGBP);
+        row.push(Number(item.guestimateImpressions).toLocaleString('en', {maximumSignificantDigits: 2}));
+        row.push("£" + Number(item.guestimateSpendGBP).toLocaleString('en', {maximumSignificantDigits: 2}));
         data.push(row)
     });
     if ($.fn.dataTable.isDataTable(table)) {
@@ -29,7 +29,8 @@ function LoadFilterTable(table, summary) {
     } else {
         table.DataTable({
             data: data,
-            pageLength: 5
+            pageLength: 5,
+            order: [[3, "desc"]]
         });
     }
 }
@@ -73,12 +74,11 @@ function GetAdList(ads) {
     <table>
         <thead>
         <tr>
-           <th> Link Title </th>
-           <th> Link Caption </th>
-           <th> Link Description </th>
+           <th> Link Details </th>
            <th> Body </th>
            <th> Impressions  </th>
            <th> Spend  </th>
+           <th> Ad Running </th>
            </tr>
         </thead>
     </table>
@@ -87,17 +87,39 @@ function GetAdList(ads) {
     let data = [];
     ads.forEach(function (ad, idx) {
         let row = [];
-        row.push(ad.ad_creative_link_title);
-        row.push(ad.ad_creative_link_caption);
-        row.push(ad.ad_creative_link_description);
+        let linkDetails = "";
+        if (ad.ad_creative_link_title !== "") {
+            linkDetails +="<h5>Title</h5>";
+            linkDetails += "<p>" + ad.ad_creative_link_title + "</p>";
+        }
+        if (ad.ad_creative_link_caption !== "") {
+            linkDetails += "<h5>Caption</h5>";
+            linkDetails += "<p>" + ad.ad_creative_link_caption + "</p>";
+        }
+
+        if (ad.ad_creative_link_description !== "") {
+            linkDetails += "<h5>Description</h5>";
+            linkDetails += "<p>" + ad.ad_creative_link_description + "</p>";
+        }
+        row.push(linkDetails);
         row.push(ad.ad_creative_body);
-        row.push(ad.guestimateImpressions);
-        row.push(ad.guestimateSpendGBP);
+        row.push(Number(ad.guestimateImpressions).toLocaleString('en', {maximumSignificantDigits: 2}));
+        row.push("£" + Number(ad.guestimateSpendGBP).toLocaleString('en', {maximumSignificantDigits: 2}));
+        let runTime = "<h5>Start</h5>"
+        runTime += ad.ad_delivery_start_time.substr(0, 4);
+        runTime += ad.ad_delivery_start_time.substr(5, 2);
+        runTime += ad.ad_delivery_start_time.substr(8, 2);
+        runTime += "<h5>End</h5>"
+        runTime += ad.ad_delivery_end_time.substr(0, 4);
+        runTime += ad.ad_delivery_end_time.substr(5, 2);
+        runTime += ad.ad_delivery_end_time.substr(8, 2);
+        row.push(runTime);
         data.push(row);
     });
 
     table.DataTable({
-        data: data
+        data: data,
+        order: [[2, "desc"]]
     });
 
     return table;
@@ -133,8 +155,8 @@ function DrawResults(table, consolidation) {
         row.push(groupKey);
         let group = consolidation[groupKey];
         row.push(group.totalAds);
-        row.push(group.guestimateImpressions);
-        row.push(group.guestimateSpendGBP);
+        row.push(Number(group.guestimateImpressions).toLocaleString('en', {maximumSignificantDigits: 2}));
+        row.push("£" + Number(group.guestimateSpendGBP).toLocaleString('en', {maximumSignificantDigits: 2}));
         data.push(row);
     }
 
@@ -146,6 +168,7 @@ function DrawResults(table, consolidation) {
     } else {
         var resultsTable = table.DataTable({
             data: data,
+            order: [[3, "desc"]]
         });
     }
     ConfigureViewAds(consolidation);

@@ -59,6 +59,7 @@ void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath) 
             adsBuilder.StartAnonymousObject();
             adsBuilder.Add("funding_entity", ad.ad->fundingEntity);
             adsBuilder.Add("ad_delivery_start_time", ad.ad->deliveryStartTime.ISO8601Timestamp());
+            adsBuilder.Add("ad_delivery_end_time", ad.ad->deliveryEndTime.ISO8601Timestamp());
             adsBuilder.Add("ad_creation_time", ad.ad->creationTime.ISO8601Timestamp());
             adsBuilder.Add("ad_creative_link_description", ad.ad->linkDescription);
             adsBuilder.Add("ad_creative_link_title", ad.ad->linkTitle);
