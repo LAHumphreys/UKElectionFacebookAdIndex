@@ -1,3 +1,13 @@
+function GetDataUrl(indexKey) {
+    return "data/" + GetDataSet() + "/" + indexKey + ".json";
+}
+function ClearTable(table) {
+    if ($.fn.dataTable.isDataTable(table)) {
+        var resultsTable = table.DataTable();
+        resultsTable.clear();
+        resultsTable.draw();
+    }
+}
 function LoadFilterTable(table, summary) {
     var data = [];
     summary.forEach(function (item, index) {
@@ -11,17 +21,24 @@ function LoadFilterTable(table, summary) {
         row.push(item.guestimateSpendGBP);
         data.push(row)
     });
-    table.DataTable({
-        data: data,
-        pageLength: 5
-    });
+    if ($.fn.dataTable.isDataTable(table)) {
+        var resultsTable = table.DataTable();
+        resultsTable.clear();
+        resultsTable.rows.add(data);
+        resultsTable.draw();
+    } else {
+        table.DataTable({
+            data: data,
+            pageLength: 5
+        });
+    }
 }
 
 function ConsolidateData(table, groupField, keys, cb) {
     let result = {};
 
     keys.forEach(function (key, index) {
-        let ref = key + ".json";
+        let ref = GetDataUrl(key);
         $.ajax({
             url: ref
         }).done(function (d) {

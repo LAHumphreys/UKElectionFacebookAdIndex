@@ -21,7 +21,13 @@ const std::string dbConfig = R"JSON(
     }, {
          "id": "Search#2",
          "keys": ["entity#DOES_NOT_EXIST"]
-    }]
+    }],
+  "issues": [
+    {
+         "id": "Brexit",
+         "keys": ["brexit"]
+    }
+   ]
 }
 )JSON";
 
@@ -56,7 +62,7 @@ public:
         ad2.linkTitle = "Title#2";
         ad2.linkCaption = "Caption#2";
         ad2.linkDescription = "Description#2";
-        ad2.body = "Body#2";
+        ad2.body = "Brexit!";
     }
 protected:
     void SetUp() {
@@ -75,6 +81,13 @@ TEST_F(TDb, SingleConstituency) {
 
     AssertEq(*matches[0], ads[1]);
     AssertEq(*matches[1], ads[2]);
+}
+
+TEST_F(TDb, SingleIssue) {
+    auto matches = theDb.GetIssue("Brexit");
+    ASSERT_EQ(matches.size(), 1);
+
+    AssertEq(*matches[0], ads[2]);
 }
 
 TEST_F(TDb, ForEachConstituencyKey) {
@@ -100,6 +113,20 @@ TEST_F(TDb, ForEachConstituencyKey_Stop) {
 
     ASSERT_EQ(cons[0], "Search#0");
 }
+
+// Consituency Key already validates the loop logic,
+// just validate our glue code is setting it up with the right index...
+TEST_F(TDb, ForEachIssueKey) {
+    std::vector<std::string> issues;
+    theDb.ForEachIssue([&] (const std::string& name) -> auto {
+        issues.push_back(name);
+        return AdDb::DbScanOp::CONTINUE;
+    });
+    ASSERT_EQ(issues.size(), 1);
+
+    ASSERT_EQ(issues[0], "Brexit");
+}
+
 
 TEST_F(TDb, ForEachConstituency) {
     std::vector<std::shared_ptr<const FacebookAd>> matches;
@@ -169,7 +196,7 @@ TEST(DbUtilsTest, ConReport_Summary) {
     auto db = DbUtils::LoadDb("../test/data/cfg/woking_beeston.json", "../test/data/full_day_run");
     auto report = Reports::DoConsituencyReport(*db);
 
-    DbUtils::DoConstituencyReport(*report, ".");
+    DbUtils::WriteReport(*report, ".");
 
     std::ifstream summaryOutput("./Summary.json");
     ASSERT_FALSE(summaryOutput.fail());
@@ -204,7 +231,7 @@ TEST(DbUtilsTest, ConReport_NoAds) {
     auto db = DbUtils::LoadDb("../test/data/cfg/woking_beeston.json", "../test/data/full_day_run");
     auto report = Reports::DoConsituencyReport(*db);
 
-    DbUtils::DoConstituencyReport(*report, ".");
+    DbUtils::WriteReport(*report, ".");
 
     std::ifstream beestonOutput("./Beeston.json");
     ASSERT_FALSE(beestonOutput.fail());
@@ -220,7 +247,7 @@ TEST(DbUtilsTest, ConReport_Ads) {
     auto report = Reports::DoConsituencyReport(*db);
     auto& reportWoking = (*report)["Woking"];
 
-    DbUtils::DoConstituencyReport(*report, ".");
+    DbUtils::WriteReport(*report, ".");
 
     std::ifstream beestonOutput("./Woking.json");
     ASSERT_FALSE(beestonOutput.fail());

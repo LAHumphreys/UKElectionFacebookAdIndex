@@ -27,7 +27,8 @@
                             <label for="DataSetSelector"> Data Set</label>
                         </h4>
                         <select class="custom-select" id="DataSetSelector">
-                            <option selected value="Woking">Consituency Mentions</option>
+                            <option selected value="Cons">Consituency Mentions</option>
+                            <option value="Issues">Issue Mentions</option>
                         </select>
                     </div>
                     <div class="form-group col-3">
@@ -87,22 +88,37 @@
         <script type="text/javascript" charset="utf8" src="adDetails.js"></script>
 
         <script>
+            function GetDataSet() {
+                return $('#DataSetSelector').val();
+            }
+            function GetSummaryUrl() {
+                return "data/" + GetDataSet() + "/Summary.json";
+            }
             $(document).ready( function () {
-                $.ajax({
-                    url: 'Summary.json'
-                }).done(function (data) {
-                    LoadFilterTable($('#selectionTable'), data.summary);
-                    $('#SearchButton').click(function () {
-                        let cons = [];
-                        $('#selectionTable input:checked').each(function (i, checkbox) {
-                            cons.push(checkbox.id);
+                function ResetData() {
+                    let selectionTable = $('#selectionTable');
+                    let resultsTable = $('#resultsTable');
+                    ClearTable(selectionTable);
+                    ClearTable(resultsTable);
+                    $.ajax({
+                        url: GetSummaryUrl()
+                    }).done(function (data) {
+                        LoadFilterTable(selectionTable, data.summary);
+                        $('#SearchButton').click(function () {
+                            let cons = [];
+                            $('#selectionTable input:checked').each(function (i, checkbox) {
+                                cons.push(checkbox.id);
+                            });
+                            LoadResults(resultsTable, cons)
                         });
-                        LoadResults($('#resultsTable'), cons)
+                    }).fail(function () {
+                        console.log("Failed to load summary data!");
                     });
-                }).fail(function () {
-                    console.log("Failed to load summary data!");
+                }
+                ResetData();
+                $("#DataSetSelector").change(function () {
+                    ResetData();
                 });
-
             } );
         </script>
     </body>

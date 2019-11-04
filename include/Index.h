@@ -32,7 +32,7 @@ public:
         std::shared_ptr<IndexConfig> config,
         std::shared_ptr<Key>  key);
 
-    const MatchList& Get(const std::string description);
+    const MatchList& Get(const std::string description) const;
 
     void Update(const typename Key::ItemType& update);
 

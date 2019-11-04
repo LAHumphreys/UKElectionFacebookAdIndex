@@ -40,7 +40,7 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
     return result;
 }
 
-void DbUtils::DoConstituencyReport(Reports::Report& report, const std::string &basePath) {
+void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath) {
     std::fstream summaryFile(basePath + "/Summary.json", std::ios_base::out);
     SimpleJSONBuilder summaryBuilder;
     summaryBuilder.StartArray("summary");

@@ -18,6 +18,7 @@ public:
         STOP
     };
     AdDb(const std::string& cfg);
+
     using FacebookAdIndex = Index<FacebookAdKey>;
     using FacebookAdList  = std::vector<std::shared_ptr<const FacebookAd>>;
     using ForEachFacebookAd =
@@ -26,9 +27,11 @@ public:
     void Store(std::unique_ptr<FacebookAd> ad);
 
     [[nodiscard]] FacebookAdList GetConstituency(const std::string& name) const;
+    [[nodiscard]] FacebookAdList GetIssue(const std::string& name) const;
 
     void ForEachAdByConstituency(const ForEachFacebookAd& cb) const;
     void ForEachConsituency(const ForEachItemDefn& cb) const;
+    void ForEachIssue(const ForEachItemDefn& cb) const;
 
     struct InvalidConfigError: std::exception {
         InvalidConfigError(std::string err): error(std::move(err)) {}
@@ -37,14 +40,20 @@ public:
     };
 
     struct DbConfig {
-        DbConfig(std::vector<IndexConfig::Item> cons) {
+        using ItemList = std::vector<IndexConfig::Item>;
+        DbConfig(ItemList cons, ItemList is = {}) {
             consituencies = std::make_shared<IndexConfig>(std::move(cons));
+            issues = std::make_shared<IndexConfig>(std::move(is));
         }
         std::shared_ptr<IndexConfig> consituencies;
+        std::shared_ptr<IndexConfig> issues;
     };
 private:
+    FacebookAdList Get(const FacebookAdIndex& idx, const std::string& key) const;
+    void ForEach(IndexConfig& idx, const AdDb::ForEachItemDefn &cb) const;
     FacebookAdStore store;
     std::unique_ptr<FacebookAdIndex> consituencies;
+    std::unique_ptr<FacebookAdIndex> issues;
 
     std::unique_ptr<DbConfig> config;
 };

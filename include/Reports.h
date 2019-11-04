@@ -28,6 +28,8 @@ namespace Reports {
     using Report = std::map<std::string, ReportItem>;
 
     std::unique_ptr<Report> DoConsituencyReport(const AdDb& theDb);
+
+    std::unique_ptr<Report> DoIssueReport(const AdDb& theDb);
 }
 
 #endif //ELECTIONDATAANAL_REPORTS_H

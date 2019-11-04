@@ -10,36 +10,52 @@ namespace {
 
         using Item = SimpleParsedJSON<id, keys>;
         NewObjectArray(consituencies, Item);
+        NewObjectArray(issues, Item);
 
-        using DbConfig = SimpleParsedJSON<consituencies>;
+        using DbConfig = SimpleParsedJSON<consituencies, issues>;
     }
+
+    template<class ItemGroup>
+    std::vector<IndexConfig::Item> LoadItems(Config::DbConfig& config) {
+        std::vector<IndexConfig::Item> items;
+        auto &cons = config.Get<ItemGroup>();
+        items.reserve(cons.size());
+
+        for (auto &pItem: cons) {
+            if (!pItem->template Supplied<Config::id>()) {
+                throw AdDb::InvalidConfigError{"Every consituency must have an id"};
+            } else if (!pItem->template Supplied<Config::keys>()) {
+                std::string err = "Missing keys list for consituency: " + pItem->template Get<Config::id>();
+                throw AdDb::InvalidConfigError{std::move(err)};
+            } else {
+                items.push_back({pItem->template Get<Config::id>(), pItem->template Get<Config::keys>()});
+            }
+        }
+
+        return items;
+    }
+
 
     std::unique_ptr<AdDb::DbConfig> ParseConfig(const char* cfg) {
         std::unique_ptr<AdDb::DbConfig>  config;
         std::string error;
         Config::DbConfig configParser;
-        std::vector<IndexConfig::Item> items;
+        std::vector<IndexConfig::Item> cons;
+        std::vector<IndexConfig::Item> issues;
         if (!configParser.Parse(cfg, error)) {
             throw AdDb::InvalidConfigError {error};
-        } else if (!configParser.Supplied<Config::consituencies>()) {
+        }
+        if (!configParser.Supplied<Config::consituencies>()) {
             throw AdDb::InvalidConfigError {"'consituencies' list was not provided!"};
         } else {
-            auto& cons = configParser.Get<Config::consituencies>();
-            items.reserve(cons.size());
-
-            for (auto& pItem: cons) {
-                if (!pItem->Supplied<Config::id>()) {
-                    throw AdDb::InvalidConfigError {"Every consituency must have an id"};
-                } else if (!pItem->Supplied<Config::keys>()) {
-                    std::string err = "Missing keys list for consituency: " + pItem->Get<Config::id>();
-                    throw AdDb::InvalidConfigError {std::move(err)};
-                } else {
-                    items.push_back({pItem->Get<Config::id>(), pItem->Get<Config::keys>()});
-                }
-            }
-
-            config = std::make_unique<AdDb::DbConfig>(std::move(items));
+            cons = LoadItems<Config::consituencies>(configParser);
         }
+
+        if (configParser.Supplied<Config::issues>()) {
+            issues = LoadItems<Config::issues>(configParser);
+        }
+
+        config = std::make_unique<AdDb::DbConfig>(std::move(cons), std::move(issues));
 
         return config;
     }
@@ -50,17 +66,18 @@ AdDb::AdDb(const std::string& cfg) {
     std::shared_ptr<FacebookAdKey> facebookKey = std::make_shared<FacebookAdKey>();
     config = ParseConfig(cfg.c_str());
     consituencies = std::make_unique<FacebookAdIndex>(config->consituencies, facebookKey);
+    issues = std::make_unique<FacebookAdIndex>(config->issues, facebookKey);
 }
 
 void AdDb::Store(std::unique_ptr<FacebookAd> ad) {
     const auto& storedAd = store.Store(std::move(ad));
     consituencies->Update(storedAd);
+    issues->Update(storedAd);
 
 }
-
-AdDb::FacebookAdList AdDb::GetConstituency(const std::string &name) const {
+AdDb::FacebookAdList AdDb::Get(const FacebookAdIndex& idx, const std::string& name) const {
     FacebookAdList results;
-    const auto& keys = consituencies->Get(name);
+    const auto& keys = idx.Get(name);
     results.reserve(keys.size());
     for(const auto& key: keys) {
         const auto& storedAd = store.Get(key);
@@ -69,6 +86,15 @@ AdDb::FacebookAdList AdDb::GetConstituency(const std::string &name) const {
         }
     }
     return results;
+
+}
+
+AdDb::FacebookAdList AdDb::GetConstituency(const std::string &name) const {
+    return Get(*consituencies, name);
+}
+
+AdDb::FacebookAdList AdDb::GetIssue(const std::string &name) const {
+    return Get(*issues, name);
 }
 
 void AdDb::ForEachAdByConstituency(const AdDb::ForEachFacebookAd &cb) const {
@@ -94,8 +120,8 @@ void AdDb::ForEachAdByConstituency(const AdDb::ForEachFacebookAd &cb) const {
     }
 }
 
-void AdDb::ForEachConsituency(const AdDb::ForEachItemDefn &cb) const {
-    for (auto& cfg: config->consituencies->items) {
+void AdDb::ForEach(IndexConfig& idx, const AdDb::ForEachItemDefn &cb) const {
+    for (auto& cfg: idx.items) {
         switch(cb(cfg.id)) {
             case DbScanOp::CONTINUE:
                 break;
@@ -104,4 +130,13 @@ void AdDb::ForEachConsituency(const AdDb::ForEachItemDefn &cb) const {
         }
     }
 }
+
+void AdDb::ForEachConsituency(const AdDb::ForEachItemDefn &cb) const {
+    ForEach(*config->consituencies, cb);
+}
+
+void AdDb::ForEachIssue(const AdDb::ForEachItemDefn &cb) const {
+    ForEach(*config->issues, cb);
+}
+
 

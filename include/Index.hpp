@@ -15,7 +15,7 @@ Index<Key>::Index(std::shared_ptr<IndexConfig> config, std::shared_ptr<Key> key)
 }
 
 template<class Key>
-const typename Index<Key>::MatchList& Index<Key>::Get(const std::string description)
+const typename Index<Key>::MatchList& Index<Key>::Get(const std::string description) const
 {
     auto it = matches.find(description);
     if (it != matches.end()) {

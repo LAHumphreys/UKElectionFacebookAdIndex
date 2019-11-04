@@ -23,7 +23,7 @@ namespace DbUtils {
     struct BadData {};
     std::unique_ptr<AdDb> LoadDb(const std::string& cfgFile, const std::string& dataDir);
 
-    void DoConstituencyReport(Reports::Report& report, const std::string& basePath);
+    void WriteReport(Reports::Report& report, const std::string& basePath);
 }
 
 

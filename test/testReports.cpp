@@ -17,7 +17,13 @@ const std::string dbConfig = R"JSON(
     }, {
          "id": "Search#2",
          "keys": ["entity#DOES_NOT_EXIST"]
-    }]
+    }],
+
+    "issues": [{
+         "id": "Brexit",
+         "keys": ["brexit", "EU", "European Union", "350 million", "350,000,000", "350000000"]
+    }
+    ]
 }
 )JSON";
 
@@ -57,6 +63,14 @@ public:
         ad3.spend.upper_bound = 99;
         ad3.impressions.lower_bound = 0;
         ad3.impressions.upper_bound = 99;
+
+        FacebookAd& ad4 = ads.emplace_back();
+        ad4.creationTime = nstimestamp::Time("2019-10-29T18:18:60+0000");
+        ad4.fundingEntity = "Brexit";
+        ad4.spend.lower_bound = 0;
+        ad4.spend.upper_bound = 99;
+        ad4.impressions.lower_bound = 0;
+        ad4.impressions.upper_bound = 99;
     }
 protected:
     void SetUp() {
@@ -136,4 +150,15 @@ TEST_F(ReportTest, ConsituencyMentions_AdList_Impressions) {
     ASSERT_EQ(report["Search#1"].ads[2].guestimateImpressions, 1);
 
     ASSERT_EQ(report["Search#2"].ads.size(), 0);
+}
+
+TEST_F(ReportTest, Issues_Summary) {
+    auto report = *Reports::DoIssueReport(theDb);
+
+    ASSERT_EQ(report.size(), 1);
+
+    ASSERT_EQ(report["Brexit"].summary.name, "Brexit");
+    ASSERT_EQ(report["Brexit"].summary.count, 1);
+    ASSERT_EQ(report["Brexit"].summary.estImpressions, 1);
+    ASSERT_EQ(report["Brexit"].summary.estSpend, 1);
 }
