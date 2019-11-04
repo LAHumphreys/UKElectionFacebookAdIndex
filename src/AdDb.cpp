@@ -2,6 +2,7 @@
 // Created by lukeh on 02/11/2019.
 //
 #include <AdDb.h>
+#include <iostream>
 
 namespace {
     namespace Config {
@@ -28,7 +29,20 @@ namespace {
                 std::string err = "Missing keys list for consituency: " + pItem->template Get<Config::id>();
                 throw AdDb::InvalidConfigError{std::move(err)};
             } else {
-                items.push_back({pItem->template Get<Config::id>(), pItem->template Get<Config::keys>()});
+                bool found = false;
+                const std::string& id = pItem->template Get<Config::id>();
+                for (auto it = items.begin(); !found && it != items.end(); ++it) {
+                    IndexConfig::Item& item = *it;
+                    if (item.id == id) {
+                        found = true;
+                        for  (auto& k: pItem->template Get<Config::keys>()) {
+                            item.keys.push_back(std::move(k));
+                        }
+                    }
+                }
+                if (!found) {
+                    items.push_back({id, pItem->template Get<Config::keys>()});
+                }
             }
         }
 

@@ -19,6 +19,12 @@ const std::string dbConfig = R"JSON(
          "keys": ["entity#DOES_NOT_EXIST"]
     }],
 
+  "consituencies": [
+    {
+         "id": "Search#1",
+         "keys": ["entity##1"]
+    }],
+
     "issues": [{
          "id": "Brexit",
          "keys": ["brexit", "EU", "European Union", "350 million", "350,000,000", "350000000"]
@@ -52,7 +58,7 @@ public:
         FacebookAd& ad2 = ads.emplace_back();
         ad2.creationTime = nstimestamp::Time("2019-10-29T18:17:59+0000");
         ad2.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
-        ad2.fundingEntity = "Entity#1";
+        ad2.fundingEntity = "Entity##1";
         ad2.spend.lower_bound = 1000;
         ad2.spend.upper_bound = 1200;
         ad2.impressions.lower_bound = 1000;
@@ -118,7 +124,7 @@ TEST_F(ReportTest, ConsituencyMentions_AdList) {
 
     ASSERT_EQ(report["Search#1"].ads.size(), 3);
     ASSERT_EQ(report["Search#1"].ads[0].ad->fundingEntity, "Entity#1");
-    ASSERT_EQ(report["Search#1"].ads[1].ad->fundingEntity, "Entity#1");
+    ASSERT_EQ(report["Search#1"].ads[1].ad->fundingEntity, "Entity##1");
     ASSERT_EQ(report["Search#1"].ads[2].ad->fundingEntity, "Entity#1");
 
     ASSERT_EQ(report["Search#2"].ads.size(), 0);

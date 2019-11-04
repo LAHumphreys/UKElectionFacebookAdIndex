@@ -18,6 +18,11 @@ const std::string dbConfig = R"JSON(
     }, {
          "id": "Search#1",
          "keys": ["entity#1"]
+    }],
+  "consituencies": [
+    {
+         "id": "Search#0",
+         "keys": ["<Aditional Search>"]
     }, {
          "id": "Search#2",
          "keys": ["entity#DOES_NOT_EXIST"]
