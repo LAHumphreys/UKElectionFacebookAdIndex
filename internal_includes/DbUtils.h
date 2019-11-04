@@ -6,6 +6,7 @@
 #define ELECTIONDATAANAL_DBUTILS_H
 #include <memory>
 #include <AdDb.h>
+#include <Reports.h>
 
 namespace DbUtils {
     struct NoSuchCfgFile: public std::exception {
@@ -21,6 +22,8 @@ namespace DbUtils {
     struct NoData {};
     struct BadData {};
     std::unique_ptr<AdDb> LoadDb(const std::string& cfgFile, const std::string& dataDir);
+
+    void DoConstituencyReport(Reports::Report& report, const std::string& basePath);
 }
 
 

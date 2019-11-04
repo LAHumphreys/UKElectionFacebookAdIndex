@@ -3,8 +3,11 @@
 //
 #include "../internal_includes/test_utils.h"
 #include "../internal_includes/DbUtils.h"
+#include "../internal_includes/SummmaryJSON.h"
+#include "../internal_includes/ReportAdsJSON.h"
 #include <gtest/gtest.h>
 #include <AdDb.h>
+#include <fstream>
 
 const std::string dbConfig = R"JSON(
 {
@@ -15,6 +18,9 @@ const std::string dbConfig = R"JSON(
     }, {
          "id": "Search#1",
          "keys": ["entity#1"]
+    }, {
+         "id": "Search#2",
+         "keys": ["entity#DOES_NOT_EXIST"]
     }]
 }
 )JSON";
@@ -69,6 +75,30 @@ TEST_F(TDb, SingleConstituency) {
 
     AssertEq(*matches[0], ads[1]);
     AssertEq(*matches[1], ads[2]);
+}
+
+TEST_F(TDb, ForEachConstituencyKey) {
+    std::vector<std::string> cons;
+    theDb.ForEachConsituency([&] (const std::string& name) -> auto {
+        cons.push_back(name);
+        return AdDb::DbScanOp::CONTINUE;
+    });
+    ASSERT_EQ(cons.size(), 3);
+
+    ASSERT_EQ(cons[0], "Search#0");
+    ASSERT_EQ(cons[1], "Search#1");
+    ASSERT_EQ(cons[2], "Search#2");
+}
+
+TEST_F(TDb, ForEachConstituencyKey_Stop) {
+    std::vector<std::string> cons;
+    theDb.ForEachConsituency([&] (const std::string& name) -> auto {
+        cons.push_back(name);
+        return AdDb::DbScanOp::STOP;
+    });
+    ASSERT_EQ(cons.size(), 1);
+
+    ASSERT_EQ(cons[0], "Search#0");
 }
 
 TEST_F(TDb, ForEachConstituency) {
@@ -133,4 +163,84 @@ TEST(DbUtilsTest, WokingData) {
     // welcome to pull request a fix for this test only problem
     ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
     ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
+}
+
+TEST(DbUtilsTest, ConReport_Summary) {
+    auto db = DbUtils::LoadDb("../test/data/cfg/woking_beeston.json", "../test/data/full_day_run");
+    auto report = Reports::DoConsituencyReport(*db);
+
+    DbUtils::DoConstituencyReport(*report, ".");
+
+    std::ifstream summaryOutput("./Summary.json");
+    ASSERT_FALSE(summaryOutput.fail());
+
+    SummaryJSON::SummaryJSON summaryParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(summaryOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(summaryParser.Parse(rawSummary.c_str(), error)) << error;
+
+    ASSERT_EQ(summaryParser.Get<SummaryJSON::summary>().size(), 2);
+
+    auto& beeston = summaryParser.Get<SummaryJSON::summary>()[0];
+    auto& reportBeeston = (*report)["Beeston"];
+    ASSERT_TRUE(beeston->Supplied<SummaryJSON::totalAds>());
+    ASSERT_EQ(beeston->Get<SummaryJSON::totalAds>(), reportBeeston.summary.count);
+    ASSERT_TRUE(beeston->Supplied<SummaryJSON::guestimateImpressions>());
+    ASSERT_EQ(beeston->Get<SummaryJSON::guestimateImpressions>(), reportBeeston.summary.estImpressions);
+    ASSERT_TRUE(beeston->Supplied<SummaryJSON::guestimateSpendGBP>());
+    ASSERT_EQ(beeston->Get<SummaryJSON::guestimateSpendGBP>(), reportBeeston.summary.estSpend);
+
+    auto& woking = summaryParser.Get<SummaryJSON::summary>()[1];
+    auto& reportWoking = (*report)["Woking"];
+    ASSERT_TRUE(woking->Supplied<SummaryJSON::totalAds>());
+    ASSERT_EQ(woking->Get<SummaryJSON::totalAds>(), reportWoking.summary.count);
+    ASSERT_TRUE(woking->Supplied<SummaryJSON::guestimateImpressions>());
+    ASSERT_EQ(woking->Get<SummaryJSON::guestimateImpressions>(), reportWoking.summary.estImpressions);
+    ASSERT_TRUE(woking->Supplied<SummaryJSON::guestimateSpendGBP>());
+    ASSERT_EQ(woking->Get<SummaryJSON::guestimateSpendGBP>(), reportWoking.summary.estSpend);
+}
+
+TEST(DbUtilsTest, ConReport_NoAds) {
+    auto db = DbUtils::LoadDb("../test/data/cfg/woking_beeston.json", "../test/data/full_day_run");
+    auto report = Reports::DoConsituencyReport(*db);
+
+    DbUtils::DoConstituencyReport(*report, ".");
+
+    std::ifstream beestonOutput("./Beeston.json");
+    ASSERT_FALSE(beestonOutput.fail());
+    ReportJSON::ReportJSON adsParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(beestonOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(adsParser.Parse(rawSummary.c_str(), error)) << error;
+    ASSERT_EQ(adsParser.Get<ReportJSON::data>().size(), 0);
+}
+
+TEST(DbUtilsTest, ConReport_Ads) {
+    auto db = DbUtils::LoadDb("../test/data/cfg/woking_beeston.json", "../test/data/full_day_run");
+    auto report = Reports::DoConsituencyReport(*db);
+    auto& reportWoking = (*report)["Woking"];
+
+    DbUtils::DoConstituencyReport(*report, ".");
+
+    std::ifstream beestonOutput("./Woking.json");
+    ASSERT_FALSE(beestonOutput.fail());
+    ReportJSON::ReportJSON adsParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(beestonOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(adsParser.Parse(rawSummary.c_str(), error)) << error;
+    ASSERT_EQ(adsParser.Get<ReportJSON::data>().size(), reportWoking.ads.size());
+
+    for (size_t i = 0; i < adsParser.Get<ReportJSON::data>().size(); ++i) {
+        auto& fileAd = *adsParser.Get<ReportJSON::data>()[i];
+        auto& ad = *reportWoking.ads[i].ad;
+        ASSERT_EQ(fileAd.Get<ReportJSON::funding_entity>(), ad.fundingEntity);
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_delivery_start_time>(), ad.deliveryStartTime.ISO8601Timestamp());
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creation_time>(), ad.creationTime.ISO8601Timestamp());
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_description>(), ad.linkDescription);
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_title>(), ad.linkTitle);
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_caption>(), ad.linkCaption );
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_body>(), ad.body );
+        ASSERT_EQ(fileAd.Get<ReportJSON::guestimateSpendGBP>(), reportWoking.ads[i].guestimateSpend );
+        ASSERT_EQ(fileAd.Get<ReportJSON::guestimateImpressions>(), reportWoking.ads[i].guestimateImpressions );
+    }
 }

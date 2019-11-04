@@ -24,6 +24,7 @@ add_library(AdParser STATIC
     include/FacebookAd.h
     include/Index.h
     internal_includes/FacebookAdJSON.h
+    internal_includes/SummmaryJSON.h
     src/FacebookParser.cpp
     src/FacebookAd.cpp
 )
@@ -48,11 +49,13 @@ add_library(Db STATIC
     include/Index.h
     include/Index.hpp
     include/IndexConfig.h
+    include/Reports.h
     src/AdDb.cpp
     src/DbUtils.cpp
     src/FacebookAdKey.cpp
     src/FacebookAdStore.cpp
     src/IndexConfig.cpp
+    src/Reports.cpp
 )
 target_link_libraries(Db PUBLIC
     AdParser
@@ -76,13 +79,15 @@ find_package(GTest REQUIRED)
 add_executable(ad_parser test/ad_parser.cpp internal_includes/test_utils.h)
 add_executable(index test/index.cpp internal_includes/test_utils.h)
 add_executable(store test/store.cpp internal_includes/test_utils.h)
-add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h)
+add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h)
+add_executable(testReports test/testReports.cpp internal_includes/test_utils.h)
 
 enable_testing()
 add_test(ad_parser ad_parser)
 add_test(index index)
 add_test(store store)
 add_test(adDb adDb)
+add_test(testReports testReports)
 
 target_compile_features(ad_parser PRIVATE cxx_std_17)
 target_link_libraries(ad_parser PUBLIC AdParser GTest::GTest GTest::Main)
@@ -95,6 +100,9 @@ target_link_libraries(store PUBLIC AdParser Db GTest::GTest GTest::Main)
 
 target_compile_features(adDb PRIVATE cxx_std_17)
 target_link_libraries(adDb PUBLIC AdParser Db GTest::GTest GTest::Main)
+
+target_compile_features(testReports PRIVATE cxx_std_17)
+target_link_libraries(testReports PUBLIC AdParser Db GTest::GTest GTest::Main)
 
 #
 # Configure Coverage Build

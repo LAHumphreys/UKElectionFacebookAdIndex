@@ -22,11 +22,13 @@ public:
     using FacebookAdList  = std::vector<std::shared_ptr<const FacebookAd>>;
     using ForEachFacebookAd =
             std::function<DbScanOp (const IndexConfig::Item&, std::shared_ptr<const FacebookAd> ad)>;
+    using ForEachItemDefn = std::function<DbScanOp (const std::string& name)>;
     void Store(std::unique_ptr<FacebookAd> ad);
 
     [[nodiscard]] FacebookAdList GetConstituency(const std::string& name) const;
 
-    void ForEachAdByConstituency(const ForEachFacebookAd& cb);
+    void ForEachAdByConstituency(const ForEachFacebookAd& cb) const;
+    void ForEachConsituency(const ForEachItemDefn& cb) const;
 
     struct InvalidConfigError: std::exception {
         InvalidConfigError(std::string err): error(std::move(err)) {}
@@ -45,9 +47,6 @@ private:
     std::unique_ptr<FacebookAdIndex> consituencies;
 
     std::unique_ptr<DbConfig> config;
-
-
-
 };
 
 #endif //ELECTIONDATAANAL_ADDB_H

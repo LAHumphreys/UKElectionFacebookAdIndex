@@ -71,7 +71,7 @@ AdDb::FacebookAdList AdDb::GetConstituency(const std::string &name) const {
     return results;
 }
 
-void AdDb::ForEachAdByConstituency(const AdDb::ForEachFacebookAd &cb) {
+void AdDb::ForEachAdByConstituency(const AdDb::ForEachFacebookAd &cb) const {
     bool continueScan = true;
     const auto& cons = config->consituencies->items;
     for (auto it = cons.begin(); continueScan && it != cons.end(); ++it) {
@@ -90,6 +90,17 @@ void AdDb::ForEachAdByConstituency(const AdDb::ForEachFacebookAd &cb) {
                         break;
                 }
             }
+        }
+    }
+}
+
+void AdDb::ForEachConsituency(const AdDb::ForEachItemDefn &cb) const {
+    for (auto& cfg: config->consituencies->items) {
+        switch(cb(cfg.id)) {
+            case DbScanOp::CONTINUE:
+                break;
+            case DbScanOp::STOP:
+                return;
         }
     }
 }
