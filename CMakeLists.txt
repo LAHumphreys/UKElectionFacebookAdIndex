@@ -70,6 +70,10 @@ target_compile_features(Db PRIVATE cxx_std_17)
 set_property(TARGET Db PROPERTY PUBLIC_HEADER
 )
 
+add_executable(processAds src/processAds.cpp internal_includes/test_utils.h)
+target_compile_features(processAds PRIVATE cxx_std_17)
+target_link_libraries(processAds PUBLIC AdParser Db GTest::GTest GTest::Main)
+
 
 #
 # Test Configuration

@@ -25,7 +25,7 @@ function ConsolidateData(table, groupField, keys, cb) {
         $.ajax({
             url: ref
         }).done(function (d) {
-            d.forEach(function (ad, index) {
+            d.data.forEach(function (ad, index) {
                 let groupKey = ad[groupField];
                 if (!(groupKey in result)) {
                     result[groupKey] = {
