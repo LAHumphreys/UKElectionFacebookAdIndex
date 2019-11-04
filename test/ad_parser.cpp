@@ -103,6 +103,17 @@ const std::string json = R"JSON(
       "currency": "GBP",
       "funding_entity": "Woking Liberal Democrats",
       "page_name": "> Woking Liberal Democrats"
+    }, {
+      "ad_creative_link_title": "We will stop Brexit, invest in public services like our NHS and take action to fight climate change",
+      "ad_creative_link_caption": "wokinglibdems.org.uk",
+      "ad_creative_link_description": "<TEST>",
+      "ad_creative_body": "Local Councillor, former Mayor and life-long resident Will Forster is the Lib Dem candidate to be Woking's new MP!",
+      "ad_creation_time": "2020-10-29T17:16:59+0000",
+      "ad_delivery_start_time": "2020-10-29T18:00:56+0000",
+      "ad_delivery_stop_time": "2020-11-01T16:00:56+0000",
+      "impressions": {
+        "lower_bound": "1000000"
+      }
     }
   ],
   "paging": {
@@ -126,7 +137,7 @@ protected:
 void AdParserTest::WithTheAd(const std::function<void(FacebookAd &ad)> &f) {
     std::vector<FacebookAd> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
-    ASSERT_EQ(ads.size(), 2);
+    ASSERT_EQ(ads.size(), 3);
     f(ads[1]);
 }
 
@@ -143,7 +154,7 @@ TEST_F(AdParserTest, InvalidJSON) {
 TEST_F(AdParserTest, ValidData) {
     std::vector<FacebookAd> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
-    ASSERT_EQ(ads.size(), 2);
+    ASSERT_EQ(ads.size(), 3);
 }
 
 TEST_F(AdParserTest, LinkTitle) {
@@ -208,6 +219,15 @@ TEST_F(AdParserTest, Impressions) {
         ASSERT_EQ(ad.impressions.lower_bound, 8000);
         ASSERT_EQ(ad.impressions.upper_bound, 8999);
     });
+}
+
+TEST_F(AdParserTest, Impressions_NoUpperBound) {
+    std::vector<FacebookAd> ads;
+    ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
+    ASSERT_EQ(ads.size(), 3);
+
+    ASSERT_EQ(ads[2].impressions.lower_bound, 1000000);
+    ASSERT_EQ(ads[2].impressions.upper_bound, 1000002);
 }
 
 TEST_F(AdParserTest, Spend) {

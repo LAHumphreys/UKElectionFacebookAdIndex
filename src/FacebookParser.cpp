@@ -39,6 +39,7 @@ namespace {
         template<class SubObject>
         void ReadBoundFields(size_t adIndex, BoundedQuantity& qty) {
             ConvertAdObjectField<SubObject, data_fields::lower_bound>( adIndex, qty.lower_bound);
+            qty.upper_bound = qty.lower_bound + 2;
             ConvertAdObjectField<SubObject, data_fields::upper_bound>( adIndex, qty.upper_bound);
         }
 
