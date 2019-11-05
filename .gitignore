@@ -29,6 +29,7 @@
 # CMake Output (build directories)
 cmake-build-debug
 cmake-build-release
+Build
 build
 deps
 

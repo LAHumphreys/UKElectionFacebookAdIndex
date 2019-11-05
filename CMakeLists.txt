@@ -7,16 +7,11 @@ project(ElectionDataAnal)
 #
 # Find dependencies
 #
-find_package(ThreadComms 0.1 REQUIRED)
 find_package(FixedJSON 0.1 REQUIRED)
 find_package(DevToolsLog 0.1 REQUIRED)
 find_package(OSDevTools 0.1 REQUIRED)
 find_package(UtilTime 0.1 REQUIRED)
-find_package(GTKUtils 0.1 REQUIRED)
 find_package(Boost 0.1 REQUIRED COMPONENTS system thread)
-find_package(WEBSOCKETPP 0.8.1 REQUIRED)
-find_package(CPPWebSocketResponseRequest 0.1 REQUIRED)
-find_package(OpenSSL REQUIRED)
 
 
 add_library(AdParser STATIC
