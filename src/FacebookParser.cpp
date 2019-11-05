@@ -142,8 +142,8 @@ namespace {
     }
 
 
-    void ParseAd(size_t adIndex, vector<FacebookAd> &into, ParserData &parserData) {
-        auto& ad = into.emplace_back();
+    void ParseAd(size_t adIndex, vector<std::unique_ptr<FacebookAd>> &into, ParserData &parserData) {
+        auto& ad = *into.emplace_back(std::make_unique<FacebookAd>());
         parserData.MoveField<ad_creation_time>(adIndex, ad.creationTime);
         parserData.MoveField<ad_creative_body>(adIndex, ad.body);
         parserData.MoveField<ad_creative_link_caption>(adIndex, ad.linkCaption);
@@ -154,9 +154,11 @@ namespace {
         parserData.MoveField<currency>(adIndex, ad.currency);
         parserData.MoveField<funding_entity>(adIndex, ad.fundingEntity);
         parserData.MoveField<page_name>(adIndex, ad.pageName);
+
         parserData.MoveField<ad_snapshot_url>(adIndex, ad.pageUrl);
 
         ad.id = ExtractId(ad.creationTime, ad.pageUrl);
+        ad.pageUrl = "";
 
         parserData.ReadBoundFields<impressions>(adIndex, ad.impressions);
         parserData.ReadBoundFields<spend>(adIndex, ad.spend);
@@ -170,7 +172,7 @@ FacebookAdParser::FacebookAdParser() {
     internalData = std::make_unique<ParserData>();
 }
 
-Parser::ParseResult Parser::ParseFacebookAdQuery(const char *qryPage, std::vector<FacebookAd> &ads) {
+Parser::ParseResult Parser::ParseFacebookAdQuery(const char *qryPage, std::vector<std::unique_ptr<FacebookAd>> &ads) {
     std::string error;
     ParseResult result = ParseResult::VALID;
     auto& parserData = GetParser(*this->internalData);
@@ -200,7 +202,7 @@ Parser::ParseResult Parser::ParseFacebookAdQuery(const char *qryPage, std::vecto
     return result;
 }
 
-FacebookAdParser::ParseResult FacebookAdParser::Parse(std::istream &source, std::vector<FacebookAd> &ads) {
+FacebookAdParser::ParseResult FacebookAdParser::Parse(std::istream &source, std::vector<std::unique_ptr<FacebookAd>> &ads) {
     std::string result((std::istreambuf_iterator<char>(source)), std::istreambuf_iterator<char>());
     return ParseFacebookAdQuery(result.c_str(), ads);
 }

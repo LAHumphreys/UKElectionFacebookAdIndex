@@ -152,24 +152,24 @@ protected:
 };
 
 void AdParserTest::WithTheAd(const std::function<void(FacebookAd &ad)> &f) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 3);
-    f(ads[1]);
+    f(*ads[1]);
 }
 
 TEST_F(AdParserTest, NullJSON) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(nullptr, ads), ParseResult::INVALID_STRING);
 }
 
 TEST_F(AdParserTest, InvalidJSON) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery("{", ads), ParseResult::PARSE_ERROR);
 }
 
 TEST_F(AdParserTest, ValidData) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 3);
 }
@@ -239,17 +239,18 @@ TEST_F(AdParserTest, Impressions) {
 }
 
 TEST_F(AdParserTest, Impressions_NoUpperBound) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 3);
 
-    ASSERT_EQ(ads[2].impressions.lower_bound, 1000000);
-    ASSERT_EQ(ads[2].impressions.upper_bound, 1000002);
+    ASSERT_EQ(ads[2]->impressions.lower_bound, 1000000);
+    ASSERT_EQ(ads[2]->impressions.upper_bound, 1000002);
 }
 
 TEST_F(AdParserTest, Url) {
     WithTheAd([&] (FacebookAd& ad) -> void {
-        ASSERT_EQ(ad.pageUrl, url);
+        // Don't bother storing the url - its just a waste of memory
+        ASSERT_EQ(ad.pageUrl, "");
     });
 }
 
@@ -262,14 +263,14 @@ TEST_F(AdParserTest, Id) {
 
 TEST_F(AdParserTest, NoLeadingZerosInId) {
     std::stringstream buf;
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
 
     std::string bigId = AdWithId("0428050904019117");
     ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::PARSE_ERROR);
 }
 
 TEST_F(AdParserTest, NoNonNumericIds) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
 
     std::string bigId = AdWithId("1428A50904019117");
     ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::PARSE_ERROR);
@@ -277,18 +278,18 @@ TEST_F(AdParserTest, NoNonNumericIds) {
 
 TEST_F(AdParserTest, LargeIds) {
     std::stringstream buf;
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
 
     std::string bigId = AdWithId("1428050904019117");
     ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 1);
-    ASSERT_EQ(ads[0].id, 1428050904019117);
+    ASSERT_EQ(ads[0]->id, 1428050904019117);
 
     ads.clear();
     bigId = AdWithId("18446744073709551615");
     ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 1);
-    ASSERT_EQ(ads[0].id, 18446744073709551615UL);
+    ASSERT_EQ(ads[0]->id, 18446744073709551615UL);
 
 
     ads.clear();
@@ -297,7 +298,7 @@ TEST_F(AdParserTest, LargeIds) {
     bigId = AdWithId(buf.str());
     ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 1);
-    ASSERT_EQ(ads[0].id, std::numeric_limits<size_t>::max());
+    ASSERT_EQ(ads[0]->id, std::numeric_limits<size_t>::max());
 
 }
 
@@ -312,18 +313,18 @@ TEST_F(AdParserTest, IdFallback) {
     }
     )JSON";
 
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
 
     ASSERT_EQ(parser.ParseFacebookAdQuery(ad.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 1);
-    ASSERT_EQ(ads[0].id, nstimestamp::Time("2019-10-29T17:16:59+0000").EpochSecs());
+    ASSERT_EQ(ads[0]->id, nstimestamp::Time("2019-10-29T17:16:59+0000").EpochSecs());
 }
 
 
 // Need to be careful not to wrap
 TEST_F(AdParserTest, IdTooLong) {
     std::stringstream buf;
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     ads.clear();
     buf.clear(); buf.str("");
     buf << std::numeric_limits<size_t>::max();
@@ -348,7 +349,7 @@ TEST_F(AdParserTest, IdTooLong) {
 
 TEST_F(AdParserTest, IdTooGreat) {
     std::stringstream buf;
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
 
     ads.clear();
     buf.clear(); buf.str("");
@@ -426,7 +427,7 @@ TEST_F(AdParserTest, Demographic) {
 }
 
 TEST_F(AdParserTest, LoadFile) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     std::ifstream wokingFile("../test/data/woking.json");
     ASSERT_EQ(parser.Parse(wokingFile, ads), FacebookAdParser::ParseResult::VALID);
     ASSERT_EQ(ads.size(), 2);
@@ -434,12 +435,12 @@ TEST_F(AdParserTest, LoadFile) {
     const auto& libDemAd = ads[0];
     const auto& conAd = ads[1];
 
-    ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
-    ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
+    ASSERT_EQ(libDemAd->fundingEntity, "Woking Liberal Democrats");
+    ASSERT_EQ(conAd->fundingEntity, "Woking Conservative Association");
 }
 
 TEST_F(AdParserTest, LoadDirectory) {
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     auto files = OS::Glob("../test/data/test_run/*");
     for (const std::string& path: files) {
         std::ifstream file(path);
@@ -452,6 +453,6 @@ TEST_F(AdParserTest, LoadDirectory) {
 
     // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
     // welcome to pull request a fix for this test only problem
-    ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
-    ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
+    ASSERT_EQ(libDemAd->fundingEntity, "Woking Liberal Democrats");
+    ASSERT_EQ(conAd->fundingEntity, "Woking Conservative Association");
 }

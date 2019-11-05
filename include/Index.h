@@ -41,7 +41,20 @@ private:
     std::shared_ptr<IndexConfig> config;
     std::shared_ptr<Key>  key;
 
-    std::map<std::string, MatchList> matches;
+    class MatchListStore {
+    public:
+        constexpr static size_t npos = std::numeric_limits<size_t>::max();
+
+        MatchListStore(IndexConfig& cfg);
+
+        size_t Find(const std::string& name) const;
+        MatchList& Get(const size_t idx);
+        const MatchList& Get(const size_t idx) const;
+    private:
+        std::map<std::string, size_t> idxs;
+        std::vector<MatchList> lists;
+    };
+    MatchListStore matches;
 };
 
 #include <Index.hpp>

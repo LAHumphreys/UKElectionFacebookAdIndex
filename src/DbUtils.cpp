@@ -65,7 +65,7 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
     }
 
     FacebookAdParser parser;
-    std::vector<FacebookAd> ads;
+    std::vector<std::unique_ptr<FacebookAd>> ads;
     auto files = OS::Glob(dataDir + "/*");
     for (const std::string& path: files) {
         std::ifstream file(path);
@@ -87,6 +87,8 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
     size_t i = 0;
     Time lastReport;
     for (auto& ad: ads) {
+        result->Store(std::move(ad));
+
         if (i %10 == 0) {
             Time now;
             if (now.DiffSecs(lastReport) >= 10) {
@@ -95,7 +97,6 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
                 lastReport = now;
             }
         }
-        result->Store(std::make_unique<FacebookAd>(std::move(ad)));
 
         ++i;
     }

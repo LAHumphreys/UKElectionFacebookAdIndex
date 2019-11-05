@@ -2,6 +2,8 @@
 #include <IndexConfig.h>
 #include "FacebookAdKey.h"
 #include <memory>
+#include <Index.h>
+
 #include "../internal_includes/test_utils.h"
 
 class IndexTest: public ::testing::Test {

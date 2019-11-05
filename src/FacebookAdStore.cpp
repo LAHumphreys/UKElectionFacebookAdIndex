@@ -19,7 +19,6 @@ namespace {
     }
 }
 
-#include <FacebookAdStore.h>
 StoredFacebookAd::StoredFacebookAd(std::shared_ptr<FacebookAd> ad)
     : item(std::move(ad))
 {
