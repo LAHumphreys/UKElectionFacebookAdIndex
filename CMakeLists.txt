@@ -103,6 +103,13 @@ add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h internal_inc
 add_executable(configPurify test/testPurify.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h)
 add_executable(testReports test/testReports.cpp internal_includes/test_utils.h)
 
+#
+# NOTE: Valgrind must be configured *before* testing is imported
+#
+set(MEMORYCHECK_COMMAND_OPTIONS "--gen-suppressions=all --track-origins=yes --freelist-vol=2000000000 --error-exitcode=1 --track-fds=yes --num-callers=50 --fullpath-after= --trace-children=yes --leak-check=full" )
+find_program(MEMORYCHECK_COMMAND valgrind )
+include (CTest)
+
 enable_testing()
 add_test(ad_parser ad_parser)
 add_test(index index)

@@ -29,6 +29,5 @@ script:
   - ./buildFromDeps.sh
   - cd Build
   - make test
-  - ctest -T Memcheck
   - cd ..
   - GCOV="gcov-9" LCOV_FILTERS="$PWD/src/cfgClean.cpp $PWD/src/processAds.cpp" ./deps/CMakeUtils/travis/doCoverage.sh
