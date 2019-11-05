@@ -3,18 +3,9 @@
 //
 #include <AdDb.h>
 #include <iostream>
+#include "../internal_includes/ConfigParser.h"
 
 namespace {
-    namespace Config {
-        NewStringField(id);
-        NewStringArrayField(keys);
-
-        using Item = SimpleParsedJSON<id, keys>;
-        NewObjectArray(consituencies, Item);
-        NewObjectArray(issues, Item);
-
-        using DbConfig = SimpleParsedJSON<consituencies, issues>;
-    }
 
     template<class ItemGroup>
     std::vector<IndexConfig::Item> LoadItems(Config::DbConfig& config) {

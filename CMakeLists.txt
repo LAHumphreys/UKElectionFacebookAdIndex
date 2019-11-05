@@ -44,6 +44,7 @@ set_property(TARGET AdParser PROPERTY PUBLIC_HEADER
 add_library(Db STATIC
     include/AdDb.h
     internal_includes/DbUtils.h
+    internal_includes/ConfigParser.h
     include/FacebookAdKey.h
     include/FacebookAdStore.h
     include/Index.h
@@ -70,9 +71,29 @@ target_compile_features(Db PRIVATE cxx_std_17)
 set_property(TARGET Db PROPERTY PUBLIC_HEADER
 )
 
+add_library(ConfigUtils STATIC
+        internal_includes/ConfigPurify.h
+        src/ConfigPurify.cpp
+)
+target_link_libraries(ConfigUtils PUBLIC
+        Db
+        AdParser
+        FixedJSON::FixedJSON
+        DevToolsLog::Log
+)
+target_include_directories(ConfigUtils PUBLIC
+        $<BUILD_INTERFACE:${ElectionDataAnal_SOURCE_DIR}/include>
+)
+
+target_compile_features(ConfigUtils PRIVATE cxx_std_17)
+
 add_executable(processAds src/processAds.cpp internal_includes/test_utils.h)
 target_compile_features(processAds PRIVATE cxx_std_17)
 target_link_libraries(processAds PUBLIC AdParser Db GTest::GTest GTest::Main)
+
+add_executable(cfgClean src/cfgClean.cpp internal_includes/test_utils.h)
+target_compile_features(cfgClean PRIVATE cxx_std_17)
+target_link_libraries(cfgClean PUBLIC ConfigUtils Db AdParser GTest::GTest GTest::Main)
 
 
 #
@@ -84,6 +105,7 @@ add_executable(ad_parser test/ad_parser.cpp internal_includes/test_utils.h)
 add_executable(index test/index.cpp internal_includes/test_utils.h)
 add_executable(store test/store.cpp internal_includes/test_utils.h)
 add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h)
+add_executable(configPurify test/testPurify.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h)
 add_executable(testReports test/testReports.cpp internal_includes/test_utils.h)
 
 enable_testing()
@@ -91,6 +113,7 @@ add_test(ad_parser ad_parser)
 add_test(index index)
 add_test(store store)
 add_test(adDb adDb)
+add_test(configPurify configPurify)
 add_test(testReports testReports)
 
 target_compile_features(ad_parser PRIVATE cxx_std_17)
@@ -104,6 +127,9 @@ target_link_libraries(store PUBLIC AdParser Db GTest::GTest GTest::Main)
 
 target_compile_features(adDb PRIVATE cxx_std_17)
 target_link_libraries(adDb PUBLIC AdParser Db GTest::GTest GTest::Main)
+
+target_compile_features(configPurify PRIVATE cxx_std_17)
+target_link_libraries(configPurify PUBLIC ConfigUtils Db AdParser GTest::GTest GTest::Main)
 
 target_compile_features(testReports PRIVATE cxx_std_17)
 target_link_libraries(testReports PUBLIC AdParser Db GTest::GTest GTest::Main)
