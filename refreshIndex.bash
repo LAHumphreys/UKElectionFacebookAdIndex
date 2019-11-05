@@ -1,5 +1,10 @@
 #!/bin/bash
 
+indexArgs=""
+if [[ "$1" == "--redacted" ]]; then
+    indexArgs+="--redacted"
+fi
+
 
 pushd ./Build/
 make -j 3  || exit 1
@@ -15,4 +20,4 @@ echo "Regenerating index..."
 rm -f FrontEnd/data/*/*.json
 mkdir -p FrontEnd/data/Cons/
 mkdir -p FrontEnd/data/Issues/
-DEV_TOOLS_LOG_OVERVIEW=YES time ./Build/processAds clean.cfg data FrontEnd/data
+DEV_TOOLS_LOG_OVERVIEW=YES ./Build/processAds $indexArgs clean.cfg data FrontEnd/data

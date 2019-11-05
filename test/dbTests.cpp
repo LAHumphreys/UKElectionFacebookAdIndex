@@ -283,3 +283,34 @@ TEST(DbUtilsTest, ConReport_Ads) {
         ASSERT_EQ(fileAd.Get<ReportJSON::guestimateImpressions>(), reportWoking.ads[i].guestimateImpressions );
     }
 }
+
+TEST(DbUtilsTest, ConReport_Ads_RedactedMode) {
+    auto db = DbUtils::LoadDb("../test/data/cfg/woking_beeston.json", "../test/data/full_day_run");
+    auto report = Reports::DoConsituencyReport(*db);
+    auto& reportWoking = (*report)["Woking"];
+
+    DbUtils::WriteReport(*report, ".", DbUtils::WriteMode::REDACTED);
+
+    std::ifstream beestonOutput("./Woking.json");
+    ASSERT_FALSE(beestonOutput.fail());
+    ReportJSON::ReportJSON adsParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(beestonOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(adsParser.Parse(rawSummary.c_str(), error)) << error;
+    ASSERT_EQ(adsParser.Get<ReportJSON::data>().size(), reportWoking.ads.size());
+
+    for (size_t i = 0; i < adsParser.Get<ReportJSON::data>().size(); ++i) {
+        auto& fileAd = *adsParser.Get<ReportJSON::data>()[i];
+        auto& ad = *reportWoking.ads[i].ad;
+        ASSERT_EQ(fileAd.Get<ReportJSON::funding_entity>(), ad.fundingEntity);
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_delivery_start_time>(), ad.deliveryStartTime.ISO8601Timestamp());
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_delivery_end_time>(), ad.deliveryEndTime.ISO8601Timestamp());
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creation_time>(), ad.creationTime.ISO8601Timestamp());
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_description>(), DbUtils::REDACTED_TEXT);
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_title>(), DbUtils::REDACTED_TEXT);
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_link_caption>(), DbUtils::REDACTED_TEXT);
+        ASSERT_EQ(fileAd.Get<ReportJSON::ad_creative_body>(), DbUtils::REDACTED_TEXT);
+        ASSERT_EQ(fileAd.Get<ReportJSON::guestimateSpendGBP>(), reportWoking.ads[i].guestimateSpend );
+        ASSERT_EQ(fileAd.Get<ReportJSON::guestimateImpressions>(), reportWoking.ads[i].guestimateImpressions );
+    }
+}

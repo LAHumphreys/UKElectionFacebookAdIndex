@@ -23,7 +23,13 @@ namespace DbUtils {
     struct BadData {};
     std::unique_ptr<AdDb> LoadDb(const std::string& cfgFile, const std::string& dataDir);
 
-    void WriteReport(Reports::Report& report, const std::string& basePath);
+    constexpr const char * const REDACTED_TEXT =
+            "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally";
+    enum class WriteMode {
+        FULL,
+        REDACTED
+    };
+    void WriteReport(Reports::Report& report, const std::string& basePath, WriteMode = WriteMode::FULL);
 
     bool Search(const std::string toSearch, const std::string& key);
 }

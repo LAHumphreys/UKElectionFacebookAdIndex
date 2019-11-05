@@ -82,7 +82,7 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
     SLOG_FROM(LOG_OVERVIEW, __func__,
             "Loaded " << ads.size() << " ads in " << loadEnd.DiffSecs(start) << "s")
 
-    SLOG_FROM(LOG_OVERVIEW, __func__, "Starting store...");
+    SLOG_FROM(LOG_OVERVIEW, __func__, "Building indexes...");
 
     size_t i = 0;
     Time lastReport;
@@ -93,7 +93,7 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
             Time now;
             if (now.DiffSecs(lastReport) >= 10) {
                 SLOG_FROM(LOG_OVERVIEW, __func__,
-                          "Stored " << i << " ads in " << now.DiffSecs(loadEnd) << "s")
+                          "Indexed " << i << " of " << ads.size() << " ads in " << now.DiffSecs(loadEnd) << "s")
                 lastReport = now;
             }
         }
@@ -103,12 +103,12 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
 
     Time storeEnd;
     SLOG_FROM(LOG_OVERVIEW, __func__,
-              "Stored " << ads.size() << " ads in " << storeEnd.DiffSecs(loadEnd) << "s")
+              "Indexed " << ads.size() << " ads in " << storeEnd.DiffSecs(loadEnd) << "s")
 
     return result;
 }
 
-void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath) {
+void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath, WriteMode mode) {
     std::fstream summaryFile(basePath + "/Summary.json", std::ios_base::out);
     SimpleJSONBuilder summaryBuilder;
     summaryBuilder.StartArray("summary");
@@ -129,10 +129,18 @@ void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath) 
             adsBuilder.Add("ad_delivery_start_time", ad.ad->deliveryStartTime.ISO8601Timestamp());
             adsBuilder.Add("ad_delivery_end_time", ad.ad->deliveryEndTime.ISO8601Timestamp());
             adsBuilder.Add("ad_creation_time", ad.ad->creationTime.ISO8601Timestamp());
-            adsBuilder.Add("ad_creative_link_description", ad.ad->linkDescription);
-            adsBuilder.Add("ad_creative_link_title", ad.ad->linkTitle);
-            adsBuilder.Add("ad_creative_link_caption", ad.ad->linkCaption);
-            adsBuilder.Add("ad_creative_body", ad.ad->body);
+            if (mode == WriteMode::REDACTED) {
+                const std::string redacted(REDACTED_TEXT);
+                adsBuilder.Add("ad_creative_link_description", redacted);
+                adsBuilder.Add("ad_creative_link_title", redacted);
+                adsBuilder.Add("ad_creative_link_caption", redacted);
+                adsBuilder.Add("ad_creative_body", redacted);
+            } else {
+                adsBuilder.Add("ad_creative_link_description", ad.ad->linkDescription);
+                adsBuilder.Add("ad_creative_link_title", ad.ad->linkTitle);
+                adsBuilder.Add("ad_creative_link_caption", ad.ad->linkCaption);
+                adsBuilder.Add("ad_creative_body", ad.ad->body);
+            }
             adsBuilder.Add("guestimateImpressions", ad.guestimateImpressions);
             adsBuilder.Add("guestimateSpendGBP", ad.guestimateSpend);
             adsBuilder.EndObject();
