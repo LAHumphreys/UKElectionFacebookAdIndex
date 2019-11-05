@@ -52,6 +52,8 @@ std::ostream& operator<<(std::ostream& os, const AgeRangeCode & code);
 AgeRangeCode ParseAgeRangeCode(const std::string& code);
 
 struct  FacebookAd {
+    size_t id;
+
     FacebookAd() = default;
     FacebookAd(const FacebookAd& rhs) = default;
     FacebookAd(FacebookAd&& rhs) = default;
@@ -67,6 +69,7 @@ struct  FacebookAd {
     BoundedQuantity impressions;
     BoundedQuantity spend;
 
+    std::string pageUrl;
     std::string fundingEntity;
     std::string pageName;
 

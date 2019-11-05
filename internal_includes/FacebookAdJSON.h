@@ -35,6 +35,8 @@ namespace FacebookAdJSON {
         NewTimeField(ad_delivery_start_time);
         NewTimeField(ad_delivery_stop_time);
 
+        NewStringField(ad_snapshot_url);
+
         NewStringField(currency);
         NewStringField(funding_entity);
         NewStringField(page_name);
@@ -87,6 +89,7 @@ namespace FacebookAdJSON {
             ad_creative_link_title,
             ad_delivery_start_time,
             ad_delivery_stop_time,
+            ad_snapshot_url,
             currency,
             funding_entity,
             impressions,

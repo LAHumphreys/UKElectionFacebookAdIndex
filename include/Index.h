@@ -40,6 +40,7 @@ private:
     const MatchList emptySet = {};
     std::shared_ptr<IndexConfig> config;
     std::shared_ptr<Key>  key;
+
     std::map<std::string, MatchList> matches;
 };
 

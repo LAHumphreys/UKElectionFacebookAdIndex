@@ -43,6 +43,7 @@ public:
        : theDb(dbConfig)
     {
         FacebookAd& ad = ads.emplace_back();
+        ad.id = 0;
         ad.creationTime = nstimestamp::Time("2019-10-29T16:15:59+0000");
         ad.fundingEntity = "Entity#0";
         ad.pageName = "Page#0";
@@ -52,6 +53,7 @@ public:
         ad.body = "Body#0";
 
         FacebookAd& ad1 = ads.emplace_back();
+        ad1.id = 1;
         ad1.creationTime = nstimestamp::Time("2019-10-29T18:16:59+0000");
         ad1.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
         ad1.fundingEntity = "Entity#1";
@@ -62,6 +64,7 @@ public:
         ad1.body = "Body#1";
 
         FacebookAd& ad2 = ads.emplace_back();
+        ad2.id = 2;
         ad2.creationTime = nstimestamp::Time("2019-10-29T18:17:59+0000");
         ad1.deliveryStartTime = nstimestamp::Time("2019-10-29T18:18:60+0000");
         ad2.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");

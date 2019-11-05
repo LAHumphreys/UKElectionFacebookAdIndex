@@ -39,6 +39,7 @@ public:
             : theDb(dbConfig)
     {
         FacebookAd& ad = ads.emplace_back();
+        ad.id = 0;
         ad.creationTime = nstimestamp::Time("2019-10-29T16:15:59+0000");
         ad.fundingEntity = "Entity#0";
         ad.spend.lower_bound = 0;
@@ -47,6 +48,7 @@ public:
         ad.impressions.upper_bound = 99;
 
         FacebookAd& ad1 = ads.emplace_back();
+        ad1.id = 1;
         ad1.creationTime = nstimestamp::Time("2019-10-29T18:16:59+0000");
         ad1.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
         ad1.fundingEntity = "Entity#1";
@@ -56,6 +58,7 @@ public:
         ad1.impressions.upper_bound = 199;
 
         FacebookAd& ad2 = ads.emplace_back();
+        ad2.id = 2;
         ad2.creationTime = nstimestamp::Time("2019-10-29T18:17:59+0000");
         ad2.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
         ad2.fundingEntity = "Entity##1";
@@ -65,6 +68,7 @@ public:
         ad2.impressions.upper_bound = 1200;
 
         FacebookAd& ad3 = ads.emplace_back();
+        ad3.id = 3;
         ad3.creationTime = nstimestamp::Time("2019-10-29T18:17:60+0000");
         ad3.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
         ad3.fundingEntity = "Entity#1";
@@ -74,6 +78,7 @@ public:
         ad3.impressions.upper_bound = 99;
 
         FacebookAd& ad4 = ads.emplace_back();
+        ad4.id = 4;
         ad4.creationTime = nstimestamp::Time("2019-10-29T18:18:60+0000");
         ad4.deliveryEndTime = nstimestamp::Time("2020-10-29T18:18:60+0000");
         ad4.fundingEntity = "Brexit";

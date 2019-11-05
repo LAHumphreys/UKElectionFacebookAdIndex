@@ -17,6 +17,7 @@ const std::string json = R"JSON(
       "ad_creation_time": "2019-10-29T17:16:59+0000",
       "ad_delivery_start_time": "2019-10-29T18:00:56+0000",
       "ad_delivery_stop_time": "2019-11-01T16:00:56+0000",
+      "ad_snapshot_url": "https:\/\/www.facebook.com\/ads\/archive\/render_ad\/?id=1428050904019116&access_token=EAAi1Yrtc0qIBAPxQq0NvUiYkKA7uZCNEGNCO4kShUVzTbmKSPrA3GAzBeimRAHJUPuIZC1ZBDB5TmTENgGkaPA3OGTLJsnnb6pHo37k4tXby9SG4wA41JEYELf4Bv5F5TVZBLmfogW6tIO3C0yOPTOMm7yNwtG8fap3Ffp84bgzNp0Qiffiad1kZCcX8zZBrcOMa9LX1sU5AZDZD",
       "impressions": {
         "lower_bound": "8000",
         "upper_bound": "8999"
@@ -124,9 +125,25 @@ const std::string json = R"JSON(
   }
 }
 )JSON";
+const std::string url = "https://www.facebook.com/ads/archive/render_ad/?id=1428050904019116&access_token=EAAi1Yrtc0qIBAPxQq0NvUiYkKA7uZCNEGNCO4kShUVzTbmKSPrA3GAzBeimRAHJUPuIZC1ZBDB5TmTENgGkaPA3OGTLJsnnb6pHo37k4tXby9SG4wA41JEYELf4Bv5F5TVZBLmfogW6tIO3C0yOPTOMm7yNwtG8fap3Ffp84bgzNp0Qiffiad1kZCcX8zZBrcOMa9LX1sU5AZDZD";
 
 class AdParserTest: public ::testing::Test {
 protected:
+    const std::string AdWithId(const std::string& id) {
+        const std::string start = R"JSON(
+        {
+            "data": [ {
+                "ad_creation_time": "2019-10-29T17:16:59+0000",
+                "ad_snapshot_url": "https:\/\/www.facebook.com\/ads\/archive\/render_ad\/?id=)JSON";
+
+        const std::string end = R"JSON(&access_token=EAAi1Yrtc0qIBAPxQq0NvUiYkKA7uZCNEGNCO4kShUVzTbmKSPrA3GAzBeimRAHJUPuIZC1ZBDB5TmTENgGkaPA3OGTLJsnnb6pHo37k4tXby9SG4wA41JEYELf4Bv5F5TVZBLmfogW6tIO3C0yOPTOMm7yNwtG8fap3Ffp84bgzNp0Qiffiad1kZCcX8zZBrcOMa9LX1sU5AZDZD"
+            } ]
+        }
+        )JSON";
+
+        return start + id + end;
+    }
+
     using Parser = FacebookAdParser;
     using ParseResult = FacebookAdParser::ParseResult ;
     void WithTheAd(const std::function<void (FacebookAd& ad)>& f);
@@ -229,6 +246,126 @@ TEST_F(AdParserTest, Impressions_NoUpperBound) {
     ASSERT_EQ(ads[2].impressions.lower_bound, 1000000);
     ASSERT_EQ(ads[2].impressions.upper_bound, 1000002);
 }
+
+TEST_F(AdParserTest, Url) {
+    WithTheAd([&] (FacebookAd& ad) -> void {
+        ASSERT_EQ(ad.pageUrl, url);
+    });
+}
+
+TEST_F(AdParserTest, Id) {
+    // Extract the Id from the url
+    WithTheAd([&] (FacebookAd& ad) -> void {
+        ASSERT_EQ(ad.id, 1428050904019116);
+    });
+}
+
+TEST_F(AdParserTest, NoLeadingZerosInId) {
+    std::stringstream buf;
+    std::vector<FacebookAd> ads;
+
+    std::string bigId = AdWithId("0428050904019117");
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::PARSE_ERROR);
+}
+
+TEST_F(AdParserTest, NoNonNumericIds) {
+    std::vector<FacebookAd> ads;
+
+    std::string bigId = AdWithId("1428A50904019117");
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::PARSE_ERROR);
+}
+
+TEST_F(AdParserTest, LargeIds) {
+    std::stringstream buf;
+    std::vector<FacebookAd> ads;
+
+    std::string bigId = AdWithId("1428050904019117");
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::VALID);
+    ASSERT_EQ(ads.size(), 1);
+    ASSERT_EQ(ads[0].id, 1428050904019117);
+
+    ads.clear();
+    bigId = AdWithId("18446744073709551615");
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::VALID);
+    ASSERT_EQ(ads.size(), 1);
+    ASSERT_EQ(ads[0].id, 18446744073709551615UL);
+
+
+    ads.clear();
+    buf.clear(); buf.str("");
+    buf << std::numeric_limits<size_t>::max();
+    bigId = AdWithId(buf.str());
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::VALID);
+    ASSERT_EQ(ads.size(), 1);
+    ASSERT_EQ(ads[0].id, std::numeric_limits<size_t>::max());
+
+}
+
+/**
+ * Fallback for backwards comaptibility with tests that didn't set the url...
+ */
+TEST_F(AdParserTest, IdFallback) {
+    const std::string ad = R"JSON( {
+        "data": [ {
+            "ad_creation_time": "2019-10-29T17:16:59+0000"
+        } ]
+    }
+    )JSON";
+
+    std::vector<FacebookAd> ads;
+
+    ASSERT_EQ(parser.ParseFacebookAdQuery(ad.c_str(), ads), ParseResult::VALID);
+    ASSERT_EQ(ads.size(), 1);
+    ASSERT_EQ(ads[0].id, nstimestamp::Time("2019-10-29T17:16:59+0000").EpochSecs());
+}
+
+
+// Need to be careful not to wrap
+TEST_F(AdParserTest, IdTooLong) {
+    std::stringstream buf;
+    std::vector<FacebookAd> ads;
+    ads.clear();
+    buf.clear(); buf.str("");
+    buf << std::numeric_limits<size_t>::max();
+    std::string bigId = AdWithId(buf.str() + "9");
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::PARSE_ERROR);
+
+    ads.clear();
+    buf.clear(); buf.str("");
+    buf << std::numeric_limits<size_t>::max();
+    std::string bigIdStr = buf.str();
+    bool ready = false;
+    for (size_t i = (bigIdStr.size() -1); !ready && i >= 0; --i) {
+        if (bigIdStr[i] != '9') {
+            bigIdStr[i] = 9;
+            ready = true;
+        }
+    }
+    ASSERT_TRUE(ready);
+    bigId = AdWithId(bigIdStr);
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::PARSE_ERROR);
+}
+
+TEST_F(AdParserTest, IdTooGreat) {
+    std::stringstream buf;
+    std::vector<FacebookAd> ads;
+
+    ads.clear();
+    buf.clear(); buf.str("");
+    buf << std::numeric_limits<size_t>::max();
+    std::string bigIdStr = buf.str();
+    bool ready = false;
+    for (size_t i = (bigIdStr.size() -1); !ready && i >= 0; --i) {
+        if (bigIdStr[i] != '9') {
+            bigIdStr[i] = '9';
+            ready = true;
+        }
+    }
+    ASSERT_TRUE(ready);
+    std::string bigId = AdWithId(bigIdStr);
+    ASSERT_EQ(parser.ParseFacebookAdQuery(bigId.c_str(), ads), ParseResult::PARSE_ERROR);
+}
+
 
 TEST_F(AdParserTest, Spend) {
     WithTheAd([&] (FacebookAd& ad) -> void {

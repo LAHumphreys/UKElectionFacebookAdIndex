@@ -2,6 +2,7 @@
 #include <../internal_includes/FacebookAdJSON.h>
 #include <logger.h>
 #include <istream>
+#include <limits>
 
 using namespace FacebookAdJSON;
 using namespace FacebookAdJSON::data_fields;
@@ -84,6 +85,63 @@ namespace {
         }
     }
 
+    const std::string& MaxId() {
+        thread_local std::string maxId = "";
+        if (maxId == "") {
+            std::stringstream buf;
+            buf << std::numeric_limits<size_t>::max();
+            maxId = buf.str();
+        }
+
+        return maxId;
+    }
+
+    struct InvalidId {
+        std::string id;
+    };
+
+    size_t ExtractId(const nstimestamp::Time& createTime, const std::string& url ) {
+        std::string id = "";
+        size_t idStart = url.find("id=");
+        if (idStart != std::string::npos) {
+            idStart += 3;
+            const size_t idEnd = url.find("&", idStart);
+            if (idEnd != std::string::npos) {
+                id = url.substr(idStart, (idEnd - idStart));
+            }
+        }
+        const std::string& maxId = MaxId();
+        if (maxId.size() < id.size()) {
+            throw InvalidId{id};
+        } else if (maxId.size() == id.size() && id > maxId) {
+            throw InvalidId{id};
+        } else if (id.size() > 0) {
+            if (id[0] == '0') {
+                // converting to size_t strips leading zeros
+                throw InvalidId{id};
+            }
+
+            for (size_t i = 0; i < id.size(); ++i) {
+                if (id[i] < '0'  || id[i] > '9') {
+                    throw InvalidId{id};
+                }
+            }
+        }
+
+        size_t result = 0;
+        if (url != "" && id == "") {
+            throw InvalidId{url};
+        } else if (id == "") {
+            result = createTime.EpochSecs();
+        } else {
+            result = strtoul(id.c_str(), nullptr, 10);
+        }
+
+
+        return result;
+    }
+
+
     void ParseAd(size_t adIndex, vector<FacebookAd> &into, ParserData &parserData) {
         auto& ad = into.emplace_back();
         parserData.MoveField<ad_creation_time>(adIndex, ad.creationTime);
@@ -96,6 +154,9 @@ namespace {
         parserData.MoveField<currency>(adIndex, ad.currency);
         parserData.MoveField<funding_entity>(adIndex, ad.fundingEntity);
         parserData.MoveField<page_name>(adIndex, ad.pageName);
+        parserData.MoveField<ad_snapshot_url>(adIndex, ad.pageUrl);
+
+        ad.id = ExtractId(ad.creationTime, ad.pageUrl);
 
         parserData.ReadBoundFields<impressions>(adIndex, ad.impressions);
         parserData.ReadBoundFields<spend>(adIndex, ad.spend);
@@ -125,7 +186,14 @@ Parser::ParseResult Parser::ParseFacebookAdQuery(const char *qryPage, std::vecto
     } else {
         ads.reserve(ads.size() + parserData.NumAds());
         for (size_t i = 0; i < parserData.NumAds(); ++i) {
-            ParseAd(i, ads, parserData);
+            try {
+                ParseAd(i, ads, parserData);
+            } catch (InvalidId& e) {
+                SLOG_FROM(LOG_WARNING, __func__,
+                          "The id is too long to be stored: " << e.id << std::endl);
+                result = ParseResult::PARSE_ERROR;
+                break;
+            }
         }
     }
 

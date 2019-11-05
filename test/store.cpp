@@ -5,11 +5,15 @@
 #include "../internal_includes/test_utils.h"
 #include <FacebookAdStore.h>
 #include <gtest/gtest.h>
+#include <util_time.h>
+
+using namespace nstimestamp;
 
 class TestFacebookStore: public ::testing::Test {
 public:
     TestFacebookStore() {
         FacebookAd& ad = ads.emplace_back();
+        ad.id = 0;
         ad.creationTime = nstimestamp::Time("2019-10-29T17:16:59+0000");
         ad.fundingEntity = "Entity#0";
         ad.pageName = "Page#0";
@@ -19,6 +23,7 @@ public:
         ad.body = "Body#0";
 
         FacebookAd& ad1 = ads.emplace_back();
+        ad1.id = 1;
         ad1.creationTime = nstimestamp::Time("2019-10-29T18:16:59+0000");
         ad1.fundingEntity = "Entity#1";
         ad1.pageName = "Page#1";
@@ -33,7 +38,7 @@ protected:
 };
 
 TEST_F(TestFacebookStore, NoSuchItem) {
-    ASSERT_TRUE(theStore.Get("Does not exist").IsNull());
+    ASSERT_TRUE(theStore.Get(99999).IsNull());
 }
 
 TEST_F(TestFacebookStore, InitialStore) {
@@ -90,7 +95,7 @@ TEST_F(TestFacebookStore, PatchNoKeyChange) {
     StoredFacebookAd storedAd { std::make_shared<FacebookAd>(ads[0])};
 
     FacebookAd updatedAd(ads[0]);
-    updatedAd.creationTime.SetNow();
+    updatedAd.id = 77;
 
     // NOTE: This shouldn't actually happen without a code error in the actual store...
     ASSERT_THROW(storedAd.PatchStoredValues(std::move(updatedAd)), StoredFacebookAd::KeyChangeError);

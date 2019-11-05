@@ -10,12 +10,7 @@
 
 class StoredFacebookAd {
 public:
-    using KeyType = std::string;
-    struct KeyRef {
-        KeyRef(const KeyType& key): key(key) {}
-        bool operator<(const KeyRef& rhs) const { return key < rhs.key; }
-        const KeyType& key;
-    };
+    using KeyType = size_t;
 
     struct UpperStrings {
         std::string linkTitle;
@@ -59,7 +54,7 @@ public:
     const StoredFacebookAd& Store(std::unique_ptr<FacebookAd> ad);
 
 private:
-    std::map<const StoredFacebookAd::KeyRef, std::unique_ptr<StoredFacebookAd>> ads;
+    std::map<const StoredFacebookAd::KeyType, std::unique_ptr<StoredFacebookAd>> ads;
     StoredFacebookAd NullAdd;
 };
 

@@ -7,10 +7,54 @@
 #include <OSTools.h>
 #include <FacebookParser.h>
 #include <Reports.h>
+#include <logger.h>
 
 using namespace DbUtils;
+using namespace nstimestamp;
+
+namespace {
+    constexpr bool IsWordChar(char c) {
+        if ( (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+bool DbUtils::Search(const std::string toSearch, const std::string& key) {
+    size_t pos = 0;
+    bool found = false;
+    while (!found && pos != std::string::npos) {
+        pos = toSearch.find(key, pos);
+
+        bool match = true;
+        const size_t next = pos + key.size();
+
+        if (pos == std::string::npos) {
+            match = false;
+        }
+        if (match && next < toSearch.size()) {
+            char nchar = toSearch[next];
+            match = !IsWordChar(nchar);
+        }
+
+        if (match && pos > 0) {
+            char pchar = toSearch[pos-1];
+            match = !IsWordChar(pchar);
+        }
+
+        if (match) {
+            found = true;
+        } else if (pos != std::string::npos) {
+            ++pos;
+        }
+    }
+
+    return found;
+}
 
 std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::string &dataDir) {
+    Time start;
     std::ifstream cfgFile(cfgPath);
     std::unique_ptr<AdDb> result;
     if (cfgFile.fail()) {
@@ -33,9 +77,32 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
     if (ads.size() == 0) {
         throw DbUtils::NoData{};
     }
+
+    Time loadEnd;
+    SLOG_FROM(LOG_OVERVIEW, __func__,
+            "Loaded " << ads.size() << " ads in " << loadEnd.DiffSecs(start) << "s")
+
+    SLOG_FROM(LOG_OVERVIEW, __func__, "Starting store...");
+
+    size_t i = 0;
+    Time lastReport;
     for (auto& ad: ads) {
+        if (i %10 == 0) {
+            Time now;
+            if (now.DiffSecs(lastReport) >= 10) {
+                SLOG_FROM(LOG_OVERVIEW, __func__,
+                          "Stored " << i << " ads in " << now.DiffSecs(loadEnd) << "s")
+                lastReport = now;
+            }
+        }
         result->Store(std::make_unique<FacebookAd>(std::move(ad)));
+
+        ++i;
     }
+
+    Time storeEnd;
+    SLOG_FROM(LOG_OVERVIEW, __func__,
+              "Stored " << ads.size() << " ads in " << storeEnd.DiffSecs(loadEnd) << "s")
 
     return result;
 }

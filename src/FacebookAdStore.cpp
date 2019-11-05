@@ -6,10 +6,8 @@
 #include <locale>
 
 namespace {
-    StoredFacebookAd::KeyType CalculateKey(const FacebookAd& ad) {
-        StoredFacebookAd::KeyType key = ad.creationTime.Timestamp();
-
-        return key;
+    constexpr StoredFacebookAd::KeyType CalculateKey(const FacebookAd& ad) {
+        return ad.id;
     }
 
     std::string ToUpper(const std::string& target) {
@@ -66,3 +64,4 @@ const StoredFacebookAd &FacebookAdStore::Store(std::unique_ptr<FacebookAd> ad) {
     }
     return *result;
 }
+

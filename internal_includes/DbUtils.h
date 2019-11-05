@@ -24,6 +24,8 @@ namespace DbUtils {
     std::unique_ptr<AdDb> LoadDb(const std::string& cfgFile, const std::string& dataDir);
 
     void WriteReport(Reports::Report& report, const std::string& basePath);
+
+    bool Search(const std::string toSearch, const std::string& key);
 }
 
 
