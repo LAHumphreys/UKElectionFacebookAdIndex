@@ -31,7 +31,7 @@ function LoadFilterTable(table, summary) {
         table.DataTable({
             data: data,
             pageLength: 5,
-            order: [[3, "desc"]]
+            order: [[4, "desc"]]
         });
     }
 }
