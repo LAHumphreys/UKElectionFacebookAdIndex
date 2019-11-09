@@ -41,12 +41,10 @@ public:
 
     struct DbConfig {
         using ItemList = std::vector<IndexConfig::Item>;
-        DbConfig(ItemList cons, ItemList is = {}) {
-            consituencies = std::make_shared<IndexConfig>(std::move(cons));
-            issues = std::make_shared<IndexConfig>(std::move(is));
-        }
         std::shared_ptr<IndexConfig> consituencies;
         std::shared_ptr<IndexConfig> issues;
+        nstimestamp::Time startTimeCutOff;
+        nstimestamp::Time endTimeCutOff;
     };
 private:
     FacebookAdList Get(const FacebookAdIndex& idx, const std::string& key) const;

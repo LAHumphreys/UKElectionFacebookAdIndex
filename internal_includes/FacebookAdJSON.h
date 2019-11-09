@@ -12,7 +12,7 @@ namespace JSONUtils {
 
         virtual void Clear() {
             FieldBase::Clear();
-            // TODO: Set to Epoch...
+            value.InitialiseFromString(nstimestamp::Time::EpochTimestamp, strlen(nstimestamp::Time::EpochTimestamp));
         }
 
         bool String(const char* str, rapidjson::SizeType length, bool copy) {

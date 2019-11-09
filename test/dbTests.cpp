@@ -94,6 +94,68 @@ TEST_F(TDb, SingleConstituency) {
     AssertEq(*matches[1], ads[2]);
 }
 
+TEST_F(TDb, StartTimeFilter) {
+    const std::string timeConfig = R"JSON(
+    {
+      "startingCutOff": "2019-10-29T12:00:00+0000",
+      "consituencies": [{
+             "id": "Search#0",
+             "keys": ["entity#0"]
+        }]
+    })JSON";
+    auto before = std::make_unique<FacebookAd>(ads[0]);
+    before->id = 1;
+    auto at = std::make_unique<FacebookAd>(ads[0]);
+    at->id = 2;
+    auto after = std::make_unique<FacebookAd>(ads[0]);
+    after->id = 3;
+    before->deliveryStartTime = nstimestamp::Time("2019-10-29T00:00:00+0000");
+    at->deliveryStartTime = nstimestamp::Time("2019-10-29T12:00:00+0000");
+    after->deliveryStartTime = nstimestamp::Time("2019-10-30T00:00:00+0000");
+
+    AdDb   timeFilterDb(timeConfig);
+    timeFilterDb.Store(std::make_unique<FacebookAd>(*before));
+    timeFilterDb.Store(std::make_unique<FacebookAd>(*at));
+    timeFilterDb.Store(std::make_unique<FacebookAd>(*after));
+
+    auto matches = timeFilterDb.GetConstituency("Search#0");
+    ASSERT_EQ(matches.size(), 2);
+
+    AssertEq(*matches[0], *at);
+    AssertEq(*matches[1], *after);
+}
+
+TEST_F(TDb, EndTimeFilter) {
+    const std::string timeConfig = R"JSON(
+    {
+      "endCutOff": "2019-10-29T12:00:00+0000",
+      "consituencies": [{
+             "id": "Search#0",
+             "keys": ["entity#0"]
+        }]
+    })JSON";
+    auto before = std::make_unique<FacebookAd>(ads[0]);
+    before->id = 1;
+    auto at = std::make_unique<FacebookAd>(ads[0]);
+    at->id = 2;
+    auto after = std::make_unique<FacebookAd>(ads[0]);
+    after->id = 3;
+    before->deliveryEndTime = nstimestamp::Time("2019-10-29T00:00:00+0000");
+    at->deliveryEndTime = nstimestamp::Time("2019-10-29T12:00:00+0000");
+    after->deliveryEndTime = nstimestamp::Time("2019-10-30T00:00:00+0000");
+
+    AdDb   timeFilterDb(timeConfig);
+    timeFilterDb.Store(std::make_unique<FacebookAd>(*before));
+    timeFilterDb.Store(std::make_unique<FacebookAd>(*at));
+    timeFilterDb.Store(std::make_unique<FacebookAd>(*after));
+
+    auto matches = timeFilterDb.GetConstituency("Search#0");
+    ASSERT_EQ(matches.size(), 2);
+
+    AssertEq(*matches[0], *at);
+    AssertEq(*matches[1], *after);
+}
+
 TEST_F(TDb, SingleIssue) {
     auto matches = theDb.GetIssue("Brexit");
     ASSERT_EQ(matches.size(), 1);

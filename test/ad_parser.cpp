@@ -111,7 +111,6 @@ const std::string json = R"JSON(
       "ad_creative_body": "Local Councillor, former Mayor and life-long resident Will Forster is the Lib Dem candidate to be Woking's new MP!",
       "ad_creation_time": "2020-10-29T17:16:59+0000",
       "ad_delivery_start_time": "2020-10-29T18:00:56+0000",
-      "ad_delivery_stop_time": "2020-11-01T16:00:56+0000",
       "impressions": {
         "lower_bound": "1000000"
       }
@@ -129,6 +128,9 @@ const std::string url = "https://www.facebook.com/ads/archive/render_ad/?id=1428
 
 class AdParserTest: public ::testing::Test {
 protected:
+    void SetUp() override {
+        startTime.SetNow();
+    }
     const std::string AdWithId(const std::string& id) {
         const std::string start = R"JSON(
         {
@@ -144,6 +146,7 @@ protected:
         return start + id + end;
     }
 
+    nstimestamp::Time startTime;
     using Parser = FacebookAdParser;
     using ParseResult = FacebookAdParser::ParseResult ;
     void WithTheAd(const std::function<void (FacebookAd& ad)>& f);
@@ -229,6 +232,17 @@ TEST_F(AdParserTest, StopTime) {
         ASSERT_EQ(ad.deliveryEndTime.Minute(), 00);
         ASSERT_EQ(ad.deliveryEndTime.Second(), 56);
     });
+}
+
+TEST_F(AdParserTest, StopTime_Default) {
+    std::vector<std::unique_ptr<FacebookAd>> ads;
+    ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
+    ASSERT_EQ(ads.size(), 3);
+    const auto& ad = ads[2];
+
+    ASSERT_GE(ad->deliveryEndTime.DiffSecs(startTime), 0);
+    ASSERT_GT(ad->deliveryEndTime.DiffUSecs(startTime), 0);
+    ASSERT_GT(ad->deliveryEndTime.DiffNSecs(startTime), 0);
 }
 
 TEST_F(AdParserTest, Impressions) {

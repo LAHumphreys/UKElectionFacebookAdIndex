@@ -7,6 +7,8 @@
 #include <SimpleJSON.h>
 
 namespace Config {
+    NewStringField(startingCutOff);
+    NewStringField(endCutOff);
     NewStringField(id);
     NewStringArrayField(keys);
 
@@ -14,7 +16,7 @@ namespace Config {
     NewObjectArray(consituencies, Item);
     NewObjectArray(issues, Item);
 
-    using DbConfig = SimpleParsedJSON<consituencies, issues>;
+    using DbConfig = SimpleParsedJSON<startingCutOff, endCutOff, consituencies, issues>;
 }
 
 #endif //ELECTIONDATAANAL_CONFIGPARSER_H

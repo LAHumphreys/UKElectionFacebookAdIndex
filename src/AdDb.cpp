@@ -42,25 +42,38 @@ namespace {
 
 
     std::unique_ptr<AdDb::DbConfig> ParseConfig(const char* cfg) {
-        std::unique_ptr<AdDb::DbConfig>  config;
+        auto config = std::make_unique<AdDb::DbConfig>();
         std::string error;
         Config::DbConfig configParser;
-        std::vector<IndexConfig::Item> cons;
-        std::vector<IndexConfig::Item> issues;
         if (!configParser.Parse(cfg, error)) {
             throw AdDb::InvalidConfigError {error};
         }
         if (!configParser.Supplied<Config::consituencies>()) {
             throw AdDb::InvalidConfigError {"'consituencies' list was not provided!"};
         } else {
-            cons = LoadItems<Config::consituencies>(configParser);
+            config->consituencies = std::make_shared<IndexConfig>(
+                    LoadItems<Config::consituencies>(configParser));
+        }
+
+        config->startTimeCutOff = nstimestamp::Time(std::string(nstimestamp::Time::EpochTimestamp));
+        if (configParser.Supplied<Config::startingCutOff>()) {
+            const std::string timeString = configParser.Get<Config::startingCutOff>();
+            config->startTimeCutOff.InitialiseFromString(timeString.c_str(), timeString.size());
+        }
+
+        config->endTimeCutOff = nstimestamp::Time(std::string(nstimestamp::Time::EpochTimestamp));
+        if (configParser.Supplied<Config::endCutOff>()) {
+            const std::string timeString = configParser.Get<Config::endCutOff>();
+            config->endTimeCutOff.InitialiseFromString(timeString.c_str(), timeString.size());
         }
 
         if (configParser.Supplied<Config::issues>()) {
-            issues = LoadItems<Config::issues>(configParser);
+            config->issues = std::make_shared<IndexConfig>(
+                    LoadItems<Config::issues>(configParser));
+        } else {
+            config->issues = std::make_shared<IndexConfig>(std::vector<IndexConfig::Item>{});
         }
 
-        config = std::make_unique<AdDb::DbConfig>(std::move(cons), std::move(issues));
 
         return config;
     }
@@ -75,9 +88,13 @@ AdDb::AdDb(const std::string& cfg) {
 }
 
 void AdDb::Store(std::unique_ptr<FacebookAd> ad) {
-    const auto& storedAd = store.Store(std::move(ad));
-    consituencies->Update(storedAd);
-    issues->Update(storedAd);
+    if ( (ad->deliveryStartTime.DiffSecs(config->startTimeCutOff) >= 0) &&
+         (ad->deliveryEndTime.DiffSecs(config->endTimeCutOff) >= 0))
+    {
+        const auto& storedAd = store.Store(std::move(ad));
+        consituencies->Update(storedAd);
+        issues->Update(storedAd);
+    }
 
 }
 AdDb::FacebookAdList AdDb::Get(const FacebookAdIndex& idx, const std::string& name) const {
