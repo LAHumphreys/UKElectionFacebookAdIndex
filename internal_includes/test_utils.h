@@ -21,9 +21,9 @@ std::ostream& operator<<(std::ostream& os, const FacebookAdParser::ParseResult& 
 }
 
 void AssertEq(const FacebookAd& expected, const FacebookAd& actual) {
-    ASSERT_EQ(expected.creationTime.Timestamp(), actual.creationTime.Timestamp());
-    ASSERT_EQ(expected.deliveryStartTime.Timestamp(), actual.deliveryStartTime.Timestamp());
-    ASSERT_EQ(expected.deliveryEndTime.Timestamp(), actual.deliveryEndTime.Timestamp());
+    ASSERT_EQ(expected.creationTime.ISO8601Timestamp(), actual.creationTime.ISO8601Timestamp());
+    ASSERT_EQ(expected.deliveryStartTime.ISO8601Timestamp(), actual.deliveryStartTime.ISO8601Timestamp());
+    ASSERT_EQ(expected.deliveryEndTime.ISO8601Timestamp(), actual.deliveryEndTime.ISO8601Timestamp());
 
     ASSERT_EQ(expected.impressions.lower_bound, actual.impressions.lower_bound);
     ASSERT_EQ(expected.impressions.upper_bound, actual.impressions.upper_bound);

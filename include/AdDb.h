@@ -17,7 +17,17 @@ public:
         CONTINUE,
         STOP
     };
+    struct Serialization {
+        Serialization() = default;
+        Serialization(const Serialization& rhs) = delete;
+        Serialization(Serialization&& rhs) = default;
+        Serialization& operator=(const Serialization& rhs) = delete;
+        Serialization& operator=(Serialization&& rhs) = default;
+
+        std::string json;
+    };
     AdDb(const std::string& cfg);
+    AdDb(const std::string& cfg, const Serialization& data);
 
     using FacebookAdIndex = Index<FacebookAdKey>;
     using FacebookAdList  = std::vector<std::shared_ptr<const FacebookAd>>;
@@ -33,10 +43,18 @@ public:
     void ForEachConsituency(const ForEachItemDefn& cb) const;
     void ForEachIssue(const ForEachItemDefn& cb) const;
 
+    Serialization Serialize() const;
+
     struct InvalidConfigError: std::exception {
         InvalidConfigError(std::string err): error(std::move(err)) {}
         const char * what() const noexcept {return error.c_str();}
         std::string error;
+    };
+
+    struct InvalidSerializationError: std::exception {
+        const char * what() const noexcept {
+            return "Failed to de-serialize database!";
+        }
     };
 
     struct DbConfig {
@@ -49,7 +67,7 @@ public:
 private:
     FacebookAdList Get(const FacebookAdIndex& idx, const std::string& key) const;
     void ForEach(IndexConfig& idx, const AdDb::ForEachItemDefn &cb) const;
-    FacebookAdStore store;
+    std::unique_ptr<FacebookAdStore> store;
     std::unique_ptr<FacebookAdIndex> consituencies;
     std::unique_ptr<FacebookAdIndex> issues;
 

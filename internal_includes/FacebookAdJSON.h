@@ -19,6 +19,15 @@ namespace JSONUtils {
             value.InitialiseFromString(str, length);
             return true;
         }
+
+        template <class Builder>
+        void AddToJSON(Builder& builder, bool nullIfNotSupplied) {
+            if (!supplied && nullIfNotSupplied) {
+                builder.AddNullField(Name());
+            } else {
+                builder.Add(Name(), value.ISO8601Timestamp());
+            }
+        }
     };
     #define NewTimeField(FieldName) struct FieldName: public JSONUtils::TimeField  { const char * Name() { return #FieldName; } };
 
@@ -26,6 +35,7 @@ namespace JSONUtils {
 
 namespace FacebookAdJSON {
     namespace data_fields {
+        NewUI64Field(id);
         NewStringField(ad_creative_body);
         NewStringField(ad_creative_link_caption);
         NewStringField(ad_creative_link_description);
@@ -82,6 +92,7 @@ namespace FacebookAdJSON {
         NewObjectArray(demographic_distribution, demographic_distribution_fields::JSON);
 
         typedef SimpleParsedJSON<
+            id,
             ad_creation_time,
             ad_creative_body,
             ad_creative_link_caption,

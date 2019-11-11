@@ -40,6 +40,10 @@ add_library(Db STATIC
     include/AdDb.h
     internal_includes/DbUtils.h
     internal_includes/ConfigParser.h
+    internal_includes/StoredItemJSON.h
+    internal_includes/StoreJSON.h
+    internal_includes/IndexJSON.h
+    internal_includes/DbJSON.h
     include/FacebookAdKey.h
     include/FacebookAdStore.h
     include/Index.h

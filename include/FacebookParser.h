@@ -18,6 +18,9 @@ public:
     ParseResult Parse(std::istream& source, std::vector<std::unique_ptr<FacebookAd>>& ads);
     ParseResult ParseFacebookAdQuery(const char* qryPage, std::vector<std::unique_ptr<FacebookAd>>& ads);
 
+    std::string Serialize(const FacebookAd& ad);
+    ParseResult DeSerialize(const std::string& ad, std::unique_ptr<FacebookAd>& parsedAd);
+
     struct InternalDataHandle {
         virtual ~InternalDataHandle() = default;
     };

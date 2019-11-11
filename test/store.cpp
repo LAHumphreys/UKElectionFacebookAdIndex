@@ -37,6 +37,67 @@ protected:
     FacebookAdStore theStore;
 };
 
+TEST_F(TestFacebookStore, StoredUppers) {
+    FacebookAd ad;
+    ad.id = 0;
+    ad.body = "Body";
+    ad.fundingEntity = "Funding Entity";
+    ad.linkDescription = "Link Description";
+    ad.linkTitle = "Link Title";
+    ad.linkCaption = "Link Caption";
+    ad.pageName = "Page Name";
+    StoredFacebookAd storedAd(std::make_unique<FacebookAd>(ad));
+
+    ASSERT_EQ(storedAd.CachedUppers().body, "BODY");
+    ASSERT_EQ(storedAd.CachedUppers().fundingEntity, "FUNDING ENTITY");
+    ASSERT_EQ(storedAd.CachedUppers().linkDescription, "LINK DESCRIPTION");
+    ASSERT_EQ(storedAd.CachedUppers().linkTitle, "LINK TITLE");
+    ASSERT_EQ(storedAd.CachedUppers().linkCaption, "LINK CAPTION");
+    ASSERT_EQ(storedAd.CachedUppers().pageName, "PAGE NAME");
+}
+
+TEST_F(TestFacebookStore, StoredItem) {
+    StoredFacebookAd storedAd(std::make_unique<FacebookAd>(ads[0]));
+    AssertEq(ads[0], storedAd.ItemRef());
+}
+
+TEST_F(TestFacebookStore, InvalidDeSerialization) {
+    StoredFacebookAd invalid (StoredFacebookAd::Serialization{"{"});
+    ASSERT_TRUE(invalid.IsNull());
+}
+
+TEST_F(TestFacebookStore, Serialization_StoredItem) {
+    StoredFacebookAd storedAd(std::make_unique<FacebookAd>(ads[0]));
+    const auto key = storedAd.Key();
+    auto serialization = storedAd.Serialize();
+    StoredFacebookAd copy(serialization);
+    ASSERT_FALSE(copy.IsNull());
+    AssertEq(ads[0], copy.ItemRef());
+    ASSERT_EQ(copy.Key(), key);
+}
+
+TEST_F(TestFacebookStore, Serialization_StoredUppers) {
+    FacebookAd ad;
+    ad.id = 0;
+    ad.body = "Body";
+    ad.fundingEntity = "Funding Entity";
+    ad.linkDescription = "Link Description";
+    ad.linkTitle = "Link Title";
+    ad.linkCaption = "Link Caption";
+    ad.pageName = "Page Name";
+    StoredFacebookAd storedAd(std::make_unique<FacebookAd>(ad));
+
+    auto serialization = storedAd.Serialize();
+    StoredFacebookAd copy(serialization);
+
+    ASSERT_EQ(copy.CachedUppers().body, "BODY");
+    ASSERT_EQ(copy.CachedUppers().fundingEntity, "FUNDING ENTITY");
+    ASSERT_EQ(copy.CachedUppers().linkDescription, "LINK DESCRIPTION");
+    ASSERT_EQ(copy.CachedUppers().linkTitle, "LINK TITLE");
+    ASSERT_EQ(copy.CachedUppers().linkCaption, "LINK CAPTION");
+    ASSERT_EQ(copy.CachedUppers().pageName, "PAGE NAME");
+}
+
 TEST_F(TestFacebookStore, NoSuchItem) {
     ASSERT_TRUE(theStore.Get(99999).IsNull());
 }
@@ -101,4 +162,35 @@ TEST_F(TestFacebookStore, PatchNoKeyChange) {
     ASSERT_THROW(storedAd.PatchStoredValues(std::move(updatedAd)), StoredFacebookAd::KeyChangeError);
 
 
+}
+
+TEST_F(TestFacebookStore, Serialize) {
+    std::vector<StoredFacebookAd::KeyType> keys = {
+            theStore.Store(std::make_unique<FacebookAd>(ads[0])).Key(),
+            theStore.Store(std::make_unique<FacebookAd>(ads[1])).Key(),
+    };
+
+    auto serialization = theStore.Serialize();
+
+    FacebookAdStore copy(serialization);
+
+    for (size_t i = 0; i < keys.size(); ++i) {
+        const auto& key = keys[i];
+        const auto& ad = ads[i];
+        auto& ref = copy.Get(key);
+        ASSERT_FALSE(ref.IsNull());
+        AssertEq(ad, ref.ItemRef());
+    }
+}
+
+TEST_F(TestFacebookStore, InvalidSerialization) {
+    std::vector<StoredFacebookAd::KeyType> keys = {
+            theStore.Store(std::make_unique<FacebookAd>(ads[0])).Key(),
+            theStore.Store(std::make_unique<FacebookAd>(ads[1])).Key(),
+    };
+
+    auto serialization = theStore.Serialize();
+    serialization.data = "{";
+
+    ASSERT_THROW((FacebookAdStore(serialization)), FacebookAdStore::InvalidSerialization);
 }

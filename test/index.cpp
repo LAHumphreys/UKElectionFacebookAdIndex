@@ -20,6 +20,20 @@ public:
             }
         });
 
+        updatedCfg = std::make_shared<IndexConfig>(
+                std::vector<IndexConfig::Item>{
+                        {
+                                "ZNot Woking",
+                                {"Wokingham"}
+                        }, {
+                                "Woking",
+                                {"Woking", "Zoëy", "Forster"}
+                        }, {
+                                "Other",
+                                {"Other", "Corbyn"}
+                        }
+                });
+
         index = std::make_unique<Index<FacebookAdKey>>(
                 constituencyConfig,
                 facebookKey);
@@ -27,6 +41,7 @@ public:
     }
 protected:
     std::shared_ptr<IndexConfig> constituencyConfig;
+    std::shared_ptr<IndexConfig> updatedCfg;
     std::shared_ptr<FacebookAdKey> facebookKey =
             std::make_shared<FacebookAdKey>();
     std::unique_ptr<Index<FacebookAdKey>> index;
@@ -49,7 +64,7 @@ protected:
 
     void GenerateNonMatch(std::string text) {
         auto ad = std::make_shared<FacebookAd>();
-        ad->creationTime.SetNow();
+        ad->id = nextId++;
         Setter(std::move(text), *ad);
 
         auto nonMatch = StoredFacebookAd(std::move(ad));
@@ -58,7 +73,7 @@ protected:
 
     void GenerateMatch (std::string text) {
         auto ad = std::make_shared<FacebookAd>();
-        ad->creationTime.SetNow();
+        ad->id = nextId++;
         Setter(std::move(text), *ad);
 
         auto wokingUpdate = StoredFacebookAd(std::move(ad));
@@ -86,9 +101,112 @@ protected:
         for (size_t i = 0; i < expectedWokingKeys.size(); ++i) {
             ASSERT_EQ(expectedWokingKeys[i], wokingHits[i]);
         }
+
+        auto serialization = index->Serialize();
+        Index<FacebookAdKey> copy(constituencyConfig, facebookKey, serialization);
+
+        auto wokingHitsCopy = copy.Get("Woking");
+        ASSERT_EQ(expectedWokingKeys.size(), wokingHitsCopy.size());
+
+        for (size_t i = 0; i < expectedWokingKeys.size(); ++i) {
+            ASSERT_EQ(expectedWokingKeys[i], wokingHitsCopy[i]);
+        }
     }
+    size_t nextId = 0;
 
 };
+
+TEST_F(IndexMatchTest, DeSerialize_NoNewCategories) {
+    Index<FacebookAdKey> original(constituencyConfig, facebookKey);
+
+    auto serialization = original.Serialize();
+
+    ASSERT_THROW(
+        Index<FacebookAdKey> updated(updatedCfg, facebookKey, serialization),
+        Index<FacebookAdKey>::ConfigChangedError);
+
+}
+
+TEST_F(IndexMatchTest, DeSerialize_NoMissingCategories) {
+    Index<FacebookAdKey> original(updatedCfg, facebookKey);
+
+    auto serialization = original.Serialize();
+
+    ASSERT_THROW(
+            Index<FacebookAdKey> updated(constituencyConfig, facebookKey, serialization),
+            Index<FacebookAdKey>::ConfigChangedError);
+
+}
+TEST_F(IndexMatchTest, DeSerialize_OrderChangeOk) {
+    auto oldCfg = std::make_shared<IndexConfig>(
+            std::vector<IndexConfig::Item>{
+                    {
+                            "Woking",
+                            {"Woking", "Zoëy", "Forster"}
+                    }, {
+                            "Other",
+                            {"Other", "Corbyn"}
+                    }
+            });
+    auto newCfg = std::make_shared<IndexConfig>(
+            std::vector<IndexConfig::Item>{
+                    {
+                            "Other",
+                            {"Other", "Corbyn"}
+                    }, {
+                            "Woking",
+                            {"Woking", "Zoëy", "Forster"}
+                    }
+            });
+    Index<FacebookAdKey> original(oldCfg, facebookKey);
+
+    auto ad = std::make_shared<FacebookAd>();
+    ad->id = nextId++;
+    ad->pageName = "Forster";
+
+    auto wokingUpdate = StoredFacebookAd(std::move(ad));
+    auto key = wokingUpdate.Key();
+    original.Update(std::move(wokingUpdate));
+
+    auto serialization = original.Serialize();
+
+    Index<FacebookAdKey> updated(newCfg, facebookKey, serialization);
+
+    auto results = updated.Get("Woking");
+    ASSERT_EQ(results.size(), 1);
+    ASSERT_EQ(results[0], key);
+}
+
+TEST_F(IndexMatchTest, DeSerialize_NoChangedCategories) {
+    auto oldCfg = std::make_shared<IndexConfig>(
+            std::vector<IndexConfig::Item>{
+                    {
+                            "Woking",
+                            {"Woking", "Zoëy", "Forster"}
+                    }, {
+                            "Other",
+                            {"Other", "Corbyn"}
+                    }
+            });
+    auto newCfg = std::make_shared<IndexConfig>(
+            std::vector<IndexConfig::Item>{
+                    {
+                            "Wokingham",
+                            {"Wokingham", "Zoëy", "Forster"}
+                    }, {
+                            "Other",
+                            {"Other", "Corbyn"}
+                    }
+            });
+    Index<FacebookAdKey> original(oldCfg, facebookKey);
+
+    auto serialization = original.Serialize();
+
+    ASSERT_THROW(
+            Index<FacebookAdKey> updated(newCfg, facebookKey, serialization),
+            Index<FacebookAdKey>::ConfigChangedError);
+
+}
 
 TEST_F(IndexMatchTest, MatchTitle) {
     Setter = [&] (std::string toSet, FacebookAd& ad) {

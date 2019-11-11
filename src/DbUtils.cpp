@@ -53,7 +53,8 @@ bool DbUtils::Search(const std::string toSearch, const std::string& key) {
     return found;
 }
 
-std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::string &dataDir) {
+std::unique_ptr<AdDb>
+DbUtils::LoadDb(const std::string &cfgPath, const std::string &dataDir, const std::string &dbStartState) {
     Time start;
     std::ifstream cfgFile(cfgPath);
     std::unique_ptr<AdDb> result;
@@ -61,51 +62,65 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
         throw DbUtils::NoSuchCfgFile{cfgPath};
     } else {
         std::string cfg((std::istreambuf_iterator<char>(cfgFile)), std::istreambuf_iterator<char>());
-        result = std::make_unique<AdDb> (cfg);
-    }
-
-    FacebookAdParser parser;
-    std::vector<std::unique_ptr<FacebookAd>> ads;
-    auto files = OS::Glob(dataDir + "/*");
-    for (const std::string& path: files) {
-        std::ifstream file(path);
-        if (parser.Parse(file, ads) != FacebookAdParser::ParseResult::VALID) {
-            throw DbUtils::BadData{};
+        if (dbStartState != "") {
+            std::ifstream dbFile(dbStartState);
+            std::string dbData((std::istreambuf_iterator<char>(dbFile)), std::istreambuf_iterator<char>());
+            AdDb::Serialization data;
+            data.json = std::move(dbData);
+            result = std::make_unique<AdDb> (cfg, data);
+        } else {
+            result = std::make_unique<AdDb> (cfg);
         }
     }
 
-    if (ads.size() == 0) {
-        throw DbUtils::NoData{};
-    }
-
-    Time loadEnd;
-    SLOG_FROM(LOG_OVERVIEW, __func__,
-            "Loaded " << ads.size() << " ads in " << loadEnd.DiffSecs(start) << "s")
-
-    SLOG_FROM(LOG_OVERVIEW, __func__, "Building indexes...");
-
-    size_t i = 0;
-    Time lastReport;
-    for (auto& ad: ads) {
-        result->Store(std::move(ad));
-
-        if (i %10 == 0) {
-            Time now;
-            if (now.DiffSecs(lastReport) >= 10) {
-                SLOG_FROM(LOG_OVERVIEW, __func__,
-                          "Indexed " << i << " of " << ads.size() << " ads in " << now.DiffSecs(loadEnd) << "s")
-                lastReport = now;
+    if (dataDir != "") {
+        FacebookAdParser parser;
+        std::vector<std::unique_ptr<FacebookAd>> ads;
+        auto files = OS::Glob(dataDir + "/*");
+        for (const std::string& path: files) {
+            std::ifstream file(path);
+            if (parser.Parse(file, ads) != FacebookAdParser::ParseResult::VALID) {
+                throw DbUtils::BadData{};
             }
         }
 
-        ++i;
+        if (ads.size() == 0) {
+            throw DbUtils::NoData{};
+        }
+
+        Time loadEnd;
+        SLOG_FROM(LOG_OVERVIEW, __func__,
+                  "Loaded " << ads.size() << " ads in " << loadEnd.DiffSecs(start) << "s")
+
+        SLOG_FROM(LOG_OVERVIEW, __func__, "Building indexes...");
+
+        size_t i = 0;
+        Time lastReport;
+        for (auto& ad: ads) {
+            result->Store(std::move(ad));
+
+            if (i %10 == 0) {
+                Time now;
+                if (now.DiffSecs(lastReport) >= 10) {
+                    SLOG_FROM(LOG_OVERVIEW, __func__,
+                              "Indexed " << i << " of " << ads.size() << " ads in " << now.DiffSecs(loadEnd) << "s")
+                    lastReport = now;
+                }
+            }
+
+            ++i;
+        }
+
+        Time storeEnd;
+        SLOG_FROM(LOG_OVERVIEW, __func__,
+                  "Indexed " << ads.size() << " ads in " << storeEnd.DiffSecs(loadEnd) << "s")
+
     }
-
-    Time storeEnd;
-    SLOG_FROM(LOG_OVERVIEW, __func__,
-              "Indexed " << ads.size() << " ads in " << storeEnd.DiffSecs(loadEnd) << "s")
-
     return result;
+}
+
+std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::string &dataDir) {
+    return LoadDb(cfgPath, dataDir, "");
 }
 
 void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath, WriteMode mode) {
@@ -151,5 +166,11 @@ void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath, 
     }
     summaryBuilder.EndArray();
     summaryFile << summaryBuilder.GetAndClear() << std::endl;
+    summaryFile.close();
+}
+
+void DbUtils::WriteDbToDisk(AdDb &db, const std::string &fname) {
+    std::fstream summaryFile(fname, std::ios_base::out);
+    summaryFile << db.Serialize().json;
     summaryFile.close();
 }

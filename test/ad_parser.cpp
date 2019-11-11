@@ -158,7 +158,14 @@ void AdParserTest::WithTheAd(const std::function<void(FacebookAd &ad)> &f) {
     std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
     ASSERT_EQ(ads.size(), 3);
-    f(*ads[1]);
+    ASSERT_NO_FATAL_FAILURE(f(*ads[1])) << "Failed on initial parse of the ad";
+
+    auto serialization = parser.Serialize(*ads[1]);
+    std::unique_ptr<FacebookAd> reParsedAd = nullptr;
+    ASSERT_EQ(parser.DeSerialize(serialization, reParsedAd), ParseResult::VALID);
+    ASSERT_NE(reParsedAd, nullptr);
+
+    ASSERT_NO_FATAL_FAILURE(f(*reParsedAd)) << "Failed to re-parse ad!" << serialization;
 }
 
 TEST_F(AdParserTest, NullJSON) {
@@ -169,6 +176,11 @@ TEST_F(AdParserTest, NullJSON) {
 TEST_F(AdParserTest, InvalidJSON) {
     std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery("{", ads), ParseResult::PARSE_ERROR);
+}
+
+TEST_F(AdParserTest, InvalidSerialization) {
+    std::unique_ptr<FacebookAd> ad;
+    ASSERT_EQ(parser.DeSerialize("{", ad), ParseResult::PARSE_ERROR);
 }
 
 TEST_F(AdParserTest, ValidData) {
@@ -470,3 +482,4 @@ TEST_F(AdParserTest, LoadDirectory) {
     ASSERT_EQ(libDemAd->fundingEntity, "Woking Liberal Democrats");
     ASSERT_EQ(conAd->fundingEntity, "Woking Conservative Association");
 }
+

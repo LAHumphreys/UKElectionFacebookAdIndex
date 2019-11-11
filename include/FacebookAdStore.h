@@ -21,8 +21,13 @@ public:
         std::string pageName;
     };
 
+    struct Serialization {
+        std::string json;
+    };
+
     StoredFacebookAd() = default;
     explicit StoredFacebookAd(std::shared_ptr<FacebookAd> ad);
+    explicit StoredFacebookAd(const Serialization& ad);
 
     [[nodiscard]] const FacebookAd& ItemRef() const { return *item;}
     [[nodiscard]] std::shared_ptr<const FacebookAd> NewSharedRef() const { return item;}
@@ -33,6 +38,8 @@ public:
     [[nodiscard]] bool IsNull() const { return (item == nullptr); }
 
     void PatchStoredValues(FacebookAd&& patchFrom);
+
+    Serialization Serialize() const;
 
     struct KeyChangeError: std::exception {
         [[nodiscard]] const char* what() const noexcept override {
@@ -50,8 +57,22 @@ private:
 
 class FacebookAdStore {
 public:
-    const StoredFacebookAd& Get(const StoredFacebookAd::KeyType & key) const;
+    struct Serialization {
+        std::string data;
+    };
+    FacebookAdStore() = default;
+    explicit FacebookAdStore(Serialization data);
+    [[nodiscard]] const StoredFacebookAd& Get(const StoredFacebookAd::KeyType & key) const;
     const StoredFacebookAd& Store(std::unique_ptr<FacebookAd> ad);
+
+    [[nodiscard]] Serialization Serialize() const;
+
+    struct InvalidSerialization: public std::exception {
+        [[nodiscard]] const char* what() const noexcept override {
+            return "Could not initialize Ad Store from serialization";
+        }
+
+    };
 
 private:
     std::map<const StoredFacebookAd::KeyType, std::unique_ptr<StoredFacebookAd>> ads;

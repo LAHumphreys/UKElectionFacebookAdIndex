@@ -1,9 +1,5 @@
 #!/bin/bash
 
-indexArgs=""
-if [[ "$1" == "--redacted" ]]; then
-    indexArgs+="--redacted"
-fi
 
 
 pushd ./Build/
@@ -20,4 +16,4 @@ echo "Regenerating index..."
 rm -f docs/FrontEnd/data/*/*.json
 mkdir -p docs/FrontEnd/data/Cons/
 mkdir -p docs/FrontEnd/data/Issues/
-DEV_TOOLS_LOG_OVERVIEW=YES ./Build/processAds $indexArgs clean.cfg data docs/FrontEnd/data
+DEV_TOOLS_LOG_OVERVIEW=YES ./Build/processAds $@ clean.cfg data docs/FrontEnd/data

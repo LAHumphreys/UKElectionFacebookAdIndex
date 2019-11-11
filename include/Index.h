@@ -28,13 +28,24 @@ class Index {
 public:
     using MatchList = std::vector<typename Key::KeyType>;
 
-    Index (
-        std::shared_ptr<IndexConfig> config,
-        std::shared_ptr<Key>  key);
+    Index ( std::shared_ptr<IndexConfig> config,
+            std::shared_ptr<Key>  key);
+
+    Index (std::shared_ptr<IndexConfig> cfg,
+           std::shared_ptr<Key>  key,
+           const std::string&    serialization);
 
     const MatchList& Get(const std::string description) const;
 
     void Update(const typename Key::ItemType& update);
+
+    std::string Serialize() const;
+
+    struct ConfigChangedError: public std::exception {
+        [[nodiscard]] const char* what() const noexcept override  {
+            return "Index config has changed!";
+        }
+    };
 
 private:
     const MatchList emptySet = {};
@@ -50,6 +61,9 @@ private:
         size_t Find(const std::string& name) const;
         MatchList& Get(const size_t idx);
         const MatchList& Get(const size_t idx) const;
+
+        [[nodiscard]] std::string Serialize(Key& key) const;
+        void DeSerialize(Key& key, const std::string& data);
     private:
         std::map<std::string, size_t> idxs;
         std::vector<MatchList> lists;

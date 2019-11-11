@@ -4,6 +4,7 @@
 #include <AdDb.h>
 #include <iostream>
 #include "../internal_includes/ConfigParser.h"
+#include "../internal_includes/DbJSON.h"
 
 namespace {
 
@@ -81,6 +82,7 @@ namespace {
 }
 
 AdDb::AdDb(const std::string& cfg) {
+    store = std::make_unique<FacebookAdStore>();
     std::shared_ptr<FacebookAdKey> facebookKey = std::make_shared<FacebookAdKey>();
     config = ParseConfig(cfg.c_str());
     consituencies = std::make_unique<FacebookAdIndex>(config->consituencies, facebookKey);
@@ -91,7 +93,7 @@ void AdDb::Store(std::unique_ptr<FacebookAd> ad) {
     if ( (ad->deliveryStartTime.DiffSecs(config->startTimeCutOff) >= 0) &&
          (ad->deliveryEndTime.DiffSecs(config->endTimeCutOff) >= 0))
     {
-        const auto& storedAd = store.Store(std::move(ad));
+        const auto& storedAd = store->Store(std::move(ad));
         consituencies->Update(storedAd);
         issues->Update(storedAd);
     }
@@ -102,7 +104,7 @@ AdDb::FacebookAdList AdDb::Get(const FacebookAdIndex& idx, const std::string& na
     const auto& keys = idx.Get(name);
     results.reserve(keys.size());
     for(const auto& key: keys) {
-        const auto& storedAd = store.Get(key);
+        const auto& storedAd = store->Get(key);
         if (!storedAd.IsNull()) {
             results.emplace_back(storedAd.NewSharedRef());
         }
@@ -127,7 +129,7 @@ void AdDb::ForEachAdByConstituency(const AdDb::ForEachFacebookAd &cb) const {
         const auto& keys = consituencies->Get(con.id);
         for (auto kit = keys.begin(); continueScan && kit!=keys.end(); ++kit) {
             const auto& key = *kit;
-            const auto& storedAd = store.Get(key);
+            const auto& storedAd = store->Get(key);
             if (!storedAd.IsNull()) {
                 switch(cb(con, storedAd.NewSharedRef())) {
                     case DbScanOp::CONTINUE:
@@ -159,6 +161,47 @@ void AdDb::ForEachConsituency(const AdDb::ForEachItemDefn &cb) const {
 
 void AdDb::ForEachIssue(const AdDb::ForEachItemDefn &cb) const {
     ForEach(*config->issues, cb);
+}
+
+AdDb::Serialization AdDb::Serialize() const {
+    thread_local DbJSON::JSON encoder;
+    encoder.Clear();
+    encoder.Get<DbJSON::store>() = std::move(store->Serialize().data);
+    encoder.Get<DbJSON::issues>() = issues->Serialize();
+    encoder.Get<DbJSON::cons>() = consituencies->Serialize();
+
+    Serialization serialization;
+    serialization.json = encoder.GetJSONString();
+
+    return serialization;
+}
+
+AdDb::AdDb(const std::string &cfg, const AdDb::Serialization &data)
+{
+
+    thread_local DbJSON::JSON decoder;
+    decoder.Clear();
+    std::string error;
+    if (decoder.Parse(data.json.c_str(), error)) {
+        FacebookAdStore::Serialization storeSerial;
+        storeSerial.data = std::move(decoder.Get<DbJSON::store>());
+        store = std::make_unique<FacebookAdStore>(std::move(storeSerial));
+
+        std::shared_ptr<FacebookAdKey> facebookKey = std::make_shared<FacebookAdKey>();
+        config = ParseConfig(cfg.c_str());
+        consituencies = std::make_unique<FacebookAdIndex>(
+                config->consituencies,
+                facebookKey,
+                decoder.Get<DbJSON::cons>());
+
+        issues = std::make_unique<FacebookAdIndex>(
+                config->issues,
+                facebookKey,
+                decoder.Get<DbJSON::issues>());
+
+    } else {
+        throw InvalidSerializationError{};
+    }
 }
 
 

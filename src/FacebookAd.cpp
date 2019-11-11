@@ -6,16 +6,16 @@ std::ostream &operator<<(std::ostream &os, const RegionCode &code) {
     switch (code) {
 
         case RegionCode::ENGLAND:
-            os << "RegionCode::ENGLAND";
+            os << "England";
             break;
         case RegionCode::WALES:
-            os << "RegionCode::WALES";
+            os << "Wales";
             break;
         case RegionCode::NORTHERN_IRELAND:
-            os << "RegionCode::NORTHERN_IRELAND";
+            os << "Northern Ireland";
             break;
         case RegionCode::SCOTLAND:
-            os << "RegionCode::SCOTLAND";
+            os << "Scotland";
             break;
         case RegionCode::UNKNOWN:
             os << "RegionCode::UNKNOWN";
@@ -42,10 +42,10 @@ RegionCode ParseRegionCode(const std::string &code) {
 std::ostream &operator<<(std::ostream &os, const GenderCode &code) {
     switch (code) {
         case GenderCode::FEMALE:
-            os << "GenderCode::FEMALE";
+            os << "female";
             break;
         case GenderCode::MALE:
-            os << "GenderCode::MALE";
+            os << "male";
             break;
         case GenderCode::UNKNOWN:
             os << "GenderCode::UNKNOWN";
@@ -68,22 +68,22 @@ GenderCode ParseGenderCode(const std::string &code) {
 std::ostream &operator<<(std::ostream &os, const AgeRangeCode &code) {
     switch (code) {
         case AgeRangeCode::AGE_18_TO_24:
-            os << "AgeRangeCode:18-24";
+            os << "18-24";
             break;
         case AgeRangeCode::AGE_25_TO_34:
-            os << "AgeRangeCode:25-34";
+            os << "25-34";
             break;
         case AgeRangeCode::AGE_35_TO_44:
-            os << "AgeRangeCode:35-44";
+            os << "35-44";
             break;
         case AgeRangeCode::AGE_45_TO_54:
-            os << "AgeRangeCode:45-54";
+            os << "45-54";
             break;
         case AgeRangeCode::AGE_55_TO_64:
-            os << "AgeRangeCode:55-64";
+            os << "55-64";
             break;
         case AgeRangeCode::AGE_65_AND_OVER:
-            os << "AgeRangeCode:65+";
+            os << "65+";
             break;
         case AgeRangeCode::UNKNOWN:
             os << "AgeRangeCode:UNKNOWN";

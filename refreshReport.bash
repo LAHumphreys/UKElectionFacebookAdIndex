@@ -11,4 +11,4 @@ rm -f data/*
 mkdir -p data
 ./getFBAds.js || exit 1
 
-./refreshIndex.bash
+./refreshIndex.bash $@

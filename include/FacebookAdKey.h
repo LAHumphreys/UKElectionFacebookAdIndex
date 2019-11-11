@@ -17,5 +17,14 @@ public:
     }
 
     bool HasKey(const StoredFacebookAd& item, const std::string& key) const override final;
+
+    std::string Serialize(
+        const std::vector<std::string>& names,
+        const std::vector<std::vector<KeyType>>& ids);
+
+    void DeSerialize(
+        const std::string& serialization,
+        std::vector<std::string>& names,
+        std::vector<std::vector<KeyType>>& ids);
 };
 #endif //ELECTIONDATAANAL_FACEBOOKADKEY_H

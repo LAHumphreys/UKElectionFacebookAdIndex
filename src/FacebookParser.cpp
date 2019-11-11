@@ -23,6 +23,11 @@ namespace {
             return parser.Get<FacebookAdJSON::data>()[adIndex]->template Get<Field>();
         }
 
+        template<class Field>
+        bool AdFieldSupplied(size_t adIndex) {
+            return parser.Get<FacebookAdJSON::data>()[adIndex]->template Supplied<Field>();
+        }
+
         template<class SubObject, class Field>
         auto& GetAdObjectField(size_t adIndex) {
             return parser.Get<FacebookAdJSON::data>()[adIndex]->template Get<SubObject>(). template Get<Field>();
@@ -155,16 +160,28 @@ namespace {
         parserData.MoveField<funding_entity>(adIndex, ad.fundingEntity);
         parserData.MoveField<page_name>(adIndex, ad.pageName);
 
-        parserData.MoveField<ad_snapshot_url>(adIndex, ad.pageUrl);
 
-        ad.id = ExtractId(ad.creationTime, ad.pageUrl);
-        ad.pageUrl = "";
+        if (parserData.AdFieldSupplied<id>(adIndex)) {
+            parserData.MoveField<id>(adIndex, ad.id);
+        } else {
+            parserData.MoveField<ad_snapshot_url>(adIndex, ad.pageUrl);
+            ad.id = ExtractId(ad.creationTime, ad.pageUrl);
+            ad.pageUrl = "";
+        }
 
         parserData.ReadBoundFields<impressions>(adIndex, ad.impressions);
         parserData.ReadBoundFields<spend>(adIndex, ad.spend);
 
         ParseRegions(adIndex, parserData, ad);
         ParseDemographics(adIndex, parserData, ad);
+    }
+
+    template <class T>
+    std::string ToString(const T& d) {
+        std::stringstream buf;
+        buf << d;
+
+        return buf.str();
     }
 
 }
@@ -205,5 +222,63 @@ Parser::ParseResult Parser::ParseFacebookAdQuery(const char *qryPage, std::vecto
 FacebookAdParser::ParseResult FacebookAdParser::Parse(std::istream &source, std::vector<std::unique_ptr<FacebookAd>> &ads) {
     std::string result((std::istreambuf_iterator<char>(source)), std::istreambuf_iterator<char>());
     return ParseFacebookAdQuery(result.c_str(), ads);
+}
+
+std::string FacebookAdParser::Serialize(const FacebookAd &ad) {
+    using namespace FacebookAdJSON;
+    using namespace FacebookAdJSON::data_fields;
+
+    auto& parserData = GetParser(*this->internalData);
+    parserData.parser.Clear();
+    auto& next = parserData.parser.Get<FacebookAdJSON::data>().emplace_back();
+    next->Get<ad_creative_link_title>() = ad.linkTitle;
+    next->Get<ad_creative_link_caption>() = ad.linkCaption;
+    next->Get<ad_creative_link_description>() = ad.linkDescription;
+    next->Get<ad_creative_body>() = ad.body;
+    next->Get<ad_creation_time>() = ad.creationTime;
+    next->Get<ad_delivery_start_time>() = ad.deliveryStartTime;
+    next->Get<ad_delivery_stop_time>() = ad.deliveryEndTime;
+    next->Get<page_name>() = ad.pageName;
+    next->Get<funding_entity>() = ad.fundingEntity;
+    next->Get<id>() = ad.id;
+
+    parserData.GetAdObjectField<impressions, data_fields::lower_bound>(0) = ToString(ad.impressions.lower_bound);
+    parserData.GetAdObjectField<impressions, data_fields::upper_bound>(0) = ToString(ad.impressions.upper_bound);
+
+    parserData.GetAdObjectField<spend, data_fields::lower_bound>(0) = ToString(ad.spend.lower_bound);
+    parserData.GetAdObjectField<spend, data_fields::upper_bound>(0) = ToString(ad.spend.upper_bound);
+    next->Get<currency>() = ad.currency;
+
+    auto& demos = next->Get<demographic_distribution>();
+    demos.reserve(ad.demographicDist.size());
+    for (const auto& pair: ad.demographicDist) {
+        auto& dnext = demos.emplace_back();
+        dnext->Get<age>() = ToString(pair.first.age);
+        dnext->Get<gender>() = ToString(pair.first.gender);
+        dnext->Get<percentage>() = ToString(pair.second);
+    }
+
+    auto& regions = next->Get<region_distribution>();
+    regions.reserve(ad.regionDist.size());
+    for (const auto& pair: ad.regionDist) {
+        auto& rnext = regions.emplace_back();
+        rnext->Get<region>() = ToString(pair.first);
+        rnext->Get<percentage>() = ToString(pair.second);
+    }
+
+
+    return parserData.parser.GetJSONString();
+}
+
+FacebookAdParser::ParseResult
+FacebookAdParser::DeSerialize(const std::string &ad, std::unique_ptr<FacebookAd> &parsedAd) {
+    std::vector<std::unique_ptr<FacebookAd>> ads;
+    auto result = ParseFacebookAdQuery(ad.c_str(), ads);
+    if (result == ParseResult::VALID && ads.size() == 1) {
+        parsedAd = std::move(ads[0]);
+    } else if (result == ParseResult::VALID) {
+        result = ParseResult::PARSE_ERROR;
+    }
+    return result;
 }
 

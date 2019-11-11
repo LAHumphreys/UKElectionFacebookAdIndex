@@ -14,6 +14,13 @@ Index<Key>::Index(std::shared_ptr<IndexConfig> cfg, std::shared_ptr<Key> key)
    , matches(*config)
 {
 }
+template<class Key>
+Index<Key>::Index(std::shared_ptr<IndexConfig> cfg, std::shared_ptr<Key> key, const std::string &serialization)
+  : Index(cfg, key)
+{
+    matches.DeSerialize(*key, serialization);
+}
+
 
 template<class Key>
 const typename Index<Key>::MatchList& Index<Key>::Get(const std::string description) const
@@ -50,6 +57,11 @@ void Index<Key>::Update(const typename Key::ItemType& update) {
 
 
 template<class Key>
+std::string Index<Key>::Serialize() const {
+    return matches.Serialize(*key);
+}
+
+template<class Key>
 Index<Key>::MatchListStore::MatchListStore(IndexConfig &cfg) {
     lists.resize(cfg.items.size());
     for (size_t i = 0; i < cfg.items.size(); ++i) {
@@ -75,6 +87,43 @@ typename Index<Key>::MatchList& Index<Key>::MatchListStore::Get(const size_t idx
 template<class Key>
 const typename Index<Key>::MatchList& Index<Key>::MatchListStore::Get(const size_t idx) const {
     return lists[idx];
+}
+
+template<class Key>
+std::string Index<Key>::MatchListStore::Serialize(Key &k) const {
+    std::vector<std::string> names;
+    names.resize(lists.size());
+    for (const auto& pair: idxs) {
+        names[pair.second] = pair.first;
+    }
+    return k.Serialize(names, lists);
+}
+
+template<class Key>
+void Index<Key>::MatchListStore::DeSerialize(Key& k, const std::string &data)
+{
+    std::vector<std::string> names;
+    k.DeSerialize(data, names, lists);
+
+    std::map<std::string, size_t> oldIdxs;
+    for (size_t i = 0; i < names.size(); ++i) {
+        oldIdxs[names[i]] = i;
+    }
+
+    auto newIt = idxs.begin(), oldIt = oldIdxs.begin();
+    for (;
+         newIt != idxs.end() && oldIt != oldIdxs.end();
+         ++newIt, ++oldIt)
+    {
+        if (newIt->first != oldIt->first) {
+            throw ConfigChangedError{};
+        }
+    }
+    if (newIt != idxs.end() || oldIt != oldIdxs.end()) {
+        throw ConfigChangedError{};
+    }
+
+    idxs = std::move(oldIdxs);
 }
 
 
