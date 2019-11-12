@@ -41,10 +41,11 @@ let facebookurl="https://graph.facebook.com/v5.0/ads_archive"
 facebookurl+="?access_token=" + process.env.FB_API_TOKEN
 facebookurl+="&ad_reached_countries=['GB']"
 facebookurl+="&search_terms=''"
+facebookurl+="&ad_type=POLITICAL_AND_ISSUE_ADS"
 facebookurl+="&ad_active_status=ALL"
-facebookurl+="&impression_condition=HAS_IMPRESSIONS_LAST_7_DAYS"
+facebookurl+="&impression_condition=HAS_IMPRESSIONS_LAST_90_DAYS"
 facebookurl+="&fields=ad_snapshot_url,funding_entity,region_distribution,ad_delivery_start_time,ad_delivery_stop_time,ad_creative_link_description,ad_creative_link_title,ad_creative_link_caption,ad_creative_body,ad_creation_time,spend,impressions,demographic_distribution"
-facebookurl+="&limit=1000"
+facebookurl+="&limit=250"
 
 function Timestamp() {
     let date = new Date()
