@@ -1,6 +1,6 @@
 function GetDataUrl(indexKey) {
-    return "https://raw.githubusercontent.com/LAHumphreys/UKElectionFacebookAdIndex/master/docs/FrontEnd/data/"  + GetDataSet() + "/" + indexKey + ".json";
-    //return "data/" + GetDataSet() + "/" + indexKey + ".json";
+    //return "https://raw.githubusercontent.com/LAHumphreys/UKElectionFacebookAdIndex/master/docs/FrontEnd/data/"  + GetDataSet() + "/" + indexKey + ".json";
+    return "data/" + GetDataSet() + "/" + indexKey + ".json";
 }
 function ClearTable(table) {
     if ($.fn.dataTable.isDataTable(table)) {
@@ -44,7 +44,7 @@ function ConsolidateData(table, groupField, keys, cb) {
         $.ajax({
             url: ref
         }).done(function (d) {
-            JSON.parse(d).data.forEach(function (ad, index) {
+            d.data.forEach(function (ad, index) {
                 let groupKey = ad[groupField];
                 if (!(groupKey in result)) {
                     result[groupKey] = {

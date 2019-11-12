@@ -94,8 +94,8 @@
                 return $('#DataSetSelector').val();
             }
             function GetSummaryUrl() {
-                //return "data/" + GetDataSet() + "/Summary.json";
-                return "https://raw.githubusercontent.com/LAHumphreys/UKElectionFacebookAdIndex/master/docs/FrontEnd/data/"  + GetDataSet() + "/Summary.json";
+                return "data/" + GetDataSet() + "/Summary.json";
+                //return "https://raw.githubusercontent.com/LAHumphreys/UKElectionFacebookAdIndex/master/docs/FrontEnd/data/"  + GetDataSet() + "/Summary.json";
             }
             $(document).ready( function () {
                 function ResetData() {
@@ -106,7 +106,7 @@
                     $.ajax({
                         url: GetSummaryUrl()
                     }).done(function (data) {
-                        LoadFilterTable(selectionTable, JSON.parse(data).summary);
+                        LoadFilterTable(selectionTable, data.summary);
                         $('#SearchButton').click(function () {
                             let cons = [];
                             $('#selectionTable input:checked').each(function (i, checkbox) {
