@@ -72,3 +72,20 @@ std::unique_ptr<Report> Reports::DoIssueReport(const AdDb &theDb) {
     };
     return DoReport(theDb, source, getter);
 }
+
+std::unique_ptr<Reports::Report> Reports::DoDiffReport(const AdDb &start, const AdDb &end) {
+    auto report = std::make_unique<Report>();
+    start.ForEachConsituency([&] (const std::string& name) -> AdDb::DbScanOp {
+        auto& con = (*report)[name];
+        con.summary.name = name;
+        auto startAds = start.GetConstituency(name);
+        for (const auto& ad: startAds) {
+            auto& adReport = con.ads.emplace_back();
+            adReport.ad = ad;
+            adReport.guestimateSpend = 0;
+            adReport.guestimateImpressions = 0;
+        }
+        return AdDb::DbScanOp::CONTINUE;
+    });
+    return report;
+}

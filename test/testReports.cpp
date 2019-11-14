@@ -177,3 +177,158 @@ TEST_F(ReportTest, Issues_Summary) {
     ASSERT_EQ(report["Brexit"].summary.estImpressions, 1);
     ASSERT_EQ(report["Brexit"].summary.estSpend, 1);
 }
+
+class DeltaReportTest: public ::testing::Test {
+public:
+    DeltaReportTest() : startDb(dbConfig), endDb(dbConfig) {}
+protected:
+    enum class CATEGORY  {
+        SEARCH_0,
+        SEARCH_1,
+        SEARCH_2,
+    };
+
+    std::string GetKey(const CATEGORY& cat) {
+        switch (cat) {
+            case CATEGORY::SEARCH_0:
+                return "Search#0";
+            case CATEGORY::SEARCH_1:
+                return "Search#1";
+            case CATEGORY::SEARCH_2:
+                return "Search#2";
+        }
+        throw "Shouldn't be here";
+    }
+    using KeyType = size_t;
+    struct AdDelta {
+        BoundedQuantity startImpressions;
+        BoundedQuantity endImpressions;
+
+        BoundedQuantity startSpend;
+        BoundedQuantity endSpend;
+    };
+
+    AdDelta NewFlatDelta(const BoundedQuantity& base, const size_t& spendDiff, const size_t& impressDiff) {
+        AdDelta delta;
+        delta.startSpend = base;
+        delta.endSpend = delta.startSpend;
+        delta.endSpend.lower_bound += spendDiff;
+        delta.endSpend.upper_bound += spendDiff;
+
+        delta.startImpressions = base;
+        delta.endImpressions = delta.startImpressions;
+        delta.endImpressions.lower_bound += impressDiff;
+        delta.endImpressions.upper_bound += impressDiff;
+
+        return delta;
+    }
+
+    KeyType NewAddDiff(const CATEGORY& cat, const AdDelta& diff) {
+        FacebookAd ad;
+        ad.id = nextId++;
+        struct UnknownCat{ };
+        switch (cat) {
+            case CATEGORY::SEARCH_0:
+                ad.pageName = "entity#0";
+                break;
+            case CATEGORY::SEARCH_1:
+                ad.pageName = "entity#1";
+                break;
+            default:
+                throw UnknownCat{};
+        }
+
+        auto startAd = std::make_unique<FacebookAd>(ad);
+        startAd->spend = diff.startSpend;
+        startAd->impressions = diff.startImpressions;
+        startDb.Store(std::move(startAd));
+
+        auto endAd = std::make_unique<FacebookAd>(ad);
+        endAd->spend = diff.endSpend;
+        endAd->impressions = diff.endImpressions;
+        endDb.Store(std::move(endAd));
+
+        return ad.id;
+    }
+
+    std::unique_ptr<Reports::Report> DoDiff() {
+        return Reports::DoDiffReport(startDb, endDb);
+    }
+
+    struct AdCheck {
+        KeyType  id;
+        long     estSpend;
+        long     estImpressions;
+    };
+
+    struct ToCheck {
+        CATEGORY cat;
+        Reports::SummaryItem summary;
+        std::vector<AdCheck> ads;
+    };
+    std::vector<ToCheck> EmptyChecks() {
+        std::vector<ToCheck> checks = {
+                { CATEGORY::SEARCH_0, {GetKey(CATEGORY::SEARCH_0), 0, 0, 0}, {} },
+                { CATEGORY::SEARCH_1, {GetKey(CATEGORY::SEARCH_1), 0, 0, 0}, {} },
+                { CATEGORY::SEARCH_2, {GetKey(CATEGORY::SEARCH_2), 0, 0, 0}, {} }
+        };
+
+        return checks;
+    }
+
+    void DoChecks(const std::vector<ToCheck>& checks, Reports::Report& report) {
+        ASSERT_EQ(report.size(), checks.size());
+
+        for (const auto& check: checks) {
+            const std::string key = GetKey(check.cat);
+            ASSERT_EQ(report[key].summary.name, check.summary.name);
+            ASSERT_EQ(report[key].summary.count, check.summary.count);
+            ASSERT_EQ(report[key].summary.estSpend, check.summary.estSpend);
+            ASSERT_EQ(report[key].summary.estImpressions, check.summary.estImpressions);
+
+            auto& reportAds = report[key].ads;
+
+            ASSERT_EQ(reportAds.size(), check.ads.size());
+            for (size_t i = 0; i < check.ads.size(); ++i) {
+                ASSERT_EQ(reportAds[i].ad->id, check.ads[i].id);
+            }
+
+        }
+    }
+private:
+
+    KeyType nextId = 0;
+    AdDb startDb;
+    AdDb endDb;
+};
+
+
+TEST_F( DeltaReportTest, NoAds) {
+    auto ptr = DoDiff();
+    auto report = *ptr;
+
+    ASSERT_EQ(report.size(), 3);
+
+    auto checks = EmptyChecks();
+
+    ASSERT_NO_FATAL_FAILURE(
+        DoChecks(checks, report)
+    );
+}
+
+TEST_F( DeltaReportTest, NoDiff) {
+    auto checks = EmptyChecks();
+
+    // 1 add, same in both
+    auto delta = NewFlatDelta({100, 200}, 0, 0);
+    auto key = NewAddDiff(CATEGORY::SEARCH_0, delta);
+    checks[0].ads.push_back({key, 0, 0});
+
+    auto ptr = DoDiff();
+    auto report = *ptr;
+
+    ASSERT_NO_FATAL_FAILURE(
+            DoChecks(checks, report)
+    );
+
+}
