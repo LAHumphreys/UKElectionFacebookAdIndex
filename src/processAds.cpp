@@ -12,9 +12,10 @@ namespace {
         std::cout << "Usage: processAds [options] <cfg> <directory to read> <directory to write>" << std::endl;
         std::cout << "" << std::endl;
         std::cout << "Options:" << std::endl;
-        std::cout << "   --redacted         :  Remove ad 'creative' details, producing a report suitable for distribution" << std::endl;
-        std::cout << "   --loadDb [dbfile]  :  Initialize from an existing database" << std::endl;
-        std::cout << "   --secureDb [dbfile]:  Secure the index to disk" << std::endl;
+        std::cout << "   --redacted          :  Remove ad 'creative' details, producing a report suitable for distribution" << std::endl;
+        std::cout << "   --loadDb [dbfile]   :  Initialize from an existing database" << std::endl;
+        std::cout << "   --secureDb [dbfile] :  Secure the index to disk" << std::endl;
+        std::cout << "   --ignoreBlankFunders:  Don't report on ads with no declared funder" << std::endl;
     }
 }
 
@@ -29,6 +30,7 @@ int main(int argc, const char* argv[]) {
 
     std::string startDb = "";
     std::string resultDb = "";
+    bool ignoreBlankFunder = false;
 
     for (size_t i = 1; i < startIdx; ++i) {
         const std::string arg = argv[i];
@@ -43,6 +45,9 @@ int main(int argc, const char* argv[]) {
             ++i;
             resultDb = argv[i];
             std::cout << "--secureDb: Final state will be secured to " << resultDb << std::endl;
+        } else if (arg == "--ignoreBlankFunders") {
+            std::cout << "--ignoreBlankFunders: ads with no declared funder will be ignored" << std::endl;
+            ignoreBlankFunder = true;
         } else {
             Usage();
             return 1;
@@ -61,7 +66,18 @@ int main(int argc, const char* argv[]) {
 
     auto db = DbUtils::LoadDb(cfg, dataDir, startDb);
 
-    auto report = Reports::DoConsituencyReport(*db);
+    const auto AdFilter = [&] (const FacebookAd& ad) -> bool {
+        bool include = true;
+
+        if (ignoreBlankFunder && ad.fundingEntity.empty()) {
+            include = false;
+        }
+
+        return include;
+    };
+
+    auto report = Reports::DoConsituencyReport(*db, AdFilter);
+
     DbUtils::WriteReport(*report, reportDir + "/Cons", writeMode);
 
     report = Reports::DoIssueReport(*db);

@@ -135,6 +135,29 @@ TEST_F(ReportTest, ConsituencyMentions_AdList) {
     ASSERT_EQ(report["Search#2"].ads.size(), 0);
 }
 
+TEST_F(ReportTest, ConsituencyMentions_predicate_Summary) {
+    auto report = *Reports::DoConsituencyReport(theDb, [] (const FacebookAd& ad) -> bool {
+        return (ad.spend.lower_bound > 0);
+    });
+
+    ASSERT_EQ(report.size(), 3);
+
+    ASSERT_EQ(report["Search#0"].summary.name, "Search#0");
+    ASSERT_EQ(report["Search#0"].summary.count, 0);
+    ASSERT_EQ(report["Search#0"].summary.estImpressions, 0);
+    ASSERT_EQ(report["Search#0"].summary.estSpend, 0);
+
+    ASSERT_EQ(report["Search#1"].summary.name, "Search#1");
+    ASSERT_EQ(report["Search#1"].summary.count, 2);
+    ASSERT_EQ(report["Search#1"].summary.estImpressions, 149 + 1100);
+    ASSERT_EQ(report["Search#1"].summary.estSpend, 149 + 1100);
+
+    ASSERT_EQ(report["Search#2"].summary.name, "Search#2");
+    ASSERT_EQ(report["Search#2"].summary.count, 0);
+    ASSERT_EQ(report["Search#2"].summary.estImpressions, 0);
+    ASSERT_EQ(report["Search#2"].summary.estSpend, 0);
+}
+
 TEST_F(ReportTest, ConsituencyMentions_AdList_Spend) {
     auto report = *Reports::DoConsituencyReport(theDb);
 
@@ -147,6 +170,22 @@ TEST_F(ReportTest, ConsituencyMentions_AdList_Spend) {
     ASSERT_EQ(report["Search#1"].ads[0].guestimateSpend, 149);
     ASSERT_EQ(report["Search#1"].ads[1].guestimateSpend, 1100);
     ASSERT_EQ(report["Search#1"].ads[2].guestimateSpend, 1);
+
+    ASSERT_EQ(report["Search#2"].ads.size(), 0);
+}
+
+TEST_F(ReportTest, ConsituencyMentions_AdList_Spend_predicate) {
+    auto report = *Reports::DoConsituencyReport(theDb, [] (const FacebookAd& ad) -> bool {
+        return (ad.spend.lower_bound > 0);
+    });
+
+    ASSERT_EQ(report.size(), 3);
+
+    ASSERT_EQ(report["Search#0"].ads.size(), 0);
+
+    ASSERT_EQ(report["Search#1"].ads.size(), 2);
+    ASSERT_EQ(report["Search#1"].ads[0].guestimateSpend, 149);
+    ASSERT_EQ(report["Search#1"].ads[1].guestimateSpend, 1100);
 
     ASSERT_EQ(report["Search#2"].ads.size(), 0);
 }
@@ -223,32 +262,38 @@ protected:
         return delta;
     }
 
-    KeyType NewAddDiff(const CATEGORY& cat, const AdDelta& diff) {
-        FacebookAd ad;
-        ad.id = nextId++;
+    std::unique_ptr<FacebookAd> NewAd( const CATEGORY& cat) {
+        auto ad = std::make_unique<FacebookAd>();
+        ad->id = nextId++;
         struct UnknownCat{ };
         switch (cat) {
             case CATEGORY::SEARCH_0:
-                ad.pageName = "entity#0";
+                ad->pageName = "entity#0";
                 break;
             case CATEGORY::SEARCH_1:
-                ad.pageName = "entity#1";
+                ad->pageName = "entity#1";
                 break;
             default:
                 throw UnknownCat{};
         }
 
-        auto startAd = std::make_unique<FacebookAd>(ad);
+        return ad;
+    }
+
+    KeyType NewAddDiff(const CATEGORY& cat, const AdDelta& diff) {
+        auto ad = NewAd(cat);
+
+        auto startAd = std::make_unique<FacebookAd>(*ad);
         startAd->spend = diff.startSpend;
         startAd->impressions = diff.startImpressions;
         startDb.Store(std::move(startAd));
 
-        auto endAd = std::make_unique<FacebookAd>(ad);
+        auto endAd = std::make_unique<FacebookAd>(*ad);
         endAd->spend = diff.endSpend;
         endAd->impressions = diff.endImpressions;
         endDb.Store(std::move(endAd));
 
-        return ad.id;
+        return ad->id;
     }
 
     std::unique_ptr<Reports::Report> DoDiff() {
@@ -291,15 +336,18 @@ protected:
             ASSERT_EQ(reportAds.size(), check.ads.size());
             for (size_t i = 0; i < check.ads.size(); ++i) {
                 ASSERT_EQ(reportAds[i].ad->id, check.ads[i].id);
+                ASSERT_EQ(reportAds[i].guestimateImpressions, check.ads[i].estImpressions);
+                ASSERT_EQ(reportAds[i].guestimateSpend, check.ads[i].estSpend);
             }
 
         }
     }
+
+    AdDb startDb;
+    AdDb endDb;
 private:
 
     KeyType nextId = 0;
-    AdDb startDb;
-    AdDb endDb;
 };
 
 
@@ -330,5 +378,107 @@ TEST_F( DeltaReportTest, NoDiff) {
     ASSERT_NO_FATAL_FAILURE(
             DoChecks(checks, report)
     );
+}
 
+TEST_F( DeltaReportTest, NewDb) {
+    auto checks = EmptyChecks();
+
+    auto newAd = NewAd(CATEGORY::SEARCH_0);
+    newAd->spend.lower_bound = 100;
+    newAd->spend.upper_bound = 200;
+    newAd->impressions.lower_bound = 100;
+    newAd->impressions.upper_bound = 200;
+    const auto id = newAd->id;
+
+    endDb.Store(std::move(newAd));
+    checks[0].ads.push_back({id, 150, 150});
+    checks[0].summary.estSpend += 150;
+    checks[0].summary.estImpressions += 150;
+    checks[0].summary.count++;
+
+    auto ptr = DoDiff();
+    auto report = *ptr;
+
+    ASSERT_NO_FATAL_FAILURE(
+            DoChecks(checks, report)
+    );
+}
+
+TEST_F( DeltaReportTest, NewZeroBandAd) {
+    auto checks = EmptyChecks();
+
+    auto newAd = NewAd(CATEGORY::SEARCH_0);
+    newAd->spend.lower_bound = 0;
+    newAd->spend.upper_bound = 99;
+    newAd->impressions.lower_bound = 0;
+    newAd->impressions.upper_bound = 99;
+    const auto id = newAd->id;
+
+    endDb.Store(std::move(newAd));
+    checks[0].ads.push_back({id, 1, 1});
+    checks[0].summary.estSpend = 1;
+    checks[0].summary.estImpressions = 1;
+    checks[0].summary.count++;
+
+    auto ptr = DoDiff();
+    auto report = *ptr;
+
+    ASSERT_NO_FATAL_FAILURE(
+        DoChecks(checks, report)
+    );
+}
+
+TEST_F( DeltaReportTest, AdditionalAd) {
+    auto checks = EmptyChecks();
+
+    // 1 new Ad...
+    auto newAd = NewAd(CATEGORY::SEARCH_0);
+    newAd->spend.lower_bound = 100;
+    newAd->spend.upper_bound = 200;
+    newAd->impressions.lower_bound = 100;
+    newAd->impressions.upper_bound = 200;
+    const auto id = newAd->id;
+    endDb.Store(std::move(newAd));
+    checks[0].ads.push_back({id, 150, 150});
+    checks[0].summary.estSpend += 150;
+    checks[0].summary.estImpressions += 150;
+    checks[0].summary.count++;
+
+    // ... and 1 unchanged ad...
+    auto delta = NewFlatDelta({100, 200}, 0, 0);
+    auto key = NewAddDiff(CATEGORY::SEARCH_0, delta);
+    checks[0].ads.push_back({key, 0, 0});
+
+
+    auto ptr = DoDiff();
+    auto report = *ptr;
+
+    ASSERT_NO_FATAL_FAILURE(
+            DoChecks(checks, report)
+    );
+}
+
+TEST_F( DeltaReportTest, RemovedAd) {
+    auto checks = EmptyChecks();
+
+    // 1 original ad...
+    auto oldAd = NewAd(CATEGORY::SEARCH_0);
+    oldAd->spend.lower_bound = 100;
+    oldAd->spend.upper_bound = 200;
+    oldAd->impressions.lower_bound = 100;
+    oldAd->impressions.upper_bound = 200;
+    const auto id = oldAd->id;
+    startDb.Store(std::move(oldAd));
+    checks[0].ads.push_back({id, 150, 150});
+    checks[0].summary.estSpend += 150;
+    checks[0].summary.estImpressions += 150;
+    checks[0].summary.count++;
+
+    // ... and 1 unchanged ad...
+    auto delta = NewFlatDelta({100, 200}, 0, 0);
+    auto key = NewAddDiff(CATEGORY::SEARCH_0, delta);
+    checks[0].ads.push_back({key, 0, 0});
+
+
+    ASSERT_THROW(DoDiff(), Reports::DbHasRegressed);
 }

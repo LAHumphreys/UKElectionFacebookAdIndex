@@ -10,6 +10,12 @@
 #include <AdDb.h>
 
 namespace Reports {
+    struct DbHasRegressed: public std::exception {
+        const char* what() const noexcept override  {
+            return "Ad impressions from the oldDb are missing in the new Db!";
+        }
+    };
+
     struct SummaryItem {
         std::string name;
         size_t count;
@@ -27,7 +33,10 @@ namespace Reports {
     };
     using Report = std::map<std::string, ReportItem>;
 
-    std::unique_ptr<Report> DoConsituencyReport(const AdDb& theDb);
+    using FilterFunc = std::function<bool (const FacebookAd&)>;
+    const FilterFunc AllowAll = [] (const FacebookAd&) -> bool { return true; };
+
+    std::unique_ptr<Report> DoConsituencyReport(const AdDb& theDb, const FilterFunc& filter = AllowAll);
 
     std::unique_ptr<Report> DoIssueReport(const AdDb& theDb);
     std::unique_ptr<Report> DoDiffReport(const AdDb& start, const AdDb& end);
