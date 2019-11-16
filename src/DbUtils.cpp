@@ -21,7 +21,7 @@ namespace {
         }
     }
 }
-bool DbUtils::Search(const std::string toSearch, const std::string& key) {
+bool DbUtils::Search(const std::string& toSearch, const std::string& key) {
     size_t pos = 0;
     bool found = false;
     while (!found && pos != std::string::npos) {

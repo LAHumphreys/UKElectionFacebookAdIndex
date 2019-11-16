@@ -35,7 +35,7 @@ namespace DbUtils {
     };
     void WriteReport(Reports::Report& report, const std::string& basePath, WriteMode = WriteMode::FULL);
 
-    bool Search(const std::string toSearch, const std::string& key);
+    bool Search(const std::string& toSearch, const std::string& key);
 }
 
 
