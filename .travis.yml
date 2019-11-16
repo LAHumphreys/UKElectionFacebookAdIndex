@@ -30,4 +30,4 @@ script:
   - cd Build
   - make test
   - cd ..
-  - GCOV="gcov-9" LCOV_FILTERS="$PWD/src/cfgClean.cpp $PWD/src/processAds.cpp" ./deps/CMakeUtils/travis/doCoverage.sh
+  - GCOV="gcov-9" LCOV_FILTERS="$PWD/internal_includes/test_utils.h $PWD/src/cfgClean.cpp $PWD/src/processAds.cpp" ./deps/CMakeUtils/travis/doCoverage.sh
