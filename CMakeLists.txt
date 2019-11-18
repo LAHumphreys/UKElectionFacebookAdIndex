@@ -44,6 +44,7 @@ add_library(Db STATIC
     internal_includes/StoreJSON.h
     internal_includes/IndexJSON.h
     internal_includes/DbJSON.h
+    internal_includes/TimeSeriesConfigJSON.h
     include/FacebookAdKey.h
     include/FacebookAdStore.h
     include/Index.h
@@ -86,9 +87,13 @@ target_include_directories(ConfigUtils PUBLIC
 
 target_compile_features(ConfigUtils PRIVATE cxx_std_17)
 
-add_executable(processAds src/processAds.cpp internal_includes/test_utils.h)
+add_executable(processAds src/processAds.cpp)
 target_compile_features(processAds PRIVATE cxx_std_17)
-target_link_libraries(processAds PUBLIC AdParser Db GTest::GTest GTest::Main)
+target_link_libraries(processAds PUBLIC AdParser Db)
+
+add_executable(generateTimeSeries src/generateTimeSeries.cpp)
+target_compile_features(generateTimeSeries PRIVATE cxx_std_17)
+target_link_libraries(generateTimeSeries PUBLIC AdParser Db)
 
 add_executable(cfgClean src/cfgClean.cpp internal_includes/test_utils.h)
 target_compile_features(cfgClean PRIVATE cxx_std_17)

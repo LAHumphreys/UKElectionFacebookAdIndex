@@ -155,3 +155,61 @@ std::unique_ptr<Reports::Report> Reports::DoDiffReport(const AdDb &start, const 
 
     return report;
 }
+
+std::unique_ptr<Reports::TimeSeriesReport> Reports::DoTimeSeries(const std::vector<Report*>& reports, const TimeSeriesMode& mode) {
+    auto result = std::make_unique<TimeSeriesReport>();
+    for (size_t i = 0; i < reports.size(); ++i) {
+        for (const auto& r: *reports[i]) {
+            const std::string& catName = r.first;
+            const ReportItem& item = r.second;
+            std::map<std::string, size_t> spendTracker;
+            for (const auto& adReport: item.ads) {
+                const std::string& funder = adReport.ad->fundingEntity;
+                spendTracker[funder] += adReport.guestimateSpend;
+            }
+
+            auto& funderMap = (*result)[catName].guestimatedSpend;
+            auto& residual = (*result)[catName].residualSpend;
+            residual.resize(reports.size());
+            for (auto& pair: spendTracker) {
+                if (pair.second > (item.summary.estSpend / 100)) {
+                    funderMap[pair.first].resize(reports.size());
+                    funderMap[pair.first][i] = pair.second;
+                } else {
+                    residual[i] += pair.second;
+                }
+            }
+
+        }
+    }
+    if (mode == TimeSeriesMode::REMOVE_BASELINE) {
+        auto rebasedResult = std::make_unique<TimeSeriesReport>();
+        for (auto& pair: *result) {
+            const std::string& cattName = pair.first;
+            TimeSeriesItem& fullItem = (*result)[cattName];
+            TimeSeriesItem& rebasedItem = (*rebasedResult)[cattName];
+            rebasedItem.residualSpend.resize(fullItem.residualSpend.size()-1);
+            for (size_t i = 1; i < fullItem.residualSpend.size(); ++i) {
+                if (fullItem.residualSpend[i] > fullItem.residualSpend[0]) {
+                    rebasedItem.residualSpend[i-1] = fullItem.residualSpend[i] - fullItem.residualSpend[0];
+                } else {
+                    rebasedItem.residualSpend[i-1] = 0;
+                }
+            }
+            for (auto& spendPair: fullItem.guestimatedSpend) {
+                const std::string& funder = spendPair.first;
+                auto& rebasedSpend = rebasedItem.guestimatedSpend[funder];
+                rebasedSpend.resize(spendPair.second.size()-1);
+                for (size_t i = 1; i < spendPair.second.size(); ++i) {
+                    if (spendPair.second[i] > spendPair.second[0]) {
+                        rebasedSpend[i-1] = spendPair.second[i] - spendPair.second[0];
+                    } else {
+                        rebasedSpend[i-1] = 0;
+                    }
+                }
+            }
+        }
+        result = std::move(rebasedResult);
+    }
+    return result;
+}

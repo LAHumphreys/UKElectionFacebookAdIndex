@@ -33,6 +33,15 @@ namespace Reports {
     };
     using Report = std::map<std::string, ReportItem>;
 
+    /**
+     * An individual category (ReportItem) - can be broken down over time
+     */
+    struct TimeSeriesItem {
+        std::map<std::string, std::vector<size_t>> guestimatedSpend;
+        std::vector<size_t> residualSpend;
+    };
+    using TimeSeriesReport = std::map<std::string, TimeSeriesItem>;
+
     using FilterFunc = std::function<bool (const FacebookAd&)>;
     const FilterFunc AllowAll = [] (const FacebookAd&) -> bool { return true; };
 
@@ -40,6 +49,12 @@ namespace Reports {
 
     std::unique_ptr<Report> DoIssueReport(const AdDb& theDb, const FilterFunc& filter = AllowAll);
     std::unique_ptr<Report> DoDiffReport(const AdDb& start, const AdDb& end);
+
+    enum class TimeSeriesMode {
+        STANDARD,
+        REMOVE_BASELINE
+    };
+    std::unique_ptr<TimeSeriesReport> DoTimeSeries(const std::vector<Report*>& reports, const TimeSeriesMode& mode = TimeSeriesMode::STANDARD);
 }
 
 #endif //ELECTIONDATAANAL_REPORTS_H

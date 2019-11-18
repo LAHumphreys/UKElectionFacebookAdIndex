@@ -123,6 +123,37 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
     return LoadDb(cfgPath, dataDir, "");
 }
 
+void DbUtils::WriteTimeSeries(Reports::TimeSeriesReport &report, const std::vector<std::string> timeStamps, const std::string &path) {
+    std::fstream reportFile(path, std::ios_base::out);
+    std::vector<std::string> catts;
+    catts.reserve(report.size());
+    for (const auto& pair: report) {
+        catts.push_back(pair.first);
+    }
+
+    SimpleJSONPrettyBuilder reportBuilder;
+    reportBuilder.Add("cattegories", catts);
+    reportBuilder.Add("timeSeries", timeStamps);
+
+    for (const std::string& catt: catts) {
+        reportBuilder.StartArray(catt);
+            reportBuilder.StartAnonymousObject();
+                reportBuilder.Add("name", std::string("Other"));
+                reportBuilder.Add("data", report[catt].residualSpend);
+            reportBuilder.EndObject();
+            for (auto& pair: report[catt].guestimatedSpend) {
+                reportBuilder.StartAnonymousObject();
+                    reportBuilder.Add("name", pair.first);
+                    reportBuilder.Add("data", pair.second);
+                reportBuilder.EndObject();
+
+            }
+        reportBuilder.EndArray();
+    }
+
+    reportFile << reportBuilder.GetAndClear();
+}
+
 void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath, WriteMode mode) {
     std::fstream summaryFile(basePath + "/Summary.json", std::ios_base::out);
     SimpleJSONPrettyBuilder summaryBuilder;
@@ -174,3 +205,4 @@ void DbUtils::WriteDbToDisk(AdDb &db, const std::string &fname) {
     summaryFile << db.Serialize().json;
     summaryFile.close();
 }
+

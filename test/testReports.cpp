@@ -313,9 +313,9 @@ protected:
     };
     std::vector<ToCheck> EmptyChecks() {
         std::vector<ToCheck> checks = {
-                { CATEGORY::SEARCH_0, {GetKey(CATEGORY::SEARCH_0), 0, 0, 0}, {} },
-                { CATEGORY::SEARCH_1, {GetKey(CATEGORY::SEARCH_1), 0, 0, 0}, {} },
-                { CATEGORY::SEARCH_2, {GetKey(CATEGORY::SEARCH_2), 0, 0, 0}, {} }
+            { CATEGORY::SEARCH_0, {GetKey(CATEGORY::SEARCH_0), 0, 0, 0}, {} },
+            { CATEGORY::SEARCH_1, {GetKey(CATEGORY::SEARCH_1), 0, 0, 0}, {} },
+            { CATEGORY::SEARCH_2, {GetKey(CATEGORY::SEARCH_2), 0, 0, 0}, {} }
         };
 
         return checks;
@@ -458,7 +458,7 @@ TEST_F( DeltaReportTest, AdditionalAd) {
     );
 }
 
-TEST_F( DeltaReportTest, RemovedAd) {
+TEST_F(DeltaReportTest, RemovedAd) {
     auto checks = EmptyChecks();
 
     // 1 original ad...
@@ -481,4 +481,442 @@ TEST_F( DeltaReportTest, RemovedAd) {
 
 
     ASSERT_THROW(DoDiff(), Reports::DbHasRegressed);
+}
+
+class TimeSeriesTest: public ::testing::Test {
+public:
+protected:
+    enum class CATEGORY  {
+        SEARCH_0,
+        SEARCH_1,
+        SEARCH_2
+    };
+
+    enum class TIME_SERIES  {
+        SPEND
+    };
+
+    std::string GetKey(const CATEGORY& cat) {
+        switch (cat) {
+            case CATEGORY::SEARCH_0:
+                return "Search#0";
+            case CATEGORY::SEARCH_1:
+                return "Search#1";
+            case CATEGORY::SEARCH_2:
+                return "Search#2";
+        }
+        throw "Shouldn't be here";
+    }
+
+    std::string GetKeyForCatt(const CATEGORY& cat) {
+        switch (cat) {
+            case CATEGORY::SEARCH_0:
+                return "entity#0";
+            case CATEGORY::SEARCH_1:
+                return "entity#1";
+            default:
+                throw "Shouldn't be here";
+        }
+        throw "Shouldn't be here";
+    }
+
+    void ForEachCategory(const std::function<void (const CATEGORY& c, std::string name)>& cb) {
+        cb(CATEGORY::SEARCH_0, GetKey(CATEGORY::SEARCH_0));
+        cb(CATEGORY::SEARCH_1, GetKey(CATEGORY::SEARCH_1));
+        cb(CATEGORY::SEARCH_2, GetKey(CATEGORY::SEARCH_2));
+    }
+
+    static constexpr size_t NO_AD = std::numeric_limits<size_t>::max();
+
+    void AddAd(const CATEGORY& cat,
+               const TIME_SERIES& series,
+               const std::string& funder,
+               const std::vector<size_t>& vals)
+    {
+        ASSERT_EQ(vals.size(), dbs.size());
+
+        FacebookAd ad;
+        ad.id = ++nextId;
+        ad.fundingEntity = funder;
+        ad.pageName = GetKeyForCatt(cat);
+
+        for (size_t i = 0; i < vals.size(); ++i) {
+            const size_t& val = vals[i];
+            if (val != NO_AD) {
+                auto item = std::make_unique<FacebookAd>(ad);
+                item->spend.lower_bound = val-1;
+                item->spend.upper_bound = val+1;
+
+                dbs[i].Store(std::move(item));
+            }
+        }
+
+
+    }
+
+    void InitializeDbs(const size_t& dps) {
+        dbs.clear();
+        dbs.reserve(dps);
+        for (size_t i = 0; i < dps; ++i) {
+            dbs.emplace_back(dbConfig);
+        }
+    }
+
+    std::unique_ptr<Reports::TimeSeriesReport> GetReport(Reports::TimeSeriesMode mode = Reports::TimeSeriesMode::STANDARD) {
+        std::vector<std::unique_ptr<Reports::Report>> rawReports;
+        std::vector<Reports::Report*> reports;
+        rawReports.reserve(dbs.size());
+        reports.reserve(dbs.size());
+        for (size_t i = 0; i < dbs.size(); ++i) {
+            auto& storedReport = rawReports.emplace_back(Reports::DoConsituencyReport(dbs[i]));
+            reports.emplace_back(storedReport.get());
+        }
+        return Reports::DoTimeSeries(reports, mode);
+    }
+
+    std::vector<AdDb> dbs;
+private:
+    size_t nextId = 0;
+    std::vector<std::string> stamps;
+
+};
+
+TEST_F(TimeSeriesTest, NoResults) {
+    InitializeDbs(0);
+    auto preport = GetReport();
+    const auto& report = *preport;
+
+    ASSERT_EQ(0, report.size());
+}
+
+TEST_F(TimeSeriesTest, EmptyResults) {
+    InitializeDbs(2);
+    auto preport = GetReport();
+    const auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto&, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+    });
+}
+
+TEST_F(TimeSeriesTest, SingleAd) {
+    InitializeDbs(2);
+
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 200});
+
+    auto preport = GetReport();
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 1);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0], 100);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1], 200);
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, NewAd) {
+    InitializeDbs(3);
+
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {NO_AD, 100, 200});
+
+    auto preport = GetReport();
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 1);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 3);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0], 0);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1], 100);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][2], 200);
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, MultipleAds_SingelFunder) {
+    InitializeDbs(2);
+
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 200});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {200, 300});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {300, 400});
+
+    auto preport = GetReport();
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 1);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0], 100 + 200 + 300);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1], 200 + 300 + 400);
+
+            ASSERT_EQ(it->second.residualSpend.size(), 2);
+            ASSERT_EQ(it->second.residualSpend[0],  0 );
+            ASSERT_EQ(it->second.residualSpend[1],  0 );
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, MultipleFunders) {
+    InitializeDbs(2);
+
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 200});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {200, 300});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {300, 400});
+
+    auto preport = GetReport();
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 3);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0],  100);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1],  200);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][0],  200 );
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][1],  300 );
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test3"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test3"][0],  300);
+            ASSERT_EQ(it->second.guestimatedSpend["Test3"][1],  400);
+
+            ASSERT_EQ(it->second.residualSpend.size(), 2);
+            ASSERT_EQ(it->second.residualSpend[0],  0 );
+            ASSERT_EQ(it->second.residualSpend[1],  0 );
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, IgnoreSmall) {
+    InitializeDbs(2);
+
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 100});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {1, 300});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {1, 1});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test4", {1, 1});
+
+    auto preport = GetReport();
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0],  100);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1],  100);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][1],  300 );
+
+            ASSERT_EQ(it->second.residualSpend.size(), 2);
+            ASSERT_EQ(it->second.residualSpend[0],  3 );
+            ASSERT_EQ(it->second.residualSpend[1],  2 );
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, CountCummulative) {
+    InitializeDbs(2);
+
+    for (size_t i = 0; i < 1000; ++i) {
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 100});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {1, 300});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {1, 1});
+    }
+
+    auto preport = GetReport();
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0],  100 * 1000);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1],  100 * 1000);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][1],  300 * 1000);
+
+            ASSERT_EQ(it->second.residualSpend.size(), 2);
+            ASSERT_EQ(it->second.residualSpend[0],  2 * 1000 );
+            ASSERT_EQ(it->second.residualSpend[1],  1  * 1000);
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, BaselineSeries) {
+    InitializeDbs(3);
+
+    for (size_t i = 0; i < 1000; ++i) {
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test0", {1000, 1000, 1000});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {50, 100, 100});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {NO_AD, 1, 300});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {NO_AD, 1, 1});
+    }
+
+    auto preport = GetReport(Reports::TimeSeriesMode::REMOVE_BASELINE);
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 3);
+
+            // TODO: We want to remove this noise
+            ASSERT_EQ(it->second.guestimatedSpend["Test0"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test0"][0],  0 * 1000);
+            ASSERT_EQ(it->second.guestimatedSpend["Test0"][1],  0 * 1000);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0],  50 * 1000);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1],  50 * 1000);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][1],  300 * 1000);
+
+            ASSERT_EQ(it->second.residualSpend.size(), 2);
+            ASSERT_EQ(it->second.residualSpend[0],  2 * 1000 );
+            ASSERT_EQ(it->second.residualSpend[1],  1  * 1000);
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, OtherBecomesItem) {
+    InitializeDbs(3);
+
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {500, 1000, 1000});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {1,   2,    300});
+
+    auto preport = GetReport(Reports::TimeSeriesMode::REMOVE_BASELINE);
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 2);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0],  500);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1],  500);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][1],  300);
+
+            ASSERT_EQ(it->second.residualSpend.size(), 2);
+            ASSERT_EQ(it->second.residualSpend[0],  1);
+            ASSERT_EQ(it->second.residualSpend[1],  0);
+        }
+
+    });
+}
+
+TEST_F(TimeSeriesTest, ItemRegressesToOther) {
+    InitializeDbs(3);
+
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {500, 1000, 1000});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {6, 7,  7});
+
+    auto preport = GetReport(Reports::TimeSeriesMode::REMOVE_BASELINE);
+    auto& report = *preport;
+
+    ASSERT_EQ(3, report.size());
+
+    ForEachCategory([&] (const auto& cat, std::string catName ) {
+        auto it = report.find(catName);
+        ASSERT_NE(it, report.end());
+
+        if (cat != CATEGORY::SEARCH_0) {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        } else {
+            ASSERT_EQ(it->second.guestimatedSpend.size(), 2);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][0],  500);
+            ASSERT_EQ(it->second.guestimatedSpend["Test1"][1],  500);
+
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedSpend["Test2"][1],  0);
+
+            ASSERT_EQ(it->second.residualSpend.size(), 2);
+            ASSERT_EQ(it->second.residualSpend[0],  7);
+            ASSERT_EQ(it->second.residualSpend[1],  7);
+        }
+
+    });
 }

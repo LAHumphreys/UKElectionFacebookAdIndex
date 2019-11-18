@@ -1,5 +1,6 @@
 #!/bin/bash
 
+chmod -w dbs/*
 
 
 pushd ./Build/
