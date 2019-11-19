@@ -1,0 +1,726 @@
+{
+    "cattegories": [
+        "Brexit",
+        "Climate Crisis",
+        "Criminal Justice",
+        "Economy & Taxes",
+        "Education",
+        "Fraking",
+        "NHS"
+    ],
+    "timeSeries": [
+        "Wednesday 13th November",
+        "Thursday 14th November",
+        "Friday 15th November",
+        "Saturday 16th November",
+        "Sunday 17th November",
+        "Monday 18th November"
+    ],
+    "Brexit": [
+        {
+            "name": "Other",
+            "data": [
+                983,
+                2634,
+                4512,
+                9122,
+                11046,
+                13326
+            ]
+        },
+        {
+            "name": "",
+            "data": [
+                3,
+                153,
+                157,
+                610,
+                610,
+                611
+            ]
+        },
+        {
+            "name": "#ProjectHope",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Best For Britain",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Best for Britain",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "HOPE not hate",
+            "data": [
+                8,
+                30,
+                40,
+                43,
+                43,
+                43
+            ]
+        },
+        {
+            "name": "Long Live The Local",
+            "data": [
+                0,
+                200,
+                200,
+                300,
+                848,
+                849
+            ]
+        },
+        {
+            "name": "Michael John Galsworthy",
+            "data": [
+                201,
+                1002,
+                1402,
+                1902,
+                2002,
+                2750
+            ]
+        },
+        {
+            "name": "Scientists for EU",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "The Brexit Party",
+            "data": [
+                11,
+                1175,
+                1773,
+                1952,
+                2475,
+                4550
+            ]
+        },
+        {
+            "name": "The Conservative Party",
+            "data": [
+                1901,
+                2514,
+                2964,
+                4764,
+                5465,
+                5669
+            ]
+        },
+        {
+            "name": "The Labour Party",
+            "data": [
+                3400,
+                7274,
+                12272,
+                21269,
+                26119,
+                37614
+            ]
+        },
+        {
+            "name": "UK Government",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "the Liberal Democrats",
+            "data": [
+                3533,
+                9461,
+                14116,
+                31017,
+                38611,
+                53988
+            ]
+        }
+    ],
+    "Climate Crisis": [
+        {
+            "name": "Other",
+            "data": [
+                1008,
+                0,
+                171,
+                1105,
+                1859,
+                2376
+            ]
+        },
+        {
+            "name": "",
+            "data": [
+                1450,
+                2649,
+                3899,
+                63898,
+                63899,
+                64459
+            ]
+        },
+        {
+            "name": "ActionAid UK",
+            "data": [
+                0,
+                2901,
+                3249,
+                3954,
+                4302,
+                4702
+            ]
+        },
+        {
+            "name": "Friends of the Earth",
+            "data": [
+                412,
+                718,
+                1018,
+                2750,
+                3787,
+                4762
+            ]
+        },
+        {
+            "name": "Greenpeace UK ",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "The Comms Lab ",
+            "data": [
+                5,
+                451,
+                1640,
+                3584,
+                4884,
+                6133
+            ]
+        },
+        {
+            "name": "The Labour Party",
+            "data": [
+                0,
+                23,
+                24,
+                24,
+                24,
+                24
+            ]
+        },
+        {
+            "name": "The Woodland Trust",
+            "data": [
+                496,
+                1201,
+                2045,
+                2845,
+                3493,
+                4248
+            ]
+        }
+    ],
+    "Criminal Justice": [
+        {
+            "name": "Other",
+            "data": [
+                1,
+                3,
+                6,
+                4,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Amnesty International UK",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Hacked Off",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Hebert Joseph Craig",
+            "data": [
+                0,
+                0,
+                0,
+                302,
+                302,
+                302
+            ]
+        },
+        {
+            "name": "Pay Justice",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                301,
+                449
+            ]
+        },
+        {
+            "name": "The Conservative Party",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "White Heat",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                149,
+                149
+            ]
+        }
+    ],
+    "Economy & Taxes": [
+        {
+            "name": "Other",
+            "data": [
+                2370,
+                5343,
+                5806,
+                8190,
+                7449,
+                9616
+            ]
+        },
+        {
+            "name": "",
+            "data": [
+                1,
+                3,
+                5,
+                6004,
+                6005,
+                6321
+            ]
+        },
+        {
+            "name": "Campaign Against Corbynism",
+            "data": [
+                0,
+                0,
+                2946,
+                4346,
+                4646,
+                4646
+            ]
+        },
+        {
+            "name": "HOPE not hate",
+            "data": [
+                7,
+                15,
+                26,
+                27,
+                27,
+                27
+            ]
+        },
+        {
+            "name": "Long Live The Local",
+            "data": [
+                500,
+                1100,
+                2351,
+                3351,
+                4247,
+                5402
+            ]
+        },
+        {
+            "name": "Prospect Magazine",
+            "data": [
+                0,
+                0,
+                0,
+                3298,
+                3298,
+                3298
+            ]
+        },
+        {
+            "name": "The Conservative Party",
+            "data": [
+                1650,
+                1756,
+                1756,
+                2558,
+                3158,
+                3664
+            ]
+        },
+        {
+            "name": "The Labour Party",
+            "data": [
+                0,
+                172,
+                522,
+                1715,
+                2411,
+                5157
+            ]
+        },
+        {
+            "name": "Working 4 UK",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                3096,
+                3996
+            ]
+        }
+    ],
+    "Education": [
+        {
+            "name": "Other",
+            "data": [
+                0,
+                0,
+                1036,
+                1968,
+                1976,
+                2306
+            ]
+        },
+        {
+            "name": "",
+            "data": [
+                4050,
+                4201,
+                4202,
+                4202,
+                4203,
+                4204
+            ]
+        },
+        {
+            "name": "Crewe and Nantwich Conservatives",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Croydon Conservatives",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Loughborough College",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Mark Steven Coxshall",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "National Education Union",
+            "data": [
+                168,
+                741,
+                1620,
+                4689,
+                7079,
+                9028
+            ]
+        },
+        {
+            "name": "Richard Patrick Tracey",
+            "data": [
+                1150,
+                1150,
+                1499,
+                2399,
+                2899,
+                3400
+            ]
+        },
+        {
+            "name": "The Conservative Party",
+            "data": [
+                1000,
+                1301,
+                1501,
+                1952,
+                2052,
+                2053
+            ]
+        },
+        {
+            "name": "The Week Junior",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "Fraking": [
+        {
+            "name": "Other",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "NHS": [
+        {
+            "name": "Other",
+            "data": [
+                749,
+                855,
+                1227,
+                3127,
+                3158,
+                4668
+            ]
+        },
+        {
+            "name": "",
+            "data": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "name": "38 Degrees",
+            "data": [
+                0,
+                947,
+                1147,
+                1447,
+                1547,
+                1550
+            ]
+        },
+        {
+            "name": "Best for Britain",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Crewe and Nantwich Conservatives",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Croydon Conservatives",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "European Movement UK",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "HOPE not hate",
+            "data": [
+                753,
+                1179,
+                1201,
+                1227,
+                1967,
+                1967
+            ]
+        },
+        {
+            "name": "Mark Steven Coxshall",
+            "data": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "name": "Momentum",
+            "data": [
+                249,
+                497,
+                497,
+                497,
+                497,
+                497
+            ]
+        },
+        {
+            "name": "The Conservative Party",
+            "data": [
+                1099,
+                1404,
+                1604,
+                1908,
+                2159,
+                2162
+            ]
+        },
+        {
+            "name": "The Labour Party",
+            "data": [
+                204,
+                312,
+                612,
+                10259,
+                14560,
+                23557
+            ]
+        },
+        {
+            "name": "The Labour Party on behalf of Jeremy Corbyn",
+            "data": [
+                0,
+                0,
+                649,
+                1249,
+                1249,
+                1249
+            ]
+        }
+    ]
+}

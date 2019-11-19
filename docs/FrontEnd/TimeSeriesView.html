@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Data tables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="cust.css">
+
+    <title>Category time-series  view</title>
+</head>
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-3">
+                    <h4>
+                        <label for="DataSetSelector"> Data Set</label>
+                    </h4>
+                    <select class="custom-select" id="DataSetSelector">
+                        <option value="Cons">Constituency / Candidate Mentions</option>
+                        <option selected value="Issues">Issue Mentions</option>
+                    </select>
+                </div>
+                <div class="form-group col-3">
+                    <h4>
+                        <label for="CategorySelector"> Category </label>
+                    </h4>
+                    <select class="custom-select" id="CategorySelector">
+                    </select>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-12">
+                <h4> Category Filter</h4>
+                <figure class="highcharts-figure">
+                    <div id="container"></div>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+        function GetDataSet() {
+            return $('#DataSetSelector').val();
+        }
+        function GetCattegory() {
+            return $('#CategorySelector').val();
+        }
+        function SetValidCattegories(list) {
+            $('#CategorySelector')
+                .empty();
+            list.forEach(function (item, idx) {
+                let opt = $("<option>" + item  +"</option>");
+                opt.attr("value", item);
+                $('#CategorySelector').append(opt);
+            });
+            $('#CategorySelector').change(function () {
+                UpdateGraph();
+            })
+            $('#CategorySelector').trigger("change");
+
+        }
+        $(document).ready( function () {
+            $('#DataSetSelector').change(function () {
+                UpdateData();
+            })
+            UpdateData();
+        });
+    </script>
+    <script src="timeSeries.js"></script>
+</body>
+</html>
