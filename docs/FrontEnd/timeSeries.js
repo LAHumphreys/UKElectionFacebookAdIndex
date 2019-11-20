@@ -1,14 +1,24 @@
 data = {}
 
-function LoadCattegories(list) {
-
-}
-
 function GetDataUrl() {
     return "https://raw.githubusercontent.com/LAHumphreys/UKElectionFacebookAdIndex/master/docs/FrontEnd/data/TimeSeries/"  + GetDataSet() + ".json";
 }
 
 function UpdateGraph() {
+    let formatter = null;
+    let label = "";
+    if (GetDataSubSet() == "spend") {
+        formatter = function () {
+            return "£" + this.value;
+        };
+        label = "£s";
+    } else {
+        formatter = function () {
+            return this.value;
+        };
+        label = "Views";
+    }
+
     let catt = GetCattegory();
     Highcharts.chart('container', {
         chart: {
@@ -29,12 +39,10 @@ function UpdateGraph() {
         },
         yAxis: {
             title: {
-                text: '£s'
+                text: label
             },
             labels: {
-                formatter: function () {
-                    return "£" + this.value;
-                }
+                formatter: formatter
             }
         },
         tooltip: {
@@ -47,7 +55,7 @@ function UpdateGraph() {
                 lineWidth: 1,
             }
         },
-        series: data[catt]
+        series: data[catt][GetDataSubSet()]
     });
 }
 

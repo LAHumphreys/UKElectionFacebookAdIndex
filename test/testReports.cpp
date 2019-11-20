@@ -493,7 +493,7 @@ protected:
     };
 
     enum class TIME_SERIES  {
-        SPEND
+        BOTH
     };
 
     std::string GetKey(const CATEGORY& cat) {
@@ -546,6 +546,9 @@ protected:
                 auto item = std::make_unique<FacebookAd>(ad);
                 item->spend.lower_bound = val-1;
                 item->spend.upper_bound = val+1;
+
+                item->impressions.lower_bound = val-1;
+                item->impressions.upper_bound = val+1;
 
                 dbs[i].Store(std::move(item));
             }
@@ -601,13 +604,16 @@ TEST_F(TimeSeriesTest, EmptyResults) {
         ASSERT_NE(it, report.end());
 
         ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+        ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
+        ASSERT_EQ(it->second.residualSpend.size(), 2);
+        ASSERT_EQ(it->second.residualImpressions.size(), 2);
     });
 }
 
 TEST_F(TimeSeriesTest, SingleAd) {
     InitializeDbs(2);
 
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 200});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {100, 200});
 
     auto preport = GetReport();
     auto& report = *preport;
@@ -620,11 +626,17 @@ TEST_F(TimeSeriesTest, SingleAd) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 1);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"][0], 100);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"][1], 200);
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 1);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0], 100);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1], 200);
         }
 
     });
@@ -633,7 +645,7 @@ TEST_F(TimeSeriesTest, SingleAd) {
 TEST_F(TimeSeriesTest, NewAd) {
     InitializeDbs(3);
 
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {NO_AD, 100, 200});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {NO_AD, 100, 200});
 
     auto preport = GetReport();
     auto& report = *preport;
@@ -646,12 +658,19 @@ TEST_F(TimeSeriesTest, NewAd) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 1);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 3);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"][0], 0);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"][1], 100);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"][2], 200);
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 1);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 3);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0], 0);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1], 100);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][2], 200);
         }
 
     });
@@ -660,9 +679,9 @@ TEST_F(TimeSeriesTest, NewAd) {
 TEST_F(TimeSeriesTest, MultipleAds_SingelFunder) {
     InitializeDbs(2);
 
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 200});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {200, 300});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {300, 400});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {100, 200});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {200, 300});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {300, 400});
 
     auto preport = GetReport();
     auto& report = *preport;
@@ -675,6 +694,7 @@ TEST_F(TimeSeriesTest, MultipleAds_SingelFunder) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 1);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
@@ -684,6 +704,15 @@ TEST_F(TimeSeriesTest, MultipleAds_SingelFunder) {
             ASSERT_EQ(it->second.residualSpend.size(), 2);
             ASSERT_EQ(it->second.residualSpend[0],  0 );
             ASSERT_EQ(it->second.residualSpend[1],  0 );
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 1);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0], 100 + 200 + 300);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1], 200 + 300 + 400);
+
+            ASSERT_EQ(it->second.residualImpressions.size(), 2);
+            ASSERT_EQ(it->second.residualImpressions[0],  0 );
+            ASSERT_EQ(it->second.residualImpressions[1],  0 );
         }
 
     });
@@ -692,9 +721,9 @@ TEST_F(TimeSeriesTest, MultipleAds_SingelFunder) {
 TEST_F(TimeSeriesTest, MultipleFunders) {
     InitializeDbs(2);
 
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 200});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {200, 300});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {300, 400});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {100, 200});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test2", {200, 300});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test3", {300, 400});
 
     auto preport = GetReport();
     auto& report = *preport;
@@ -707,6 +736,7 @@ TEST_F(TimeSeriesTest, MultipleFunders) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 3);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
@@ -724,6 +754,23 @@ TEST_F(TimeSeriesTest, MultipleFunders) {
             ASSERT_EQ(it->second.residualSpend.size(), 2);
             ASSERT_EQ(it->second.residualSpend[0],  0 );
             ASSERT_EQ(it->second.residualSpend[1],  0 );
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 3);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0],  100);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1],  200);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][0],  200 );
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][1],  300 );
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test3"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test3"][0],  300);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test3"][1],  400);
+
+            ASSERT_EQ(it->second.residualImpressions.size(), 2);
+            ASSERT_EQ(it->second.residualImpressions[0],  0 );
+            ASSERT_EQ(it->second.residualImpressions[1],  0 );
         }
 
     });
@@ -732,10 +779,10 @@ TEST_F(TimeSeriesTest, MultipleFunders) {
 TEST_F(TimeSeriesTest, IgnoreSmall) {
     InitializeDbs(2);
 
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 100});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {1, 300});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {1, 1});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test4", {1, 1});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {100, 100});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test2", {1, 300});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test3", {1, 1});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test4", {1, 1});
 
     auto preport = GetReport();
     auto& report = *preport;
@@ -748,6 +795,7 @@ TEST_F(TimeSeriesTest, IgnoreSmall) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 2);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
@@ -761,6 +809,19 @@ TEST_F(TimeSeriesTest, IgnoreSmall) {
             ASSERT_EQ(it->second.residualSpend.size(), 2);
             ASSERT_EQ(it->second.residualSpend[0],  3 );
             ASSERT_EQ(it->second.residualSpend[1],  2 );
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0],  100);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1],  100);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][1],  300 );
+
+            ASSERT_EQ(it->second.residualImpressions.size(), 2);
+            ASSERT_EQ(it->second.residualImpressions[0],  3 );
+            ASSERT_EQ(it->second.residualImpressions[1],  2 );
         }
 
     });
@@ -770,9 +831,9 @@ TEST_F(TimeSeriesTest, CountCummulative) {
     InitializeDbs(2);
 
     for (size_t i = 0; i < 1000; ++i) {
-        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {100, 100});
-        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {1, 300});
-        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {1, 1});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {100, 100});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test2", {1, 300});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test3", {1, 1});
     }
 
     auto preport = GetReport();
@@ -786,6 +847,7 @@ TEST_F(TimeSeriesTest, CountCummulative) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 2);
             ASSERT_EQ(it->second.guestimatedSpend["Test1"].size(), 2);
@@ -799,6 +861,19 @@ TEST_F(TimeSeriesTest, CountCummulative) {
             ASSERT_EQ(it->second.residualSpend.size(), 2);
             ASSERT_EQ(it->second.residualSpend[0],  2 * 1000 );
             ASSERT_EQ(it->second.residualSpend[1],  1  * 1000);
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0],  100 * 1000);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1],  100 * 1000);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][1],  300 * 1000);
+
+            ASSERT_EQ(it->second.residualImpressions.size(), 2);
+            ASSERT_EQ(it->second.residualImpressions[0],  2 * 1000 );
+            ASSERT_EQ(it->second.residualImpressions[1],  1  * 1000);
         }
 
     });
@@ -808,10 +883,10 @@ TEST_F(TimeSeriesTest, BaselineSeries) {
     InitializeDbs(3);
 
     for (size_t i = 0; i < 1000; ++i) {
-        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test0", {1000, 1000, 1000});
-        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {50, 100, 100});
-        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {NO_AD, 1, 300});
-        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test3", {NO_AD, 1, 1});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test0", {1000, 1000, 1000});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {50, 100, 100});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test2", {NO_AD, 1, 300});
+        AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test3", {NO_AD, 1, 1});
     }
 
     auto preport = GetReport(Reports::TimeSeriesMode::REMOVE_BASELINE);
@@ -825,6 +900,7 @@ TEST_F(TimeSeriesTest, BaselineSeries) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 3);
 
@@ -844,6 +920,22 @@ TEST_F(TimeSeriesTest, BaselineSeries) {
             ASSERT_EQ(it->second.residualSpend.size(), 2);
             ASSERT_EQ(it->second.residualSpend[0],  2 * 1000 );
             ASSERT_EQ(it->second.residualSpend[1],  1  * 1000);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test0"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test0"][0],  0 * 1000);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test0"][1],  0 * 1000);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0],  50 * 1000);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1],  50 * 1000);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][1],  300 * 1000);
+
+            ASSERT_EQ(it->second.residualImpressions.size(), 2);
+            ASSERT_EQ(it->second.residualImpressions[0],  2 * 1000 );
+            ASSERT_EQ(it->second.residualImpressions[1],  1  * 1000);
         }
 
     });
@@ -852,8 +944,8 @@ TEST_F(TimeSeriesTest, BaselineSeries) {
 TEST_F(TimeSeriesTest, OtherBecomesItem) {
     InitializeDbs(3);
 
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {500, 1000, 1000});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {1,   2,    300});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {500, 1000, 1000});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test2", {1,   2,    300});
 
     auto preport = GetReport(Reports::TimeSeriesMode::REMOVE_BASELINE);
     auto& report = *preport;
@@ -880,6 +972,20 @@ TEST_F(TimeSeriesTest, OtherBecomesItem) {
             ASSERT_EQ(it->second.residualSpend.size(), 2);
             ASSERT_EQ(it->second.residualSpend[0],  1);
             ASSERT_EQ(it->second.residualSpend[1],  0);
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 2);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0],  500);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1],  500);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][1],  300);
+
+            ASSERT_EQ(it->second.residualImpressions.size(), 2);
+            ASSERT_EQ(it->second.residualImpressions[0],  1);
+            ASSERT_EQ(it->second.residualImpressions[1],  0);
         }
 
     });
@@ -888,8 +994,8 @@ TEST_F(TimeSeriesTest, OtherBecomesItem) {
 TEST_F(TimeSeriesTest, ItemRegressesToOther) {
     InitializeDbs(3);
 
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test1", {500, 1000, 1000});
-    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::SPEND, "Test2", {6, 7,  7});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test1", {500, 1000, 1000});
+    AddAd(CATEGORY::SEARCH_0, TIME_SERIES::BOTH, "Test2", {6, 7,  7});
 
     auto preport = GetReport(Reports::TimeSeriesMode::REMOVE_BASELINE);
     auto& report = *preport;
@@ -902,6 +1008,7 @@ TEST_F(TimeSeriesTest, ItemRegressesToOther) {
 
         if (cat != CATEGORY::SEARCH_0) {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 0);
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 0);
         } else {
             ASSERT_EQ(it->second.guestimatedSpend.size(), 2);
 
@@ -916,6 +1023,20 @@ TEST_F(TimeSeriesTest, ItemRegressesToOther) {
             ASSERT_EQ(it->second.residualSpend.size(), 2);
             ASSERT_EQ(it->second.residualSpend[0],  7);
             ASSERT_EQ(it->second.residualSpend[1],  7);
+
+            ASSERT_EQ(it->second.guestimatedImpressions.size(), 2);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][0],  500);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test1"][1],  500);
+
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"].size(), 2);
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][0],  0 );
+            ASSERT_EQ(it->second.guestimatedImpressions["Test2"][1],  0);
+
+            ASSERT_EQ(it->second.residualImpressions.size(), 2);
+            ASSERT_EQ(it->second.residualImpressions[0],  7);
+            ASSERT_EQ(it->second.residualImpressions[1],  7);
         }
 
     });

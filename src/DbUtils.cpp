@@ -136,19 +136,35 @@ void DbUtils::WriteTimeSeries(Reports::TimeSeriesReport &report, const std::vect
     reportBuilder.Add("timeSeries", timeStamps);
 
     for (const std::string& catt: catts) {
-        reportBuilder.StartArray(catt);
-            reportBuilder.StartAnonymousObject();
-                reportBuilder.Add("name", std::string("Other"));
-                reportBuilder.Add("data", report[catt].residualSpend);
-            reportBuilder.EndObject();
-            for (auto& pair: report[catt].guestimatedSpend) {
+        reportBuilder.AddName(catt);
+        reportBuilder.StartAnonymousObject();
+            reportBuilder.StartArray("spend");
                 reportBuilder.StartAnonymousObject();
-                    reportBuilder.Add("name", pair.first);
-                    reportBuilder.Add("data", pair.second);
+                    reportBuilder.Add("name", std::string("Other"));
+                    reportBuilder.Add("data", report[catt].residualSpend);
                 reportBuilder.EndObject();
+                for (auto& pair: report[catt].guestimatedSpend) {
+                    reportBuilder.StartAnonymousObject();
+                        reportBuilder.Add("name", pair.first);
+                        reportBuilder.Add("data", pair.second);
+                    reportBuilder.EndObject();
+                }
+            reportBuilder.EndArray();
 
-            }
-        reportBuilder.EndArray();
+            reportBuilder.StartArray("impressions");
+                reportBuilder.StartAnonymousObject();
+                    reportBuilder.Add("name", std::string("Other"));
+                    reportBuilder.Add("data", report[catt].residualImpressions);
+                reportBuilder.EndObject();
+                for (auto& pair: report[catt].guestimatedImpressions) {
+                    reportBuilder.StartAnonymousObject();
+                        reportBuilder.Add("name", pair.first);
+                        reportBuilder.Add("data", pair.second);
+                    reportBuilder.EndObject();
+
+                }
+            reportBuilder.EndArray();
+        reportBuilder.EndObject();
     }
 
     reportFile << reportBuilder.GetAndClear();

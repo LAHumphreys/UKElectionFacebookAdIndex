@@ -38,7 +38,9 @@ namespace Reports {
      */
     struct TimeSeriesItem {
         std::map<std::string, std::vector<size_t>> guestimatedSpend;
+        std::map<std::string, std::vector<size_t>> guestimatedImpressions;
         std::vector<size_t> residualSpend;
+        std::vector<size_t> residualImpressions;
     };
     using TimeSeriesReport = std::map<std::string, TimeSeriesItem>;
 

@@ -162,21 +162,41 @@ std::unique_ptr<Reports::TimeSeriesReport> Reports::DoTimeSeries(const std::vect
         for (const auto& r: *reports[i]) {
             const std::string& catName = r.first;
             const ReportItem& item = r.second;
+
             std::map<std::string, size_t> spendTracker;
             for (const auto& adReport: item.ads) {
                 const std::string& funder = adReport.ad->fundingEntity;
                 spendTracker[funder] += adReport.guestimateSpend;
             }
 
-            auto& funderMap = (*result)[catName].guestimatedSpend;
-            auto& residual = (*result)[catName].residualSpend;
-            residual.resize(reports.size());
+            std::map<std::string, size_t> impressionTracker;
+            for (const auto& adReport: item.ads) {
+                const std::string& funder = adReport.ad->fundingEntity;
+                impressionTracker[funder] += adReport.guestimateImpressions;
+            }
+
+            auto& funderSpendMap = (*result)[catName].guestimatedSpend;
+            auto& residualSpend = (*result)[catName].residualSpend;
+            residualSpend.resize(reports.size());
             for (auto& pair: spendTracker) {
                 if (pair.second > (item.summary.estSpend / 100)) {
-                    funderMap[pair.first].resize(reports.size());
-                    funderMap[pair.first][i] = pair.second;
+                    funderSpendMap[pair.first].resize(reports.size());
+                    funderSpendMap[pair.first][i] = pair.second;
                 } else {
-                    residual[i] += pair.second;
+                    residualSpend[i] += pair.second;
+                }
+            }
+
+            auto& funderImpressionMap = (*result)[catName].guestimatedImpressions;
+            auto& residualImpressions = (*result)[catName].residualImpressions;
+            residualImpressions.resize(reports.size());
+
+            for (auto& pair: impressionTracker) {
+                if (pair.second > (item.summary.estImpressions / 100)) {
+                    funderImpressionMap[pair.first].resize(reports.size());
+                    funderImpressionMap[pair.first][i] = pair.second;
+                } else {
+                    residualImpressions[i] += pair.second;
                 }
             }
 
@@ -189,11 +209,19 @@ std::unique_ptr<Reports::TimeSeriesReport> Reports::DoTimeSeries(const std::vect
             TimeSeriesItem& fullItem = (*result)[cattName];
             TimeSeriesItem& rebasedItem = (*rebasedResult)[cattName];
             rebasedItem.residualSpend.resize(fullItem.residualSpend.size()-1);
+            rebasedItem.residualImpressions.resize(fullItem.residualImpressions.size()-1);
             for (size_t i = 1; i < fullItem.residualSpend.size(); ++i) {
                 if (fullItem.residualSpend[i] > fullItem.residualSpend[0]) {
                     rebasedItem.residualSpend[i-1] = fullItem.residualSpend[i] - fullItem.residualSpend[0];
                 } else {
                     rebasedItem.residualSpend[i-1] = 0;
+                }
+            }
+            for (size_t i = 1; i < fullItem.residualImpressions.size(); ++i) {
+                if (fullItem.residualImpressions[i] > fullItem.residualImpressions[0]) {
+                    rebasedItem.residualImpressions[i-1] = fullItem.residualImpressions[i] - fullItem.residualImpressions[0];
+                } else {
+                    rebasedItem.residualImpressions[i-1] = 0;
                 }
             }
             for (auto& spendPair: fullItem.guestimatedSpend) {
@@ -208,8 +236,22 @@ std::unique_ptr<Reports::TimeSeriesReport> Reports::DoTimeSeries(const std::vect
                     }
                 }
             }
+
+            for (auto& impressionPair: fullItem.guestimatedImpressions) {
+                const std::string& funder = impressionPair.first;
+                auto& rebasedImpressions = rebasedItem.guestimatedImpressions[funder];
+                rebasedImpressions.resize(impressionPair.second.size()-1);
+                for (size_t i = 1; i < impressionPair.second.size(); ++i) {
+                    if (impressionPair.second[i] > impressionPair.second[0]) {
+                        rebasedImpressions[i-1] = impressionPair.second[i] - impressionPair.second[0];
+                    } else {
+                        rebasedImpressions[i-1] = 0;
+                    }
+                }
+            }
         }
         result = std::move(rebasedResult);
     }
+
     return result;
 }

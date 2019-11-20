@@ -41,11 +41,19 @@
                     <select class="custom-select" id="CategorySelector">
                     </select>
                 </div>
+                <div class="form-group col-3">
+                    <h4>
+                        <label for="CategorySelector"> Track </label>
+                    </h4>
+                    <select class="custom-select" id="TrackedDataset">
+                        <option value="spend">Ad Spend (new spend only)</option>
+                        <option selected value="impressions">Ad Views (new views only)</option>
+                    </select>
+                </div>
             </div>
         </form>
         <div class="row">
             <div class="col-12">
-                <h4> Category Filter</h4>
                 <figure class="highcharts-figure">
                     <div id="container"></div>
                 </figure>
@@ -59,6 +67,9 @@
         function GetDataSet() {
             return $('#DataSetSelector').val();
         }
+        function GetDataSubSet() {
+            return $('#TrackedDataset').val();
+        }
         function GetCattegory() {
             return $('#CategorySelector').val();
         }
@@ -71,6 +82,9 @@
                 $('#CategorySelector').append(opt);
             });
             $('#CategorySelector').change(function () {
+                UpdateGraph();
+            })
+            $('#TrackedDataset').change(function () {
                 UpdateGraph();
             })
             $('#CategorySelector').trigger("change");
