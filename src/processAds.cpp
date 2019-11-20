@@ -16,6 +16,8 @@ namespace {
         std::cout << "   --loadDb [dbfile]   :  Initialize from an existing database" << std::endl;
         std::cout << "   --secureDb [dbfile] :  Secure the index to disk" << std::endl;
         std::cout << "   --ignoreBlankFunders:  Don't report on ads with no declared funder" << std::endl;
+        std::cout << "   --funder [funder]   :  Only process from the specified funder ('--' for blank funder)" << std::endl;
+        std::cout << "   --skipParse         :  Don't load the ads directory" << std::endl;
     }
 }
 
@@ -30,13 +32,19 @@ int main(int argc, const char* argv[]) {
 
     std::string startDb = "";
     std::string resultDb = "";
+    std::string funder = "";
     bool ignoreBlankFunder = false;
+    bool skipParse = false;
+    bool funderFilter = false;
 
     for (size_t i = 1; i < startIdx; ++i) {
         const std::string arg = argv[i];
         if (arg == "--redacted") {
             std::cout << "--redacted: Cretive details will be removed" << std::endl;
             writeMode = DbUtils::WriteMode::REDACTED;
+        } else if (arg == "--skipParse") {
+                std::cout << "--skipParse: will not load ads" << std::endl;
+                skipParse = true;
         } else if (arg == "--loadDb") {
             ++i;
             startDb = argv[i];
@@ -45,6 +53,14 @@ int main(int argc, const char* argv[]) {
             ++i;
             resultDb = argv[i];
             std::cout << "--secureDb: Final state will be secured to " << resultDb << std::endl;
+        } else if (arg == "--funder") {
+            ++i;
+            funder = argv[i];
+            if (funder == "--") {
+                funder = "";
+            }
+            std::cout << "--funder: Only ads funded by: '" << funder << "'" << std::endl;
+            funderFilter = true;
         } else if (arg == "--ignoreBlankFunders") {
             std::cout << "--ignoreBlankFunders: ads with no declared funder will be ignored" << std::endl;
             ignoreBlankFunder = true;
@@ -64,12 +80,20 @@ int main(int argc, const char* argv[]) {
 
     std::string reportDir = argv[startIdx+2];
 
+    if (skipParse) {
+        dataDir = "";
+    }
+
     auto db = DbUtils::LoadDb(cfg, dataDir, startDb);
 
     const auto AdFilter = [&] (const FacebookAd& ad) -> bool {
         bool include = true;
 
         if (ignoreBlankFunder && ad.fundingEntity.empty()) {
+            include = false;
+        }
+
+        if (funderFilter && ad.fundingEntity != funder) {
             include = false;
         }
 
@@ -80,7 +104,7 @@ int main(int argc, const char* argv[]) {
 
     DbUtils::WriteReport(*report, reportDir + "/Cons", writeMode);
 
-    report = Reports::DoIssueReport(*db);
+    report = Reports::DoIssueReport(*db, AdFilter);
     DbUtils::WriteReport(*report, reportDir + "/Issues", writeMode);
 
     if (resultDb != "") {

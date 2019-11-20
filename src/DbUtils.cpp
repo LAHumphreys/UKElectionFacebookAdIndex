@@ -125,7 +125,7 @@ std::unique_ptr<AdDb> DbUtils::LoadDb(const std::string &cfgPath, const std::str
 
 void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath, WriteMode mode) {
     std::fstream summaryFile(basePath + "/Summary.json", std::ios_base::out);
-    SimpleJSONBuilder summaryBuilder;
+    SimpleJSONPrettyBuilder summaryBuilder;
     summaryBuilder.StartArray("summary");
     for (const auto &item: report) {
         summaryBuilder.StartAnonymousObject();
@@ -136,7 +136,7 @@ void DbUtils::WriteReport(Reports::Report& report, const std::string &basePath, 
         summaryBuilder.EndObject();
 
         std::fstream adsFile(basePath + "/" + item.first + ".json", std::ios_base::out);
-        SimpleJSONBuilder adsBuilder;
+        SimpleJSONPrettyBuilder adsBuilder;
         adsBuilder.StartArray("data");
         for (const auto& ad: item.second.ads) {
             adsBuilder.StartAnonymousObject();

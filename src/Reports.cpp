@@ -127,14 +127,17 @@ std::unique_ptr<Report> Reports::DoConsituencyReport(
     return DoReport(theDb, source, getter, filter);
 }
 
-std::unique_ptr<Report> Reports::DoIssueReport(const AdDb &theDb) {
+std::unique_ptr<Report> Reports::DoIssueReport(
+        const AdDb &theDb,
+        const FilterFunc& filter)
+{
     auto source = [&] (const auto& processor) -> void {
         theDb.ForEachIssue(processor);
     };
     auto getter = [&] (const std::string& name) -> auto {
         return theDb.GetIssue(name);
     };
-    return DoReport(theDb, source, getter, Reports::AllowAll);
+    return DoReport(theDb, source, getter, filter);
 }
 
 std::unique_ptr<Reports::Report> Reports::DoDiffReport(const AdDb &start, const AdDb &end) {
