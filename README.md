@@ -1,4 +1,5 @@
-
+[![Build Status](https://travis-ci.org/LAHumphreys/UKElectionFacebookAdIndex.svg?branch=master)](https://travis-ci.org/LAHumphreys/UKElectionFacebookAdIndex)
+[![Coverage Status](https://coveralls.io/repos/github/LAHumphreys/UKElectionFacebookAdIndex/badge.svg?branch=master)](https://coveralls.io/github/LAHumphreys/UKElectionFacebookAdIndex?branch=master)
 # UK Election 2019 - Facebook Ad Indexer
 
 Index political ads running on the Facebook platforms, and produce reports breaking spending down by:
@@ -6,13 +7,12 @@ Index political ads running on the Facebook platforms, and produce reports break
 - Constituencies being targeted by Ads
 - Who's paying for Ads?
 
+A day-by-day new-spending report can be [found here](https://lahumphreys.github.io/UKElectionFacebookAdIndex/FrontEnd/TimeSeriesView.html). 
 The latest raw data dump can be [viewed here](https://lahumphreys.github.io/UKElectionFacebookAdIndex/FrontEnd/FacebookBreakdown.html).
 
 The index is dumped as a JSON file for further analysis, but a simple web viewer is provided to quickly explore the data:
 
-![Screenshot_20191117-094925__01](https://raw.githubusercontent.com/LAHumphreys/UKElectionFacebookAdIndex/master/docs/Screenshot_20191117-094925__01.jpg)
-![Screenshot_20191117-094925__02](https://raw.githubusercontent.com/LAHumphreys/UKElectionFacebookAdIndex/master/docs/Screenshot_20191117-094925__02.jpg)
-
+![TimeSeriesDemo](https://lahumphreys.github.io/UKElectionFacebookAdIndex/TimeSeriesScreenshot.PNG)
 
 ## How it Works
 ### Introduction - Facebook Ad Library
