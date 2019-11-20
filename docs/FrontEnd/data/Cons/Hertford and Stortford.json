@@ -1,1 +1,52 @@
-{"data":[{"funding_entity":"Rishi Fernando","ad_delivery_start_time":"2019-11-11T13:05:20.000000Z","ad_delivery_end_time":"2019-11-25T13:05:07.000000Z","ad_creation_time":"2019-11-11T13:05:20.000000Z","ad_creative_link_description":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_title":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_caption":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_body":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","guestimateImpressions":1499,"guestimateSpendGBP":1},{"funding_entity":"Rishi Fernando","ad_delivery_start_time":"2019-11-15T21:10:45.000000Z","ad_delivery_end_time":"2019-11-25T21:10:24.000000Z","ad_creation_time":"2019-11-15T21:10:45.000000Z","ad_creative_link_description":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_title":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_caption":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_body":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","guestimateImpressions":1,"guestimateSpendGBP":1},{"funding_entity":"Rishi Fernando","ad_delivery_start_time":"2019-11-15T20:04:43.000000Z","ad_delivery_end_time":"2019-11-25T13:05:07.000000Z","ad_creation_time":"2019-11-15T20:04:43.000000Z","ad_creative_link_description":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_title":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_caption":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_body":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","guestimateImpressions":1,"guestimateSpendGBP":1},{"funding_entity":"Hertford & Stortford Liberal Democrats","ad_delivery_start_time":"2019-11-15T10:37:10.000000Z","ad_delivery_end_time":"2019-12-01T10:37:10.000000Z","ad_creation_time":"2019-11-15T10:36:53.000000Z","ad_creative_link_description":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_title":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_link_caption":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","ad_creative_body":"\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally","guestimateImpressions":1,"guestimateSpendGBP":1}]}
+{
+    "data": [
+        {
+            "funding_entity": "Rishi Fernando",
+            "ad_delivery_start_time": "2019-11-11T13:05:20.000000Z",
+            "ad_delivery_end_time": "2019-11-25T13:05:07.000000Z",
+            "ad_creation_time": "2019-11-11T13:05:20.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Rishi Fernando",
+            "ad_delivery_start_time": "2019-11-15T21:10:45.000000Z",
+            "ad_delivery_end_time": "2019-11-25T21:10:24.000000Z",
+            "ad_creation_time": "2019-11-15T21:10:45.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Rishi Fernando",
+            "ad_delivery_start_time": "2019-11-15T20:04:43.000000Z",
+            "ad_delivery_end_time": "2019-11-25T13:05:07.000000Z",
+            "ad_creation_time": "2019-11-15T20:04:43.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Hertford & Stortford Liberal Democrats",
+            "ad_delivery_start_time": "2019-11-15T10:37:10.000000Z",
+            "ad_delivery_end_time": "2019-12-01T10:37:10.000000Z",
+            "ad_creation_time": "2019-11-15T10:36:53.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        }
+    ]
+}

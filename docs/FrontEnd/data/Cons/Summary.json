@@ -1,1 +1,3904 @@
-{"summary":[{"name":"Aberavon","totalAds":6,"guestimateImpressions":92996,"guestimateSpendGBP":749},{"name":"Aberconwy","totalAds":1,"guestimateImpressions":3499,"guestimateSpendGBP":1},{"name":"Aberdeen North","totalAds":2,"guestimateImpressions":22500,"guestimateSpendGBP":150},{"name":"Aberdeen South","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Airdrie and Shotts","totalAds":14,"guestimateImpressions":26990,"guestimateSpendGBP":1},{"name":"Aldershot","totalAds":7,"guestimateImpressions":58497,"guestimateSpendGBP":250},{"name":"Aldridge-Brownhills","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Altrincham and Sale West","totalAds":1,"guestimateImpressions":27499,"guestimateSpendGBP":349},{"name":"Alyn and Deeside","totalAds":5,"guestimateImpressions":122997,"guestimateSpendGBP":1398},{"name":"Amber Valley","totalAds":2,"guestimateImpressions":17998,"guestimateSpendGBP":149},{"name":"Angus","totalAds":10,"guestimateImpressions":17998,"guestimateSpendGBP":1},{"name":"Arfon","totalAds":9,"guestimateImpressions":27495,"guestimateSpendGBP":1},{"name":"Argyll and Bute","totalAds":12,"guestimateImpressions":58496,"guestimateSpendGBP":1},{"name":"Arundel and South Downs","totalAds":8,"guestimateImpressions":6004,"guestimateSpendGBP":1},{"name":"Ashfield","totalAds":23,"guestimateImpressions":194489,"guestimateSpendGBP":1548},{"name":"Ashford","totalAds":9,"guestimateImpressions":261497,"guestimateSpendGBP":1399},{"name":"Ashton-under-Lyne","totalAds":6,"guestimateImpressions":99996,"guestimateSpendGBP":449},{"name":"Aylesbury","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Ayr, Carrick and Cumnock","totalAds":4,"guestimateImpressions":14498,"guestimateSpendGBP":1},{"name":"Banbury","totalAds":4,"guestimateImpressions":168998,"guestimateSpendGBP":3000},{"name":"Banff and Buchan","totalAds":9,"guestimateImpressions":19997,"guestimateSpendGBP":1},{"name":"Barking","totalAds":21,"guestimateImpressions":195991,"guestimateSpendGBP":1547},{"name":"Barnsley Central","totalAds":7,"guestimateImpressions":32995,"guestimateSpendGBP":1},{"name":"Barnsley East","totalAds":8,"guestimateImpressions":40494,"guestimateSpendGBP":150},{"name":"Barrow and Furness","totalAds":26,"guestimateImpressions":556486,"guestimateSpendGBP":2243},{"name":"Basildon and Billericay","totalAds":12,"guestimateImpressions":10504,"guestimateSpendGBP":1},{"name":"Basingstoke","totalAds":16,"guestimateImpressions":22996,"guestimateSpendGBP":1},{"name":"Bassetlaw","totalAds":6,"guestimateImpressions":123998,"guestimateSpendGBP":1399},{"name":"Bath","totalAds":24,"guestimateImpressions":605490,"guestimateSpendGBP":5695},{"name":"Batley and Spen","totalAds":6,"guestimateImpressions":7998,"guestimateSpendGBP":1},{"name":"Battersea","totalAds":20,"guestimateImpressions":189488,"guestimateSpendGBP":899},{"name":"Beaconsfield","totalAds":11,"guestimateImpressions":71989,"guestimateSpendGBP":1},{"name":"Beckenham","totalAds":2,"guestimateImpressions":150000,"guestimateSpendGBP":749},{"name":"Bedford","totalAds":16,"guestimateImpressions":42496,"guestimateSpendGBP":299},{"name":"Belfast East","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"Belfast North","totalAds":5,"guestimateImpressions":7001,"guestimateSpendGBP":1},{"name":"Belfast South","totalAds":12,"guestimateImpressions":46992,"guestimateSpendGBP":1},{"name":"Belfast West","totalAds":2,"guestimateImpressions":6998,"guestimateSpendGBP":1},{"name":"Bermondsey and Old Southwark","totalAds":32,"guestimateImpressions":118490,"guestimateSpendGBP":548},{"name":"Berwick-upon-Tweed","totalAds":19,"guestimateImpressions":272003,"guestimateSpendGBP":4646},{"name":"Berwickshire, Roxburgh and Selkirk","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Bethnal Green and Bow","totalAds":3,"guestimateImpressions":36997,"guestimateSpendGBP":300},{"name":"Beverley and Holderness","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Bexhill and Battle","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Bexleyheath and Crayford","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Birkenhead","totalAds":4,"guestimateImpressions":6498,"guestimateSpendGBP":1},{"name":"Birmingham, Edgbaston","totalAds":6,"guestimateImpressions":8500,"guestimateSpendGBP":1},{"name":"Birmingham, Erdington","totalAds":9,"guestimateImpressions":16997,"guestimateSpendGBP":1},{"name":"Birmingham, Hall Green","totalAds":4,"guestimateImpressions":8498,"guestimateSpendGBP":1},{"name":"Birmingham, Hodge Hill","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Birmingham, Ladywood","totalAds":33,"guestimateImpressions":67495,"guestimateSpendGBP":1},{"name":"Birmingham, Northfield","totalAds":10,"guestimateImpressions":58496,"guestimateSpendGBP":150},{"name":"Birmingham, Perry Barr","totalAds":5,"guestimateImpressions":15997,"guestimateSpendGBP":1},{"name":"Birmingham, Selly Oak","totalAds":4,"guestimateImpressions":8498,"guestimateSpendGBP":1},{"name":"Birmingham, Yardley","totalAds":5,"guestimateImpressions":10001,"guestimateSpendGBP":1},{"name":"Bishop Auckland","totalAds":25,"guestimateImpressions":173493,"guestimateSpendGBP":1297},{"name":"Blackburn","totalAds":31,"guestimateImpressions":72983,"guestimateSpendGBP":1},{"name":"Blackley and Broughton","totalAds":4,"guestimateImpressions":7498,"guestimateSpendGBP":1},{"name":"Blackpool North and Cleveleys","totalAds":29,"guestimateImpressions":319975,"guestimateSpendGBP":999},{"name":"Blackpool South","totalAds":10,"guestimateImpressions":163492,"guestimateSpendGBP":1250},{"name":"Blaenau Gwent","totalAds":4,"guestimateImpressions":4000,"guestimateSpendGBP":1},{"name":"Blaydon","totalAds":5,"guestimateImpressions":8497,"guestimateSpendGBP":1},{"name":"Blyth Valley","totalAds":6,"guestimateImpressions":19998,"guestimateSpendGBP":298},{"name":"Bognor Regis and Littlehampton","totalAds":3,"guestimateImpressions":6497,"guestimateSpendGBP":1},{"name":"Bolsover","totalAds":15,"guestimateImpressions":157995,"guestimateSpendGBP":1149},{"name":"Bolton North East","totalAds":11,"guestimateImpressions":23995,"guestimateSpendGBP":1},{"name":"Bolton South East","totalAds":7,"guestimateImpressions":13995,"guestimateSpendGBP":1},{"name":"Bolton West","totalAds":7,"guestimateImpressions":12501,"guestimateSpendGBP":1},{"name":"Bootle","totalAds":4,"guestimateImpressions":3000,"guestimateSpendGBP":1},{"name":"Boston and Skegness","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Bosworth","totalAds":6,"guestimateImpressions":112494,"guestimateSpendGBP":650},{"name":"Bournemouth East","totalAds":3,"guestimateImpressions":3,"guestimateSpendGBP":1},{"name":"Bournemouth West","totalAds":6,"guestimateImpressions":14496,"guestimateSpendGBP":1},{"name":"Bracknell","totalAds":12,"guestimateImpressions":59490,"guestimateSpendGBP":499},{"name":"Bradford East","totalAds":4,"guestimateImpressions":7996,"guestimateSpendGBP":1},{"name":"Bradford South","totalAds":18,"guestimateImpressions":79490,"guestimateSpendGBP":300},{"name":"Bradford West","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Braintree","totalAds":9,"guestimateImpressions":30495,"guestimateSpendGBP":150},{"name":"Brecon and Radnorshire","totalAds":5,"guestimateImpressions":99499,"guestimateSpendGBP":650},{"name":"Brent Central","totalAds":3,"guestimateImpressions":3999,"guestimateSpendGBP":1},{"name":"Brent North","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Brentford and Isleworth","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Brentwood and Ongar","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Bridgend","totalAds":22,"guestimateImpressions":275482,"guestimateSpendGBP":1447},{"name":"Bridgwater and West Somerset","totalAds":14,"guestimateImpressions":56990,"guestimateSpendGBP":1},{"name":"Brigg and Goole","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Brighton, Kemptown","totalAds":131,"guestimateImpressions":158549,"guestimateSpendGBP":1197},{"name":"Brighton, Pavilion","totalAds":70,"guestimateImpressions":726496,"guestimateSpendGBP":3847},{"name":"Bristol East","totalAds":5,"guestimateImpressions":10499,"guestimateSpendGBP":1},{"name":"Bristol North West","totalAds":16,"guestimateImpressions":39498,"guestimateSpendGBP":250},{"name":"Bristol South","totalAds":4,"guestimateImpressions":18498,"guestimateSpendGBP":1},{"name":"Bristol West","totalAds":2,"guestimateImpressions":6998,"guestimateSpendGBP":1},{"name":"Broadland","totalAds":2,"guestimateImpressions":8500,"guestimateSpendGBP":1},{"name":"Bromley and Chislehurst","totalAds":15,"guestimateImpressions":167503,"guestimateSpendGBP":750},{"name":"Bromsgrove","totalAds":11,"guestimateImpressions":212993,"guestimateSpendGBP":449},{"name":"Broxbourne","totalAds":1,"guestimateImpressions":3499,"guestimateSpendGBP":1},{"name":"Broxtowe","totalAds":25,"guestimateImpressions":256991,"guestimateSpendGBP":2093},{"name":"Buckingham","totalAds":3,"guestimateImpressions":3001,"guestimateSpendGBP":1},{"name":"Burnley","totalAds":9,"guestimateImpressions":25997,"guestimateSpendGBP":1},{"name":"Burton","totalAds":10,"guestimateImpressions":18496,"guestimateSpendGBP":1},{"name":"Bury North","totalAds":18,"guestimateImpressions":190986,"guestimateSpendGBP":1499},{"name":"Bury South","totalAds":4,"guestimateImpressions":101496,"guestimateSpendGBP":1250},{"name":"Bury St. Edmunds","totalAds":35,"guestimateImpressions":47513,"guestimateSpendGBP":1},{"name":"Caerphilly","totalAds":9,"guestimateImpressions":37997,"guestimateSpendGBP":150},{"name":"Caithness, Sutherland and Easter Ross","totalAds":8,"guestimateImpressions":76504,"guestimateSpendGBP":749},{"name":"Calder Valley","totalAds":18,"guestimateImpressions":33496,"guestimateSpendGBP":1},{"name":"Camberwell and Peckham","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Camborne and Redruth","totalAds":42,"guestimateImpressions":138996,"guestimateSpendGBP":750},{"name":"Cambridge","totalAds":22,"guestimateImpressions":809484,"guestimateSpendGBP":5547},{"name":"Cannock Chase","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Canterbury","totalAds":15,"guestimateImpressions":169503,"guestimateSpendGBP":3148},{"name":"Cardiff Central","totalAds":18,"guestimateImpressions":462984,"guestimateSpendGBP":3000},{"name":"Cardiff North","totalAds":17,"guestimateImpressions":69989,"guestimateSpendGBP":1},{"name":"Cardiff South and Penarth","totalAds":58,"guestimateImpressions":284474,"guestimateSpendGBP":448},{"name":"Cardiff West","totalAds":2,"guestimateImpressions":3998,"guestimateSpendGBP":1},{"name":"Carlisle","totalAds":14,"guestimateImpressions":63492,"guestimateSpendGBP":150},{"name":"Carmarthen East and Dinefwr","totalAds":7,"guestimateImpressions":9999,"guestimateSpendGBP":1},{"name":"Carmarthen West and South Pembrokeshire","totalAds":20,"guestimateImpressions":334488,"guestimateSpendGBP":2193},{"name":"Carshalton and Wallington","totalAds":3,"guestimateImpressions":49999,"guestimateSpendGBP":649},{"name":"Castle Point","totalAds":11,"guestimateImpressions":44995,"guestimateSpendGBP":150},{"name":"Central Ayrshire","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Central Devon","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Central Suffolk and North Ipswich","totalAds":3,"guestimateImpressions":19497,"guestimateSpendGBP":1},{"name":"Ceredigion","totalAds":9,"guestimateImpressions":24499,"guestimateSpendGBP":1},{"name":"Charnwood","totalAds":2,"guestimateImpressions":4500,"guestimateSpendGBP":1},{"name":"Chatham and Aylesford","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Cheadle","totalAds":4,"guestimateImpressions":60998,"guestimateSpendGBP":650},{"name":"Chelmsford","totalAds":9,"guestimateImpressions":108995,"guestimateSpendGBP":450},{"name":"Chelsea and Fulham","totalAds":8,"guestimateImpressions":108994,"guestimateSpendGBP":1250},{"name":"Cheltenham","totalAds":16,"guestimateImpressions":200998,"guestimateSpendGBP":1197},{"name":"Chesham and Amersham","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Chesterfield","totalAds":7,"guestimateImpressions":37499,"guestimateSpendGBP":299},{"name":"Chichester","totalAds":13,"guestimateImpressions":79499,"guestimateSpendGBP":550},{"name":"Chingford and Woodford Green","totalAds":23,"guestimateImpressions":138989,"guestimateSpendGBP":847},{"name":"Chippenham","totalAds":3,"guestimateImpressions":55997,"guestimateSpendGBP":548},{"name":"Chipping Barnet","totalAds":10,"guestimateImpressions":81492,"guestimateSpendGBP":750},{"name":"Chorley","totalAds":2,"guestimateImpressions":7998,"guestimateSpendGBP":1},{"name":"Christchurch","totalAds":11,"guestimateImpressions":98001,"guestimateSpendGBP":250},{"name":"Cities of London and Westminster","totalAds":2,"guestimateImpressions":352998,"guestimateSpendGBP":749},{"name":"City of Chester","totalAds":3,"guestimateImpressions":6497,"guestimateSpendGBP":1},{"name":"City of Durham","totalAds":2,"guestimateImpressions":5998,"guestimateSpendGBP":1},{"name":"Clacton","totalAds":6,"guestimateImpressions":36500,"guestimateSpendGBP":1},{"name":"Cleethorpes","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Clwyd South","totalAds":10,"guestimateImpressions":84498,"guestimateSpendGBP":850},{"name":"Clwyd West","totalAds":7,"guestimateImpressions":11497,"guestimateSpendGBP":1},{"name":"Coatbridge, Chryston and Bellshill","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Colchester","totalAds":9,"guestimateImpressions":190993,"guestimateSpendGBP":1548},{"name":"Colne Valley","totalAds":51,"guestimateImpressions":713975,"guestimateSpendGBP":3192},{"name":"Congleton","totalAds":16,"guestimateImpressions":16000,"guestimateSpendGBP":1},{"name":"Copeland","totalAds":10,"guestimateImpressions":57496,"guestimateSpendGBP":250},{"name":"Corby","totalAds":8,"guestimateImpressions":55496,"guestimateSpendGBP":1},{"name":"Coventry North East","totalAds":4,"guestimateImpressions":8498,"guestimateSpendGBP":150},{"name":"Coventry North West","totalAds":5,"guestimateImpressions":118997,"guestimateSpendGBP":1398},{"name":"Coventry South","totalAds":4,"guestimateImpressions":209996,"guestimateSpendGBP":1147},{"name":"Crawley","totalAds":4,"guestimateImpressions":10498,"guestimateSpendGBP":1},{"name":"Crewe and Nantwich","totalAds":20,"guestimateImpressions":281994,"guestimateSpendGBP":1894},{"name":"Croydon Central","totalAds":35,"guestimateImpressions":86483,"guestimateSpendGBP":1},{"name":"Croydon North","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Croydon South","totalAds":40,"guestimateImpressions":100498,"guestimateSpendGBP":1444},{"name":"Cumbernauld, Kilsyth and Kirkintilloch East","totalAds":3,"guestimateImpressions":20497,"guestimateSpendGBP":150},{"name":"Cynon Valley","totalAds":7,"guestimateImpressions":12997,"guestimateSpendGBP":1},{"name":"Dagenham and Rainham","totalAds":5,"guestimateImpressions":8997,"guestimateSpendGBP":1},{"name":"Darlington","totalAds":21,"guestimateImpressions":156491,"guestimateSpendGBP":1099},{"name":"Dartford","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Daventry","totalAds":2,"guestimateImpressions":17998,"guestimateSpendGBP":1},{"name":"Delyn","totalAds":5,"guestimateImpressions":48499,"guestimateSpendGBP":949},{"name":"Denton and Reddish","totalAds":10,"guestimateImpressions":9500,"guestimateSpendGBP":1},{"name":"Derby North","totalAds":4,"guestimateImpressions":111998,"guestimateSpendGBP":998},{"name":"Derby South","totalAds":11,"guestimateImpressions":102489,"guestimateSpendGBP":548},{"name":"Derbyshire Dales","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Devizes","totalAds":6,"guestimateImpressions":92996,"guestimateSpendGBP":749},{"name":"Dewsbury","totalAds":13,"guestimateImpressions":147995,"guestimateSpendGBP":1697},{"name":"Don Valley","totalAds":7,"guestimateImpressions":104499,"guestimateSpendGBP":350},{"name":"Doncaster Central","totalAds":4,"guestimateImpressions":6498,"guestimateSpendGBP":1},{"name":"Doncaster North","totalAds":25,"guestimateImpressions":108495,"guestimateSpendGBP":150},{"name":"Dover","totalAds":20,"guestimateImpressions":35508,"guestimateSpendGBP":299},{"name":"Dudley North","totalAds":53,"guestimateImpressions":520963,"guestimateSpendGBP":3793},{"name":"Dudley South","totalAds":7,"guestimateImpressions":18501,"guestimateSpendGBP":1},{"name":"Dulwich and West Norwood","totalAds":3,"guestimateImpressions":65001,"guestimateSpendGBP":149},{"name":"Dumfries and Galloway","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Dumfriesshire, Clydesdale and Tweeddale","totalAds":4,"guestimateImpressions":10996,"guestimateSpendGBP":1},{"name":"Dundee East","totalAds":2,"guestimateImpressions":2,"guestimateSpendGBP":1},{"name":"Dundee West","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Dunfermline and West Fife","totalAds":10,"guestimateImpressions":28496,"guestimateSpendGBP":150},{"name":"Dwyfor Meirionnydd","totalAds":6,"guestimateImpressions":76996,"guestimateSpendGBP":250},{"name":"Ealing Central and Acton","totalAds":7,"guestimateImpressions":48001,"guestimateSpendGBP":149},{"name":"Ealing North","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Ealing, Southall","totalAds":12,"guestimateImpressions":26996,"guestimateSpendGBP":1},{"name":"Easington","totalAds":17,"guestimateImpressions":54997,"guestimateSpendGBP":150},{"name":"East Antrim","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"East Devon","totalAds":22,"guestimateImpressions":53990,"guestimateSpendGBP":1},{"name":"East Dunbartonshire","totalAds":456,"guestimateImpressions":1952950,"guestimateSpendGBP":9521},{"name":"East Ham","totalAds":4,"guestimateImpressions":7996,"guestimateSpendGBP":1},{"name":"East Hampshire","totalAds":6,"guestimateImpressions":10998,"guestimateSpendGBP":1},{"name":"East Kilbride, Strathaven and Lesmahagow","totalAds":8,"guestimateImpressions":25992,"guestimateSpendGBP":1},{"name":"East Londonderry","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"East Lothian","totalAds":15,"guestimateImpressions":18505,"guestimateSpendGBP":1},{"name":"East Renfrewshire","totalAds":1,"guestimateImpressions":3499,"guestimateSpendGBP":1},{"name":"East Surrey","totalAds":3,"guestimateImpressions":132497,"guestimateSpendGBP":1048},{"name":"East Worthing and Shoreham","totalAds":3,"guestimateImpressions":78997,"guestimateSpendGBP":750},{"name":"East Yorkshire","totalAds":6,"guestimateImpressions":98498,"guestimateSpendGBP":299},{"name":"Eastbourne","totalAds":9,"guestimateImpressions":29491,"guestimateSpendGBP":1},{"name":"Eastleigh","totalAds":597,"guestimateImpressions":187987,"guestimateSpendGBP":499},{"name":"Eddisbury","totalAds":4,"guestimateImpressions":29496,"guestimateSpendGBP":548},{"name":"Edinburgh East","totalAds":5,"guestimateImpressions":12001,"guestimateSpendGBP":1},{"name":"Edinburgh North and Leith","totalAds":2,"guestimateImpressions":6998,"guestimateSpendGBP":1},{"name":"Edinburgh South","totalAds":16,"guestimateImpressions":53996,"guestimateSpendGBP":150},{"name":"Edinburgh South West","totalAds":2,"guestimateImpressions":7998,"guestimateSpendGBP":1},{"name":"Edinburgh West","totalAds":4,"guestimateImpressions":7498,"guestimateSpendGBP":1},{"name":"Edmonton","totalAds":3,"guestimateImpressions":26999,"guestimateSpendGBP":149},{"name":"Ellesmere Port and Neston","totalAds":9,"guestimateImpressions":12997,"guestimateSpendGBP":1},{"name":"Elmet and Rothwell","totalAds":8,"guestimateImpressions":8000,"guestimateSpendGBP":1},{"name":"Eltham","totalAds":12,"guestimateImpressions":41996,"guestimateSpendGBP":150},{"name":"Enfield North","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Enfield, Southgate","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Epping Forest","totalAds":14,"guestimateImpressions":73004,"guestimateSpendGBP":250},{"name":"Epsom and Ewell","totalAds":2,"guestimateImpressions":3998,"guestimateSpendGBP":1},{"name":"Erewash","totalAds":3,"guestimateImpressions":11497,"guestimateSpendGBP":1},{"name":"Erith and Thamesmead","totalAds":14,"guestimateImpressions":28500,"guestimateSpendGBP":1},{"name":"Esher and Walton","totalAds":9,"guestimateImpressions":110497,"guestimateSpendGBP":2045},{"name":"Exeter","totalAds":12,"guestimateImpressions":95500,"guestimateSpendGBP":1},{"name":"Falkirk","totalAds":3,"guestimateImpressions":4501,"guestimateSpendGBP":1},{"name":"Fareham","totalAds":3,"guestimateImpressions":23497,"guestimateSpendGBP":150},{"name":"Faversham and Mid Kent","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Feltham and Heston","totalAds":4,"guestimateImpressions":3000,"guestimateSpendGBP":1},{"name":"Fermanagh and South Tyrone","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Filton and Bradley Stoke","totalAds":1,"guestimateImpressions":5499,"guestimateSpendGBP":1},{"name":"Finchley and Golders Green","totalAds":2,"guestimateImpressions":118998,"guestimateSpendGBP":649},{"name":"Folkestone and Hythe","totalAds":3,"guestimateImpressions":2999,"guestimateSpendGBP":1},{"name":"Forest of Dean","totalAds":8,"guestimateImpressions":185496,"guestimateSpendGBP":2999},{"name":"Foyle","totalAds":14,"guestimateImpressions":32500,"guestimateSpendGBP":1},{"name":"Fylde","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"Gainsborough","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Garston and Halewood","totalAds":6,"guestimateImpressions":9998,"guestimateSpendGBP":1},{"name":"Gateshead","totalAds":5,"guestimateImpressions":6499,"guestimateSpendGBP":1},{"name":"Gedling","totalAds":6,"guestimateImpressions":5500,"guestimateSpendGBP":1},{"name":"Gillingham and Rainham","totalAds":4,"guestimateImpressions":6498,"guestimateSpendGBP":1},{"name":"Glasgow Central","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Glasgow East","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Glasgow North","totalAds":8,"guestimateImpressions":31498,"guestimateSpendGBP":150},{"name":"Glasgow North East","totalAds":20,"guestimateImpressions":144988,"guestimateSpendGBP":299},{"name":"Glasgow North West","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Glasgow South","totalAds":6,"guestimateImpressions":18496,"guestimateSpendGBP":1},{"name":"Glasgow South West","totalAds":4,"guestimateImpressions":21996,"guestimateSpendGBP":1},{"name":"Glenrothes","totalAds":2,"guestimateImpressions":4998,"guestimateSpendGBP":1},{"name":"Gloucester","totalAds":8,"guestimateImpressions":96496,"guestimateSpendGBP":750},{"name":"Gordon","totalAds":9,"guestimateImpressions":9001,"guestimateSpendGBP":1},{"name":"Gosport","totalAds":8,"guestimateImpressions":41496,"guestimateSpendGBP":1},{"name":"Gower","totalAds":9,"guestimateImpressions":26997,"guestimateSpendGBP":249},{"name":"Grantham and Stamford","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Gravesham","totalAds":3,"guestimateImpressions":47497,"guestimateSpendGBP":150},{"name":"Great Grimsby","totalAds":5,"guestimateImpressions":117499,"guestimateSpendGBP":1398},{"name":"Great Yarmouth","totalAds":15,"guestimateImpressions":72993,"guestimateSpendGBP":300},{"name":"Greenwich and Woolwich","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Guildford","totalAds":67,"guestimateImpressions":210511,"guestimateSpendGBP":2092},{"name":"Hackney North and Stoke Newington","totalAds":5,"guestimateImpressions":77497,"guestimateSpendGBP":449},{"name":"Hackney South and Shoreditch","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Halesowen and Rowley Regis","totalAds":3,"guestimateImpressions":7497,"guestimateSpendGBP":1},{"name":"Halifax","totalAds":7,"guestimateImpressions":10999,"guestimateSpendGBP":1},{"name":"Haltemprice and Howden","totalAds":5,"guestimateImpressions":5,"guestimateSpendGBP":1},{"name":"Halton","totalAds":4,"guestimateImpressions":152500,"guestimateSpendGBP":749},{"name":"Hammersmith","totalAds":5,"guestimateImpressions":84995,"guestimateSpendGBP":997},{"name":"Hampstead and Kilburn","totalAds":9,"guestimateImpressions":40997,"guestimateSpendGBP":150},{"name":"Harborough","totalAds":6,"guestimateImpressions":81494,"guestimateSpendGBP":650},{"name":"Harlow","totalAds":53,"guestimateImpressions":323497,"guestimateSpendGBP":2340},{"name":"Harrogate and Knaresborough","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Harrow East","totalAds":2,"guestimateImpressions":27500,"guestimateSpendGBP":250},{"name":"Harrow West","totalAds":3,"guestimateImpressions":1501,"guestimateSpendGBP":1},{"name":"Hartlepool","totalAds":15,"guestimateImpressions":111991,"guestimateSpendGBP":449},{"name":"Harwich and North Essex","totalAds":7,"guestimateImpressions":83997,"guestimateSpendGBP":750},{"name":"Hastings and Rye","totalAds":9,"guestimateImpressions":74991,"guestimateSpendGBP":1},{"name":"Havant","totalAds":1,"guestimateImpressions":12499,"guestimateSpendGBP":149},{"name":"Hayes and Harlington","totalAds":31,"guestimateImpressions":486989,"guestimateSpendGBP":5144},{"name":"Hazel Grove","totalAds":2,"guestimateImpressions":54998,"guestimateSpendGBP":649},{"name":"Hemel Hempstead","totalAds":4,"guestimateImpressions":12498,"guestimateSpendGBP":1},{"name":"Hemsworth","totalAds":11,"guestimateImpressions":20995,"guestimateSpendGBP":1},{"name":"Hendon","totalAds":7,"guestimateImpressions":46497,"guestimateSpendGBP":1},{"name":"Henley","totalAds":2,"guestimateImpressions":7500,"guestimateSpendGBP":1},{"name":"Hereford and South Herefordshire","totalAds":2,"guestimateImpressions":9998,"guestimateSpendGBP":1},{"name":"Hertford and Stortford","totalAds":4,"guestimateImpressions":1502,"guestimateSpendGBP":1},{"name":"Hertsmere","totalAds":8,"guestimateImpressions":688996,"guestimateSpendGBP":4846},{"name":"Hexham","totalAds":36,"guestimateImpressions":1055982,"guestimateSpendGBP":4147},{"name":"Heywood and Middleton","totalAds":21,"guestimateImpressions":84491,"guestimateSpendGBP":150},{"name":"High Peak","totalAds":5,"guestimateImpressions":3001,"guestimateSpendGBP":1},{"name":"Hitchin and Harpenden","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Holborn and St. Pancras","totalAds":15,"guestimateImpressions":44497,"guestimateSpendGBP":1},{"name":"Hornchurch and Upminster","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Hornsey and Wood Green","totalAds":5,"guestimateImpressions":7997,"guestimateSpendGBP":150},{"name":"Horsham","totalAds":11,"guestimateImpressions":29497,"guestimateSpendGBP":1},{"name":"Houghton and Sunderland South","totalAds":9,"guestimateImpressions":12499,"guestimateSpendGBP":1},{"name":"Hove","totalAds":7,"guestimateImpressions":364495,"guestimateSpendGBP":2999},{"name":"Huddersfield","totalAds":3,"guestimateImpressions":4999,"guestimateSpendGBP":150},{"name":"Huntingdon","totalAds":2,"guestimateImpressions":75000,"guestimateSpendGBP":749},{"name":"Hyndburn","totalAds":3,"guestimateImpressions":3,"guestimateSpendGBP":1},{"name":"Ilford North","totalAds":1,"guestimateImpressions":6499,"guestimateSpendGBP":1},{"name":"Ilford South","totalAds":2,"guestimateImpressions":13998,"guestimateSpendGBP":1},{"name":"Inverclyde","totalAds":7,"guestimateImpressions":12501,"guestimateSpendGBP":1},{"name":"Inverness, Nairn, Badenoch and Strathspey","totalAds":2,"guestimateImpressions":13998,"guestimateSpendGBP":1},{"name":"Ipswich","totalAds":51,"guestimateImpressions":433963,"guestimateSpendGBP":1989},{"name":"Isle of Wight","totalAds":13,"guestimateImpressions":53497,"guestimateSpendGBP":1},{"name":"Islington North","totalAds":531,"guestimateImpressions":6823873,"guestimateSpendGBP":43419},{"name":"Islington South and Finsbury","totalAds":4,"guestimateImpressions":77496,"guestimateSpendGBP":798},{"name":"Islwyn","totalAds":5,"guestimateImpressions":32997,"guestimateSpendGBP":149},{"name":"Jarrow","totalAds":6,"guestimateImpressions":2504,"guestimateSpendGBP":1},{"name":"Keighley","totalAds":9,"guestimateImpressions":36491,"guestimateSpendGBP":1},{"name":"Kenilworth and Southam","totalAds":3,"guestimateImpressions":6999,"guestimateSpendGBP":1},{"name":"Kensington","totalAds":25,"guestimateImpressions":434981,"guestimateSpendGBP":3992},{"name":"Kettering","totalAds":3,"guestimateImpressions":8501,"guestimateSpendGBP":1},{"name":"Kilmarnock and Loudoun","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Kingston and Surbiton","totalAds":9,"guestimateImpressions":102993,"guestimateSpendGBP":1148},{"name":"Kingston upon Hull East","totalAds":3,"guestimateImpressions":8497,"guestimateSpendGBP":150},{"name":"Kingston upon Hull North","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Kingston upon Hull West and Hessle","totalAds":10,"guestimateImpressions":19994,"guestimateSpendGBP":150},{"name":"Kingswood","totalAds":11,"guestimateImpressions":21499,"guestimateSpendGBP":1},{"name":"Kirkcaldy and Cowdenbeath","totalAds":4,"guestimateImpressions":7996,"guestimateSpendGBP":1},{"name":"Knowsley","totalAds":3,"guestimateImpressions":3,"guestimateSpendGBP":1},{"name":"Lagan Valley","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Lanark and Hamilton East","totalAds":11,"guestimateImpressions":29999,"guestimateSpendGBP":298},{"name":"Lancaster and Fleetwood","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Leeds Central","totalAds":3,"guestimateImpressions":6497,"guestimateSpendGBP":1},{"name":"Leeds East","totalAds":5,"guestimateImpressions":17495,"guestimateSpendGBP":1},{"name":"Leeds North East","totalAds":1,"guestimateImpressions":5499,"guestimateSpendGBP":1},{"name":"Leeds North West","totalAds":6,"guestimateImpressions":22496,"guestimateSpendGBP":1},{"name":"Leeds West","totalAds":7,"guestimateImpressions":28995,"guestimateSpendGBP":150},{"name":"Leicester East","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Leicester South","totalAds":6,"guestimateImpressions":43496,"guestimateSpendGBP":150},{"name":"Leicester West","totalAds":3,"guestimateImpressions":6497,"guestimateSpendGBP":1},{"name":"Leigh","totalAds":15,"guestimateImpressions":175991,"guestimateSpendGBP":1048},{"name":"Lewes","totalAds":12,"guestimateImpressions":127498,"guestimateSpendGBP":1197},{"name":"Lewisham East","totalAds":6,"guestimateImpressions":19500,"guestimateSpendGBP":250},{"name":"Lewisham West and Penge","totalAds":2,"guestimateImpressions":15998,"guestimateSpendGBP":149},{"name":"Lewisham, Deptford","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"Leyton and Wanstead","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Lichfield","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Lincoln","totalAds":27,"guestimateImpressions":279491,"guestimateSpendGBP":3149},{"name":"Linlithgow and East Falkirk","totalAds":3,"guestimateImpressions":4501,"guestimateSpendGBP":1},{"name":"Liverpool, Riverside","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Liverpool, Walton","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Liverpool, Wavertree","totalAds":5,"guestimateImpressions":62495,"guestimateSpendGBP":150},{"name":"Liverpool, West Derby","totalAds":1,"guestimateImpressions":3499,"guestimateSpendGBP":1},{"name":"Livingston","totalAds":5,"guestimateImpressions":9499,"guestimateSpendGBP":1},{"name":"Llanelli","totalAds":16,"guestimateImpressions":96992,"guestimateSpendGBP":250},{"name":"Loughborough","totalAds":18,"guestimateImpressions":403986,"guestimateSpendGBP":1497},{"name":"Louth and Horncastle","totalAds":4,"guestimateImpressions":21996,"guestimateSpendGBP":1},{"name":"Ludlow","totalAds":9,"guestimateImpressions":75495,"guestimateSpendGBP":650},{"name":"Luton North","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Luton South","totalAds":6,"guestimateImpressions":392494,"guestimateSpendGBP":3396},{"name":"Macclesfield","totalAds":14,"guestimateImpressions":41990,"guestimateSpendGBP":250},{"name":"Maidenhead","totalAds":40,"guestimateImpressions":176506,"guestimateSpendGBP":1096},{"name":"Maidstone and The Weald","totalAds":1,"guestimateImpressions":6499,"guestimateSpendGBP":1},{"name":"Makerfield","totalAds":6,"guestimateImpressions":4500,"guestimateSpendGBP":1},{"name":"Maldon","totalAds":2,"guestimateImpressions":3998,"guestimateSpendGBP":1},{"name":"Manchester Central","totalAds":8,"guestimateImpressions":7000,"guestimateSpendGBP":1},{"name":"Manchester, Gorton","totalAds":3,"guestimateImpressions":37499,"guestimateSpendGBP":300},{"name":"Manchester, Withington","totalAds":6,"guestimateImpressions":3002,"guestimateSpendGBP":1},{"name":"Mansfield","totalAds":6,"guestimateImpressions":4500,"guestimateSpendGBP":1},{"name":"Meon Valley","totalAds":3,"guestimateImpressions":23497,"guestimateSpendGBP":150},{"name":"Meriden","totalAds":1,"guestimateImpressions":17499,"guestimateSpendGBP":1},{"name":"Merthyr Tydfil and Rhymney","totalAds":3,"guestimateImpressions":2999,"guestimateSpendGBP":1},{"name":"Mid Bedfordshire","totalAds":2,"guestimateImpressions":4998,"guestimateSpendGBP":1},{"name":"Mid Derbyshire","totalAds":4,"guestimateImpressions":26996,"guestimateSpendGBP":150},{"name":"Mid Dorset and North Poole","totalAds":2,"guestimateImpressions":2500,"guestimateSpendGBP":1},{"name":"Mid Norfolk","totalAds":4,"guestimateImpressions":16498,"guestimateSpendGBP":1},{"name":"Mid Sussex","totalAds":32,"guestimateImpressions":74506,"guestimateSpendGBP":399},{"name":"Mid Ulster","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Mid Worcestershire","totalAds":11,"guestimateImpressions":8007,"guestimateSpendGBP":1},{"name":"Middlesbrough","totalAds":38,"guestimateImpressions":442976,"guestimateSpendGBP":1245},{"name":"Middlesbrough South and East Cleveland","totalAds":13,"guestimateImpressions":82493,"guestimateSpendGBP":150},{"name":"Midlothian","totalAds":5,"guestimateImpressions":5001,"guestimateSpendGBP":1},{"name":"Milton Keynes North","totalAds":18,"guestimateImpressions":552992,"guestimateSpendGBP":1844},{"name":"Milton Keynes South","totalAds":3,"guestimateImpressions":6501,"guestimateSpendGBP":1},{"name":"Mitcham and Morden","totalAds":20,"guestimateImpressions":57482,"guestimateSpendGBP":1},{"name":"Mole Valley","totalAds":2,"guestimateImpressions":17500,"guestimateSpendGBP":350},{"name":"Monmouth","totalAds":5,"guestimateImpressions":5501,"guestimateSpendGBP":1},{"name":"Montgomeryshire","totalAds":2,"guestimateImpressions":75000,"guestimateSpendGBP":299},{"name":"Moray","totalAds":5,"guestimateImpressions":13499,"guestimateSpendGBP":1},{"name":"Morecambe and Lunesdale","totalAds":1,"guestimateImpressions":12499,"guestimateSpendGBP":149},{"name":"Morley and Outwood","totalAds":9,"guestimateImpressions":81491,"guestimateSpendGBP":298},{"name":"Motherwell and Wishaw","totalAds":1,"guestimateImpressions":3499,"guestimateSpendGBP":1},{"name":"Na h-Eileanan an Iar","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Neath","totalAds":5,"guestimateImpressions":108999,"guestimateSpendGBP":898},{"name":"New Forest East","totalAds":5,"guestimateImpressions":909999,"guestimateSpendGBP":3847},{"name":"New Forest West","totalAds":15,"guestimateImpressions":81501,"guestimateSpendGBP":1048},{"name":"Newark","totalAds":8,"guestimateImpressions":33992,"guestimateSpendGBP":1},{"name":"Newbury","totalAds":9,"guestimateImpressions":40491,"guestimateSpendGBP":1},{"name":"Newcastle upon Tyne Central","totalAds":2,"guestimateImpressions":9998,"guestimateSpendGBP":1},{"name":"Newcastle upon Tyne East","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Newcastle upon Tyne North","totalAds":9,"guestimateImpressions":15997,"guestimateSpendGBP":1},{"name":"Newcastle-under-Lyme","totalAds":13,"guestimateImpressions":111493,"guestimateSpendGBP":1250},{"name":"Newport East","totalAds":16,"guestimateImpressions":37996,"guestimateSpendGBP":150},{"name":"Newport West","totalAds":5,"guestimateImpressions":120999,"guestimateSpendGBP":998},{"name":"Newry and Armagh","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Newton Abbot","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Normanton, Pontefract and Castleford","totalAds":10,"guestimateImpressions":66994,"guestimateSpendGBP":298},{"name":"North Antrim","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"North Ayrshire and Arran","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"North Cornwall","totalAds":3,"guestimateImpressions":101997,"guestimateSpendGBP":650},{"name":"North Devon","totalAds":8,"guestimateImpressions":15498,"guestimateSpendGBP":1},{"name":"North Dorset","totalAds":37,"guestimateImpressions":195491,"guestimateSpendGBP":1196},{"name":"North Down","totalAds":4,"guestimateImpressions":26498,"guestimateSpendGBP":150},{"name":"North Durham","totalAds":4,"guestimateImpressions":7000,"guestimateSpendGBP":1},{"name":"North East Bedfordshire","totalAds":10,"guestimateImpressions":3006,"guestimateSpendGBP":1},{"name":"North East Cambridgeshire","totalAds":3,"guestimateImpressions":374997,"guestimateSpendGBP":2999},{"name":"North East Derbyshire","totalAds":12,"guestimateImpressions":166494,"guestimateSpendGBP":1047},{"name":"North East Fife","totalAds":11,"guestimateImpressions":37497,"guestimateSpendGBP":150},{"name":"North East Hampshire","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"North East Hertfordshire","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"North East Somerset","totalAds":24,"guestimateImpressions":40000,"guestimateSpendGBP":1},{"name":"North Herefordshire","totalAds":5,"guestimateImpressions":29997,"guestimateSpendGBP":250},{"name":"North Norfolk","totalAds":11,"guestimateImpressions":23495,"guestimateSpendGBP":1},{"name":"North Shropshire","totalAds":15,"guestimateImpressions":48995,"guestimateSpendGBP":650},{"name":"North Somerset","totalAds":64,"guestimateImpressions":207018,"guestimateSpendGBP":2193},{"name":"North Swindon","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"North Thanet","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"North Tyneside","totalAds":5,"guestimateImpressions":3001,"guestimateSpendGBP":1},{"name":"North Warwickshire","totalAds":1,"guestimateImpressions":74999,"guestimateSpendGBP":749},{"name":"North West Cambridgeshire","totalAds":1,"guestimateImpressions":74999,"guestimateSpendGBP":749},{"name":"North West Durham","totalAds":11,"guestimateImpressions":50497,"guestimateSpendGBP":1},{"name":"North West Hampshire","totalAds":11,"guestimateImpressions":280491,"guestimateSpendGBP":4196},{"name":"North West Leicestershire","totalAds":2,"guestimateImpressions":1500,"guestimateSpendGBP":1},{"name":"North West Norfolk","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"North Wiltshire","totalAds":2,"guestimateImpressions":31498,"guestimateSpendGBP":299},{"name":"Northampton North","totalAds":21,"guestimateImpressions":189991,"guestimateSpendGBP":599},{"name":"Northampton South","totalAds":2,"guestimateImpressions":2500,"guestimateSpendGBP":1},{"name":"Norwich North","totalAds":10,"guestimateImpressions":58000,"guestimateSpendGBP":449},{"name":"Norwich South","totalAds":5,"guestimateImpressions":66499,"guestimateSpendGBP":698},{"name":"Nottingham East","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Nottingham North","totalAds":2,"guestimateImpressions":3998,"guestimateSpendGBP":1},{"name":"Nottingham South","totalAds":3,"guestimateImpressions":3,"guestimateSpendGBP":1},{"name":"Nuneaton","totalAds":2,"guestimateImpressions":3998,"guestimateSpendGBP":1},{"name":"Ochil and South Perthshire","totalAds":2,"guestimateImpressions":10998,"guestimateSpendGBP":1},{"name":"Ogmore","totalAds":3,"guestimateImpressions":2999,"guestimateSpendGBP":1},{"name":"Old Bexley and Sidcup","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Oldham East and Saddleworth","totalAds":8,"guestimateImpressions":7502,"guestimateSpendGBP":1},{"name":"Oldham West and Royton","totalAds":12,"guestimateImpressions":37498,"guestimateSpendGBP":1},{"name":"Orkney and Shetland","totalAds":2,"guestimateImpressions":2500,"guestimateSpendGBP":1},{"name":"Orpington","totalAds":8,"guestimateImpressions":165500,"guestimateSpendGBP":1048},{"name":"Oxford East","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Oxford West and Abingdon","totalAds":20,"guestimateImpressions":121998,"guestimateSpendGBP":650},{"name":"Paisley and Renfrewshire North","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Paisley and Renfrewshire South","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Pendle","totalAds":27,"guestimateImpressions":152993,"guestimateSpendGBP":1099},{"name":"Penistone and Stocksbridge","totalAds":10,"guestimateImpressions":162994,"guestimateSpendGBP":1250},{"name":"Penrith and The Border","totalAds":7,"guestimateImpressions":26497,"guestimateSpendGBP":1},{"name":"Perth and North Perthshire","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Peterborough","totalAds":6,"guestimateImpressions":17002,"guestimateSpendGBP":1},{"name":"Plymouth, Moor View","totalAds":10,"guestimateImpressions":172996,"guestimateSpendGBP":1248},{"name":"Plymouth, Sutton and Devonport","totalAds":6,"guestimateImpressions":193500,"guestimateSpendGBP":1199},{"name":"Pontypridd","totalAds":8,"guestimateImpressions":57494,"guestimateSpendGBP":1},{"name":"Poole","totalAds":37,"guestimateImpressions":237505,"guestimateSpendGBP":1146},{"name":"Poplar and Limehouse","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Portsmouth North","totalAds":2,"guestimateImpressions":6998,"guestimateSpendGBP":1},{"name":"Portsmouth South","totalAds":8,"guestimateImpressions":23996,"guestimateSpendGBP":150},{"name":"Preseli Pembrokeshire","totalAds":8,"guestimateImpressions":115492,"guestimateSpendGBP":499},{"name":"Preston","totalAds":10,"guestimateImpressions":170496,"guestimateSpendGBP":749},{"name":"Pudsey","totalAds":14,"guestimateImpressions":79500,"guestimateSpendGBP":300},{"name":"Putney","totalAds":7,"guestimateImpressions":9003,"guestimateSpendGBP":1},{"name":"Rayleigh and Wickford","totalAds":1,"guestimateImpressions":2999,"guestimateSpendGBP":1},{"name":"Reading East","totalAds":24,"guestimateImpressions":60992,"guestimateSpendGBP":1},{"name":"Reading West","totalAds":15,"guestimateImpressions":82497,"guestimateSpendGBP":399},{"name":"Redcar","totalAds":14,"guestimateImpressions":116488,"guestimateSpendGBP":598},{"name":"Redditch","totalAds":7,"guestimateImpressions":32497,"guestimateSpendGBP":1},{"name":"Reigate","totalAds":3,"guestimateImpressions":1501,"guestimateSpendGBP":1},{"name":"Rhondda","totalAds":5,"guestimateImpressions":14997,"guestimateSpendGBP":1},{"name":"Ribble Valley","totalAds":5,"guestimateImpressions":58495,"guestimateSpendGBP":350},{"name":"Richmond (Yorks)","totalAds":3,"guestimateImpressions":58497,"guestimateSpendGBP":398},{"name":"Richmond Park","totalAds":5,"guestimateImpressions":75495,"guestimateSpendGBP":1047},{"name":"Rochdale","totalAds":3,"guestimateImpressions":4501,"guestimateSpendGBP":1},{"name":"Rochester and Strood","totalAds":3,"guestimateImpressions":2501,"guestimateSpendGBP":1},{"name":"Rochford and Southend East","totalAds":8,"guestimateImpressions":26494,"guestimateSpendGBP":1},{"name":"Romford","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Romsey and Southampton North","totalAds":4,"guestimateImpressions":158496,"guestimateSpendGBP":1696},{"name":"Ross, Skye and Lochaber","totalAds":16,"guestimateImpressions":119002,"guestimateSpendGBP":250},{"name":"Rossendale and Darwen","totalAds":2,"guestimateImpressions":4998,"guestimateSpendGBP":1},{"name":"Rother Valley","totalAds":6,"guestimateImpressions":90498,"guestimateSpendGBP":1250},{"name":"Rotherham","totalAds":10,"guestimateImpressions":100992,"guestimateSpendGBP":750},{"name":"Rugby","totalAds":30,"guestimateImpressions":179990,"guestimateSpendGBP":1099},{"name":"Ruislip, Northwood and Pinner","totalAds":6,"guestimateImpressions":40994,"guestimateSpendGBP":150},{"name":"Runnymede and Weybridge","totalAds":10,"guestimateImpressions":13002,"guestimateSpendGBP":150},{"name":"Rushcliffe","totalAds":7,"guestimateImpressions":10495,"guestimateSpendGBP":1},{"name":"Rutherglen and Hamilton West","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Rutland and Melton","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"Saffron Walden","totalAds":10,"guestimateImpressions":2508,"guestimateSpendGBP":1},{"name":"Salford and Eccles","totalAds":3,"guestimateImpressions":1501,"guestimateSpendGBP":1},{"name":"Salisbury","totalAds":4,"guestimateImpressions":11498,"guestimateSpendGBP":1},{"name":"Scarborough and Whitby","totalAds":3,"guestimateImpressions":2501,"guestimateSpendGBP":1},{"name":"Scunthorpe","totalAds":7,"guestimateImpressions":121499,"guestimateSpendGBP":999},{"name":"Sedgefield","totalAds":6,"guestimateImpressions":39998,"guestimateSpendGBP":698},{"name":"Sefton Central","totalAds":3,"guestimateImpressions":3,"guestimateSpendGBP":1},{"name":"Selby and Ainsty","totalAds":3,"guestimateImpressions":8497,"guestimateSpendGBP":1},{"name":"Sevenoaks","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Sheffield Central","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Sheffield South East","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Sheffield, Brightside and Hillsborough","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Sheffield, Hallam","totalAds":2,"guestimateImpressions":14998,"guestimateSpendGBP":298},{"name":"Sheffield, Heeley","totalAds":16,"guestimateImpressions":20498,"guestimateSpendGBP":1},{"name":"Sherwood","totalAds":4,"guestimateImpressions":12996,"guestimateSpendGBP":1},{"name":"Shipley","totalAds":13,"guestimateImpressions":127497,"guestimateSpendGBP":250},{"name":"Shrewsbury and Atcham","totalAds":5,"guestimateImpressions":3001,"guestimateSpendGBP":1},{"name":"Sittingbourne and Sheppey","totalAds":4,"guestimateImpressions":247500,"guestimateSpendGBP":1399},{"name":"Skipton and Ripon","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"Sleaford and North Hykeham","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Slough","totalAds":11,"guestimateImpressions":280995,"guestimateSpendGBP":1396},{"name":"Solihull","totalAds":3,"guestimateImpressions":114999,"guestimateSpendGBP":1250},{"name":"Somerton and Frome","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"South Antrim","totalAds":4,"guestimateImpressions":14498,"guestimateSpendGBP":1},{"name":"South Basildon and East Thurrock","totalAds":6,"guestimateImpressions":6002,"guestimateSpendGBP":1},{"name":"South Cambridgeshire","totalAds":76,"guestimateImpressions":440470,"guestimateSpendGBP":995},{"name":"South Derbyshire","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"South Dorset","totalAds":37,"guestimateImpressions":67981,"guestimateSpendGBP":1},{"name":"South Down","totalAds":4,"guestimateImpressions":17996,"guestimateSpendGBP":1},{"name":"South East Cambridgeshire","totalAds":13,"guestimateImpressions":192495,"guestimateSpendGBP":650},{"name":"South East Cornwall","totalAds":14,"guestimateImpressions":96490,"guestimateSpendGBP":548},{"name":"South Holland and The Deepings","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"South Leicestershire","totalAds":4,"guestimateImpressions":36500,"guestimateSpendGBP":1},{"name":"South Norfolk","totalAds":2,"guestimateImpressions":11998,"guestimateSpendGBP":1},{"name":"South Northamptonshire","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"South Ribble","totalAds":6,"guestimateImpressions":11500,"guestimateSpendGBP":1},{"name":"South Shields","totalAds":8,"guestimateImpressions":16498,"guestimateSpendGBP":1},{"name":"South Staffordshire","totalAds":3,"guestimateImpressions":2501,"guestimateSpendGBP":1},{"name":"South Suffolk","totalAds":5,"guestimateImpressions":104501,"guestimateSpendGBP":450},{"name":"South Swindon","totalAds":5,"guestimateImpressions":22495,"guestimateSpendGBP":1},{"name":"South Thanet","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"South West Bedfordshire","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"South West Devon","totalAds":8,"guestimateImpressions":27498,"guestimateSpendGBP":1},{"name":"South West Hertfordshire","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"South West Norfolk","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"South West Surrey","totalAds":14,"guestimateImpressions":141996,"guestimateSpendGBP":749},{"name":"South West Wiltshire","totalAds":8,"guestimateImpressions":8498,"guestimateSpendGBP":1},{"name":"Southampton, Itchen","totalAds":4,"guestimateImpressions":18996,"guestimateSpendGBP":150},{"name":"Southampton, Test","totalAds":7,"guestimateImpressions":5999,"guestimateSpendGBP":1},{"name":"Southend West","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Southport","totalAds":2,"guestimateImpressions":45998,"guestimateSpendGBP":450},{"name":"Spelthorne","totalAds":26,"guestimateImpressions":208486,"guestimateSpendGBP":1593},{"name":"St. Albans","totalAds":5,"guestimateImpressions":83995,"guestimateSpendGBP":650},{"name":"St. Austell and Newquay","totalAds":6,"guestimateImpressions":114996,"guestimateSpendGBP":649},{"name":"St. Helens North","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"St. Helens South and Whiston","totalAds":2,"guestimateImpressions":2,"guestimateSpendGBP":1},{"name":"St. Ives","totalAds":14,"guestimateImpressions":83494,"guestimateSpendGBP":448},{"name":"Stafford","totalAds":1,"guestimateImpressions":2499,"guestimateSpendGBP":1},{"name":"Staffordshire Moorlands","totalAds":2,"guestimateImpressions":78498,"guestimateSpendGBP":299},{"name":"Stalybridge and Hyde","totalAds":3,"guestimateImpressions":1501,"guestimateSpendGBP":1},{"name":"Stevenage","totalAds":8,"guestimateImpressions":5506,"guestimateSpendGBP":1},{"name":"Stirling","totalAds":13,"guestimateImpressions":133993,"guestimateSpendGBP":1497},{"name":"Stockport","totalAds":13,"guestimateImpressions":401489,"guestimateSpendGBP":3000},{"name":"Stockton North","totalAds":11,"guestimateImpressions":34493,"guestimateSpendGBP":1},{"name":"Stockton South","totalAds":22,"guestimateImpressions":542480,"guestimateSpendGBP":3345},{"name":"Stoke-on-Trent Central","totalAds":3,"guestimateImpressions":11497,"guestimateSpendGBP":1},{"name":"Stoke-on-Trent North","totalAds":8,"guestimateImpressions":165992,"guestimateSpendGBP":998},{"name":"Stoke-on-Trent South","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Stone","totalAds":4,"guestimateImpressions":23498,"guestimateSpendGBP":350},{"name":"Stourbridge","totalAds":7,"guestimateImpressions":22497,"guestimateSpendGBP":1},{"name":"Strangford","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Stratford-on-Avon","totalAds":6,"guestimateImpressions":16496,"guestimateSpendGBP":1},{"name":"Streatham","totalAds":6,"guestimateImpressions":76000,"guestimateSpendGBP":149},{"name":"Stretford and Urmston","totalAds":5,"guestimateImpressions":8997,"guestimateSpendGBP":1},{"name":"Stroud","totalAds":13,"guestimateImpressions":363989,"guestimateSpendGBP":2497},{"name":"Suffolk Coastal","totalAds":4,"guestimateImpressions":5498,"guestimateSpendGBP":1},{"name":"Sunderland Central","totalAds":9,"guestimateImpressions":21997,"guestimateSpendGBP":1},{"name":"Surrey Heath","totalAds":21,"guestimateImpressions":114489,"guestimateSpendGBP":449},{"name":"Sutton Coldfield","totalAds":7,"guestimateImpressions":40993,"guestimateSpendGBP":249},{"name":"Sutton and Cheam","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Swansea East","totalAds":12,"guestimateImpressions":24494,"guestimateSpendGBP":1},{"name":"Swansea West","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Tamworth","totalAds":1,"guestimateImpressions":2999,"guestimateSpendGBP":1},{"name":"Tatton","totalAds":16,"guestimateImpressions":670486,"guestimateSpendGBP":3595},{"name":"Taunton Deane","totalAds":57,"guestimateImpressions":266979,"guestimateSpendGBP":1197},{"name":"Telford","totalAds":3,"guestimateImpressions":98499,"guestimateSpendGBP":950},{"name":"Tewkesbury","totalAds":8,"guestimateImpressions":88500,"guestimateSpendGBP":749},{"name":"The Cotswolds","totalAds":5,"guestimateImpressions":45499,"guestimateSpendGBP":449},{"name":"The Wrekin","totalAds":3,"guestimateImpressions":18999,"guestimateSpendGBP":250},{"name":"Thirsk and Malton","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Thornbury and Yate","totalAds":9,"guestimateImpressions":67493,"guestimateSpendGBP":650},{"name":"Thurrock","totalAds":15,"guestimateImpressions":491497,"guestimateSpendGBP":1448},{"name":"Tiverton and Honiton","totalAds":2,"guestimateImpressions":5998,"guestimateSpendGBP":1},{"name":"Tonbridge and Malling","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Tooting","totalAds":27,"guestimateImpressions":119511,"guestimateSpendGBP":650},{"name":"Torbay","totalAds":6,"guestimateImpressions":96498,"guestimateSpendGBP":749},{"name":"Torfaen","totalAds":8,"guestimateImpressions":4004,"guestimateSpendGBP":150},{"name":"Torridge and West Devon","totalAds":11,"guestimateImpressions":21497,"guestimateSpendGBP":1},{"name":"Totnes","totalAds":36,"guestimateImpressions":70508,"guestimateSpendGBP":300},{"name":"Tottenham","totalAds":3,"guestimateImpressions":66497,"guestimateSpendGBP":299},{"name":"Truro and Falmouth","totalAds":8,"guestimateImpressions":78494,"guestimateSpendGBP":696},{"name":"Tunbridge Wells","totalAds":11,"guestimateImpressions":175995,"guestimateSpendGBP":749},{"name":"Twickenham","totalAds":8,"guestimateImpressions":51996,"guestimateSpendGBP":650},{"name":"Tynemouth","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Upper Bann","totalAds":4,"guestimateImpressions":4000,"guestimateSpendGBP":1},{"name":"Uxbridge and South Ruislip","totalAds":818,"guestimateImpressions":15345402,"guestimateSpendGBP":131461},{"name":"Vale of Clwyd","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Vale of Glamorgan","totalAds":4,"guestimateImpressions":165496,"guestimateSpendGBP":2999},{"name":"Vauxhall","totalAds":9,"guestimateImpressions":91493,"guestimateSpendGBP":1},{"name":"Wakefield","totalAds":14,"guestimateImpressions":149496,"guestimateSpendGBP":999},{"name":"Wallasey","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Walsall North","totalAds":26,"guestimateImpressions":299984,"guestimateSpendGBP":599},{"name":"Walsall South","totalAds":12,"guestimateImpressions":65498,"guestimateSpendGBP":1},{"name":"Walthamstow","totalAds":1,"guestimateImpressions":1,"guestimateSpendGBP":1},{"name":"Wansbeck","totalAds":7,"guestimateImpressions":11497,"guestimateSpendGBP":1},{"name":"Wantage","totalAds":4,"guestimateImpressions":16996,"guestimateSpendGBP":1},{"name":"Warley","totalAds":3,"guestimateImpressions":2999,"guestimateSpendGBP":1},{"name":"Warrington North","totalAds":9,"guestimateImpressions":12495,"guestimateSpendGBP":1},{"name":"Warrington South","totalAds":14,"guestimateImpressions":11504,"guestimateSpendGBP":1},{"name":"Warwick and Leamington","totalAds":5,"guestimateImpressions":12495,"guestimateSpendGBP":1},{"name":"Washington and Sunderland West","totalAds":3,"guestimateImpressions":3999,"guestimateSpendGBP":1},{"name":"Watford","totalAds":22,"guestimateImpressions":145486,"guestimateSpendGBP":599},{"name":"Waveney","totalAds":1,"guestimateImpressions":8499,"guestimateSpendGBP":1},{"name":"Wealden","totalAds":3,"guestimateImpressions":39999,"guestimateSpendGBP":250},{"name":"Weaver Vale","totalAds":5,"guestimateImpressions":101995,"guestimateSpendGBP":448},{"name":"Wellingborough","totalAds":2,"guestimateImpressions":32500,"guestimateSpendGBP":250},{"name":"Wells","totalAds":31,"guestimateImpressions":383981,"guestimateSpendGBP":1846},{"name":"Welwyn Hatfield","totalAds":2,"guestimateImpressions":3500,"guestimateSpendGBP":1},{"name":"Wentworth and Dearne","totalAds":3,"guestimateImpressions":2999,"guestimateSpendGBP":1},{"name":"West Aberdeenshire and Kincardine","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"West Bromwich East","totalAds":23,"guestimateImpressions":109495,"guestimateSpendGBP":647},{"name":"West Bromwich West","totalAds":9,"guestimateImpressions":53499,"guestimateSpendGBP":398},{"name":"West Dorset","totalAds":5,"guestimateImpressions":90497,"guestimateSpendGBP":749},{"name":"West Dunbartonshire","totalAds":1,"guestimateImpressions":9499,"guestimateSpendGBP":1},{"name":"West Ham","totalAds":6,"guestimateImpressions":46494,"guestimateSpendGBP":1},{"name":"West Lancashire","totalAds":31,"guestimateImpressions":31,"guestimateSpendGBP":1},{"name":"West Suffolk","totalAds":9,"guestimateImpressions":79991,"guestimateSpendGBP":449},{"name":"West Tyrone","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"West Worcestershire","totalAds":3,"guestimateImpressions":10497,"guestimateSpendGBP":1},{"name":"Westminster North","totalAds":28,"guestimateImpressions":116006,"guestimateSpendGBP":697},{"name":"Westmorland and Lonsdale","totalAds":8,"guestimateImpressions":17996,"guestimateSpendGBP":1},{"name":"Weston-Super-Mare","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"Wigan","totalAds":5,"guestimateImpressions":153999,"guestimateSpendGBP":749},{"name":"Wimbledon","totalAds":11,"guestimateImpressions":77993,"guestimateSpendGBP":448},{"name":"Winchester","totalAds":11,"guestimateImpressions":104999,"guestimateSpendGBP":749},{"name":"Windsor","totalAds":6,"guestimateImpressions":102994,"guestimateSpendGBP":298},{"name":"Wirral South","totalAds":2,"guestimateImpressions":11998,"guestimateSpendGBP":149},{"name":"Wirral West","totalAds":6,"guestimateImpressions":83498,"guestimateSpendGBP":950},{"name":"Witham","totalAds":15,"guestimateImpressions":77991,"guestimateSpendGBP":298},{"name":"Witney","totalAds":1,"guestimateImpressions":74999,"guestimateSpendGBP":649},{"name":"Woking","totalAds":13,"guestimateImpressions":61495,"guestimateSpendGBP":1},{"name":"Wokingham","totalAds":22,"guestimateImpressions":128480,"guestimateSpendGBP":797},{"name":"Wolverhampton North East","totalAds":1,"guestimateImpressions":4499,"guestimateSpendGBP":1},{"name":"Wolverhampton South East","totalAds":9,"guestimateImpressions":9499,"guestimateSpendGBP":1},{"name":"Wolverhampton South West","totalAds":17,"guestimateImpressions":202985,"guestimateSpendGBP":1648},{"name":"Worcester","totalAds":12,"guestimateImpressions":59998,"guestimateSpendGBP":299},{"name":"Workington","totalAds":20,"guestimateImpressions":132496,"guestimateSpendGBP":950},{"name":"Worsley and Eccles South","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Worthing West","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Wrexham","totalAds":11,"guestimateImpressions":266991,"guestimateSpendGBP":1699},{"name":"Wycombe","totalAds":7,"guestimateImpressions":30501,"guestimateSpendGBP":149},{"name":"Wyre Forest","totalAds":1,"guestimateImpressions":1499,"guestimateSpendGBP":1},{"name":"Wyre and Preston North","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"Wythenshawe and Sale East","totalAds":5,"guestimateImpressions":27495,"guestimateSpendGBP":1},{"name":"Yeovil","totalAds":7,"guestimateImpressions":136993,"guestimateSpendGBP":947},{"name":"Ynys Môn","totalAds":5,"guestimateImpressions":76995,"guestimateSpendGBP":250},{"name":"York Central","totalAds":3,"guestimateImpressions":13497,"guestimateSpendGBP":1},{"name":"York Outer","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0}]}
+{
+    "summary": [
+        {
+            "name": "Aberavon",
+            "totalAds": 12,
+            "guestimateImpressions": 95500,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Aberconwy",
+            "totalAds": 1,
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Aberdeen North",
+            "totalAds": 2,
+            "guestimateImpressions": 22500,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Aberdeen South",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Airdrie and Shotts",
+            "totalAds": 16,
+            "guestimateImpressions": 28490,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Aldershot",
+            "totalAds": 7,
+            "guestimateImpressions": 58497,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Aldridge-Brownhills",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Altrincham and Sale West",
+            "totalAds": 1,
+            "guestimateImpressions": 27499,
+            "guestimateSpendGBP": 349
+        },
+        {
+            "name": "Alyn and Deeside",
+            "totalAds": 14,
+            "guestimateImpressions": 138496,
+            "guestimateSpendGBP": 1398
+        },
+        {
+            "name": "Amber Valley",
+            "totalAds": 3,
+            "guestimateImpressions": 27497,
+            "guestimateSpendGBP": 249
+        },
+        {
+            "name": "Angus",
+            "totalAds": 11,
+            "guestimateImpressions": 19999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Arfon",
+            "totalAds": 13,
+            "guestimateImpressions": 35495,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Argyll and Bute",
+            "totalAds": 12,
+            "guestimateImpressions": 61496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Arundel and South Downs",
+            "totalAds": 10,
+            "guestimateImpressions": 11002,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Ashfield",
+            "totalAds": 35,
+            "guestimateImpressions": 211991,
+            "guestimateSpendGBP": 1548
+        },
+        {
+            "name": "Ashford",
+            "totalAds": 15,
+            "guestimateImpressions": 448493,
+            "guestimateSpendGBP": 2148
+        },
+        {
+            "name": "Ashton-under-Lyne",
+            "totalAds": 11,
+            "guestimateImpressions": 28999,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Aylesbury",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Ayr, Carrick and Cumnock",
+            "totalAds": 4,
+            "guestimateImpressions": 14498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Banbury",
+            "totalAds": 4,
+            "guestimateImpressions": 168998,
+            "guestimateSpendGBP": 3000
+        },
+        {
+            "name": "Banff and Buchan",
+            "totalAds": 10,
+            "guestimateImpressions": 20998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Barking",
+            "totalAds": 11,
+            "guestimateImpressions": 62493,
+            "guestimateSpendGBP": 649
+        },
+        {
+            "name": "Barnsley Central",
+            "totalAds": 13,
+            "guestimateImpressions": 46993,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Barnsley East",
+            "totalAds": 15,
+            "guestimateImpressions": 78489,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Barrow and Furness",
+            "totalAds": 33,
+            "guestimateImpressions": 570485,
+            "guestimateSpendGBP": 2243
+        },
+        {
+            "name": "Basildon and Billericay",
+            "totalAds": 12,
+            "guestimateImpressions": 12002,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Basingstoke",
+            "totalAds": 19,
+            "guestimateImpressions": 28497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bassetlaw",
+            "totalAds": 15,
+            "guestimateImpressions": 140497,
+            "guestimateSpendGBP": 1399
+        },
+        {
+            "name": "Bath",
+            "totalAds": 20,
+            "guestimateImpressions": 613984,
+            "guestimateSpendGBP": 5695
+        },
+        {
+            "name": "Batley and Spen",
+            "totalAds": 9,
+            "guestimateImpressions": 12997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Battersea",
+            "totalAds": 24,
+            "guestimateImpressions": 197488,
+            "guestimateSpendGBP": 899
+        },
+        {
+            "name": "Beaconsfield",
+            "totalAds": 11,
+            "guestimateImpressions": 71989,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Beckenham",
+            "totalAds": 5,
+            "guestimateImpressions": 152999,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Bedford",
+            "totalAds": 24,
+            "guestimateImpressions": 71492,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Belfast East",
+            "totalAds": 1,
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Belfast North",
+            "totalAds": 7,
+            "guestimateImpressions": 7003,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Belfast South",
+            "totalAds": 20,
+            "guestimateImpressions": 64996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Belfast West",
+            "totalAds": 2,
+            "guestimateImpressions": 6998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bermondsey and Old Southwark",
+            "totalAds": 41,
+            "guestimateImpressions": 139981,
+            "guestimateSpendGBP": 548
+        },
+        {
+            "name": "Berwick-upon-Tweed",
+            "totalAds": 4,
+            "guestimateImpressions": 8498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Berwickshire, Roxburgh and Selkirk",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bethnal Green and Bow",
+            "totalAds": 4,
+            "guestimateImpressions": 36998,
+            "guestimateSpendGBP": 300
+        },
+        {
+            "name": "Beverley and Holderness",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Bexhill and Battle",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Bexleyheath and Crayford",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birkenhead",
+            "totalAds": 10,
+            "guestimateImpressions": 9002,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birmingham, Edgbaston",
+            "totalAds": 10,
+            "guestimateImpressions": 18998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birmingham, Erdington",
+            "totalAds": 16,
+            "guestimateImpressions": 24498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birmingham, Hall Green",
+            "totalAds": 11,
+            "guestimateImpressions": 32493,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birmingham, Hodge Hill",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Birmingham, Ladywood",
+            "totalAds": 40,
+            "guestimateImpressions": 82494,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birmingham, Northfield",
+            "totalAds": 13,
+            "guestimateImpressions": 65491,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Birmingham, Perry Barr",
+            "totalAds": 8,
+            "guestimateImpressions": 20498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birmingham, Selly Oak",
+            "totalAds": 7,
+            "guestimateImpressions": 10999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Birmingham, Yardley",
+            "totalAds": 7,
+            "guestimateImpressions": 16999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bishop Auckland",
+            "totalAds": 31,
+            "guestimateImpressions": 182491,
+            "guestimateSpendGBP": 1297
+        },
+        {
+            "name": "Blackburn",
+            "totalAds": 19,
+            "guestimateImpressions": 61983,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Blackley and Broughton",
+            "totalAds": 10,
+            "guestimateImpressions": 20496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Blackpool North and Cleveleys",
+            "totalAds": 30,
+            "guestimateImpressions": 326976,
+            "guestimateSpendGBP": 999
+        },
+        {
+            "name": "Blackpool South",
+            "totalAds": 14,
+            "guestimateImpressions": 171492,
+            "guestimateSpendGBP": 1250
+        },
+        {
+            "name": "Blaenau Gwent",
+            "totalAds": 13,
+            "guestimateImpressions": 15001,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Blaydon",
+            "totalAds": 11,
+            "guestimateImpressions": 13499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Blyth Valley",
+            "totalAds": 12,
+            "guestimateImpressions": 25000,
+            "guestimateSpendGBP": 298
+        },
+        {
+            "name": "Bognor Regis and Littlehampton",
+            "totalAds": 3,
+            "guestimateImpressions": 6497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bolsover",
+            "totalAds": 24,
+            "guestimateImpressions": 179494,
+            "guestimateSpendGBP": 1149
+        },
+        {
+            "name": "Bolton North East",
+            "totalAds": 15,
+            "guestimateImpressions": 31995,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bolton South East",
+            "totalAds": 12,
+            "guestimateImpressions": 40490,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bolton West",
+            "totalAds": 7,
+            "guestimateImpressions": 13999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bootle",
+            "totalAds": 10,
+            "guestimateImpressions": 4504,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Boston and Skegness",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Bosworth",
+            "totalAds": 6,
+            "guestimateImpressions": 114494,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Bournemouth East",
+            "totalAds": 3,
+            "guestimateImpressions": 3,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bournemouth West",
+            "totalAds": 6,
+            "guestimateImpressions": 14496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bracknell",
+            "totalAds": 12,
+            "guestimateImpressions": 70988,
+            "guestimateSpendGBP": 748
+        },
+        {
+            "name": "Bradford East",
+            "totalAds": 11,
+            "guestimateImpressions": 43489,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bradford South",
+            "totalAds": 25,
+            "guestimateImpressions": 109991,
+            "guestimateSpendGBP": 449
+        },
+        {
+            "name": "Bradford West",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Braintree",
+            "totalAds": 11,
+            "guestimateImpressions": 36497,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Brecon and Radnorshire",
+            "totalAds": 5,
+            "guestimateImpressions": 99499,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Brent Central",
+            "totalAds": 3,
+            "guestimateImpressions": 3999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Brent North",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Brentford and Isleworth",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Brentwood and Ongar",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bridgend",
+            "totalAds": 22,
+            "guestimateImpressions": 275482,
+            "guestimateSpendGBP": 1447
+        },
+        {
+            "name": "Bridgwater and West Somerset",
+            "totalAds": 11,
+            "guestimateImpressions": 47993,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Brigg and Goole",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Brighton, Kemptown",
+            "totalAds": 132,
+            "guestimateImpressions": 158550,
+            "guestimateSpendGBP": 1197
+        },
+        {
+            "name": "Brighton, Pavilion",
+            "totalAds": 76,
+            "guestimateImpressions": 745494,
+            "guestimateSpendGBP": 3847
+        },
+        {
+            "name": "Bristol East",
+            "totalAds": 5,
+            "guestimateImpressions": 22499,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Bristol North West",
+            "totalAds": 17,
+            "guestimateImpressions": 49495,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Bristol South",
+            "totalAds": 11,
+            "guestimateImpressions": 32497,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Bristol West",
+            "totalAds": 2,
+            "guestimateImpressions": 12998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Broadland",
+            "totalAds": 2,
+            "guestimateImpressions": 8500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bromley and Chislehurst",
+            "totalAds": 15,
+            "guestimateImpressions": 164001,
+            "guestimateSpendGBP": 750
+        },
+        {
+            "name": "Bromsgrove",
+            "totalAds": 18,
+            "guestimateImpressions": 283490,
+            "guestimateSpendGBP": 1047
+        },
+        {
+            "name": "Broxbourne",
+            "totalAds": 3,
+            "guestimateImpressions": 3501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Broxtowe",
+            "totalAds": 27,
+            "guestimateImpressions": 260993,
+            "guestimateSpendGBP": 2093
+        },
+        {
+            "name": "Buckingham",
+            "totalAds": 3,
+            "guestimateImpressions": 3001,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Burnley",
+            "totalAds": 18,
+            "guestimateImpressions": 36998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Burton",
+            "totalAds": 10,
+            "guestimateImpressions": 21496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Bury North",
+            "totalAds": 22,
+            "guestimateImpressions": 205982,
+            "guestimateSpendGBP": 1499
+        },
+        {
+            "name": "Bury South",
+            "totalAds": 5,
+            "guestimateImpressions": 101497,
+            "guestimateSpendGBP": 1250
+        },
+        {
+            "name": "Bury St. Edmunds",
+            "totalAds": 35,
+            "guestimateImpressions": 68011,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Caerphilly",
+            "totalAds": 15,
+            "guestimateImpressions": 42999,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Caithness, Sutherland and Easter Ross",
+            "totalAds": 10,
+            "guestimateImpressions": 87498,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Calder Valley",
+            "totalAds": 18,
+            "guestimateImpressions": 38994,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Camberwell and Peckham",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Camborne and Redruth",
+            "totalAds": 47,
+            "guestimateImpressions": 147495,
+            "guestimateSpendGBP": 899
+        },
+        {
+            "name": "Cambridge",
+            "totalAds": 21,
+            "guestimateImpressions": 535485,
+            "guestimateSpendGBP": 4898
+        },
+        {
+            "name": "Cannock Chase",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Canterbury",
+            "totalAds": 15,
+            "guestimateImpressions": 171001,
+            "guestimateSpendGBP": 3148
+        },
+        {
+            "name": "Cardiff Central",
+            "totalAds": 18,
+            "guestimateImpressions": 462984,
+            "guestimateSpendGBP": 3000
+        },
+        {
+            "name": "Cardiff North",
+            "totalAds": 19,
+            "guestimateImpressions": 72991,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Cardiff South and Penarth",
+            "totalAds": 57,
+            "guestimateImpressions": 299965,
+            "guestimateSpendGBP": 448
+        },
+        {
+            "name": "Cardiff West",
+            "totalAds": 3,
+            "guestimateImpressions": 5999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Carlisle",
+            "totalAds": 13,
+            "guestimateImpressions": 60993,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Carmarthen East and Dinefwr",
+            "totalAds": 16,
+            "guestimateImpressions": 23000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Carmarthen West and South Pembrokeshire",
+            "totalAds": 32,
+            "guestimateImpressions": 360986,
+            "guestimateSpendGBP": 2193
+        },
+        {
+            "name": "Carshalton and Wallington",
+            "totalAds": 6,
+            "guestimateImpressions": 52500,
+            "guestimateSpendGBP": 649
+        },
+        {
+            "name": "Castle Point",
+            "totalAds": 11,
+            "guestimateImpressions": 44995,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Central Ayrshire",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Central Devon",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Central Suffolk and North Ipswich",
+            "totalAds": 3,
+            "guestimateImpressions": 32497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ceredigion",
+            "totalAds": 9,
+            "guestimateImpressions": 26499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Charnwood",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Chatham and Aylesford",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Cheadle",
+            "totalAds": 4,
+            "guestimateImpressions": 60998,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Chelmsford",
+            "totalAds": 9,
+            "guestimateImpressions": 113493,
+            "guestimateSpendGBP": 450
+        },
+        {
+            "name": "Chelsea and Fulham",
+            "totalAds": 9,
+            "guestimateImpressions": 112493,
+            "guestimateSpendGBP": 1250
+        },
+        {
+            "name": "Cheltenham",
+            "totalAds": 16,
+            "guestimateImpressions": 197998,
+            "guestimateSpendGBP": 1196
+        },
+        {
+            "name": "Chesham and Amersham",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Chesterfield",
+            "totalAds": 13,
+            "guestimateImpressions": 41003,
+            "guestimateSpendGBP": 448
+        },
+        {
+            "name": "Chichester",
+            "totalAds": 14,
+            "guestimateImpressions": 79998,
+            "guestimateSpendGBP": 550
+        },
+        {
+            "name": "Chingford and Woodford Green",
+            "totalAds": 24,
+            "guestimateImpressions": 138990,
+            "guestimateSpendGBP": 847
+        },
+        {
+            "name": "Chippenham",
+            "totalAds": 3,
+            "guestimateImpressions": 55997,
+            "guestimateSpendGBP": 548
+        },
+        {
+            "name": "Chipping Barnet",
+            "totalAds": 11,
+            "guestimateImpressions": 81493,
+            "guestimateSpendGBP": 750
+        },
+        {
+            "name": "Chorley",
+            "totalAds": 2,
+            "guestimateImpressions": 10998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Christchurch",
+            "totalAds": 11,
+            "guestimateImpressions": 85001,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Cities of London and Westminster",
+            "totalAds": 2,
+            "guestimateImpressions": 352998,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "City of Chester",
+            "totalAds": 9,
+            "guestimateImpressions": 11997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "City of Durham",
+            "totalAds": 2,
+            "guestimateImpressions": 5998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Clacton",
+            "totalAds": 6,
+            "guestimateImpressions": 40500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Cleethorpes",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Clwyd South",
+            "totalAds": 16,
+            "guestimateImpressions": 87002,
+            "guestimateSpendGBP": 850
+        },
+        {
+            "name": "Clwyd West",
+            "totalAds": 7,
+            "guestimateImpressions": 12497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Coatbridge, Chryston and Bellshill",
+            "totalAds": 5,
+            "guestimateImpressions": 11997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Colchester",
+            "totalAds": 10,
+            "guestimateImpressions": 194492,
+            "guestimateSpendGBP": 1548
+        },
+        {
+            "name": "Colne Valley",
+            "totalAds": 52,
+            "guestimateImpressions": 715474,
+            "guestimateSpendGBP": 3192
+        },
+        {
+            "name": "Congleton",
+            "totalAds": 19,
+            "guestimateImpressions": 21995,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Copeland",
+            "totalAds": 10,
+            "guestimateImpressions": 59496,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Corby",
+            "totalAds": 5,
+            "guestimateImpressions": 51995,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Coventry North East",
+            "totalAds": 10,
+            "guestimateImpressions": 16998,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Coventry North West",
+            "totalAds": 11,
+            "guestimateImpressions": 140493,
+            "guestimateSpendGBP": 1398
+        },
+        {
+            "name": "Coventry South",
+            "totalAds": 3,
+            "guestimateImpressions": 114997,
+            "guestimateSpendGBP": 998
+        },
+        {
+            "name": "Crawley",
+            "totalAds": 4,
+            "guestimateImpressions": 10498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Crewe and Nantwich",
+            "totalAds": 14,
+            "guestimateImpressions": 290988,
+            "guestimateSpendGBP": 1894
+        },
+        {
+            "name": "Croydon Central",
+            "totalAds": 36,
+            "guestimateImpressions": 89484,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Croydon North",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Croydon South",
+            "totalAds": 40,
+            "guestimateImpressions": 102498,
+            "guestimateSpendGBP": 1444
+        },
+        {
+            "name": "Cumbernauld, Kilsyth and Kirkintilloch East",
+            "totalAds": 3,
+            "guestimateImpressions": 20497,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Cynon Valley",
+            "totalAds": 13,
+            "guestimateImpressions": 16999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Dagenham and Rainham",
+            "totalAds": 16,
+            "guestimateImpressions": 27996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Darlington",
+            "totalAds": 23,
+            "guestimateImpressions": 162493,
+            "guestimateSpendGBP": 1099
+        },
+        {
+            "name": "Dartford",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Daventry",
+            "totalAds": 2,
+            "guestimateImpressions": 17998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Delyn",
+            "totalAds": 5,
+            "guestimateImpressions": 49499,
+            "guestimateSpendGBP": 949
+        },
+        {
+            "name": "Denton and Reddish",
+            "totalAds": 18,
+            "guestimateImpressions": 13504,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Derby North",
+            "totalAds": 8,
+            "guestimateImpressions": 119994,
+            "guestimateSpendGBP": 998
+        },
+        {
+            "name": "Derby South",
+            "totalAds": 18,
+            "guestimateImpressions": 153986,
+            "guestimateSpendGBP": 548
+        },
+        {
+            "name": "Derbyshire Dales",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Devizes",
+            "totalAds": 6,
+            "guestimateImpressions": 92996,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Dewsbury",
+            "totalAds": 14,
+            "guestimateImpressions": 147996,
+            "guestimateSpendGBP": 1696
+        },
+        {
+            "name": "Don Valley",
+            "totalAds": 18,
+            "guestimateImpressions": 119498,
+            "guestimateSpendGBP": 350
+        },
+        {
+            "name": "Doncaster Central",
+            "totalAds": 13,
+            "guestimateImpressions": 27495,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Doncaster North",
+            "totalAds": 34,
+            "guestimateImpressions": 125496,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Dover",
+            "totalAds": 14,
+            "guestimateImpressions": 43498,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Dudley North",
+            "totalAds": 61,
+            "guestimateImpressions": 530963,
+            "guestimateSpendGBP": 3793
+        },
+        {
+            "name": "Dudley South",
+            "totalAds": 8,
+            "guestimateImpressions": 20000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Dulwich and West Norwood",
+            "totalAds": 3,
+            "guestimateImpressions": 65001,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Dumfries and Galloway",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Dumfriesshire, Clydesdale and Tweeddale",
+            "totalAds": 4,
+            "guestimateImpressions": 10996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Dundee East",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Dundee West",
+            "totalAds": 2,
+            "guestimateImpressions": 1500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Dunfermline and West Fife",
+            "totalAds": 10,
+            "guestimateImpressions": 30496,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Dwyfor Meirionnydd",
+            "totalAds": 10,
+            "guestimateImpressions": 95498,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Ealing Central and Acton",
+            "totalAds": 8,
+            "guestimateImpressions": 48002,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Ealing North",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ealing, Southall",
+            "totalAds": 16,
+            "guestimateImpressions": 39498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Easington",
+            "totalAds": 30,
+            "guestimateImpressions": 80998,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "East Antrim",
+            "totalAds": 2,
+            "guestimateImpressions": 5500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "East Devon",
+            "totalAds": 22,
+            "guestimateImpressions": 64986,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "East Dunbartonshire",
+            "totalAds": 463,
+            "guestimateImpressions": 2006411,
+            "guestimateSpendGBP": 9521
+        },
+        {
+            "name": "East Ham",
+            "totalAds": 10,
+            "guestimateImpressions": 22994,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "East Hampshire",
+            "totalAds": 7,
+            "guestimateImpressions": 17497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "East Kilbride, Strathaven and Lesmahagow",
+            "totalAds": 8,
+            "guestimateImpressions": 31992,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "East Londonderry",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "East Lothian",
+            "totalAds": 16,
+            "guestimateImpressions": 18506,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "East Renfrewshire",
+            "totalAds": 1,
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "East Surrey",
+            "totalAds": 4,
+            "guestimateImpressions": 146996,
+            "guestimateSpendGBP": 1197
+        },
+        {
+            "name": "East Worthing and Shoreham",
+            "totalAds": 3,
+            "guestimateImpressions": 78997,
+            "guestimateSpendGBP": 750
+        },
+        {
+            "name": "East Yorkshire",
+            "totalAds": 5,
+            "guestimateImpressions": 94999,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Eastbourne",
+            "totalAds": 10,
+            "guestimateImpressions": 29492,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Eastleigh",
+            "totalAds": 596,
+            "guestimateImpressions": 217464,
+            "guestimateSpendGBP": 499
+        },
+        {
+            "name": "Eddisbury",
+            "totalAds": 6,
+            "guestimateImpressions": 30496,
+            "guestimateSpendGBP": 349
+        },
+        {
+            "name": "Edinburgh East",
+            "totalAds": 6,
+            "guestimateImpressions": 13500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Edinburgh North and Leith",
+            "totalAds": 2,
+            "guestimateImpressions": 8998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Edinburgh South",
+            "totalAds": 16,
+            "guestimateImpressions": 57996,
+            "guestimateSpendGBP": 448
+        },
+        {
+            "name": "Edinburgh South West",
+            "totalAds": 3,
+            "guestimateImpressions": 7999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Edinburgh West",
+            "totalAds": 4,
+            "guestimateImpressions": 9996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Edmonton",
+            "totalAds": 3,
+            "guestimateImpressions": 29999,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Ellesmere Port and Neston",
+            "totalAds": 18,
+            "guestimateImpressions": 20998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Elmet and Rothwell",
+            "totalAds": 10,
+            "guestimateImpressions": 8002,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Eltham",
+            "totalAds": 12,
+            "guestimateImpressions": 41996,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Enfield North",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Enfield, Southgate",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Epping Forest",
+            "totalAds": 14,
+            "guestimateImpressions": 73004,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Epsom and Ewell",
+            "totalAds": 3,
+            "guestimateImpressions": 3999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Erewash",
+            "totalAds": 2,
+            "guestimateImpressions": 5998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Erith and Thamesmead",
+            "totalAds": 21,
+            "guestimateImpressions": 60993,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Esher and Walton",
+            "totalAds": 9,
+            "guestimateImpressions": 110497,
+            "guestimateSpendGBP": 2045
+        },
+        {
+            "name": "Exeter",
+            "totalAds": 6,
+            "guestimateImpressions": 35498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Falkirk",
+            "totalAds": 3,
+            "guestimateImpressions": 5501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Fareham",
+            "totalAds": 4,
+            "guestimateImpressions": 28498,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Faversham and Mid Kent",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Feltham and Heston",
+            "totalAds": 7,
+            "guestimateImpressions": 6501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Fermanagh and South Tyrone",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Filton and Bradley Stoke",
+            "totalAds": 2,
+            "guestimateImpressions": 5500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Finchley and Golders Green",
+            "totalAds": 4,
+            "guestimateImpressions": 121996,
+            "guestimateSpendGBP": 649
+        },
+        {
+            "name": "Folkestone and Hythe",
+            "totalAds": 4,
+            "guestimateImpressions": 8498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Forest of Dean",
+            "totalAds": 6,
+            "guestimateImpressions": 185494,
+            "guestimateSpendGBP": 2999
+        },
+        {
+            "name": "Foyle",
+            "totalAds": 26,
+            "guestimateImpressions": 54002,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Fylde",
+            "totalAds": 1,
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Gainsborough",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Garston and Halewood",
+            "totalAds": 12,
+            "guestimateImpressions": 12502,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Gateshead",
+            "totalAds": 11,
+            "guestimateImpressions": 10999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Gedling",
+            "totalAds": 8,
+            "guestimateImpressions": 9000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Gillingham and Rainham",
+            "totalAds": 15,
+            "guestimateImpressions": 25497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Glasgow Central",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Glasgow East",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Glasgow North",
+            "totalAds": 11,
+            "guestimateImpressions": 38995,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Glasgow North East",
+            "totalAds": 23,
+            "guestimateImpressions": 153485,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Glasgow North West",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Glasgow South",
+            "totalAds": 7,
+            "guestimateImpressions": 18497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Glasgow South West",
+            "totalAds": 5,
+            "guestimateImpressions": 21997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Glenrothes",
+            "totalAds": 2,
+            "guestimateImpressions": 4998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Gloucester",
+            "totalAds": 11,
+            "guestimateImpressions": 96499,
+            "guestimateSpendGBP": 750
+        },
+        {
+            "name": "Gordon",
+            "totalAds": 12,
+            "guestimateImpressions": 10004,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Gosport",
+            "totalAds": 6,
+            "guestimateImpressions": 11496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Gower",
+            "totalAds": 12,
+            "guestimateImpressions": 28498,
+            "guestimateSpendGBP": 249
+        },
+        {
+            "name": "Grantham and Stamford",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Gravesham",
+            "totalAds": 3,
+            "guestimateImpressions": 47497,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Great Grimsby",
+            "totalAds": 16,
+            "guestimateImpressions": 145494,
+            "guestimateSpendGBP": 1398
+        },
+        {
+            "name": "Great Yarmouth",
+            "totalAds": 13,
+            "guestimateImpressions": 28495,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Greenwich and Woolwich",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Guildford",
+            "totalAds": 72,
+            "guestimateImpressions": 220010,
+            "guestimateSpendGBP": 1743
+        },
+        {
+            "name": "Hackney North and Stoke Newington",
+            "totalAds": 7,
+            "guestimateImpressions": 80997,
+            "guestimateSpendGBP": 449
+        },
+        {
+            "name": "Hackney South and Shoreditch",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Halesowen and Rowley Regis",
+            "totalAds": 4,
+            "guestimateImpressions": 7498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Halifax",
+            "totalAds": 12,
+            "guestimateImpressions": 17502,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Haltemprice and Howden",
+            "totalAds": 2,
+            "guestimateImpressions": 2,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Halton",
+            "totalAds": 10,
+            "guestimateImpressions": 155004,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Hammersmith",
+            "totalAds": 5,
+            "guestimateImpressions": 84995,
+            "guestimateSpendGBP": 997
+        },
+        {
+            "name": "Hampstead and Kilburn",
+            "totalAds": 12,
+            "guestimateImpressions": 42498,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Harborough",
+            "totalAds": 8,
+            "guestimateImpressions": 82994,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Harlow",
+            "totalAds": 53,
+            "guestimateImpressions": 323497,
+            "guestimateSpendGBP": 2340
+        },
+        {
+            "name": "Harrogate and Knaresborough",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Harrow East",
+            "totalAds": 4,
+            "guestimateImpressions": 31498,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Harrow West",
+            "totalAds": 7,
+            "guestimateImpressions": 4003,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hartlepool",
+            "totalAds": 24,
+            "guestimateImpressions": 150490,
+            "guestimateSpendGBP": 449
+        },
+        {
+            "name": "Harwich and North Essex",
+            "totalAds": 8,
+            "guestimateImpressions": 86998,
+            "guestimateSpendGBP": 750
+        },
+        {
+            "name": "Hastings and Rye",
+            "totalAds": 12,
+            "guestimateImpressions": 78492,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Havant",
+            "totalAds": 5,
+            "guestimateImpressions": 14001,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Hayes and Harlington",
+            "totalAds": 36,
+            "guestimateImpressions": 551488,
+            "guestimateSpendGBP": 5742
+        },
+        {
+            "name": "Hazel Grove",
+            "totalAds": 2,
+            "guestimateImpressions": 54998,
+            "guestimateSpendGBP": 649
+        },
+        {
+            "name": "Hemel Hempstead",
+            "totalAds": 4,
+            "guestimateImpressions": 12498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hemsworth",
+            "totalAds": 28,
+            "guestimateImpressions": 46494,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hendon",
+            "totalAds": 8,
+            "guestimateImpressions": 50498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Henley",
+            "totalAds": 3,
+            "guestimateImpressions": 7501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hereford and South Herefordshire",
+            "totalAds": 3,
+            "guestimateImpressions": 11497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hertford and Stortford",
+            "totalAds": 4,
+            "guestimateImpressions": 3000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hertsmere",
+            "totalAds": 8,
+            "guestimateImpressions": 395494,
+            "guestimateSpendGBP": 2297
+        },
+        {
+            "name": "Hexham",
+            "totalAds": 37,
+            "guestimateImpressions": 1295983,
+            "guestimateSpendGBP": 5047
+        },
+        {
+            "name": "Heywood and Middleton",
+            "totalAds": 30,
+            "guestimateImpressions": 91994,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "High Peak",
+            "totalAds": 9,
+            "guestimateImpressions": 7001,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hitchin and Harpenden",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Holborn and St. Pancras",
+            "totalAds": 15,
+            "guestimateImpressions": 48995,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hornchurch and Upminster",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Hornsey and Wood Green",
+            "totalAds": 8,
+            "guestimateImpressions": 14996,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Horsham",
+            "totalAds": 13,
+            "guestimateImpressions": 31997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Houghton and Sunderland South",
+            "totalAds": 19,
+            "guestimateImpressions": 26501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Hove",
+            "totalAds": 7,
+            "guestimateImpressions": 371495,
+            "guestimateSpendGBP": 2999
+        },
+        {
+            "name": "Huddersfield",
+            "totalAds": 10,
+            "guestimateImpressions": 14500,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Huntingdon",
+            "totalAds": 6,
+            "guestimateImpressions": 87996,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Hyndburn",
+            "totalAds": 8,
+            "guestimateImpressions": 4004,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ilford North",
+            "totalAds": 1,
+            "guestimateImpressions": 6499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ilford South",
+            "totalAds": 2,
+            "guestimateImpressions": 13998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Inverclyde",
+            "totalAds": 7,
+            "guestimateImpressions": 8999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Inverness, Nairn, Badenoch and Strathspey",
+            "totalAds": 2,
+            "guestimateImpressions": 14998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ipswich",
+            "totalAds": 52,
+            "guestimateImpressions": 440462,
+            "guestimateSpendGBP": 1989
+        },
+        {
+            "name": "Isle of Wight",
+            "totalAds": 13,
+            "guestimateImpressions": 54497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Islington North",
+            "totalAds": 607,
+            "guestimateImpressions": 7878769,
+            "guestimateSpendGBP": 50952
+        },
+        {
+            "name": "Islington South and Finsbury",
+            "totalAds": 4,
+            "guestimateImpressions": 78496,
+            "guestimateSpendGBP": 798
+        },
+        {
+            "name": "Islwyn",
+            "totalAds": 15,
+            "guestimateImpressions": 51497,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Jarrow",
+            "totalAds": 12,
+            "guestimateImpressions": 8004,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Keighley",
+            "totalAds": 10,
+            "guestimateImpressions": 36492,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Kenilworth and Southam",
+            "totalAds": 4,
+            "guestimateImpressions": 7000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Kensington",
+            "totalAds": 32,
+            "guestimateImpressions": 447976,
+            "guestimateSpendGBP": 3992
+        },
+        {
+            "name": "Kettering",
+            "totalAds": 4,
+            "guestimateImpressions": 8502,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Kilmarnock and Loudoun",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Kingston and Surbiton",
+            "totalAds": 9,
+            "guestimateImpressions": 101993,
+            "guestimateSpendGBP": 1148
+        },
+        {
+            "name": "Kingston upon Hull East",
+            "totalAds": 9,
+            "guestimateImpressions": 23993,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Kingston upon Hull North",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Kingston upon Hull West and Hessle",
+            "totalAds": 27,
+            "guestimateImpressions": 41995,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Kingswood",
+            "totalAds": 11,
+            "guestimateImpressions": 22499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Kirkcaldy and Cowdenbeath",
+            "totalAds": 4,
+            "guestimateImpressions": 7996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Knowsley",
+            "totalAds": 10,
+            "guestimateImpressions": 12500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Lagan Valley",
+            "totalAds": 2,
+            "guestimateImpressions": 2500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Lanark and Hamilton East",
+            "totalAds": 12,
+            "guestimateImpressions": 38498,
+            "guestimateSpendGBP": 298
+        },
+        {
+            "name": "Lancaster and Fleetwood",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Leeds Central",
+            "totalAds": 9,
+            "guestimateImpressions": 16495,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Leeds East",
+            "totalAds": 12,
+            "guestimateImpressions": 30992,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Leeds North East",
+            "totalAds": 1,
+            "guestimateImpressions": 5499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Leeds North West",
+            "totalAds": 7,
+            "guestimateImpressions": 24995,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Leeds West",
+            "totalAds": 13,
+            "guestimateImpressions": 33997,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Leicester East",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Leicester South",
+            "totalAds": 8,
+            "guestimateImpressions": 43498,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Leicester West",
+            "totalAds": 10,
+            "guestimateImpressions": 38492,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Leigh",
+            "totalAds": 21,
+            "guestimateImpressions": 180993,
+            "guestimateSpendGBP": 1148
+        },
+        {
+            "name": "Lewes",
+            "totalAds": 14,
+            "guestimateImpressions": 134496,
+            "guestimateSpendGBP": 1197
+        },
+        {
+            "name": "Lewisham East",
+            "totalAds": 9,
+            "guestimateImpressions": 19503,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Lewisham West and Penge",
+            "totalAds": 2,
+            "guestimateImpressions": 15998,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Lewisham, Deptford",
+            "totalAds": 2,
+            "guestimateImpressions": 5998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Leyton and Wanstead",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Lichfield",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Lincoln",
+            "totalAds": 27,
+            "guestimateImpressions": 279993,
+            "guestimateSpendGBP": 3149
+        },
+        {
+            "name": "Linlithgow and East Falkirk",
+            "totalAds": 3,
+            "guestimateImpressions": 5501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Liverpool, Riverside",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Liverpool, Walton",
+            "totalAds": 3,
+            "guestimateImpressions": 1501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Liverpool, Wavertree",
+            "totalAds": 4,
+            "guestimateImpressions": 61996,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Liverpool, West Derby",
+            "totalAds": 1,
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Livingston",
+            "totalAds": 5,
+            "guestimateImpressions": 9499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Llanelli",
+            "totalAds": 22,
+            "guestimateImpressions": 126988,
+            "guestimateSpendGBP": 399
+        },
+        {
+            "name": "Loughborough",
+            "totalAds": 25,
+            "guestimateImpressions": 421985,
+            "guestimateSpendGBP": 1497
+        },
+        {
+            "name": "Louth and Horncastle",
+            "totalAds": 3,
+            "guestimateImpressions": 16497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ludlow",
+            "totalAds": 9,
+            "guestimateImpressions": 81495,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Luton North",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Luton South",
+            "totalAds": 6,
+            "guestimateImpressions": 392494,
+            "guestimateSpendGBP": 3396
+        },
+        {
+            "name": "Macclesfield",
+            "totalAds": 14,
+            "guestimateImpressions": 52488,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Maidenhead",
+            "totalAds": 41,
+            "guestimateImpressions": 181507,
+            "guestimateSpendGBP": 1196
+        },
+        {
+            "name": "Maidstone and The Weald",
+            "totalAds": 1,
+            "guestimateImpressions": 6499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Makerfield",
+            "totalAds": 15,
+            "guestimateImpressions": 20999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Maldon",
+            "totalAds": 2,
+            "guestimateImpressions": 3998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Manchester Central",
+            "totalAds": 9,
+            "guestimateImpressions": 9499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Manchester, Gorton",
+            "totalAds": 1,
+            "guestimateImpressions": 7499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Manchester, Withington",
+            "totalAds": 6,
+            "guestimateImpressions": 3002,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mansfield",
+            "totalAds": 5,
+            "guestimateImpressions": 3001,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Meon Valley",
+            "totalAds": 3,
+            "guestimateImpressions": 28497,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Meriden",
+            "totalAds": 1,
+            "guestimateImpressions": 17499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Merthyr Tydfil and Rhymney",
+            "totalAds": 12,
+            "guestimateImpressions": 17000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mid Bedfordshire",
+            "totalAds": 2,
+            "guestimateImpressions": 6998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mid Derbyshire",
+            "totalAds": 5,
+            "guestimateImpressions": 35495,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Mid Dorset and North Poole",
+            "totalAds": 2,
+            "guestimateImpressions": 2500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mid Norfolk",
+            "totalAds": 4,
+            "guestimateImpressions": 29498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mid Sussex",
+            "totalAds": 36,
+            "guestimateImpressions": 85502,
+            "guestimateSpendGBP": 399
+        },
+        {
+            "name": "Mid Ulster",
+            "totalAds": 3,
+            "guestimateImpressions": 2501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mid Worcestershire",
+            "totalAds": 11,
+            "guestimateImpressions": 12003,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Middlesbrough",
+            "totalAds": 56,
+            "guestimateImpressions": 347466,
+            "guestimateSpendGBP": 1095
+        },
+        {
+            "name": "Middlesbrough South and East Cleveland",
+            "totalAds": 18,
+            "guestimateImpressions": 106992,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Midlothian",
+            "totalAds": 3,
+            "guestimateImpressions": 4999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Milton Keynes North",
+            "totalAds": 21,
+            "guestimateImpressions": 553995,
+            "guestimateSpendGBP": 1844
+        },
+        {
+            "name": "Milton Keynes South",
+            "totalAds": 6,
+            "guestimateImpressions": 11998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mitcham and Morden",
+            "totalAds": 20,
+            "guestimateImpressions": 63482,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Mole Valley",
+            "totalAds": 1,
+            "guestimateImpressions": 17499,
+            "guestimateSpendGBP": 349
+        },
+        {
+            "name": "Monmouth",
+            "totalAds": 5,
+            "guestimateImpressions": 6999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Montgomeryshire",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Moray",
+            "totalAds": 4,
+            "guestimateImpressions": 10000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Morecambe and Lunesdale",
+            "totalAds": 1,
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Morley and Outwood",
+            "totalAds": 9,
+            "guestimateImpressions": 81491,
+            "guestimateSpendGBP": 298
+        },
+        {
+            "name": "Motherwell and Wishaw",
+            "totalAds": 1,
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Na h-Eileanan an Iar",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Neath",
+            "totalAds": 11,
+            "guestimateImpressions": 124997,
+            "guestimateSpendGBP": 898
+        },
+        {
+            "name": "New Forest East",
+            "totalAds": 4,
+            "guestimateImpressions": 1149998,
+            "guestimateSpendGBP": 4747
+        },
+        {
+            "name": "New Forest West",
+            "totalAds": 16,
+            "guestimateImpressions": 88498,
+            "guestimateSpendGBP": 1048
+        },
+        {
+            "name": "Newark",
+            "totalAds": 8,
+            "guestimateImpressions": 33992,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Newbury",
+            "totalAds": 10,
+            "guestimateImpressions": 43492,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Newcastle upon Tyne Central",
+            "totalAds": 3,
+            "guestimateImpressions": 9999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Newcastle upon Tyne East",
+            "totalAds": 2,
+            "guestimateImpressions": 1500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Newcastle upon Tyne North",
+            "totalAds": 10,
+            "guestimateImpressions": 15998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Newcastle-under-Lyme",
+            "totalAds": 18,
+            "guestimateImpressions": 107996,
+            "guestimateSpendGBP": 1250
+        },
+        {
+            "name": "Newport East",
+            "totalAds": 42,
+            "guestimateImpressions": 72006,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Newport West",
+            "totalAds": 5,
+            "guestimateImpressions": 121999,
+            "guestimateSpendGBP": 998
+        },
+        {
+            "name": "Newry and Armagh",
+            "totalAds": 2,
+            "guestimateImpressions": 1500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Newton Abbot",
+            "totalAds": 1,
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Normanton, Pontefract and Castleford",
+            "totalAds": 11,
+            "guestimateImpressions": 68995,
+            "guestimateSpendGBP": 298
+        },
+        {
+            "name": "North Antrim",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "North Ayrshire and Arran",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "North Cornwall",
+            "totalAds": 3,
+            "guestimateImpressions": 101997,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "North Devon",
+            "totalAds": 8,
+            "guestimateImpressions": 19498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North Dorset",
+            "totalAds": 37,
+            "guestimateImpressions": 196491,
+            "guestimateSpendGBP": 1196
+        },
+        {
+            "name": "North Down",
+            "totalAds": 4,
+            "guestimateImpressions": 41498,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "North Durham",
+            "totalAds": 13,
+            "guestimateImpressions": 28499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North East Bedfordshire",
+            "totalAds": 12,
+            "guestimateImpressions": 6004,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North East Cambridgeshire",
+            "totalAds": 3,
+            "guestimateImpressions": 374997,
+            "guestimateSpendGBP": 2999
+        },
+        {
+            "name": "North East Derbyshire",
+            "totalAds": 12,
+            "guestimateImpressions": 175992,
+            "guestimateSpendGBP": 1047
+        },
+        {
+            "name": "North East Fife",
+            "totalAds": 10,
+            "guestimateImpressions": 29998,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "North East Hampshire",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "North East Hertfordshire",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "North East Somerset",
+            "totalAds": 22,
+            "guestimateImpressions": 39998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North Herefordshire",
+            "totalAds": 5,
+            "guestimateImpressions": 29997,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "North Norfolk",
+            "totalAds": 12,
+            "guestimateImpressions": 26496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North Shropshire",
+            "totalAds": 27,
+            "guestimateImpressions": 63497,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "North Somerset",
+            "totalAds": 66,
+            "guestimateImpressions": 208518,
+            "guestimateSpendGBP": 2193
+        },
+        {
+            "name": "North Swindon",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "North Thanet",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "North Tyneside",
+            "totalAds": 12,
+            "guestimateImpressions": 8502,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North Warwickshire",
+            "totalAds": 1,
+            "guestimateImpressions": 74999,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "North West Cambridgeshire",
+            "totalAds": 1,
+            "guestimateImpressions": 74999,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "North West Durham",
+            "totalAds": 17,
+            "guestimateImpressions": 62997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North West Hampshire",
+            "totalAds": 10,
+            "guestimateImpressions": 26496,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "North West Leicestershire",
+            "totalAds": 10,
+            "guestimateImpressions": 21998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "North West Norfolk",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "North Wiltshire",
+            "totalAds": 2,
+            "guestimateImpressions": 31498,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Northampton North",
+            "totalAds": 22,
+            "guestimateImpressions": 189992,
+            "guestimateSpendGBP": 599
+        },
+        {
+            "name": "Northampton South",
+            "totalAds": 5,
+            "guestimateImpressions": 5499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Norwich North",
+            "totalAds": 12,
+            "guestimateImpressions": 60500,
+            "guestimateSpendGBP": 449
+        },
+        {
+            "name": "Norwich South",
+            "totalAds": 7,
+            "guestimateImpressions": 67999,
+            "guestimateSpendGBP": 698
+        },
+        {
+            "name": "Nottingham East",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Nottingham North",
+            "totalAds": 3,
+            "guestimateImpressions": 9497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Nottingham South",
+            "totalAds": 2,
+            "guestimateImpressions": 2,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Nuneaton",
+            "totalAds": 2,
+            "guestimateImpressions": 3998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ochil and South Perthshire",
+            "totalAds": 1,
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ogmore",
+            "totalAds": 12,
+            "guestimateImpressions": 20996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Old Bexley and Sidcup",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Oldham East and Saddleworth",
+            "totalAds": 18,
+            "guestimateImpressions": 24500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Oldham West and Royton",
+            "totalAds": 22,
+            "guestimateImpressions": 63496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Orkney and Shetland",
+            "totalAds": 1,
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Orpington",
+            "totalAds": 8,
+            "guestimateImpressions": 169998,
+            "guestimateSpendGBP": 1048
+        },
+        {
+            "name": "Oxford East",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Oxford West and Abingdon",
+            "totalAds": 20,
+            "guestimateImpressions": 121998,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Paisley and Renfrewshire North",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Paisley and Renfrewshire South",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Pendle",
+            "totalAds": 28,
+            "guestimateImpressions": 154492,
+            "guestimateSpendGBP": 1099
+        },
+        {
+            "name": "Penistone and Stocksbridge",
+            "totalAds": 18,
+            "guestimateImpressions": 174492,
+            "guestimateSpendGBP": 1250
+        },
+        {
+            "name": "Penrith and The Border",
+            "totalAds": 5,
+            "guestimateImpressions": 22499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Perth and North Perthshire",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Peterborough",
+            "totalAds": 13,
+            "guestimateImpressions": 36997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Plymouth, Moor View",
+            "totalAds": 10,
+            "guestimateImpressions": 173996,
+            "guestimateSpendGBP": 1248
+        },
+        {
+            "name": "Plymouth, Sutton and Devonport",
+            "totalAds": 7,
+            "guestimateImpressions": 197999,
+            "guestimateSpendGBP": 1348
+        },
+        {
+            "name": "Pontypridd",
+            "totalAds": 15,
+            "guestimateImpressions": 73497,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Poole",
+            "totalAds": 28,
+            "guestimateImpressions": 210498,
+            "guestimateSpendGBP": 847
+        },
+        {
+            "name": "Poplar and Limehouse",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Portsmouth North",
+            "totalAds": 3,
+            "guestimateImpressions": 6999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Portsmouth South",
+            "totalAds": 9,
+            "guestimateImpressions": 42495,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Preseli Pembrokeshire",
+            "totalAds": 10,
+            "guestimateImpressions": 117992,
+            "guestimateSpendGBP": 499
+        },
+        {
+            "name": "Preston",
+            "totalAds": 15,
+            "guestimateImpressions": 193491,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Pudsey",
+            "totalAds": 14,
+            "guestimateImpressions": 79500,
+            "guestimateSpendGBP": 300
+        },
+        {
+            "name": "Putney",
+            "totalAds": 7,
+            "guestimateImpressions": 10501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Rayleigh and Wickford",
+            "totalAds": 1,
+            "guestimateImpressions": 2999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Reading East",
+            "totalAds": 29,
+            "guestimateImpressions": 64993,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Reading West",
+            "totalAds": 17,
+            "guestimateImpressions": 83997,
+            "guestimateSpendGBP": 399
+        },
+        {
+            "name": "Redcar",
+            "totalAds": 24,
+            "guestimateImpressions": 133988,
+            "guestimateSpendGBP": 598
+        },
+        {
+            "name": "Redditch",
+            "totalAds": 7,
+            "guestimateImpressions": 32497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Reigate",
+            "totalAds": 4,
+            "guestimateImpressions": 3000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Rhondda",
+            "totalAds": 11,
+            "guestimateImpressions": 21497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Ribble Valley",
+            "totalAds": 6,
+            "guestimateImpressions": 58496,
+            "guestimateSpendGBP": 350
+        },
+        {
+            "name": "Richmond (Yorks)",
+            "totalAds": 3,
+            "guestimateImpressions": 63497,
+            "guestimateSpendGBP": 398
+        },
+        {
+            "name": "Richmond Park",
+            "totalAds": 5,
+            "guestimateImpressions": 79495,
+            "guestimateSpendGBP": 1047
+        },
+        {
+            "name": "Rochdale",
+            "totalAds": 2,
+            "guestimateImpressions": 1500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Rochester and Strood",
+            "totalAds": 3,
+            "guestimateImpressions": 2501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Rochford and Southend East",
+            "totalAds": 12,
+            "guestimateImpressions": 26498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Romford",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Romsey and Southampton North",
+            "totalAds": 4,
+            "guestimateImpressions": 158496,
+            "guestimateSpendGBP": 1696
+        },
+        {
+            "name": "Ross, Skye and Lochaber",
+            "totalAds": 15,
+            "guestimateImpressions": 123001,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Rossendale and Darwen",
+            "totalAds": 2,
+            "guestimateImpressions": 4998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Rother Valley",
+            "totalAds": 15,
+            "guestimateImpressions": 103997,
+            "guestimateSpendGBP": 1250
+        },
+        {
+            "name": "Rotherham",
+            "totalAds": 20,
+            "guestimateImpressions": 124986,
+            "guestimateSpendGBP": 899
+        },
+        {
+            "name": "Rugby",
+            "totalAds": 30,
+            "guestimateImpressions": 205490,
+            "guestimateSpendGBP": 1399
+        },
+        {
+            "name": "Ruislip, Northwood and Pinner",
+            "totalAds": 8,
+            "guestimateImpressions": 46494,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Runnymede and Weybridge",
+            "totalAds": 16,
+            "guestimateImpressions": 24004,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Rushcliffe",
+            "totalAds": 9,
+            "guestimateImpressions": 13493,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Rutherglen and Hamilton West",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Rutland and Melton",
+            "totalAds": 2,
+            "guestimateImpressions": 4500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Saffron Walden",
+            "totalAds": 10,
+            "guestimateImpressions": 2508,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Salford and Eccles",
+            "totalAds": 7,
+            "guestimateImpressions": 5003,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Salisbury",
+            "totalAds": 4,
+            "guestimateImpressions": 11498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Scarborough and Whitby",
+            "totalAds": 3,
+            "guestimateImpressions": 3999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Scunthorpe",
+            "totalAds": 22,
+            "guestimateImpressions": 149996,
+            "guestimateSpendGBP": 999
+        },
+        {
+            "name": "Sedgefield",
+            "totalAds": 15,
+            "guestimateImpressions": 56497,
+            "guestimateSpendGBP": 698
+        },
+        {
+            "name": "Sefton Central",
+            "totalAds": 11,
+            "guestimateImpressions": 3007,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Selby and Ainsty",
+            "totalAds": 5,
+            "guestimateImpressions": 8499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Sevenoaks",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Sheffield Central",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Sheffield South East",
+            "totalAds": 3,
+            "guestimateImpressions": 3999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Sheffield, Brightside and Hillsborough",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Sheffield, Hallam",
+            "totalAds": 2,
+            "guestimateImpressions": 14998,
+            "guestimateSpendGBP": 298
+        },
+        {
+            "name": "Sheffield, Heeley",
+            "totalAds": 18,
+            "guestimateImpressions": 27496,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Sherwood",
+            "totalAds": 3,
+            "guestimateImpressions": 6497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Shipley",
+            "totalAds": 17,
+            "guestimateImpressions": 130497,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Shrewsbury and Atcham",
+            "totalAds": 6,
+            "guestimateImpressions": 3002,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Sittingbourne and Sheppey",
+            "totalAds": 5,
+            "guestimateImpressions": 422499,
+            "guestimateSpendGBP": 2148
+        },
+        {
+            "name": "Skipton and Ripon",
+            "totalAds": 1,
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Sleaford and North Hykeham",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Slough",
+            "totalAds": 14,
+            "guestimateImpressions": 319496,
+            "guestimateSpendGBP": 1645
+        },
+        {
+            "name": "Solihull",
+            "totalAds": 3,
+            "guestimateImpressions": 112501,
+            "guestimateSpendGBP": 1250
+        },
+        {
+            "name": "Somerton and Frome",
+            "totalAds": 2,
+            "guestimateImpressions": 3500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Antrim",
+            "totalAds": 7,
+            "guestimateImpressions": 17497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Basildon and East Thurrock",
+            "totalAds": 6,
+            "guestimateImpressions": 6002,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Cambridgeshire",
+            "totalAds": 80,
+            "guestimateImpressions": 449968,
+            "guestimateSpendGBP": 995
+        },
+        {
+            "name": "South Derbyshire",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Dorset",
+            "totalAds": 46,
+            "guestimateImpressions": 73484,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Down",
+            "totalAds": 4,
+            "guestimateImpressions": 18996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South East Cambridgeshire",
+            "totalAds": 16,
+            "guestimateImpressions": 246490,
+            "guestimateSpendGBP": 899
+        },
+        {
+            "name": "South East Cornwall",
+            "totalAds": 10,
+            "guestimateImpressions": 87492,
+            "guestimateSpendGBP": 548
+        },
+        {
+            "name": "South Holland and The Deepings",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Leicestershire",
+            "totalAds": 5,
+            "guestimateImpressions": 38999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Norfolk",
+            "totalAds": 2,
+            "guestimateImpressions": 24998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Northamptonshire",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Ribble",
+            "totalAds": 7,
+            "guestimateImpressions": 7501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Shields",
+            "totalAds": 17,
+            "guestimateImpressions": 33499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Staffordshire",
+            "totalAds": 3,
+            "guestimateImpressions": 2501,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Suffolk",
+            "totalAds": 5,
+            "guestimateImpressions": 105999,
+            "guestimateSpendGBP": 450
+        },
+        {
+            "name": "South Swindon",
+            "totalAds": 5,
+            "guestimateImpressions": 24495,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South Thanet",
+            "totalAds": 3,
+            "guestimateImpressions": 3,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South West Bedfordshire",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "South West Devon",
+            "totalAds": 9,
+            "guestimateImpressions": 29997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South West Hertfordshire",
+            "totalAds": 5,
+            "guestimateImpressions": 1503,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "South West Norfolk",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "South West Surrey",
+            "totalAds": 14,
+            "guestimateImpressions": 147996,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "South West Wiltshire",
+            "totalAds": 12,
+            "guestimateImpressions": 8502,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Southampton, Itchen",
+            "totalAds": 4,
+            "guestimateImpressions": 18996,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Southampton, Test",
+            "totalAds": 7,
+            "guestimateImpressions": 7999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Southend West",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Southport",
+            "totalAds": 4,
+            "guestimateImpressions": 48996,
+            "guestimateSpendGBP": 450
+        },
+        {
+            "name": "Spelthorne",
+            "totalAds": 28,
+            "guestimateImpressions": 225984,
+            "guestimateSpendGBP": 1593
+        },
+        {
+            "name": "St. Albans",
+            "totalAds": 5,
+            "guestimateImpressions": 83995,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "St. Austell and Newquay",
+            "totalAds": 5,
+            "guestimateImpressions": 112497,
+            "guestimateSpendGBP": 649
+        },
+        {
+            "name": "St. Helens North",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "St. Helens South and Whiston",
+            "totalAds": 2,
+            "guestimateImpressions": 2,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "St. Ives",
+            "totalAds": 16,
+            "guestimateImpressions": 98488,
+            "guestimateSpendGBP": 448
+        },
+        {
+            "name": "Stafford",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Staffordshire Moorlands",
+            "totalAds": 2,
+            "guestimateImpressions": 78498,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Stalybridge and Hyde",
+            "totalAds": 9,
+            "guestimateImpressions": 4503,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Stevenage",
+            "totalAds": 8,
+            "guestimateImpressions": 5506,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Stirling",
+            "totalAds": 13,
+            "guestimateImpressions": 133993,
+            "guestimateSpendGBP": 1497
+        },
+        {
+            "name": "Stockport",
+            "totalAds": 13,
+            "guestimateImpressions": 401489,
+            "guestimateSpendGBP": 3000
+        },
+        {
+            "name": "Stockton North",
+            "totalAds": 23,
+            "guestimateImpressions": 61489,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Stockton South",
+            "totalAds": 23,
+            "guestimateImpressions": 545481,
+            "guestimateSpendGBP": 3494
+        },
+        {
+            "name": "Stoke-on-Trent Central",
+            "totalAds": 4,
+            "guestimateImpressions": 20996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Stoke-on-Trent North",
+            "totalAds": 9,
+            "guestimateImpressions": 177491,
+            "guestimateSpendGBP": 998
+        },
+        {
+            "name": "Stoke-on-Trent South",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Stone",
+            "totalAds": 3,
+            "guestimateImpressions": 23497,
+            "guestimateSpendGBP": 350
+        },
+        {
+            "name": "Stourbridge",
+            "totalAds": 7,
+            "guestimateImpressions": 22497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Strangford",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Stratford-on-Avon",
+            "totalAds": 8,
+            "guestimateImpressions": 16498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Streatham",
+            "totalAds": 6,
+            "guestimateImpressions": 76000,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Stretford and Urmston",
+            "totalAds": 11,
+            "guestimateImpressions": 20999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Stroud",
+            "totalAds": 20,
+            "guestimateImpressions": 368992,
+            "guestimateSpendGBP": 2497
+        },
+        {
+            "name": "Suffolk Coastal",
+            "totalAds": 5,
+            "guestimateImpressions": 6997,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Sunderland Central",
+            "totalAds": 15,
+            "guestimateImpressions": 26999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Surrey Heath",
+            "totalAds": 24,
+            "guestimateImpressions": 150990,
+            "guestimateSpendGBP": 747
+        },
+        {
+            "name": "Sutton Coldfield",
+            "totalAds": 8,
+            "guestimateImpressions": 40496,
+            "guestimateSpendGBP": 249
+        },
+        {
+            "name": "Sutton and Cheam",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Swansea East",
+            "totalAds": 24,
+            "guestimateImpressions": 49988,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Swansea West",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Tamworth",
+            "totalAds": 1,
+            "guestimateImpressions": 2999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Tatton",
+            "totalAds": 10,
+            "guestimateImpressions": 515992,
+            "guestimateSpendGBP": 1797
+        },
+        {
+            "name": "Taunton Deane",
+            "totalAds": 59,
+            "guestimateImpressions": 272981,
+            "guestimateSpendGBP": 1197
+        },
+        {
+            "name": "Telford",
+            "totalAds": 5,
+            "guestimateImpressions": 109497,
+            "guestimateSpendGBP": 950
+        },
+        {
+            "name": "Tewkesbury",
+            "totalAds": 9,
+            "guestimateImpressions": 90999,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "The Cotswolds",
+            "totalAds": 5,
+            "guestimateImpressions": 50499,
+            "guestimateSpendGBP": 449
+        },
+        {
+            "name": "The Wrekin",
+            "totalAds": 3,
+            "guestimateImpressions": 18999,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Thirsk and Malton",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Thornbury and Yate",
+            "totalAds": 9,
+            "guestimateImpressions": 67493,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Thurrock",
+            "totalAds": 18,
+            "guestimateImpressions": 496496,
+            "guestimateSpendGBP": 1448
+        },
+        {
+            "name": "Tiverton and Honiton",
+            "totalAds": 2,
+            "guestimateImpressions": 6998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Tonbridge and Malling",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Tooting",
+            "totalAds": 28,
+            "guestimateImpressions": 124508,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Torbay",
+            "totalAds": 6,
+            "guestimateImpressions": 96498,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Torfaen",
+            "totalAds": 17,
+            "guestimateImpressions": 19503,
+            "guestimateSpendGBP": 150
+        },
+        {
+            "name": "Torridge and West Devon",
+            "totalAds": 11,
+            "guestimateImpressions": 24493,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Totnes",
+            "totalAds": 36,
+            "guestimateImpressions": 60512,
+            "guestimateSpendGBP": 300
+        },
+        {
+            "name": "Tottenham",
+            "totalAds": 3,
+            "guestimateImpressions": 66497,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Truro and Falmouth",
+            "totalAds": 9,
+            "guestimateImpressions": 85993,
+            "guestimateSpendGBP": 696
+        },
+        {
+            "name": "Tunbridge Wells",
+            "totalAds": 13,
+            "guestimateImpressions": 184997,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Twickenham",
+            "totalAds": 7,
+            "guestimateImpressions": 51995,
+            "guestimateSpendGBP": 650
+        },
+        {
+            "name": "Tynemouth",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Upper Bann",
+            "totalAds": 4,
+            "guestimateImpressions": 4000,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Uxbridge and South Ruislip",
+            "totalAds": 914,
+            "guestimateImpressions": 16717776,
+            "guestimateSpendGBP": 147755
+        },
+        {
+            "name": "Vale of Clwyd",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Vale of Glamorgan",
+            "totalAds": 4,
+            "guestimateImpressions": 165496,
+            "guestimateSpendGBP": 2999
+        },
+        {
+            "name": "Vauxhall",
+            "totalAds": 9,
+            "guestimateImpressions": 91493,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wakefield",
+            "totalAds": 21,
+            "guestimateImpressions": 161993,
+            "guestimateSpendGBP": 1148
+        },
+        {
+            "name": "Wallasey",
+            "totalAds": 2,
+            "guestimateImpressions": 1500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Walsall North",
+            "totalAds": 29,
+            "guestimateImpressions": 307481,
+            "guestimateSpendGBP": 599
+        },
+        {
+            "name": "Walsall South",
+            "totalAds": 13,
+            "guestimateImpressions": 65499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Walthamstow",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Wansbeck",
+            "totalAds": 14,
+            "guestimateImpressions": 18998,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wantage",
+            "totalAds": 4,
+            "guestimateImpressions": 16996,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Warley",
+            "totalAds": 9,
+            "guestimateImpressions": 11499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Warrington North",
+            "totalAds": 15,
+            "guestimateImpressions": 25493,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Warrington South",
+            "totalAds": 15,
+            "guestimateImpressions": 11505,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Warwick and Leamington",
+            "totalAds": 5,
+            "guestimateImpressions": 12495,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Washington and Sunderland West",
+            "totalAds": 9,
+            "guestimateImpressions": 8001,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Watford",
+            "totalAds": 23,
+            "guestimateImpressions": 155483,
+            "guestimateSpendGBP": 747
+        },
+        {
+            "name": "Waveney",
+            "totalAds": 1,
+            "guestimateImpressions": 8499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wealden",
+            "totalAds": 2,
+            "guestimateImpressions": 39998,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "Weaver Vale",
+            "totalAds": 8,
+            "guestimateImpressions": 107994,
+            "guestimateSpendGBP": 448
+        },
+        {
+            "name": "Wellingborough",
+            "totalAds": 1,
+            "guestimateImpressions": 32499,
+            "guestimateSpendGBP": 349
+        },
+        {
+            "name": "Wells",
+            "totalAds": 21,
+            "guestimateImpressions": 320489,
+            "guestimateSpendGBP": 1846
+        },
+        {
+            "name": "Welwyn Hatfield",
+            "totalAds": 3,
+            "guestimateImpressions": 7999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wentworth and Dearne",
+            "totalAds": 12,
+            "guestimateImpressions": 17498,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "West Aberdeenshire and Kincardine",
+            "totalAds": 1,
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "West Bromwich East",
+            "totalAds": 42,
+            "guestimateImpressions": 142000,
+            "guestimateSpendGBP": 647
+        },
+        {
+            "name": "West Bromwich West",
+            "totalAds": 12,
+            "guestimateImpressions": 76996,
+            "guestimateSpendGBP": 398
+        },
+        {
+            "name": "West Dorset",
+            "totalAds": 5,
+            "guestimateImpressions": 90497,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "West Dunbartonshire",
+            "totalAds": 1,
+            "guestimateImpressions": 9499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "West Ham",
+            "totalAds": 11,
+            "guestimateImpressions": 34991,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "West Lancashire",
+            "totalAds": 39,
+            "guestimateImpressions": 39,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "West Suffolk",
+            "totalAds": 9,
+            "guestimateImpressions": 80991,
+            "guestimateSpendGBP": 449
+        },
+        {
+            "name": "West Tyrone",
+            "totalAds": 1,
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "West Worcestershire",
+            "totalAds": 3,
+            "guestimateImpressions": 15497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Westminster North",
+            "totalAds": 27,
+            "guestimateImpressions": 86007,
+            "guestimateSpendGBP": 697
+        },
+        {
+            "name": "Westmorland and Lonsdale",
+            "totalAds": 12,
+            "guestimateImpressions": 28494,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Weston-Super-Mare",
+            "totalAds": 1,
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wigan",
+            "totalAds": 11,
+            "guestimateImpressions": 161001,
+            "guestimateSpendGBP": 898
+        },
+        {
+            "name": "Wimbledon",
+            "totalAds": 11,
+            "guestimateImpressions": 49493,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Winchester",
+            "totalAds": 12,
+            "guestimateImpressions": 112498,
+            "guestimateSpendGBP": 749
+        },
+        {
+            "name": "Windsor",
+            "totalAds": 9,
+            "guestimateImpressions": 131493,
+            "guestimateSpendGBP": 298
+        },
+        {
+            "name": "Wirral South",
+            "totalAds": 2,
+            "guestimateImpressions": 15998,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "name": "Wirral West",
+            "totalAds": 6,
+            "guestimateImpressions": 85996,
+            "guestimateSpendGBP": 950
+        },
+        {
+            "name": "Witham",
+            "totalAds": 16,
+            "guestimateImpressions": 83992,
+            "guestimateSpendGBP": 298
+        },
+        {
+            "name": "Witney",
+            "totalAds": 2,
+            "guestimateImpressions": 75000,
+            "guestimateSpendGBP": 649
+        },
+        {
+            "name": "Woking",
+            "totalAds": 15,
+            "guestimateImpressions": 65991,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wokingham",
+            "totalAds": 22,
+            "guestimateImpressions": 135480,
+            "guestimateSpendGBP": 797
+        },
+        {
+            "name": "Wolverhampton North East",
+            "totalAds": 2,
+            "guestimateImpressions": 4500,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wolverhampton South East",
+            "totalAds": 15,
+            "guestimateImpressions": 18999,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wolverhampton South West",
+            "totalAds": 19,
+            "guestimateImpressions": 205485,
+            "guestimateSpendGBP": 1648
+        },
+        {
+            "name": "Worcester",
+            "totalAds": 12,
+            "guestimateImpressions": 69998,
+            "guestimateSpendGBP": 299
+        },
+        {
+            "name": "Workington",
+            "totalAds": 18,
+            "guestimateImpressions": 129498,
+            "guestimateSpendGBP": 950
+        },
+        {
+            "name": "Worsley and Eccles South",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Worthing West",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Wrexham",
+            "totalAds": 21,
+            "guestimateImpressions": 291491,
+            "guestimateSpendGBP": 1699
+        },
+        {
+            "name": "Wycombe",
+            "totalAds": 7,
+            "guestimateImpressions": 30501,
+            "guestimateSpendGBP": 249
+        },
+        {
+            "name": "Wyre Forest",
+            "totalAds": 1,
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Wyre and Preston North",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "Wythenshawe and Sale East",
+            "totalAds": 11,
+            "guestimateImpressions": 55493,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "Yeovil",
+            "totalAds": 5,
+            "guestimateImpressions": 132995,
+            "guestimateSpendGBP": 947
+        },
+        {
+            "name": "Ynys Môn",
+            "totalAds": 5,
+            "guestimateImpressions": 92995,
+            "guestimateSpendGBP": 250
+        },
+        {
+            "name": "York Central",
+            "totalAds": 3,
+            "guestimateImpressions": 19497,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "name": "York Outer",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        }
+    ]
+}

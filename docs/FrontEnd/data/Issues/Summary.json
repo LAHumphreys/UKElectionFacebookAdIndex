@@ -1,1 +1,46 @@
-{"summary":[{"name":"Brexit","totalAds":6267,"guestimateImpressions":136566169,"guestimateSpendGBP":1439290},{"name":"Climate Crisis","totalAds":5525,"guestimateImpressions":58617391,"guestimateSpendGBP":293572},{"name":"Criminal Justice","totalAds":349,"guestimateImpressions":1322595,"guestimateSpendGBP":5084},{"name":"Economy & Taxes","totalAds":1748,"guestimateImpressions":36446020,"guestimateSpendGBP":312146},{"name":"Education","totalAds":945,"guestimateImpressions":13288739,"guestimateSpendGBP":85216},{"name":"Fraking","totalAds":0,"guestimateImpressions":0,"guestimateSpendGBP":0},{"name":"NHS","totalAds":1422,"guestimateImpressions":15427796,"guestimateSpendGBP":92839}]}
+{
+    "summary": [
+        {
+            "name": "Brexit",
+            "totalAds": 7300,
+            "guestimateImpressions": 138992214,
+            "guestimateSpendGBP": 1483421
+        },
+        {
+            "name": "Climate Crisis",
+            "totalAds": 5013,
+            "guestimateImpressions": 33546791,
+            "guestimateSpendGBP": 134336
+        },
+        {
+            "name": "Criminal Justice",
+            "totalAds": 340,
+            "guestimateImpressions": 1285594,
+            "guestimateSpendGBP": 4236
+        },
+        {
+            "name": "Economy & Taxes",
+            "totalAds": 1561,
+            "guestimateImpressions": 31561999,
+            "guestimateSpendGBP": 273670
+        },
+        {
+            "name": "Education",
+            "totalAds": 914,
+            "guestimateImpressions": 8549254,
+            "guestimateSpendGBP": 44839
+        },
+        {
+            "name": "Fraking",
+            "totalAds": 0,
+            "guestimateImpressions": 0,
+            "guestimateSpendGBP": 0
+        },
+        {
+            "name": "NHS",
+            "totalAds": 1643,
+            "guestimateImpressions": 16759413,
+            "guestimateSpendGBP": 107768
+        }
+    ]
+}
