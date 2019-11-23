@@ -406,6 +406,42 @@ TEST(DbUtilsTest, RestoreWokingData) {
     ASSERT_NO_FATAL_FAILURE(DoCheck(*db, 3000, 4000));
 }
 
+TEST(DbUtilsTest, RestoreWokingData_Reindex) {
+    auto oldDb = DbUtils::LoadDb("../test/data/cfg/woking.json", "../test/data/full_day_run");
+
+    auto ad = std::make_unique<FacebookAd>();
+    ad->id = 2572697905;
+    ad->fundingEntity = "Woking Test Org";
+    ad->impressions.lower_bound = 123;
+    oldDb->Store(std::move(ad));
+
+    const auto DoCheck = [&] (const std::string& conn, AdDb& dbToTest, size_t libDemLower, size_t conLower) -> void {
+        auto results = dbToTest.GetConstituency(conn);
+        ASSERT_EQ(results.size(), 3);
+
+        const auto* libDemAd = results[1].get();
+        const auto* conAd = results[0].get();
+        const auto* testAd = results[2].get();
+
+        // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
+        // welcome to pull request a fix for this test only problem
+        ASSERT_EQ(libDemAd->fundingEntity, "Woking Liberal Democrats");
+        ASSERT_EQ(libDemAd->impressions.lower_bound, libDemLower);
+        ASSERT_EQ(libDemAd->id, 1572697905);
+        ASSERT_EQ(conAd->fundingEntity, "Woking Conservative Association");
+        ASSERT_EQ(conAd->impressions.lower_bound, conLower);
+        ASSERT_EQ(conAd->id, 1572614327);
+        ASSERT_EQ(testAd->fundingEntity, "Woking Test Org");
+        ASSERT_EQ(testAd->impressions.lower_bound, 123);
+
+    };
+    DbUtils::WriteDbToDisk(*oldDb, "tmp.json");
+
+    auto db = DbUtils::LoadDb("../test/data/cfg/testWoking.json", "", "tmp.json", AdDb::DeSerialMode::FORCE_REINDEX);
+
+    ASSERT_NO_FATAL_FAILURE(DoCheck("testWoking", *db, 3000, 4000));
+}
+
 TEST(DbUtilsTest, RestoreAndUpdateWokingData) {
     auto oldDb = DbUtils::LoadDb("../test/data/cfg/woking.json", "../test/data/full_day_run");
 

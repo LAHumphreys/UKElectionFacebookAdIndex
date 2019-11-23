@@ -95,6 +95,10 @@ add_executable(generateTimeSeries src/generateTimeSeries.cpp)
 target_compile_features(generateTimeSeries PRIVATE cxx_std_17)
 target_link_libraries(generateTimeSeries PUBLIC AdParser Db)
 
+add_executable(reindex src/reindex.cpp)
+target_compile_features(reindex PRIVATE cxx_std_17)
+target_link_libraries(reindex PUBLIC AdParser Db)
+
 add_executable(extractId src/ExtractIdDates.cpp)
 target_compile_features(extractId PRIVATE cxx_std_17)
 target_link_libraries(extractId PUBLIC AdParser Db)

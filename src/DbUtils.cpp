@@ -54,7 +54,12 @@ bool DbUtils::Search(const std::string& toSearch, const std::string& key) {
 }
 
 std::unique_ptr<AdDb>
-DbUtils::LoadDb(const std::string &cfgPath, const std::string &dataDir, const std::string &dbStartState) {
+DbUtils::LoadDb(
+        const std::string &cfgPath,
+        const std::string &dataDir,
+        const std::string &dbStartState,
+        const AdDb::DeSerialMode& indexMode)
+{
     Time start;
     std::ifstream cfgFile(cfgPath);
     std::unique_ptr<AdDb> result;
@@ -67,7 +72,7 @@ DbUtils::LoadDb(const std::string &cfgPath, const std::string &dataDir, const st
             std::string dbData((std::istreambuf_iterator<char>(dbFile)), std::istreambuf_iterator<char>());
             AdDb::Serialization data;
             data.json = std::move(dbData);
-            result = std::make_unique<AdDb> (cfg, data);
+            result = std::make_unique<AdDb> (cfg, data, indexMode);
         } else {
             result = std::make_unique<AdDb> (cfg);
         }
