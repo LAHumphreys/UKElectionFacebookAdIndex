@@ -95,6 +95,10 @@ add_executable(generateTimeSeries src/generateTimeSeries.cpp)
 target_compile_features(generateTimeSeries PRIVATE cxx_std_17)
 target_link_libraries(generateTimeSeries PUBLIC AdParser Db)
 
+add_executable(extractId src/ExtractIdDates.cpp)
+target_compile_features(extractId PRIVATE cxx_std_17)
+target_link_libraries(extractId PUBLIC AdParser Db)
+
 add_executable(cfgClean src/cfgClean.cpp internal_includes/test_utils.h)
 target_compile_features(cfgClean PRIVATE cxx_std_17)
 target_link_libraries(cfgClean PUBLIC ConfigUtils Db AdParser GTest::GTest GTest::Main)
