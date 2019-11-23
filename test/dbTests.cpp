@@ -5,6 +5,7 @@
 #include "../internal_includes/DbUtils.h"
 #include "../internal_includes/SummmaryJSON.h"
 #include "../internal_includes/ReportAdsJSON.h"
+#include "../internal_includes/ConfigParser.h"
 #include <gtest/gtest.h>
 #include <AdDb.h>
 #include <fstream>
@@ -80,10 +81,13 @@ protected:
         for (const auto& ad: ads) {
             theDb.Store(std::make_unique<FacebookAd>(ad));
         }
+        std::string error;
+        ASSERT_TRUE(pconfig.Parse(dbConfig.c_str(), error)) << error;
     }
 
     AdDb                    theDb;
     std::vector<FacebookAd> ads;
+    Config::DbConfig        pconfig;
 };
 
 TEST_F(TDb, SingleConstituency) {
@@ -263,6 +267,73 @@ TEST_F(TDb, Serialize_DeSerialize_Issues) {
     ASSERT_EQ(matches.size(), 1);
 
     AssertEq(*matches[0], ads[2]);
+}
+
+TEST_F(TDb, Serialize_DeSerialize_Issue_NewKey) {
+    auto serialization = theDb.Serialize();
+
+    pconfig.Get<Config::issues>()[0]->Get<Config::keys>().push_back("entity#0");
+    AdDb dbCopy(pconfig.GetJSONString(), serialization, AdDb::DeSerialMode::FORCE_REINDEX);
+
+
+    auto matches = dbCopy.GetIssue("Brexit");
+    ASSERT_EQ(matches.size(), 2);
+
+    AssertEq(*matches[0], ads[0]);
+    AssertEq(*matches[1], ads[2]);
+}
+
+TEST_F(TDb, Serialize_DeSerialize_Cons_NewKey) {
+    auto serialization = theDb.Serialize();
+
+    pconfig.Get<Config::consituencies>()[0]->Get<Config::keys>().push_back("brexit");
+    AdDb dbCopy(pconfig.GetJSONString(), serialization, AdDb::DeSerialMode::FORCE_REINDEX);
+
+
+    auto matches = dbCopy.GetConstituency("Search#0");
+    ASSERT_EQ(matches.size(), 2);
+
+    AssertEq(*matches[0], ads[0]);
+    AssertEq(*matches[1], ads[2]);
+}
+
+TEST_F(TDb, Serialize_DeSerialize_NewIssue) {
+    auto serialization = theDb.Serialize();
+
+    auto& issueConfig = *pconfig.Get<Config::issues>().emplace_back();
+    issueConfig.Get<Config::id>() = "New Issue";
+    issueConfig.Get<Config::keys>().push_back("entity#0");
+
+    AdDb dbCopy(pconfig.GetJSONString(), serialization, AdDb::DeSerialMode::FORCE_REINDEX);
+
+
+    auto matches = dbCopy.GetIssue("Brexit");
+    ASSERT_EQ(matches.size(), 1);
+    AssertEq(*matches[0], ads[2]);
+
+    matches = dbCopy.GetIssue("New Issue");
+    ASSERT_EQ(matches.size(), 1);
+    AssertEq(*matches[0], ads[0]);
+}
+
+TEST_F(TDb, Serialize_DeSerialize_NewCon) {
+    auto serialization = theDb.Serialize();
+
+    auto& issueConfig = *pconfig.Get<Config::consituencies>().emplace_back();
+    issueConfig.Get<Config::id>() = "Brexit";
+    issueConfig.Get<Config::keys>().push_back("brexit");
+
+    AdDb dbCopy(pconfig.GetJSONString(), serialization, AdDb::DeSerialMode::FORCE_REINDEX);
+
+
+    auto matches = dbCopy.GetConstituency("Brexit");
+    ASSERT_EQ(matches.size(), 1);
+    AssertEq(*matches[0], ads[2]);
+
+    matches = dbCopy.GetConstituency("Search#0");
+    ASSERT_EQ(matches.size(), 1);
+    AssertEq(*matches[0], ads[0]);
+
 }
 
 TEST_F(TDb, InvalidSerialization) {

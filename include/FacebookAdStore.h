@@ -7,6 +7,7 @@
 #include <memory>
 #include <map>
 #include <FacebookAd.h>
+#include <functional>
 
 class StoredFacebookAd {
 public:
@@ -60,18 +61,31 @@ public:
     struct Serialization {
         std::string data;
     };
+// INITIALISATION
     FacebookAdStore() = default;
     explicit FacebookAdStore(Serialization data);
-    [[nodiscard]] const StoredFacebookAd& Get(const StoredFacebookAd::KeyType & key) const;
+
+// Store individual items
     const StoredFacebookAd& Store(std::unique_ptr<FacebookAd> ad);
 
+// Access indvidual items
+    [[nodiscard]] const StoredFacebookAd& Get(const StoredFacebookAd::KeyType & key) const;
+
+// Loop Access
+    enum class ScanOp {
+        CONTINUE,
+        STOP
+    };
+    using ForEachFn = std::function<ScanOp (const StoredFacebookAd& ad)>;
+    void ForEach(const ForEachFn& cb) const;
+
+// SERIALIZATION
     [[nodiscard]] Serialization Serialize() const;
 
     struct InvalidSerialization: public std::exception {
         [[nodiscard]] const char* what() const noexcept override {
             return "Could not initialize Ad Store from serialization";
         }
-
     };
 
 private:

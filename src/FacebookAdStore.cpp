@@ -151,4 +151,11 @@ FacebookAdStore::FacebookAdStore(FacebookAdStore::Serialization data) {
 
 }
 
+void FacebookAdStore::ForEach(const ForEachFn& cb) const {
+    bool cont = true;
+    for (auto it = ads.cbegin(); it != ads.cend() && cont; ++it) {
+        cont = (cb(*it->second) == ScanOp::CONTINUE);
+    }
+}
+
 

@@ -164,6 +164,39 @@ TEST_F(TestFacebookStore, PatchNoKeyChange) {
 
 }
 
+TEST_F(TestFacebookStore, ForEach) {
+    std::vector<StoredFacebookAd::KeyType> keys = {
+            theStore.Store(std::make_unique<FacebookAd>(ads[0])).Key(),
+            theStore.Store(std::make_unique<FacebookAd>(ads[1])).Key(),
+    };
+    std::vector<std::shared_ptr<const FacebookAd>> storedAds;
+    theStore.ForEach([&] (const StoredFacebookAd& ad) -> auto {
+        storedAds.emplace_back(ad.NewSharedRef());
+        return FacebookAdStore::ScanOp::CONTINUE;
+    });
+
+    for (size_t i = 0; i < keys.size(); ++i) {
+        const auto& ad = ads[i];
+        const auto& copyAd = storedAds[i];
+        AssertEq(ad, *copyAd);
+    }
+}
+
+TEST_F(TestFacebookStore, ForEach_Stopped) {
+    std::vector<StoredFacebookAd::KeyType> keys = {
+            theStore.Store(std::make_unique<FacebookAd>(ads[0])).Key(),
+            theStore.Store(std::make_unique<FacebookAd>(ads[1])).Key(),
+    };
+    std::vector<std::shared_ptr<const FacebookAd>> storedAds;
+    theStore.ForEach([&] (const StoredFacebookAd& ad) -> auto {
+        storedAds.emplace_back(ad.NewSharedRef());
+        return FacebookAdStore::ScanOp::STOP;
+    });
+
+    ASSERT_EQ(storedAds.size(), 1);
+    AssertEq(ads[0], *storedAds[0]);
+}
+
 TEST_F(TestFacebookStore, Serialize) {
     std::vector<StoredFacebookAd::KeyType> keys = {
             theStore.Store(std::make_unique<FacebookAd>(ads[0])).Key(),

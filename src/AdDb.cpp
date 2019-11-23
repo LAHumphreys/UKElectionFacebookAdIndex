@@ -176,11 +176,10 @@ AdDb::Serialization AdDb::Serialize() const {
     return serialization;
 }
 
-AdDb::AdDb(const std::string &cfg, const AdDb::Serialization &data)
-{
 
-    thread_local DbJSON::JSON decoder;
-    decoder.Clear();
+AdDb::AdDb(const std::string &cfg, const AdDb::Serialization &data, const AdDb::DeSerialMode& mode)
+{
+    DbJSON::JSON decoder;
     std::string error;
     if (decoder.Parse(data.json.c_str(), error)) {
         FacebookAdStore::Serialization storeSerial;
@@ -189,19 +188,29 @@ AdDb::AdDb(const std::string &cfg, const AdDb::Serialization &data)
 
         std::shared_ptr<FacebookAdKey> facebookKey = std::make_shared<FacebookAdKey>();
         config = ParseConfig(cfg.c_str());
-        consituencies = std::make_unique<FacebookAdIndex>(
-                config->consituencies,
-                facebookKey,
-                decoder.Get<DbJSON::cons>());
 
-        issues = std::make_unique<FacebookAdIndex>(
-                config->issues,
-                facebookKey,
-                decoder.Get<DbJSON::issues>());
+        if (mode == DeSerialMode::FORCE_REINDEX) {
+            issues = std::make_unique<FacebookAdIndex>(config->issues, facebookKey);
+            consituencies = std::make_unique<FacebookAdIndex>(config->consituencies, facebookKey);
+            store->ForEach([&] (const StoredFacebookAd& ad) -> auto {
+                issues->Update(ad);
+                consituencies->Update(ad);
+                return FacebookAdStore::ScanOp::CONTINUE;
+            });
+        } else {
+            issues = std::make_unique<FacebookAdIndex>(
+                    config->issues,
+                    facebookKey,
+                    decoder.Get<DbJSON::issues>());
+
+            consituencies = std::make_unique<FacebookAdIndex>(
+                    config->consituencies,
+                    facebookKey,
+                    decoder.Get<DbJSON::cons>());
+        }
+
 
     } else {
         throw InvalidSerializationError{};
     }
 }
-
-

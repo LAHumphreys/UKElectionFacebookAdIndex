@@ -26,8 +26,12 @@ public:
 
         std::string json;
     };
+    enum class DeSerialMode {
+        NO_REINDEX,
+        FORCE_REINDEX
+    };
     AdDb(const std::string& cfg);
-    AdDb(const std::string& cfg, const Serialization& data);
+    AdDb(const std::string& cfg, const Serialization& data, const DeSerialMode& mode = DeSerialMode::NO_REINDEX);
 
     using FacebookAdIndex = Index<FacebookAdKey>;
     using FacebookAdList  = std::vector<std::shared_ptr<const FacebookAd>>;
