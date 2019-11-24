@@ -1,0 +1,1 @@
+/mnt/c/Users/lukeh/CLionProjects/election_ads/refreshTimeSeries.bash
