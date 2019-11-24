@@ -1,63 +1,15 @@
 {
     "data": [
         {
-            "funding_entity": "JULIN. CATHERINE WEIR AGLIONBY",
-            "ad_delivery_start_time": "2019-11-09T09:03:11.000000Z",
-            "ad_delivery_end_time": "2019-11-12T09:03:08.000000Z",
-            "ad_creation_time": "2019-11-09T09:03:08.000000Z",
+            "funding_entity": "The Labour Party",
+            "ad_delivery_start_time": "2019-11-01T10:11:21.000000Z",
+            "ad_delivery_end_time": "2019-11-06T23:50:45.000000Z",
+            "ad_creation_time": "2019-11-01T09:56:38.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 2499,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "The Brexit Party",
-            "ad_delivery_start_time": "2019-11-05T13:27:20.000000Z",
-            "ad_delivery_end_time": "2019-11-06T22:00:56.000000Z",
-            "ad_creation_time": "2019-11-05T13:27:20.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 12499,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Carlisle Liberal Democrats",
-            "ad_delivery_start_time": "2019-11-02T07:36:01.000000Z",
-            "ad_delivery_end_time": "2019-11-04T07:35:46.000000Z",
-            "ad_creation_time": "2019-11-02T07:36:01.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 2499,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Carlisle Liberal Democrats",
-            "ad_delivery_start_time": "2019-11-01T22:27:48.000000Z",
-            "ad_delivery_end_time": "2019-11-15T22:27:48.000000Z",
-            "ad_creation_time": "2019-11-01T22:27:29.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 8499,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "JULIN. CATHERINE WEIR AGLIONBY",
-            "ad_delivery_start_time": "2019-11-01T22:06:32.000000Z",
-            "ad_delivery_end_time": "2019-11-04T22:06:29.000000Z",
-            "ad_creation_time": "2019-11-01T22:06:29.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 3499,
+            "guestimateImpressions": 1,
             "guestimateSpendGBP": 1
         },
         {
@@ -73,15 +25,15 @@
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "The Labour Party",
-            "ad_delivery_start_time": "2019-11-01T19:59:52.000000Z",
-            "ad_delivery_end_time": "2019-11-06T23:50:46.000000Z",
-            "ad_creation_time": "2019-11-01T19:45:07.000000Z",
+            "funding_entity": "The Conservative Party",
+            "ad_delivery_start_time": "2019-11-21T07:00:35.000000Z",
+            "ad_delivery_end_time": "2019-11-24T20:00:35.000000Z",
+            "ad_creation_time": "2019-11-20T21:28:00.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 5499,
+            "guestimateImpressions": 2499,
             "guestimateSpendGBP": 1
         },
         {
@@ -97,15 +49,39 @@
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "The Labour Party",
-            "ad_delivery_start_time": "2019-11-01T10:11:21.000000Z",
-            "ad_delivery_end_time": "2019-11-06T23:50:45.000000Z",
-            "ad_creation_time": "2019-11-01T09:56:38.000000Z",
+            "funding_entity": "Carlisle Liberal Democrats",
+            "ad_delivery_start_time": "2019-11-01T22:27:48.000000Z",
+            "ad_delivery_end_time": "2019-11-15T22:27:48.000000Z",
+            "ad_creation_time": "2019-11-01T22:27:29.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
+            "guestimateImpressions": 8499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Conservative Party",
+            "ad_delivery_start_time": "2019-11-21T12:25:35.000000Z",
+            "ad_delivery_end_time": "2019-11-24T20:00:35.000000Z",
+            "ad_creation_time": "2019-11-21T12:25:35.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 22499,
+            "guestimateSpendGBP": 249
+        },
+        {
+            "funding_entity": "Carlisle Liberal Democrats",
+            "ad_delivery_start_time": "2019-11-02T07:36:01.000000Z",
+            "ad_delivery_end_time": "2019-11-04T07:35:46.000000Z",
+            "ad_creation_time": "2019-11-02T07:36:01.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 2499,
             "guestimateSpendGBP": 1
         },
         {
@@ -121,6 +97,30 @@
             "guestimateSpendGBP": 1
         },
         {
+            "funding_entity": "The Brexit Party",
+            "ad_delivery_start_time": "2019-11-05T13:27:20.000000Z",
+            "ad_delivery_end_time": "2019-11-06T22:00:56.000000Z",
+            "ad_creation_time": "2019-11-05T13:27:20.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Labour Party",
+            "ad_delivery_start_time": "2019-11-01T19:59:52.000000Z",
+            "ad_delivery_end_time": "2019-11-06T23:50:46.000000Z",
+            "ad_creation_time": "2019-11-01T19:45:07.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 5499,
+            "guestimateSpendGBP": 1
+        },
+        {
             "funding_entity": "The Labour Party",
             "ad_delivery_start_time": "2019-11-01T10:11:21.000000Z",
             "ad_delivery_end_time": "2019-11-06T23:50:45.000000Z",
@@ -133,15 +133,15 @@
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "Ian Murray",
-            "ad_delivery_start_time": "2019-10-31T13:12:58.000000Z",
-            "ad_delivery_end_time": "2019-11-05T13:12:55.000000Z",
-            "ad_creation_time": "2019-10-31T13:12:55.000000Z",
+            "funding_entity": "JULIN. CATHERINE WEIR AGLIONBY",
+            "ad_delivery_start_time": "2019-11-09T09:03:11.000000Z",
+            "ad_delivery_end_time": "2019-11-12T09:03:08.000000Z",
+            "ad_creation_time": "2019-11-09T09:03:08.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 7499,
+            "guestimateImpressions": 2499,
             "guestimateSpendGBP": 1
         },
         {
@@ -155,6 +155,18 @@
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 6499,
             "guestimateSpendGBP": 149
+        },
+        {
+            "funding_entity": "",
+            "ad_delivery_start_time": "2019-10-21T17:14:28.000000Z",
+            "ad_delivery_end_time": "2019-11-02T19:25:02.000000Z",
+            "ad_creation_time": "2019-10-21T17:14:28.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
         }
     ]
 }

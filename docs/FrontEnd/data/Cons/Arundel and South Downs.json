@@ -1,15 +1,27 @@
 {
     "data": [
         {
-            "funding_entity": "Arundel & South Downs Liberal Democrats",
-            "ad_delivery_start_time": "2019-11-07T10:08:31.000000Z",
-            "ad_delivery_end_time": "2019-11-11T10:08:07.000000Z",
-            "ad_creation_time": "2019-11-07T10:08:31.000000Z",
+            "funding_entity": "LAMBS",
+            "ad_delivery_start_time": "2019-11-20T10:14:46.000000Z",
+            "ad_delivery_end_time": "2019-11-22T10:14:44.000000Z",
+            "ad_creation_time": "2019-11-20T10:14:44.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Arundel & South Downs Conservatives",
+            "ad_delivery_start_time": "2019-11-13T18:49:58.000000Z",
+            "ad_delivery_end_time": "2019-12-03T18:49:58.000000Z",
+            "ad_creation_time": "2019-11-13T18:49:42.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 3499,
             "guestimateSpendGBP": 1
         },
         {
@@ -17,18 +29,6 @@
             "ad_delivery_start_time": "2019-11-12T00:30:02.000000Z",
             "ad_delivery_end_time": "2019-11-13T00:30:02.000000Z",
             "ad_creation_time": "2019-11-11T16:24:01.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Arundel & South Downs Liberal Democrats",
-            "ad_delivery_start_time": "2019-09-30T21:45:59.000000Z",
-            "ad_delivery_end_time": "2019-11-20T22:12:37.037725Z",
-            "ad_creation_time": "2019-09-30T21:45:59.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -50,15 +50,15 @@
         },
         {
             "funding_entity": "Arundel & South Downs Liberal Democrats",
-            "ad_delivery_start_time": "2019-11-14T15:56:35.000000Z",
-            "ad_delivery_end_time": "2019-11-20T22:12:38.540064Z",
-            "ad_creation_time": "2019-11-14T15:56:35.000000Z",
+            "ad_delivery_start_time": "2019-11-07T10:08:31.000000Z",
+            "ad_delivery_end_time": "2019-11-11T10:08:07.000000Z",
+            "ad_creation_time": "2019-11-07T10:08:31.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 6499,
-            "guestimateSpendGBP": 149
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
         },
         {
             "funding_entity": "Arundel & South Downs Liberal Democrats",
@@ -73,42 +73,6 @@
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "Arundel & South Downs Conservatives",
-            "ad_delivery_start_time": "2019-11-17T12:27:47.000000Z",
-            "ad_delivery_end_time": "2019-11-20T12:27:30.000000Z",
-            "ad_creation_time": "2019-11-17T12:27:47.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Arundel & South Downs Conservatives",
-            "ad_delivery_start_time": "2019-11-17T15:04:55.000000Z",
-            "ad_delivery_end_time": "2019-11-24T15:01:41.000000Z",
-            "ad_creation_time": "2019-11-17T15:04:55.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1499,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "LAMBS",
-            "ad_delivery_start_time": "2019-11-20T10:14:46.000000Z",
-            "ad_delivery_end_time": "2019-11-22T10:14:44.000000Z",
-            "ad_creation_time": "2019-11-20T10:14:44.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
-            "guestimateSpendGBP": 1
-        },
-        {
             "funding_entity": "LAMBS",
             "ad_delivery_start_time": "2019-11-20T10:13:35.000000Z",
             "ad_delivery_end_time": "2019-11-22T10:13:31.000000Z",
@@ -117,8 +81,20 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
+            "guestimateImpressions": 1499,
             "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Arundel & South Downs Liberal Democrats",
+            "ad_delivery_start_time": "2019-11-14T15:56:35.000000Z",
+            "ad_delivery_end_time": "2019-11-23T00:15:19.000000Z",
+            "ad_creation_time": "2019-11-14T15:56:35.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 9499,
+            "guestimateSpendGBP": 149
         }
     ]
 }

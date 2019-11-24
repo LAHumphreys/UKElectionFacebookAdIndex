@@ -25,6 +25,18 @@
             "guestimateSpendGBP": 1
         },
         {
+            "funding_entity": "East Midlands Labour",
+            "ad_delivery_start_time": "2019-11-05T22:37:33.000000Z",
+            "ad_delivery_end_time": "2019-12-06T23:59:28.000000Z",
+            "ad_creation_time": "2019-11-05T22:37:33.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
             "funding_entity": "Broxtowe Borough Council",
             "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
             "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
@@ -37,52 +49,16 @@
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "Broxtowe Borough Council",
-            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
-            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
-            "ad_creation_time": "2019-08-01T12:00:36.000000Z",
+            "funding_entity": "Broxtowe Conservative Association",
+            "ad_delivery_start_time": "2019-10-05T22:00:25.000000Z",
+            "ad_delivery_end_time": "2019-11-03T22:00:00.000000Z",
+            "ad_creation_time": "2019-10-05T18:50:03.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Broxtowe Borough Council",
-            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
-            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
-            "ad_creation_time": "2019-08-01T12:00:36.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 3499,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Broxtowe Borough Council",
-            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
-            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
-            "ad_creation_time": "2019-08-01T11:04:53.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Broxtowe Borough Council",
-            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
-            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
-            "ad_creation_time": "2019-08-01T12:00:36.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 7499,
-            "guestimateSpendGBP": 1
+            "guestimateImpressions": 29999,
+            "guestimateSpendGBP": 299
         },
         {
             "funding_entity": "East Midlands Labour",
@@ -97,28 +73,16 @@
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "East Midlands Labour",
-            "ad_delivery_start_time": "2019-11-05T22:37:33.000000Z",
-            "ad_delivery_end_time": "2019-12-06T23:59:28.000000Z",
-            "ad_creation_time": "2019-11-05T22:37:33.000000Z",
+            "funding_entity": "Broxtowe Conservative Association",
+            "ad_delivery_start_time": "2019-10-12T13:00:02.000000Z",
+            "ad_delivery_end_time": "2019-11-03T22:00:37.000000Z",
+            "ad_creation_time": "2019-10-12T12:18:34.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1499,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "East Midlands Labour",
-            "ad_delivery_start_time": "2019-11-05T22:37:33.000000Z",
-            "ad_delivery_end_time": "2019-12-06T23:59:28.000000Z",
-            "ad_creation_time": "2019-11-05T22:37:33.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1499,
-            "guestimateSpendGBP": 1
+            "guestimateImpressions": 29999,
+            "guestimateSpendGBP": 299
         },
         {
             "funding_entity": "East Midlands Labour",
@@ -145,6 +109,54 @@
             "guestimateSpendGBP": 1
         },
         {
+            "funding_entity": "Anna Soubry",
+            "ad_delivery_start_time": "2019-11-21T10:25:41.000000Z",
+            "ad_delivery_end_time": "2019-11-24T10:25:31.000000Z",
+            "ad_creation_time": "2019-11-21T10:25:31.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Adam Mark Zerny",
+            "ad_delivery_start_time": "2019-11-22T08:38:18.000000Z",
+            "ad_delivery_end_time": "2019-11-27T08:38:16.000000Z",
+            "ad_creation_time": "2019-11-22T08:38:16.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Broxtowe Borough Council",
+            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
+            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
+            "ad_creation_time": "2019-08-01T12:00:36.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Broxtowe Conservative Association",
+            "ad_delivery_start_time": "2019-09-28T22:58:09.000000Z",
+            "ad_delivery_end_time": "2019-11-03T22:00:00.000000Z",
+            "ad_creation_time": "2019-09-28T22:45:17.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 74999,
+            "guestimateSpendGBP": 749
+        },
+        {
             "funding_entity": "Broxtowe Conservative Association",
             "ad_delivery_start_time": "2019-10-31T18:32:39.000000Z",
             "ad_delivery_end_time": "2019-11-03T22:00:41.000000Z",
@@ -154,18 +166,6 @@
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 17499,
-            "guestimateSpendGBP": 149
-        },
-        {
-            "funding_entity": "Broxtowe Conservative Association",
-            "ad_delivery_start_time": "2019-10-31T13:30:27.000000Z",
-            "ad_delivery_end_time": "2019-11-03T22:00:37.000000Z",
-            "ad_creation_time": "2019-10-31T13:18:39.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 12499,
             "guestimateSpendGBP": 149
         },
         {
@@ -182,9 +182,57 @@
         },
         {
             "funding_entity": "Broxtowe Conservative Association",
+            "ad_delivery_start_time": "2019-10-31T13:30:27.000000Z",
+            "ad_delivery_end_time": "2019-11-03T22:00:37.000000Z",
+            "ad_creation_time": "2019-10-31T13:18:39.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "funding_entity": "Adam Mark Zerny",
+            "ad_delivery_start_time": "2019-11-21T21:03:07.000000Z",
+            "ad_delivery_end_time": "2019-11-26T21:03:07.000000Z",
+            "ad_creation_time": "2019-11-21T21:03:06.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Broxtowe Borough Council",
+            "ad_delivery_start_time": "2019-10-28T07:01:05.000000Z",
+            "ad_delivery_end_time": "2019-11-04T07:59:41.000000Z",
+            "ad_creation_time": "2019-10-15T16:07:49.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 27499,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "funding_entity": "Broxtowe Conservative Association",
             "ad_delivery_start_time": "2019-10-31T13:00:05.000000Z",
             "ad_delivery_end_time": "2019-11-03T22:00:05.000000Z",
             "ad_creation_time": "2019-10-31T12:51:27.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "East Midlands Labour",
+            "ad_delivery_start_time": "2019-11-05T22:37:33.000000Z",
+            "ad_delivery_end_time": "2019-12-06T23:59:28.000000Z",
+            "ad_creation_time": "2019-11-05T22:37:33.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -205,10 +253,46 @@
             "guestimateSpendGBP": 1
         },
         {
+            "funding_entity": "Broxtowe Borough Council",
+            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
+            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
+            "ad_creation_time": "2019-08-01T12:00:36.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Anna Soubry",
+            "ad_delivery_start_time": "2019-11-19T12:16:09.000000Z",
+            "ad_delivery_end_time": "2019-11-21T12:16:01.000000Z",
+            "ad_creation_time": "2019-11-19T12:16:01.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
             "funding_entity": "Broxtowe Conservative Association",
             "ad_delivery_start_time": "2019-10-31T13:00:05.000000Z",
             "ad_delivery_end_time": "2019-11-03T22:00:05.000000Z",
             "ad_creation_time": "2019-10-31T12:51:29.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Broxtowe Borough Council",
+            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
+            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
+            "ad_creation_time": "2019-08-01T11:04:53.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -229,16 +313,28 @@
             "guestimateSpendGBP": 149
         },
         {
-            "funding_entity": "Broxtowe Borough Council",
-            "ad_delivery_start_time": "2019-10-28T07:01:05.000000Z",
-            "ad_delivery_end_time": "2019-11-04T07:59:41.000000Z",
-            "ad_creation_time": "2019-10-15T16:07:49.000000Z",
+            "funding_entity": "Anna Soubry",
+            "ad_delivery_start_time": "2019-11-20T09:38:56.000000Z",
+            "ad_delivery_end_time": "2019-11-23T09:38:54.000000Z",
+            "ad_creation_time": "2019-11-20T09:38:54.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 27499,
-            "guestimateSpendGBP": 149
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Broxtowe Borough Council",
+            "ad_delivery_start_time": "2019-11-06T16:55:42.000000Z",
+            "ad_delivery_end_time": "2019-11-10T08:00:00.000000Z",
+            "ad_creation_time": "2019-08-01T12:00:36.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 7499,
+            "guestimateSpendGBP": 1
         },
         {
             "funding_entity": "Broxtowe Borough Council",
@@ -253,42 +349,6 @@
             "guestimateSpendGBP": 149
         },
         {
-            "funding_entity": "Broxtowe Conservative Association",
-            "ad_delivery_start_time": "2019-10-12T13:00:02.000000Z",
-            "ad_delivery_end_time": "2019-11-03T22:00:37.000000Z",
-            "ad_creation_time": "2019-10-12T12:18:34.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 29999,
-            "guestimateSpendGBP": 299
-        },
-        {
-            "funding_entity": "Broxtowe Conservative Association",
-            "ad_delivery_start_time": "2019-10-05T22:00:25.000000Z",
-            "ad_delivery_end_time": "2019-11-03T22:00:00.000000Z",
-            "ad_creation_time": "2019-10-05T18:50:03.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 29999,
-            "guestimateSpendGBP": 299
-        },
-        {
-            "funding_entity": "Broxtowe Conservative Association",
-            "ad_delivery_start_time": "2019-09-28T22:58:09.000000Z",
-            "ad_delivery_end_time": "2019-11-03T22:00:00.000000Z",
-            "ad_creation_time": "2019-09-28T22:45:17.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 74999,
-            "guestimateSpendGBP": 749
-        },
-        {
             "funding_entity": "Broxtowe Borough Council",
             "ad_delivery_start_time": "2019-11-18T17:17:49.000000Z",
             "ad_delivery_end_time": "2019-11-24T17:17:49.000000Z",
@@ -297,31 +357,19 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 5499,
+            "guestimateImpressions": 12499,
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "Anna Soubry",
-            "ad_delivery_start_time": "2019-11-19T12:16:09.000000Z",
-            "ad_delivery_end_time": "2019-11-21T12:16:01.000000Z",
-            "ad_creation_time": "2019-11-19T12:16:01.000000Z",
+            "funding_entity": "East Midlands Labour",
+            "ad_delivery_start_time": "2019-11-22T15:37:07.000000Z",
+            "ad_delivery_end_time": "2019-12-22T12:49:39.000000Z",
+            "ad_creation_time": "2019-11-22T15:37:07.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
-            "guestimateSpendGBP": 1
-        },
-        {
-            "funding_entity": "Anna Soubry",
-            "ad_delivery_start_time": "2019-11-20T09:38:56.000000Z",
-            "ad_delivery_end_time": "2019-11-23T09:38:54.000000Z",
-            "ad_creation_time": "2019-11-20T09:38:54.000000Z",
-            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
+            "guestimateImpressions": 1499,
             "guestimateSpendGBP": 1
         }
     ]
