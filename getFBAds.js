@@ -90,23 +90,28 @@ function DumpFile(page, body) {
 let count = 0;
 let pages = 0;
 function callback(payload, response, body) {
-    pbody = JSON.parse(body);
+    if (response.statusCode == 200 ) {
+        pbody = JSON.parse(body);
 
-    if ("data" in pbody) {
-        pages+=1;
-        count+=pbody['data'].length;
+        if ("data" in pbody) {
+            pages+=1;
+            count+=pbody['data'].length;
 
-        DumpFile(pages, body);
+            DumpFile(pages, body);
 
-        console.log("Page " + pages + ": " + count);
-        if ("paging" in pbody) {
-            let next = pbody['paging']['next'];
-            proxy.get(next, callback);
+            console.log("Page " + pages + ": " + count);
+            if ("paging" in pbody) {
+                let next = pbody['paging']['next'];
+                proxy.get(next, callback);
+            }
+        } else {
+            console.log ("ERROR: Failed to get data from the Facebook Ad API");
+            console.log (body);
+            process.exit(1)
         }
     } else {
-        console.log ("ERROR: Failed to get data from the Facebook Ad API");
-        console.log (body);
-        process.exit(1)
+        console.log(body)
+        console.log("FAILED TO GET PAGE!")
     }
 
 }
