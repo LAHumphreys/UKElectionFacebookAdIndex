@@ -15,13 +15,13 @@
         {
             "funding_entity": "Andrew Crawford Croy",
             "ad_delivery_start_time": "2019-11-13T12:15:19.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.405927Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.965296Z",
             "ad_creation_time": "2019-11-13T12:15:19.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 32499,
+            "guestimateImpressions": 37499,
             "guestimateSpendGBP": 249
         },
         {
@@ -39,7 +39,7 @@
         {
             "funding_entity": "Stephen Newton for the Lib Dems",
             "ad_delivery_start_time": "2019-11-15T11:47:41.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.215472Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.709126Z",
             "ad_creation_time": "2019-11-15T11:47:41.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -51,7 +51,7 @@
         {
             "funding_entity": "Andrew Crawford Croy",
             "ad_delivery_start_time": "2019-10-12T17:31:07.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:16.995567Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:02.441711Z",
             "ad_creation_time": "2019-10-12T17:31:07.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -111,13 +111,13 @@
         {
             "funding_entity": "Andrew Crawford Croy",
             "ad_delivery_start_time": "2019-11-13T12:18:36.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.405860Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.965221Z",
             "ad_creation_time": "2019-11-13T12:18:36.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 2499,
+            "guestimateImpressions": 3499,
             "guestimateSpendGBP": 1
         },
         {
@@ -135,7 +135,7 @@
         {
             "funding_entity": "Andrew Crawford Croy",
             "ad_delivery_start_time": "2019-10-12T17:07:04.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:16.995657Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:02.441836Z",
             "ad_creation_time": "2019-10-12T17:07:04.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -183,7 +183,7 @@
         {
             "funding_entity": "Andrew Crawford Croy",
             "ad_delivery_start_time": "2019-11-07T12:30:51.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.776866Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:06.472945Z",
             "ad_creation_time": "2019-11-07T12:30:51.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -195,7 +195,7 @@
         {
             "funding_entity": "Andrew Crawford Croy",
             "ad_delivery_start_time": "2019-11-07T15:03:01.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.764477Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:06.468431Z",
             "ad_creation_time": "2019-11-07T15:03:01.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -262,6 +262,18 @@
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Daniel Anthony Hinton",
+            "ad_delivery_start_time": "2019-11-23T21:13:38.000000Z",
+            "ad_delivery_end_time": "2019-11-30T21:13:26.000000Z",
+            "ad_creation_time": "2019-11-23T21:13:38.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
             "guestimateSpendGBP": 1
         }
     ]

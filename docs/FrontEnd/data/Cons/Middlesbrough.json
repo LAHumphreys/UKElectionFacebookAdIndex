@@ -3,7 +3,7 @@
         {
             "funding_entity": "Scientists for EU",
             "ad_delivery_start_time": "2019-07-28T00:01:31.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.628762Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:04.812874Z",
             "ad_creation_time": "2019-07-28T00:01:01.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -51,7 +51,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-15T21:55:31.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.176018Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.660587Z",
             "ad_creation_time": "2019-11-15T21:55:31.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -63,7 +63,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-18T11:57:18.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.959308Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.321646Z",
             "ad_creation_time": "2019-11-18T11:57:18.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -87,14 +87,14 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-20T11:50:04.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.415798Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.068490Z",
             "ad_creation_time": "2019-11-20T11:50:04.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 17499,
-            "guestimateSpendGBP": 349
+            "guestimateImpressions": 32499,
+            "guestimateSpendGBP": 549
         },
         {
             "funding_entity": "The Conservative Party",
@@ -243,7 +243,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-20T11:50:04.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.415813Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.068513Z",
             "ad_creation_time": "2019-11-20T11:50:04.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -279,7 +279,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-18T11:57:18.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.959325Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.321686Z",
             "ad_creation_time": "2019-11-18T11:57:18.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -297,7 +297,7 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 12499,
+            "guestimateImpressions": 17499,
             "guestimateSpendGBP": 1
         },
         {
@@ -321,13 +321,13 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 12499,
+            "guestimateImpressions": 17499,
             "guestimateSpendGBP": 1
         },
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-20T11:50:04.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.415829Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.068540Z",
             "ad_creation_time": "2019-11-20T11:50:04.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -351,7 +351,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-14T13:35:29.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.307708Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.796601Z",
             "ad_creation_time": "2019-11-14T13:35:29.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -375,7 +375,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-19T17:53:29.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.799142Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.114771Z",
             "ad_creation_time": "2019-11-19T17:53:29.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -399,13 +399,13 @@
         {
             "funding_entity": "National Education Union",
             "ad_delivery_start_time": "2019-11-19T23:19:04.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.645136Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.091092Z",
             "ad_creation_time": "2019-11-19T23:19:04.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 9499,
+            "guestimateImpressions": 12499,
             "guestimateSpendGBP": 1
         },
         {
@@ -435,7 +435,7 @@
         {
             "funding_entity": "Ben Houchen",
             "ad_delivery_start_time": "2019-09-11T13:20:01.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:17.955355Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:03.854509Z",
             "ad_creation_time": "2019-09-11T13:20:01.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -447,7 +447,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-18T11:57:20.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.959291Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.321611Z",
             "ad_creation_time": "2019-11-18T11:57:20.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -567,7 +567,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-19T17:53:29.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.799158Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.114790Z",
             "ad_creation_time": "2019-11-19T17:53:29.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -579,7 +579,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-15T21:57:39.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.176004Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.660559Z",
             "ad_creation_time": "2019-11-15T21:57:39.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -639,7 +639,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-19T17:53:29.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.799179Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.114815Z",
             "ad_creation_time": "2019-11-19T17:53:29.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -669,7 +669,7 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 12499,
+            "guestimateImpressions": 17499,
             "guestimateSpendGBP": 1
         },
         {

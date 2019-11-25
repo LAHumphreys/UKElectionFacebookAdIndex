@@ -2,33 +2,33 @@
     "summary": [
         {
             "name": "Brexit",
-            "totalAds": 8034,
-            "guestimateImpressions": 161127280,
-            "guestimateSpendGBP": 1708773
+            "totalAds": 8171,
+            "guestimateImpressions": 168149141,
+            "guestimateSpendGBP": 1780030
         },
         {
             "name": "Climate Crisis",
-            "totalAds": 6993,
-            "guestimateImpressions": 70965977,
-            "guestimateSpendGBP": 378754
+            "totalAds": 7087,
+            "guestimateImpressions": 72133403,
+            "guestimateSpendGBP": 384489
         },
         {
             "name": "Criminal Justice",
-            "totalAds": 463,
-            "guestimateImpressions": 2256055,
-            "guestimateSpendGBP": 7724
+            "totalAds": 464,
+            "guestimateImpressions": 2425552,
+            "guestimateSpendGBP": 8273
         },
         {
             "name": "Economy & Taxes",
-            "totalAds": 1999,
-            "guestimateImpressions": 41133889,
-            "guestimateSpendGBP": 356637
+            "totalAds": 2043,
+            "guestimateImpressions": 42171363,
+            "guestimateSpendGBP": 363776
         },
         {
             "name": "Education",
-            "totalAds": 1337,
-            "guestimateImpressions": 16003087,
-            "guestimateSpendGBP": 94097
+            "totalAds": 1391,
+            "guestimateImpressions": 17395529,
+            "guestimateSpendGBP": 99173
         },
         {
             "name": "Fraking",
@@ -38,9 +38,9 @@
         },
         {
             "name": "NHS",
-            "totalAds": 1897,
-            "guestimateImpressions": 19418773,
-            "guestimateSpendGBP": 148735
+            "totalAds": 1942,
+            "guestimateImpressions": 20545740,
+            "guestimateSpendGBP": 160121
         }
     ]
 }

@@ -3,7 +3,7 @@
         {
             "funding_entity": "Colne Valley Conservatives",
             "ad_delivery_start_time": "2019-08-29T21:04:10.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.297791Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:04.286927Z",
             "ad_creation_time": "2019-08-29T21:04:10.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -15,7 +15,7 @@
         {
             "funding_entity": "Colne Valley Conservatives",
             "ad_delivery_start_time": "2019-09-14T00:57:53.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:17.883255Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:03.673743Z",
             "ad_creation_time": "2019-09-14T00:57:53.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -39,7 +39,7 @@
         {
             "funding_entity": "Colne Valley Conservatives",
             "ad_delivery_start_time": "2019-09-13T19:28:52.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:17.884293Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:03.675830Z",
             "ad_creation_time": "2019-09-13T19:28:52.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -63,7 +63,7 @@
         {
             "funding_entity": "Colne Valley Conservatives",
             "ad_delivery_start_time": "2019-10-26T11:39:00.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:16.298521Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:01.582725Z",
             "ad_creation_time": "2019-10-26T11:09:37.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -183,7 +183,7 @@
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-13T21:24:25.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.344125Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:05.899304Z",
             "ad_creation_time": "2019-11-13T21:24:25.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -195,7 +195,7 @@
         {
             "funding_entity": "Colne Valley Conservatives",
             "ad_delivery_start_time": "2019-09-13T15:47:13.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:17.886775Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:03.679055Z",
             "ad_creation_time": "2019-09-13T15:47:13.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -219,7 +219,7 @@
         {
             "funding_entity": "Colne Valley Conservatives",
             "ad_delivery_start_time": "2019-11-12T16:59:39.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:19.460982Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:06.032009Z",
             "ad_creation_time": "2019-11-12T16:59:39.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -255,7 +255,7 @@
         {
             "funding_entity": "Colne Valley Conservatives",
             "ad_delivery_start_time": "2019-10-25T19:56:28.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:16.327641Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:01.616683Z",
             "ad_creation_time": "2019-10-25T19:56:28.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -310,6 +310,18 @@
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Colne Valley Conservatives",
+            "ad_delivery_start_time": "2019-11-24T00:07:49.000000Z",
+            "ad_delivery_end_time": "2019-11-27T00:07:29.000000Z",
+            "ad_creation_time": "2019-11-24T00:07:49.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
             "guestimateSpendGBP": 1
         }
     ]

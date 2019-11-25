@@ -3,7 +3,7 @@
         {
             "funding_entity": "James Aberley",
             "ad_delivery_start_time": "2019-01-06T13:22:21.000000Z",
-            "ad_delivery_end_time": "2019-11-23T21:21:18.772268Z",
+            "ad_delivery_end_time": "2019-11-24T23:56:04.960209Z",
             "ad_creation_time": "2019-01-06T13:21:51.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -11,6 +11,18 @@
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 74999,
             "guestimateSpendGBP": 299
+        },
+        {
+            "funding_entity": "Michael Jones",
+            "ad_delivery_start_time": "2019-11-23T17:15:13.000000Z",
+            "ad_delivery_end_time": "2019-12-01T17:14:59.000000Z",
+            "ad_creation_time": "2019-11-23T17:15:13.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
         }
     ]
 }
