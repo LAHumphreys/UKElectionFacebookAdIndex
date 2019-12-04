@@ -117,7 +117,7 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 4499,
+            "guestimateImpressions": 6499,
             "guestimateSpendGBP": 1
         },
         {
@@ -135,14 +135,14 @@
         {
             "funding_entity": "Calder Valley Conservatives",
             "ad_delivery_start_time": "2019-11-21T23:16:39.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:02.336725Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:30.390791Z",
             "ad_creation_time": "2019-11-21T23:16:39.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 4499,
-            "guestimateSpendGBP": 1
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 149
         },
         {
             "funding_entity": "Mohammed Javed Bashir",
@@ -171,14 +171,14 @@
         {
             "funding_entity": "Calder Valley Conservatives",
             "ad_delivery_start_time": "2019-11-21T23:20:51.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:02.336666Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:30.390755Z",
             "ad_creation_time": "2019-11-21T23:20:51.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 5499,
-            "guestimateSpendGBP": 1
+            "guestimateImpressions": 27499,
+            "guestimateSpendGBP": 149
         },
         {
             "funding_entity": "Mohammed Javed Bashir",
@@ -286,7 +286,7 @@
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 12499,
-            "guestimateSpendGBP": 1
+            "guestimateSpendGBP": 149
         },
         {
             "funding_entity": "Mohammed Javed Bashir",
@@ -298,6 +298,126 @@
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Conservative Party",
+            "ad_delivery_start_time": "2019-11-25T13:52:42.000000Z",
+            "ad_delivery_end_time": "2019-11-27T20:00:00.000000Z",
+            "ad_creation_time": "2019-11-25T13:52:42.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Conservative Party",
+            "ad_delivery_start_time": "2019-11-25T13:52:38.000000Z",
+            "ad_delivery_end_time": "2019-11-27T20:00:00.000000Z",
+            "ad_creation_time": "2019-11-25T13:52:38.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 17499,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "funding_entity": "the Labour Party",
+            "ad_delivery_start_time": "2019-11-24T22:13:08.000000Z",
+            "ad_delivery_end_time": "2019-11-30T22:12:50.000000Z",
+            "ad_creation_time": "2019-11-24T22:13:08.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Calder Valley Conservatives",
+            "ad_delivery_start_time": "2019-11-27T11:41:49.000000Z",
+            "ad_delivery_end_time": "2019-11-29T11:40:04.000000Z",
+            "ad_creation_time": "2019-11-27T11:41:49.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Calder Valley Conservatives",
+            "ad_delivery_start_time": "2019-11-27T11:33:53.000000Z",
+            "ad_delivery_end_time": "2019-12-11T23:59:48.000000Z",
+            "ad_creation_time": "2019-11-27T11:33:53.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 7499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Richard Arthur Phillips",
+            "ad_delivery_start_time": "2019-11-25T23:48:15.000000Z",
+            "ad_delivery_end_time": "2019-12-12T23:48:14.000000Z",
+            "ad_creation_time": "2019-11-25T23:48:14.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Calder Valley Conservatives",
+            "ad_delivery_start_time": "2019-11-29T01:46:21.000000Z",
+            "ad_delivery_end_time": "2019-12-01T01:46:01.000000Z",
+            "ad_creation_time": "2019-11-29T01:46:21.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Calder Valley Conservatives",
+            "ad_delivery_start_time": "2019-11-29T01:44:43.000000Z",
+            "ad_delivery_end_time": "2019-12-01T01:44:24.000000Z",
+            "ad_creation_time": "2019-11-29T01:44:43.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Calder Valley Conservatives",
+            "ad_delivery_start_time": "2019-12-03T09:00:31.000000Z",
+            "ad_delivery_end_time": "2019-12-06T08:58:48.000000Z",
+            "ad_creation_time": "2019-12-03T09:00:31.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Calder Valley Conservatives",
+            "ad_delivery_start_time": "2019-12-03T04:17:42.000000Z",
+            "ad_delivery_end_time": "2019-12-12T21:00:17.000000Z",
+            "ad_creation_time": "2019-12-03T04:17:42.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
             "guestimateSpendGBP": 1
         }
     ]

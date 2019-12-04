@@ -3,7 +3,7 @@
         {
             "funding_entity": "Gavin Shuker",
             "ad_delivery_start_time": "2019-11-15T21:50:47.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:05.660741Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:26.663431Z",
             "ad_creation_time": "2019-11-15T21:50:47.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -15,19 +15,19 @@
         {
             "funding_entity": "Gavin Shuker",
             "ad_delivery_start_time": "2019-11-16T18:02:06.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:05.486115Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:26.580203Z",
             "ad_creation_time": "2019-11-16T18:02:06.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 47499,
-            "guestimateSpendGBP": 249
+            "guestimateImpressions": 54999,
+            "guestimateSpendGBP": 349
         },
         {
             "funding_entity": "Gavin Shuker",
             "ad_delivery_start_time": "2019-11-16T17:59:51.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:05.486208Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:26.580254Z",
             "ad_creation_time": "2019-11-16T17:59:51.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -51,7 +51,7 @@
         {
             "funding_entity": "Gavin Shuker",
             "ad_delivery_start_time": "2019-11-15T22:06:50.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:05.660249Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:26.663176Z",
             "ad_creation_time": "2019-11-15T22:06:50.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -71,6 +71,90 @@
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 274999,
             "guestimateSpendGBP": 2749
+        },
+        {
+            "funding_entity": "Gavin Shuker",
+            "ad_delivery_start_time": "2019-11-25T23:20:08.000000Z",
+            "ad_delivery_end_time": "2019-11-30T19:03:08.000000Z",
+            "ad_creation_time": "2019-11-25T23:13:30.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Gavin Shuker",
+            "ad_delivery_start_time": "2019-11-25T23:20:08.000000Z",
+            "ad_delivery_end_time": "2019-11-30T19:03:08.000000Z",
+            "ad_creation_time": "2019-11-25T23:13:30.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Gavin Shuker",
+            "ad_delivery_start_time": "2019-11-26T02:32:35.000000Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:30.063291Z",
+            "ad_creation_time": "2019-11-26T02:32:35.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Gavin Shuker",
+            "ad_delivery_start_time": "2019-11-26T01:42:59.000000Z",
+            "ad_delivery_end_time": "2019-12-09T09:29:36.000000Z",
+            "ad_creation_time": "2019-11-26T01:42:59.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 9499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Gavin Shuker",
+            "ad_delivery_start_time": "2019-11-28T12:27:25.000000Z",
+            "ad_delivery_end_time": "2019-12-09T09:29:36.000000Z",
+            "ad_creation_time": "2019-11-28T12:27:25.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "funding_entity": "Gavin Shuker",
+            "ad_delivery_start_time": "2019-11-28T10:59:16.000000Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:29.895204Z",
+            "ad_creation_time": "2019-11-28T10:59:16.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 37499,
+            "guestimateSpendGBP": 249
+        },
+        {
+            "funding_entity": "Gavin Shuker",
+            "ad_delivery_start_time": "2019-12-02T13:39:03.000000Z",
+            "ad_delivery_end_time": "2019-12-11T13:39:01.000000Z",
+            "ad_creation_time": "2019-12-02T13:39:01.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 3499,
+            "guestimateSpendGBP": 1
         }
     ]
 }

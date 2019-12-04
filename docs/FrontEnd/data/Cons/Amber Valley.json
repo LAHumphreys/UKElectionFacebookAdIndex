@@ -10,7 +10,7 @@
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 17499,
-            "guestimateSpendGBP": 149
+            "guestimateSpendGBP": 249
         },
         {
             "funding_entity": "Richard Salmon on behalf of Amber Valley Liberal Democrats",
@@ -21,7 +21,7 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 9499,
+            "guestimateImpressions": 12499,
             "guestimateSpendGBP": 149
         },
         {
@@ -47,6 +47,42 @@
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 17499,
             "guestimateSpendGBP": 249
+        },
+        {
+            "funding_entity": "Richard Salmon on behalf of Amber Valley Liberal Democrats",
+            "ad_delivery_start_time": "2019-11-25T17:20:45.000000Z",
+            "ad_delivery_end_time": "2019-12-05T17:20:44.000000Z",
+            "ad_creation_time": "2019-11-25T17:20:44.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 27499,
+            "guestimateSpendGBP": 349
+        },
+        {
+            "funding_entity": "Richard Salmon on behalf of Amber Valley Liberal Democrats",
+            "ad_delivery_start_time": "2019-11-26T15:44:05.000000Z",
+            "ad_delivery_end_time": "2019-12-01T15:44:02.000000Z",
+            "ad_creation_time": "2019-11-26T15:44:02.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Richard Salmon on behalf of Amber Valley Liberal Democrats",
+            "ad_delivery_start_time": "2019-11-29T16:29:55.000000Z",
+            "ad_delivery_end_time": "2019-12-09T16:29:54.000000Z",
+            "ad_creation_time": "2019-11-29T16:29:54.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 149
         }
     ]
 }

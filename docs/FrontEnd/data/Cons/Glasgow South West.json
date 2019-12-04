@@ -9,7 +9,7 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 2499,
+            "guestimateImpressions": 4499,
             "guestimateSpendGBP": 1
         },
         {
@@ -21,7 +21,7 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 4499,
+            "guestimateImpressions": 5499,
             "guestimateSpendGBP": 1
         },
         {
@@ -49,15 +49,15 @@
             "guestimateSpendGBP": 1
         },
         {
-            "funding_entity": "",
-            "ad_delivery_start_time": "2019-09-19T16:21:42.000000Z",
-            "ad_delivery_end_time": "2019-11-06T16:21:09.000000Z",
-            "ad_creation_time": "2019-09-19T16:21:42.000000Z",
+            "funding_entity": "The Labour Party. Promoted by Danny O'Neill on behalf of Matt Kerr",
+            "ad_delivery_start_time": "2019-11-29T13:42:34.000000Z",
+            "ad_delivery_end_time": "2019-12-11T13:42:26.000000Z",
+            "ad_creation_time": "2019-11-29T13:42:26.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 29999,
+            "guestimateImpressions": 6499,
             "guestimateSpendGBP": 1
         }
     ]

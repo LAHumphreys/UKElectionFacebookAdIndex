@@ -135,7 +135,7 @@
         {
             "funding_entity": "Sarah Jones",
             "ad_delivery_start_time": "2019-11-19T18:09:41.000000Z",
-            "ad_delivery_end_time": "2019-11-26T18:01:42.000000Z",
+            "ad_delivery_end_time": "2019-12-03T18:01:42.000000Z",
             "ad_creation_time": "2019-11-19T18:09:41.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -183,13 +183,13 @@
         {
             "funding_entity": "Sarah Jones",
             "ad_delivery_start_time": "2019-11-22T18:55:59.000000Z",
-            "ad_delivery_end_time": "2019-11-26T09:50:36.000000Z",
+            "ad_delivery_end_time": "2019-12-07T09:50:36.000000Z",
             "ad_creation_time": "2019-11-22T18:50:58.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
+            "guestimateImpressions": 5499,
             "guestimateSpendGBP": 1
         },
         {
@@ -219,13 +219,13 @@
         {
             "funding_entity": "Sarah Jones",
             "ad_delivery_start_time": "2019-11-22T18:51:33.000000Z",
-            "ad_delivery_end_time": "2019-11-26T09:48:00.000000Z",
+            "ad_delivery_end_time": "2019-11-30T00:00:00.000000Z",
             "ad_creation_time": "2019-11-22T18:51:33.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 2499,
+            "guestimateImpressions": 7499,
             "guestimateSpendGBP": 1
         },
         {
@@ -291,19 +291,19 @@
         {
             "funding_entity": "Sarah Jones",
             "ad_delivery_start_time": "2019-11-22T18:49:28.000000Z",
-            "ad_delivery_end_time": "2019-11-26T09:50:36.000000Z",
+            "ad_delivery_end_time": "2019-11-30T09:50:36.000000Z",
             "ad_creation_time": "2019-11-22T18:49:28.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 1,
+            "guestimateImpressions": 3499,
             "guestimateSpendGBP": 1
         },
         {
             "funding_entity": "The Brexit Party",
             "ad_delivery_start_time": "2019-11-13T21:52:00.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:05.898862Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:26.772077Z",
             "ad_creation_time": "2019-11-13T21:52:00.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -315,7 +315,7 @@
         {
             "funding_entity": "Sarah Jones",
             "ad_delivery_start_time": "2019-11-22T18:46:38.000000Z",
-            "ad_delivery_end_time": "2019-11-26T09:48:00.000000Z",
+            "ad_delivery_end_time": "2019-11-30T00:00:00.000000Z",
             "ad_creation_time": "2019-11-22T18:46:38.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -351,7 +351,7 @@
         {
             "funding_entity": "Simon James Sprague",
             "ad_delivery_start_time": "2019-09-18T08:07:50.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:03.498660Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:28.739324Z",
             "ad_creation_time": "2019-09-18T08:07:20.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -387,7 +387,7 @@
         {
             "funding_entity": "Sarah Jones",
             "ad_delivery_start_time": "2019-11-21T09:48:00.000000Z",
-            "ad_delivery_end_time": "2019-11-26T09:48:00.000000Z",
+            "ad_delivery_end_time": "2019-11-30T00:00:00.000000Z",
             "ad_creation_time": "2019-11-21T09:18:18.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -399,7 +399,7 @@
         {
             "funding_entity": "Simon James Sprague",
             "ad_delivery_start_time": "2019-09-18T17:39:34.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:03.453148Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:28.694031Z",
             "ad_creation_time": "2019-09-18T17:39:34.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -423,7 +423,7 @@
         {
             "funding_entity": "Simon James Sprague",
             "ad_delivery_start_time": "2019-09-19T12:03:56.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:03.431235Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:28.680855Z",
             "ad_creation_time": "2019-09-19T12:03:56.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -435,7 +435,7 @@
         {
             "funding_entity": "Sarah Jones",
             "ad_delivery_start_time": "2019-11-22T09:50:38.000000Z",
-            "ad_delivery_end_time": "2019-11-26T09:50:36.000000Z",
+            "ad_delivery_end_time": "2019-11-30T09:50:36.000000Z",
             "ad_creation_time": "2019-11-22T09:50:36.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -549,7 +549,151 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 9499,
+            "guestimateImpressions": 32499,
+            "guestimateSpendGBP": 349
+        },
+        {
+            "funding_entity": "The Conservative Party",
+            "ad_delivery_start_time": "2019-11-25T14:05:26.000000Z",
+            "ad_delivery_end_time": "2019-11-27T20:00:00.000000Z",
+            "ad_creation_time": "2019-11-25T14:05:26.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-11-25T21:39:46.000000Z",
+            "ad_delivery_end_time": "2019-11-30T21:39:40.000000Z",
+            "ad_creation_time": "2019-11-25T21:39:40.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 4499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-11-25T17:59:10.000000Z",
+            "ad_delivery_end_time": "2019-11-30T00:00:00.000000Z",
+            "ad_creation_time": "2019-11-25T17:59:10.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 6499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-11-27T15:06:05.000000Z",
+            "ad_delivery_end_time": "2019-12-02T15:05:57.000000Z",
+            "ad_creation_time": "2019-11-27T15:05:57.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-11-28T11:50:04.000000Z",
+            "ad_delivery_end_time": "2019-12-06T11:49:55.000000Z",
+            "ad_creation_time": "2019-11-28T11:49:55.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-11-28T11:52:02.000000Z",
+            "ad_delivery_end_time": "2019-12-04T10:50:35.000000Z",
+            "ad_creation_time": "2019-11-28T11:52:02.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Olga Henrietta Fitzroy",
+            "ad_delivery_start_time": "2019-12-01T23:22:00.000000Z",
+            "ad_delivery_end_time": "2019-12-05T23:22:00.000000Z",
+            "ad_creation_time": "2019-12-01T22:52:35.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-12-01T21:01:53.000000Z",
+            "ad_delivery_end_time": "2019-12-05T21:01:47.000000Z",
+            "ad_creation_time": "2019-12-01T21:01:47.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-12-01T18:51:33.000000Z",
+            "ad_delivery_end_time": "2019-12-06T11:49:55.000000Z",
+            "ad_creation_time": "2019-12-01T18:51:33.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-12-01T18:50:48.000000Z",
+            "ad_delivery_end_time": "2019-12-04T10:50:35.000000Z",
+            "ad_creation_time": "2019-12-01T18:50:48.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Avaaz Campaigns UK",
+            "ad_delivery_start_time": "2019-12-03T10:59:38.000000Z",
+            "ad_delivery_end_time": "2019-12-11T16:56:30.000000Z",
+            "ad_creation_time": "2019-12-03T10:59:38.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Sarah Jones",
+            "ad_delivery_start_time": "2019-12-02T23:36:00.000000Z",
+            "ad_delivery_end_time": "2019-12-07T23:36:00.000000Z",
+            "ad_creation_time": "2019-12-02T23:06:55.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
             "guestimateSpendGBP": 1
         }
     ]

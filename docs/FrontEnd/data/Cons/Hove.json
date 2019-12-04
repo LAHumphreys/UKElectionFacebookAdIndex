@@ -39,7 +39,7 @@
         {
             "funding_entity": "Michael John Galsworthy",
             "ad_delivery_start_time": "2019-08-05T17:31:10.000000Z",
-            "ad_delivery_end_time": "2019-11-24T23:56:04.783588Z",
+            "ad_delivery_end_time": "2019-12-04T01:16:29.452557Z",
             "ad_creation_time": "2019-08-05T17:30:40.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -65,6 +65,18 @@
             "ad_delivery_start_time": "2019-11-12T01:05:36.000000Z",
             "ad_delivery_end_time": "2019-11-13T01:05:36.000000Z",
             "ad_creation_time": "2019-11-11T17:46:14.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 1,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "Brighton Kemptown Conservatives",
+            "ad_delivery_start_time": "2019-12-02T23:00:07.000000Z",
+            "ad_delivery_end_time": "2019-12-08T22:34:33.000000Z",
+            "ad_creation_time": "2019-12-02T23:00:07.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
