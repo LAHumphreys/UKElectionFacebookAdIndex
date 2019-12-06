@@ -116,7 +116,7 @@ find_package(GTest REQUIRED)
 add_executable(ad_parser test/ad_parser.cpp internal_includes/test_utils.h)
 add_executable(index test/index.cpp internal_includes/test_utils.h)
 add_executable(store test/store.cpp internal_includes/test_utils.h)
-add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h)
+add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h internal_includes/test_BreakdownParser.h)
 add_executable(configPurify test/testPurify.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h)
 add_executable(testReports test/testReports.cpp internal_includes/test_utils.h)
 

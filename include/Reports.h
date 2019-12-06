@@ -57,6 +57,20 @@ namespace Reports {
         REMOVE_BASELINE
     };
     std::unique_ptr<TimeSeriesReport> DoTimeSeries(const std::vector<Report*>& reports, const TimeSeriesMode& mode = TimeSeriesMode::STANDARD);
+
+    struct VennSet {
+        std::vector<std::string> groupNames;
+        struct VennItem {
+            std::vector<size_t> groups;
+            size_t value;
+        };
+        std::vector<VennItem> data;
+    };
+    struct BreakdownReport {
+        std::vector<std::string> keys;
+        std::vector<VennSet>     issueViews;
+        std::vector<VennSet>     issueSpend;
+    };
 }
 
 #endif //ELECTIONDATAANAL_REPORTS_H

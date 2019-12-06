@@ -6,6 +6,7 @@
 #include "../internal_includes/SummmaryJSON.h"
 #include "../internal_includes/ReportAdsJSON.h"
 #include "../internal_includes/ConfigParser.h"
+#include "../internal_includes/test_BreakdownParser.h"
 #include <gtest/gtest.h>
 #include <AdDb.h>
 #include <fstream>
@@ -590,4 +591,230 @@ TEST(DbUtilsTest, ConReport_Ads_RedactedMode) {
         ASSERT_EQ(fileAd.Get<ReportJSON::guestimateSpendGBP>(), reportWoking.ads[i].guestimateSpend );
         ASSERT_EQ(fileAd.Get<ReportJSON::guestimateImpressions>(), reportWoking.ads[i].guestimateImpressions );
     }
+}
+
+class BreakDownTst: public TDb {};
+
+TEST_F(BreakDownTst, BreakdownReport_Funder) {
+    Reports::BreakdownReport rpt;
+    rpt.keys = {"TestFunder1"};
+    rpt.issueViews = {{}, {}};
+    rpt.issueSpend = { {}, {} };
+
+    DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
+
+    std::ifstream breakdownOutput("./testBreakdown.json");
+    ASSERT_FALSE(breakdownOutput.fail());
+    TestBrkDwn::BrkDwn outputParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(breakdownOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(outputParser.Parse(rawSummary.c_str(), error)) << rawSummary << std::endl << error;
+    ASSERT_EQ(outputParser.Get<TestBrkDwn::funders>().size(), 1);
+    ASSERT_EQ(outputParser.Get<TestBrkDwn::funders>()[0], "TestFunder1");
+}
+
+TEST_F(BreakDownTst, BreakdownReport_Funders) {
+    Reports::BreakdownReport rpt;
+    rpt.keys = {"TestFunder1", "TestFunder2"};
+    rpt.issueViews = {{}, {}};
+    rpt.issueSpend = { {}, {} };
+
+    DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
+
+
+    std::ifstream breakdownOutput("./testBreakdown.json");
+    ASSERT_FALSE(breakdownOutput.fail());
+    TestBrkDwn::BrkDwn outputParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(breakdownOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(outputParser.Parse(rawSummary.c_str(), error)) << rawSummary << std::endl << error;
+    ASSERT_EQ(outputParser.Get<TestBrkDwn::funders>().size(), 2);
+    ASSERT_EQ(outputParser.Get<TestBrkDwn::funders>()[0], "TestFunder1");
+    ASSERT_EQ(outputParser.Get<TestBrkDwn::funders>()[1], "TestFunder2");
+}
+
+TEST_F(BreakDownTst, BreakdownReport_IssueViews) {
+    Reports::BreakdownReport rpt;
+    rpt.keys = {"TestFunder1", "TestFunder2"};
+    rpt.issueSpend = { {}, {} };
+    rpt.issueViews = {
+            {
+                { "Group 1", "Group 2"},
+                {
+                    { { 0}, 12},
+                    { { 1}, 15},
+                    { { 0, 1}, 2}
+                }
+            }, {
+                { "Group 3"},
+                {
+                    { { 0}, 13}
+                }
+            }
+    };
+
+
+    DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
+
+    std::ifstream breakdownOutput("./testBreakdown.json");
+    ASSERT_FALSE(breakdownOutput.fail());
+    TestBrkDwn::BrkDwn outputParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(breakdownOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(outputParser.Parse(rawSummary.c_str(), error)) << rawSummary << std::endl << error;
+
+    auto& funder1 =
+            outputParser.Get<TestBrkDwn::Issues>()
+                         .Get<TestBrkDwn::impressions>()
+                         .Get<TestBrkDwn::TestFunder1>();
+
+    ASSERT_EQ(funder1.Get<TestBrkDwn::name>(), "TestFunder1");
+    ASSERT_EQ(funder1.Get<TestBrkDwn::type>(), "venn");
+    ASSERT_EQ(funder1.Get<TestBrkDwn::data>().size(), 3);
+
+
+    auto& funder2 =
+            outputParser.Get<TestBrkDwn::Issues>()
+                    .Get<TestBrkDwn::impressions>()
+                    .Get<TestBrkDwn::TestFunder2>();
+
+    ASSERT_EQ(funder2.Get<TestBrkDwn::name>(), "TestFunder2");
+    ASSERT_EQ(funder2.Get<TestBrkDwn::type>(), "venn");
+    ASSERT_EQ(funder2.Get<TestBrkDwn::data>().size(), 1);
+
+    const std::vector<size_t> values = {12, 15, 2};
+    const std::vector<std::vector<std::string>> sets = {
+            { "Group 1"},
+            { "Group 2"},
+            { "Group 1", "Group 2"}
+    };
+
+
+    for (size_t i = 0; i < 3; ++i) {
+        const auto actValue = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
+        const auto& expValue = values[i];
+
+        const std::vector<std::string>& expSet = sets[i];
+        const std::vector<std::string>& actSet = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
+
+        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
+
+        ASSERT_EQ(expSet.size(), actSet.size());
+        for (size_t j = 0; i < expSet.size(); ++i) {
+            ASSERT_EQ(expSet[j], actSet[j]);
+        }
+    };
+
+    const std::vector<size_t> values2 = {13};
+    const std::vector<std::vector<std::string>> sets2 = {
+            { "Group 3"}
+    };
+
+    for (size_t i = 0; i < 1; ++i) {
+        const auto actValue = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
+        const auto& expValue = values2[i];
+
+        const std::vector<std::string>& expSet = sets2[i];
+        const std::vector<std::string>& actSet = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
+
+        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
+
+        ASSERT_EQ(expSet.size(), actSet.size());
+        for (size_t j = 0; i < expSet.size(); ++i) {
+            ASSERT_EQ(expSet[j], actSet[j]);
+        }
+    };
+}
+
+TEST_F(BreakDownTst, BreakdownReport_IssueSpend) {
+    Reports::BreakdownReport rpt;
+    rpt.keys = {"TestFunder1", "TestFunder2"};
+    rpt.issueViews = { {}, {} };
+    rpt.issueSpend = {
+            {
+                    { "Group 1", "Group 2"},
+                    {
+                            { { 0}, 12},
+                            { { 1}, 15},
+                            { { 0, 1}, 2}
+                    }
+            }, {
+                    { "Group 3"},
+                    {
+                            { { 0}, 13}
+                    }
+            }
+    };
+
+
+    DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
+
+    std::ifstream breakdownOutput("./testBreakdown.json");
+    ASSERT_FALSE(breakdownOutput.fail());
+    TestBrkDwn::BrkDwn outputParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(breakdownOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(outputParser.Parse(rawSummary.c_str(), error)) << rawSummary << std::endl << error;
+
+    auto& funder1 =
+            outputParser.Get<TestBrkDwn::Issues>()
+                    .Get<TestBrkDwn::spend>()
+                    .Get<TestBrkDwn::TestFunder1>();
+
+    ASSERT_EQ(funder1.Get<TestBrkDwn::name>(), "TestFunder1");
+    ASSERT_EQ(funder1.Get<TestBrkDwn::type>(), "venn");
+    ASSERT_EQ(funder1.Get<TestBrkDwn::data>().size(), 3);
+
+
+    auto& funder2 =
+            outputParser.Get<TestBrkDwn::Issues>()
+                    .Get<TestBrkDwn::spend>()
+                    .Get<TestBrkDwn::TestFunder2>();
+
+    ASSERT_EQ(funder2.Get<TestBrkDwn::name>(), "TestFunder2");
+    ASSERT_EQ(funder2.Get<TestBrkDwn::type>(), "venn");
+    ASSERT_EQ(funder2.Get<TestBrkDwn::data>().size(), 1);
+
+    const std::vector<size_t> values = {12, 15, 2};
+    const std::vector<std::vector<std::string>> sets = {
+            { "Group 1"},
+            { "Group 2"},
+            { "Group 1", "Group 2"}
+    };
+
+
+    for (size_t i = 0; i < 3; ++i) {
+        const auto actValue = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
+        const auto& expValue = values[i];
+
+        const std::vector<std::string>& expSet = sets[i];
+        const std::vector<std::string>& actSet = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
+
+        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
+
+        ASSERT_EQ(expSet.size(), actSet.size());
+        for (size_t j = 0; i < expSet.size(); ++i) {
+            ASSERT_EQ(expSet[j], actSet[j]);
+        }
+    };
+
+    const std::vector<size_t> values2 = {13};
+    const std::vector<std::vector<std::string>> sets2 = {
+            { "Group 3"}
+    };
+
+    for (size_t i = 0; i < 1; ++i) {
+        const auto actValue = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
+        const auto& expValue = values2[i];
+
+        const std::vector<std::string>& expSet = sets2[i];
+        const std::vector<std::string>& actSet = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
+
+        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
+
+        ASSERT_EQ(expSet.size(), actSet.size());
+        for (size_t j = 0; i < expSet.size(); ++i) {
+            ASSERT_EQ(expSet[j], actSet[j]);
+        }
+    };
 }

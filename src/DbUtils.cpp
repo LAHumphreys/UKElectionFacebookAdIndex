@@ -227,3 +227,80 @@ void DbUtils::WriteDbToDisk(AdDb &db, const std::string &fname) {
     summaryFile.close();
 }
 
+void DbUtils::WriteBreakdown(const Reports::BreakdownReport& report, const std::string &path) {
+    std::fstream breakdownFile(path, std::ios_base::out);
+    SimpleJSONPrettyBuilder breakdownBuilder;
+    breakdownBuilder.Add("funders", report.keys);
+
+    const auto AddObject = [&] (const std::string& name, std::function<void ()> inner) {
+        breakdownBuilder.AddName(name);
+        breakdownBuilder.StartAnonymousObject();
+        inner();
+        breakdownBuilder.EndObject();
+    };
+
+    const auto AddAnnonObject = [&] (std::function<void ()> inner) {
+        breakdownBuilder.StartAnonymousObject();
+        inner();
+        breakdownBuilder.EndObject();
+    };
+
+    const auto AddArray = [&] (const std::string& name, std::function<void ()> inner) {
+        breakdownBuilder.StartArray(name);
+        inner();
+        breakdownBuilder.EndArray();
+    };
+
+    AddObject("Issues", [&] () {
+        AddObject("impressions", [&] () {
+            for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
+                const std::string& key = report.keys[keyIdx];
+                const auto& issueViews = report.issueViews[keyIdx];
+                AddObject(key, [&] () {
+                    breakdownBuilder.Add("name", key);
+                    breakdownBuilder.Add("type", std::string("venn"));
+                    AddArray("data", [&] () {
+                        for (const auto& issue: issueViews.data) {
+                            AddAnnonObject([&] () {
+                                breakdownBuilder.Add("value", issue.value);
+                                std::vector<std::string> sets;
+                                sets.resize(issue.groups.size());
+                                for (size_t i = 0; i < sets.size(); ++i) {
+                                    sets[i] = issueViews.groupNames[issue.groups[i]];
+                                }
+                                breakdownBuilder.Add("sets", sets);
+                            });
+                        }
+                    });
+                });
+            }
+        });
+        AddObject("spend", [&] () {
+            for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
+                const std::string& key = report.keys[keyIdx];
+                const auto& issueSpend = report.issueSpend[keyIdx];
+                AddObject(key, [&] () {
+                    breakdownBuilder.Add("name", key);
+                    breakdownBuilder.Add("type", std::string("venn"));
+                    AddArray("data", [&] () {
+                        for (const auto& issue: issueSpend.data) {
+                            AddAnnonObject([&] () {
+                                breakdownBuilder.Add("value", issue.value);
+                                std::vector<std::string> sets;
+                                sets.resize(issue.groups.size());
+                                for (size_t i = 0; i < sets.size(); ++i) {
+                                    sets[i] = issueSpend.groupNames[issue.groups[i]];
+                                }
+                                breakdownBuilder.Add("sets", sets);
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    });
+
+
+    breakdownFile << breakdownBuilder.GetAndClear();
+    breakdownFile.close();
+}

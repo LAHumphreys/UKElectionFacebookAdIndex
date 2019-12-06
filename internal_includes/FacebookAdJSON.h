@@ -9,6 +9,7 @@ namespace JSONUtils {
     struct TimeField: public FieldBase {
         typedef Time ValueType;
         ValueType value;
+        constexpr ValueType& Value() { return value; }
 
         virtual void Clear() {
             FieldBase::Clear();
