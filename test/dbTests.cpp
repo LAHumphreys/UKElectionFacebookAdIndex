@@ -600,6 +600,10 @@ TEST_F(BreakDownTst, BreakdownReport_Funder) {
     rpt.keys = {"TestFunder1"};
     rpt.issueViews = {{}, {}};
     rpt.issueSpend = { {}, {} };
+    rpt.consViews = { {}, {} };
+    rpt.consSpend = { {}, {} };
+    rpt.pageViews = { {}, {} };
+    rpt.pageSpend = { {}, {} };
 
     DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
 
@@ -618,6 +622,10 @@ TEST_F(BreakDownTst, BreakdownReport_Funders) {
     rpt.keys = {"TestFunder1", "TestFunder2"};
     rpt.issueViews = {{}, {}};
     rpt.issueSpend = { {}, {} };
+    rpt.consViews = { {}, {} };
+    rpt.consSpend = { {}, {} };
+    rpt.pageViews = { {}, {} };
+    rpt.pageSpend = { {}, {} };
 
     DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
 
@@ -633,104 +641,19 @@ TEST_F(BreakDownTst, BreakdownReport_Funders) {
     ASSERT_EQ(outputParser.Get<TestBrkDwn::funders>()[1], "TestFunder2");
 }
 
-TEST_F(BreakDownTst, BreakdownReport_IssueViews) {
-    Reports::BreakdownReport rpt;
-    rpt.keys = {"TestFunder1", "TestFunder2"};
-    rpt.issueSpend = { {}, {} };
-    rpt.issueViews = {
-            {
-                { "Group 1", "Group 2"},
-                {
-                    { { 0}, 12},
-                    { { 1}, 15},
-                    { { 0, 1}, 2}
-                }
-            }, {
-                { "Group 3"},
-                {
-                    { { 0}, 13}
-                }
-            }
-    };
-
-
-    DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
-
-    std::ifstream breakdownOutput("./testBreakdown.json");
-    ASSERT_FALSE(breakdownOutput.fail());
-    TestBrkDwn::BrkDwn outputParser;
-    std::string rawSummary((std::istreambuf_iterator<char>(breakdownOutput)), std::istreambuf_iterator<char>());
-    std::string error;
-    ASSERT_TRUE(outputParser.Parse(rawSummary.c_str(), error)) << rawSummary << std::endl << error;
-
-    auto& funder1 =
-            outputParser.Get<TestBrkDwn::Issues>()
-                         .Get<TestBrkDwn::impressions>()
-                         .Get<TestBrkDwn::TestFunder1>();
-
-    ASSERT_EQ(funder1.Get<TestBrkDwn::name>(), "TestFunder1");
-    ASSERT_EQ(funder1.Get<TestBrkDwn::type>(), "venn");
-    ASSERT_EQ(funder1.Get<TestBrkDwn::data>().size(), 3);
-
-
-    auto& funder2 =
-            outputParser.Get<TestBrkDwn::Issues>()
-                    .Get<TestBrkDwn::impressions>()
-                    .Get<TestBrkDwn::TestFunder2>();
-
-    ASSERT_EQ(funder2.Get<TestBrkDwn::name>(), "TestFunder2");
-    ASSERT_EQ(funder2.Get<TestBrkDwn::type>(), "venn");
-    ASSERT_EQ(funder2.Get<TestBrkDwn::data>().size(), 1);
-
-    const std::vector<size_t> values = {12, 15, 2};
-    const std::vector<std::vector<std::string>> sets = {
-            { "Group 1"},
-            { "Group 2"},
-            { "Group 1", "Group 2"}
-    };
-
-
-    for (size_t i = 0; i < 3; ++i) {
-        const auto actValue = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
-        const auto& expValue = values[i];
-
-        const std::vector<std::string>& expSet = sets[i];
-        const std::vector<std::string>& actSet = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
-
-        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
-
-        ASSERT_EQ(expSet.size(), actSet.size());
-        for (size_t j = 0; i < expSet.size(); ++i) {
-            ASSERT_EQ(expSet[j], actSet[j]);
-        }
-    };
-
-    const std::vector<size_t> values2 = {13};
-    const std::vector<std::vector<std::string>> sets2 = {
-            { "Group 3"}
-    };
-
-    for (size_t i = 0; i < 1; ++i) {
-        const auto actValue = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
-        const auto& expValue = values2[i];
-
-        const std::vector<std::string>& expSet = sets2[i];
-        const std::vector<std::string>& actSet = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
-
-        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
-
-        ASSERT_EQ(expSet.size(), actSet.size());
-        for (size_t j = 0; i < expSet.size(); ++i) {
-            ASSERT_EQ(expSet[j], actSet[j]);
-        }
-    };
-}
-
-TEST_F(BreakDownTst, BreakdownReport_IssueSpend) {
+using VennDataSet = std::vector<Reports::VennSet>;
+template <class ReportDataSet, class ReportDataSubSet>
+void TestVenn(const std::function<VennDataSet& (Reports::BreakdownReport& rpt)>& GetField) {
     Reports::BreakdownReport rpt;
     rpt.keys = {"TestFunder1", "TestFunder2"};
     rpt.issueViews = { {}, {} };
-    rpt.issueSpend = {
+    rpt.issueSpend = { {}, {} };
+    rpt.consViews = { {}, {} };
+    rpt.consSpend = { {}, {} };
+    rpt.pageViews = { {}, {} };
+    rpt.pageSpend = { {}, {} };
+
+    GetField(rpt) = {
             {
                     { "Group 1", "Group 2"},
                     {
@@ -757,23 +680,23 @@ TEST_F(BreakDownTst, BreakdownReport_IssueSpend) {
     ASSERT_TRUE(outputParser.Parse(rawSummary.c_str(), error)) << rawSummary << std::endl << error;
 
     auto& funder1 =
-            outputParser.Get<TestBrkDwn::Issues>()
-                    .Get<TestBrkDwn::spend>()
-                    .Get<TestBrkDwn::TestFunder1>();
+            outputParser.Get<ReportDataSet>()
+                    .template Get<ReportDataSubSet>()
+                    .template Get<TestBrkDwn::Venn::TestFunder1>();
 
-    ASSERT_EQ(funder1.Get<TestBrkDwn::name>(), "TestFunder1");
-    ASSERT_EQ(funder1.Get<TestBrkDwn::type>(), "venn");
-    ASSERT_EQ(funder1.Get<TestBrkDwn::data>().size(), 3);
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::name>(), "TestFunder1");
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::type>(), "venn");
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::Venn::data>().size(), 3);
 
 
     auto& funder2 =
-            outputParser.Get<TestBrkDwn::Issues>()
-                    .Get<TestBrkDwn::spend>()
-                    .Get<TestBrkDwn::TestFunder2>();
+            outputParser.Get<ReportDataSet>()
+                    .template Get<ReportDataSubSet>()
+                    .template Get<TestBrkDwn::Venn::TestFunder2>();
 
-    ASSERT_EQ(funder2.Get<TestBrkDwn::name>(), "TestFunder2");
-    ASSERT_EQ(funder2.Get<TestBrkDwn::type>(), "venn");
-    ASSERT_EQ(funder2.Get<TestBrkDwn::data>().size(), 1);
+    ASSERT_EQ(funder2.template Get<TestBrkDwn::name>(), "TestFunder2");
+    ASSERT_EQ(funder2.template Get<TestBrkDwn::type>(), "venn");
+    ASSERT_EQ(funder2.template Get<TestBrkDwn::Venn::data>().size(), 1);
 
     const std::vector<size_t> values = {12, 15, 2};
     const std::vector<std::vector<std::string>> sets = {
@@ -784,11 +707,11 @@ TEST_F(BreakDownTst, BreakdownReport_IssueSpend) {
 
 
     for (size_t i = 0; i < 3; ++i) {
-        const auto actValue = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
+        const auto actValue = funder1.template Get<TestBrkDwn::Venn::data>()[i]->template Get<TestBrkDwn::value>();
         const auto& expValue = values[i];
 
         const std::vector<std::string>& expSet = sets[i];
-        const std::vector<std::string>& actSet = funder1.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
+        const std::vector<std::string>& actSet = funder1.template Get<TestBrkDwn::Venn::data>()[i]->template Get<TestBrkDwn::sets>();
 
         ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
 
@@ -804,17 +727,115 @@ TEST_F(BreakDownTst, BreakdownReport_IssueSpend) {
     };
 
     for (size_t i = 0; i < 1; ++i) {
-        const auto actValue = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::value>();
+        const auto actValue = funder2.template Get<TestBrkDwn::Venn::data>()[i]->template Get<TestBrkDwn::value>();
         const auto& expValue = values2[i];
 
         const std::vector<std::string>& expSet = sets2[i];
-        const std::vector<std::string>& actSet = funder2.Get<TestBrkDwn::data>()[i]->Get<TestBrkDwn::sets>();
+        const std::vector<std::string>& actSet = funder2.template Get<TestBrkDwn::Venn::data>()[i]->template Get<TestBrkDwn::sets>();
 
-        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 1 value: " << i;
+        ASSERT_EQ(actValue, expValue) << "Failed matching Test Funder 2 value: " << i;
 
         ASSERT_EQ(expSet.size(), actSet.size());
         for (size_t j = 0; i < expSet.size(); ++i) {
             ASSERT_EQ(expSet[j], actSet[j]);
         }
     };
+
+}
+
+TEST_F(BreakDownTst, BreakdownReport_IssueViews) {
+    const auto Getter = [] (Reports::BreakdownReport& rpt) -> VennDataSet& {
+        return rpt.issueViews;
+    };
+    TestVenn<TestBrkDwn::Issues, TestBrkDwn::Venn::impressions>(Getter);
+}
+
+TEST_F(BreakDownTst, BreakdownReport_IssueSpend) {
+    const auto Getter = [] (Reports::BreakdownReport& rpt) -> VennDataSet& {
+        return rpt.issueSpend;
+    };
+    TestVenn<TestBrkDwn::Issues, TestBrkDwn::Venn::spend>(Getter);
+}
+
+TEST_F(BreakDownTst, BreakdownReport_ConsViews) {
+    const auto Getter = [] (Reports::BreakdownReport& rpt) -> VennDataSet& {
+        return rpt.consViews;
+    };
+    TestVenn<TestBrkDwn::Cons, TestBrkDwn::Venn::impressions>(Getter);
+}
+
+TEST_F(BreakDownTst, BreakdownReport_ConsSpend) {
+    const auto Getter = [] (Reports::BreakdownReport& rpt) -> VennDataSet& {
+        return rpt.consSpend;
+    };
+    TestVenn<TestBrkDwn::Cons, TestBrkDwn::Venn::spend>(Getter);
+}
+
+using PieDataSet = std::vector<Reports::PieMap>;
+template <class ReportDataSet, class ReportDataSubSet>
+void TestPie(const std::function<PieDataSet& (Reports::BreakdownReport& rpt)>& GetField) {
+    Reports::BreakdownReport rpt;
+    rpt.keys = {"TestFunder1", "TestFunder2"};
+    rpt.issueViews = { {}, {} };
+    rpt.issueSpend = { {}, {} };
+    rpt.consViews = { {}, {} };
+    rpt.consSpend = { {}, {} };
+    rpt.pageViews = { {}, {} };
+    rpt.pageSpend = { {}, {} };
+
+    GetField(rpt) = {
+        { {"Page 1", 2}, {"Page 2", 3} },
+        { {"Page 3", 30} }
+    };
+
+    DbUtils::WriteBreakdown(rpt, "testBreakdown.json");
+
+    std::ifstream breakdownOutput("./testBreakdown.json");
+    ASSERT_FALSE(breakdownOutput.fail());
+    TestBrkDwn::BrkDwn outputParser;
+    std::string rawSummary((std::istreambuf_iterator<char>(breakdownOutput)), std::istreambuf_iterator<char>());
+    std::string error;
+    ASSERT_TRUE(outputParser.Parse(rawSummary.c_str(), error)) << rawSummary << std::endl << error;
+
+    auto& funder1 =
+            outputParser.Get<ReportDataSet>()
+                    .template Get<ReportDataSubSet>()
+                    .template Get<TestBrkDwn::Pie::TestFunder1>();
+
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::name>(), "TestFunder1");
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::type>(), "pie");
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::Pie::data>().size(), 2);
+
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::Pie::data>()[0]->template Get<TestBrkDwn::y>(), 2);
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::Pie::data>()[1]->template Get<TestBrkDwn::y>(), 3);
+
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::Pie::data>()[0]->template Get<TestBrkDwn::name>(), "Page 1");
+    ASSERT_EQ(funder1.template Get<TestBrkDwn::Pie::data>()[1]->template Get<TestBrkDwn::name>(), "Page 2");
+
+
+    auto& funder2 =
+            outputParser.Get<ReportDataSet>()
+                    .template Get<ReportDataSubSet>()
+                    .template Get<TestBrkDwn::Pie::TestFunder2>();
+
+    ASSERT_EQ(funder2.template Get<TestBrkDwn::name>(), "TestFunder2");
+    ASSERT_EQ(funder2.template Get<TestBrkDwn::type>(), "pie");
+    ASSERT_EQ(funder2.template Get<TestBrkDwn::Pie::data>().size(), 1);
+
+    ASSERT_EQ(funder2.template Get<TestBrkDwn::Pie::data>()[0]->template Get<TestBrkDwn::name>(), "Page 3");
+
+}
+
+TEST_F(BreakDownTst, BreakdownReport_PagesViews) {
+    const auto Getter = [] (Reports::BreakdownReport& rpt) -> PieDataSet& {
+        return rpt.pageViews;
+    };
+    TestPie<TestBrkDwn::Pages, TestBrkDwn::Pie::impressions>(Getter);
+}
+
+TEST_F(BreakDownTst, BreakdownReport_PagesSpend) {
+    const auto Getter = [] (Reports::BreakdownReport& rpt) -> PieDataSet& {
+        return rpt.pageSpend;
+    };
+    TestPie<TestBrkDwn::Pages, TestBrkDwn::Pie::spend>(Getter);
 }

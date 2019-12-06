@@ -11,25 +11,45 @@ namespace TestBrkDwn {
 
     NewStringArrayField(sets);
     NewI64Field(value);
+    NewI64Field(y);
     NewStringField(name);
     NewStringField(type);
 
-    using DataFields = SimpleParsedJSON<sets, value>;
-    NewObjectArray(data, DataFields);
 
-    using Funder = SimpleParsedJSON<name, type, data>;
-    NewEmbededObject(TestFunder1, Funder);
-    NewEmbededObject(TestFunder2, Funder);
+    namespace Venn {
+        using DataFields = SimpleParsedJSON<sets, value>;
+        NewObjectArray(data, DataFields);
 
-    using ImpressionFields = SimpleParsedJSON<TestFunder1, TestFunder2>;
-    using SpendFields = SimpleParsedJSON<TestFunder1, TestFunder2>;
-    NewEmbededObject(impressions, ImpressionFields);
-    NewEmbededObject(spend, SpendFields);
+        using Funder = SimpleParsedJSON<name, type, data>;
+        NewEmbededObject(TestFunder1, Funder);
+        NewEmbededObject(TestFunder2, Funder);
 
-    using IssueFields = SimpleParsedJSON<impressions, spend>;
-    NewEmbededObject(Issues, IssueFields);
+        using Data = SimpleParsedJSON<TestFunder1, TestFunder2>;
+        NewEmbededObject(impressions, Data);
+        NewEmbededObject(spend, Data);
 
-    using BrkDwn = SimpleParsedJSON<funders, Issues>;
+        using Set = SimpleParsedJSON<impressions, spend>;
+    }
+
+    namespace Pie {
+        using DataFields = SimpleParsedJSON<name, y>;
+        NewObjectArray(data, DataFields);
+
+        using Funder = SimpleParsedJSON<name, type, data>;
+        NewEmbededObject(TestFunder1, Funder);
+        NewEmbededObject(TestFunder2, Funder);
+
+        using Data = SimpleParsedJSON<TestFunder1, TestFunder2>;
+        NewEmbededObject(impressions, Data);
+        NewEmbededObject(spend, Data);
+
+        using Set = SimpleParsedJSON<impressions, spend>;
+    }
+    NewEmbededObject(Issues, Venn::Set);
+    NewEmbededObject(Cons, Venn::Set);
+    NewEmbededObject(Pages, Pie::Set);
+
+    using BrkDwn = SimpleParsedJSON<funders, Issues, Cons, Pages>;
 }
 
 #endif //ELECTIONDATAANAL_TEST_BREAKDOWNPARSER_H

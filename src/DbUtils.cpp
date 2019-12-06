@@ -251,54 +251,102 @@ void DbUtils::WriteBreakdown(const Reports::BreakdownReport& report, const std::
         breakdownBuilder.EndArray();
     };
 
-    AddObject("Issues", [&] () {
-        AddObject("impressions", [&] () {
-            for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
-                const std::string& key = report.keys[keyIdx];
-                const auto& issueViews = report.issueViews[keyIdx];
-                AddObject(key, [&] () {
-                    breakdownBuilder.Add("name", key);
-                    breakdownBuilder.Add("type", std::string("venn"));
-                    AddArray("data", [&] () {
-                        for (const auto& issue: issueViews.data) {
-                            AddAnnonObject([&] () {
-                                breakdownBuilder.Add("value", issue.value);
-                                std::vector<std::string> sets;
-                                sets.resize(issue.groups.size());
-                                for (size_t i = 0; i < sets.size(); ++i) {
-                                    sets[i] = issueViews.groupNames[issue.groups[i]];
-                                }
-                                breakdownBuilder.Add("sets", sets);
-                            });
-                        }
+    using VennSet = std::vector<Reports::VennSet>;
+    const auto DoBreakDown = [&] (const std::string& dataSet, const VennSet& views, const VennSet& spend) {
+        AddObject(dataSet, [&] () {
+            AddObject("impressions", [&] () {
+                for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
+                    const std::string& key = report.keys[keyIdx];
+                    const auto& issueViews = views[keyIdx];
+                    AddObject(key, [&] () {
+                        breakdownBuilder.Add("name", key);
+                        breakdownBuilder.Add("type", std::string("venn"));
+                        AddArray("data", [&] () {
+                            for (const auto& issue: issueViews.data) {
+                                AddAnnonObject([&] () {
+                                    breakdownBuilder.Add("value", issue.value);
+                                    std::vector<std::string> sets;
+                                    sets.resize(issue.groups.size());
+                                    for (size_t i = 0; i < sets.size(); ++i) {
+                                        sets[i] = issueViews.groupNames[issue.groups[i]];
+                                    }
+                                    breakdownBuilder.Add("sets", sets);
+                                });
+                            }
+                        });
                     });
-                });
-            }
-        });
-        AddObject("spend", [&] () {
-            for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
-                const std::string& key = report.keys[keyIdx];
-                const auto& issueSpend = report.issueSpend[keyIdx];
-                AddObject(key, [&] () {
-                    breakdownBuilder.Add("name", key);
-                    breakdownBuilder.Add("type", std::string("venn"));
-                    AddArray("data", [&] () {
-                        for (const auto& issue: issueSpend.data) {
-                            AddAnnonObject([&] () {
-                                breakdownBuilder.Add("value", issue.value);
-                                std::vector<std::string> sets;
-                                sets.resize(issue.groups.size());
-                                for (size_t i = 0; i < sets.size(); ++i) {
-                                    sets[i] = issueSpend.groupNames[issue.groups[i]];
-                                }
-                                breakdownBuilder.Add("sets", sets);
-                            });
-                        }
+                }
+            });
+            AddObject("spend", [&] () {
+                for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
+                    const std::string& key = report.keys[keyIdx];
+                    const auto& issueSpend = spend[keyIdx];
+                    AddObject(key, [&] () {
+                        breakdownBuilder.Add("name", key);
+                        breakdownBuilder.Add("type", std::string("venn"));
+                        AddArray("data", [&] () {
+                            for (const auto& issue: issueSpend.data) {
+                                AddAnnonObject([&] () {
+                                    breakdownBuilder.Add("value", issue.value);
+                                    std::vector<std::string> sets;
+                                    sets.resize(issue.groups.size());
+                                    for (size_t i = 0; i < sets.size(); ++i) {
+                                        sets[i] = issueSpend.groupNames[issue.groups[i]];
+                                    }
+                                    breakdownBuilder.Add("sets", sets);
+                                });
+                            }
+                        });
                     });
-                });
-            }
+                }
+            });
         });
-    });
+    };
+    const auto DoPie = [&] (const std::string& dataSet) {
+        AddObject(dataSet, [&] () {
+            AddObject("impressions", [&] () {
+                for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
+                    const std::string& key = report.keys[keyIdx];
+                    const Reports::PieMap& funderPages = report.pageViews[keyIdx];
+                    AddObject(key, [&] () {
+                        breakdownBuilder.Add("name", key);
+                        breakdownBuilder.Add("type", std::string("pie"));
+                        AddArray("data", [&] () {
+                            for (const auto& pair: funderPages) {
+                                AddAnnonObject([&] () {
+                                    breakdownBuilder.Add("name", pair.first);
+                                    breakdownBuilder.Add("y", pair.second);
+                                });
+                            }
+                        });
+                    });
+                }
+            });
+            AddObject("spend", [&] () {
+                for (size_t keyIdx = 0; keyIdx < report.keys.size(); ++keyIdx) {
+                    const std::string& key = report.keys[keyIdx];
+                    const Reports::PieMap& funderPages = report.pageSpend[keyIdx];
+                    AddObject(key, [&] () {
+                        breakdownBuilder.Add("name", key);
+                        breakdownBuilder.Add("type", std::string("pie"));
+                        AddArray("data", [&] () {
+                            for (const auto& pair: funderPages) {
+                                AddAnnonObject([&] () {
+                                    breakdownBuilder.Add("name", pair.first);
+                                    breakdownBuilder.Add("y", pair.second);
+                                });
+                            }
+                        });
+                    });
+                }
+            });
+        });
+    };
+
+    DoBreakDown("Issues", report.issueViews, report.issueSpend);
+    DoBreakDown("Cons", report.consViews, report.consSpend);
+    DoPie("Pages");
+
 
 
     breakdownFile << breakdownBuilder.GetAndClear();

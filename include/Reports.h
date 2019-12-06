@@ -66,10 +66,15 @@ namespace Reports {
         };
         std::vector<VennItem> data;
     };
+    using PieMap = std::map<std::string, size_t>;
     struct BreakdownReport {
         std::vector<std::string> keys;
         std::vector<VennSet>     issueViews;
         std::vector<VennSet>     issueSpend;
+        std::vector<VennSet>     consViews;
+        std::vector<VennSet>     consSpend;
+        std::vector<PieMap>      pageViews;
+        std::vector<PieMap>      pageSpend;
     };
 }
 
