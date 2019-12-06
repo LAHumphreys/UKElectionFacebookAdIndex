@@ -120,6 +120,13 @@ AdDb::FacebookAdList AdDb::GetConstituency(const std::string &name) const {
 AdDb::FacebookAdList AdDb::GetIssue(const std::string &name) const {
     return Get(*issues, name);
 }
+void AdDb::ForEachAd(const AdDb::ForEachFacebookAd_UnGrouped &cb) const {
+    store->ForEach([&] (const StoredFacebookAd& ad) -> FacebookAdStore::ScanOp {
+        bool more = (cb(ad.NewSharedRef()) == DbScanOp::CONTINUE);
+        return (more ? FacebookAdStore::ScanOp::CONTINUE: FacebookAdStore::ScanOp::STOP);
+    });
+
+}
 
 void AdDb::ForEachAdByConstituency(const AdDb::ForEachFacebookAd &cb) const {
     bool continueScan = true;
@@ -214,3 +221,4 @@ AdDb::AdDb(const std::string &cfg, const AdDb::Serialization &data, const AdDb::
         throw InvalidSerializationError{};
     }
 }
+

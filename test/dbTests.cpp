@@ -76,6 +76,9 @@ public:
         ad2.linkCaption = "Caption#2";
         ad2.linkDescription = "Description#2";
         ad2.body = "Brexit!";
+
+        FacebookAd& ad3 = ads.emplace_back();
+        ad3.id = 3;
     }
 protected:
     void SetUp() {
@@ -203,6 +206,38 @@ TEST_F(TDb, ForEachIssueKey) {
     ASSERT_EQ(issues.size(), 1);
 
     ASSERT_EQ(issues[0], "Brexit");
+}
+
+TEST_F(TDb, ForEach) {
+    std::vector<std::shared_ptr<const FacebookAd>> matches;
+    theDb.ForEachAd([&](std::shared_ptr<const FacebookAd> ad) -> auto {
+        matches.emplace_back(std::move(ad));
+        return AdDb::DbScanOp::CONTINUE;
+    });
+    ASSERT_EQ(matches.size(), 4);
+
+    AssertEq(*matches[0], ads[0]);
+    AssertEq(*matches[1], ads[1]);
+    AssertEq(*matches[2], ads[2]);
+    AssertEq(*matches[3], ads[3]);
+}
+
+TEST_F(TDb, ForEach_Stop) {
+    std::vector<std::shared_ptr<const FacebookAd>> matches;
+    size_t i = 0;
+    theDb.ForEachAd([&](std::shared_ptr<const FacebookAd> ad) -> auto {
+        ++i;
+        matches.emplace_back(std::move(ad));
+        if (i < 2) {
+            return AdDb::DbScanOp::CONTINUE;
+        } else {
+            return AdDb::DbScanOp::STOP;
+        }
+    });
+    ASSERT_EQ(matches.size(), 2);
+
+    AssertEq(*matches[0], ads[0]);
+    AssertEq(*matches[1], ads[1]);
 }
 
 

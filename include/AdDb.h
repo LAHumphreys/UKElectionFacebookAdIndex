@@ -37,12 +37,14 @@ public:
     using FacebookAdList  = std::vector<std::shared_ptr<const FacebookAd>>;
     using ForEachFacebookAd =
             std::function<DbScanOp (const IndexConfig::Item&, std::shared_ptr<const FacebookAd> ad)>;
+    using ForEachFacebookAd_UnGrouped = std::function<DbScanOp (std::shared_ptr<const FacebookAd> ad)>;
     using ForEachItemDefn = std::function<DbScanOp (const std::string& name)>;
     void Store(std::unique_ptr<FacebookAd> ad);
 
     [[nodiscard]] FacebookAdList GetConstituency(const std::string& name) const;
     [[nodiscard]] FacebookAdList GetIssue(const std::string& name) const;
 
+    void ForEachAd(const ForEachFacebookAd_UnGrouped & cb) const;
     void ForEachAdByConstituency(const ForEachFacebookAd& cb) const;
     void ForEachConsituency(const ForEachItemDefn& cb) const;
     void ForEachIssue(const ForEachItemDefn& cb) const;
