@@ -35,6 +35,18 @@
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "guestimateImpressions": 9499,
             "guestimateSpendGBP": 149
+        },
+        {
+            "funding_entity": "The Labour Party. Promoted by Joanna Wojna on behalf of Janet Daby",
+            "ad_delivery_start_time": "2019-12-07T17:00:19.000000Z",
+            "ad_delivery_end_time": "2019-12-12T14:00:19.000000Z",
+            "ad_creation_time": "2019-12-07T16:06:17.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 22499,
+            "guestimateSpendGBP": 449
         }
     ]
 }

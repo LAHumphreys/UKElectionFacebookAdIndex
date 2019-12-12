@@ -63,7 +63,7 @@
         {
             "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
             "ad_delivery_start_time": "2019-11-25T20:25:01.000000Z",
-            "ad_delivery_end_time": "2019-12-04T01:16:30.066969Z",
+            "ad_delivery_end_time": "2019-12-12T08:43:18.799565Z",
             "ad_creation_time": "2019-11-25T20:25:01.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
@@ -75,14 +75,14 @@
         {
             "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
             "ad_delivery_start_time": "2019-11-26T11:01:13.000000Z",
-            "ad_delivery_end_time": "2019-12-04T01:16:30.040957Z",
+            "ad_delivery_end_time": "2019-12-12T08:43:18.763082Z",
             "ad_creation_time": "2019-11-26T11:01:13.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 9499,
-            "guestimateSpendGBP": 149
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 249
         },
         {
             "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
@@ -105,7 +105,7 @@
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
-            "guestimateImpressions": 3499,
+            "guestimateImpressions": 4499,
             "guestimateSpendGBP": 1
         },
         {
@@ -123,8 +123,68 @@
         {
             "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
             "ad_delivery_start_time": "2019-12-02T20:52:46.000000Z",
-            "ad_delivery_end_time": "2019-12-04T01:16:26.935935Z",
+            "ad_delivery_end_time": "2019-12-12T08:43:17.886908Z",
             "ad_creation_time": "2019-12-02T20:52:46.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 2499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
+            "ad_delivery_start_time": "2019-12-03T21:52:03.000000Z",
+            "ad_delivery_end_time": "2019-12-12T08:43:17.577510Z",
+            "ad_creation_time": "2019-12-03T21:52:03.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 9499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
+            "ad_delivery_start_time": "2019-12-04T18:03:23.000000Z",
+            "ad_delivery_end_time": "2019-12-12T08:43:17.339071Z",
+            "ad_creation_time": "2019-12-04T18:03:23.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 8499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
+            "ad_delivery_start_time": "2019-12-04T17:57:51.000000Z",
+            "ad_delivery_end_time": "2019-12-12T08:43:17.351665Z",
+            "ad_creation_time": "2019-12-04T17:57:51.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 7499,
+            "guestimateSpendGBP": 1
+        },
+        {
+            "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
+            "ad_delivery_start_time": "2019-12-08T18:29:18.000000Z",
+            "ad_delivery_end_time": "2020-01-12T14:26:46.000000Z",
+            "ad_creation_time": "2019-12-08T18:29:18.000000Z",
+            "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "ad_creative_body": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
+            "guestimateImpressions": 12499,
+            "guestimateSpendGBP": 149
+        },
+        {
+            "funding_entity": "The Labour Party. Promoted by Graham Redwood on behalf of Rebecca Gordon-Nesbitt",
+            "ad_delivery_start_time": "2019-12-08T17:30:54.000000Z",
+            "ad_delivery_end_time": "2019-12-12T08:43:25.837886Z",
+            "ad_creation_time": "2019-12-08T17:30:54.000000Z",
             "ad_creative_link_description": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_title": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
             "ad_creative_link_caption": "\"Creative Fields\" redacted due to Facebook Terms & Conditions. To review ad details please acquire a FACEBOOK API Token and re-run the report locally",
