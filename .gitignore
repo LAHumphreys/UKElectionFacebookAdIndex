@@ -47,3 +47,11 @@ FrontEnd/data
 clean.cfg
 purged.txt
 utils/PlaceData/IPN_GB_2019.csv
+
+data
+dbs.*
+timeSeries.cfg
+doReindex.sh
+reindexed
+refreshTimeSeries.bash
+resultsData
