@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- Data tables -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
+        <link rel="stylesheet" href="cust.css">
+
+        <title>View By Category</title>
+    </head>
+    <body>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <div class="container-fluid">
+            <div class="row">
+            </div>
+            <div class="row">
+                <h6> Report Generated Thursday 12th November 2019, 22:00 GMT</h6>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h4> UK Election Facebook Advertising </h4>
+                    <h5> The Final 36 Hours</h5>
+                    <table id="selectionTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Consituency</th>
+                                <th scope="col">2017 Winning Party</th>
+                                <th scope="col">2017 Winning Candidate</th>
+                                <th scope="col">2017 Winning Margin</th>
+                                <th scope="col">Guestimated Impressions</th>
+                                <th scope="col">Load Spend Graph</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <figure class="highcharts-figure">
+                        <div id="2017Pie"></div>
+                    </figure>
+                </div>
+                <div class="col-6">
+                    <figure class="highcharts-figure">
+                        <div id="ViewsPie"></div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" charset="utf8" src="finalNight.js"></script>
+
+        <script>
+            function GetDataSet() {
+                return $('#DataSetSelector').val();
+            }
+            function GetSummaryUrl() {
+                return "data/" + "ResultsNight" + "/FinalHours.json";
+            }
+            function GetVoteUrl() {
+                return "data/" + "ResultsNight" + "/2017.json";
+            }
+            $(document).ready( function () {
+                ResetData();
+            } );
+        </script>
+    </body>
+</html>
+

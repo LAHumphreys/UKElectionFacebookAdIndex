@@ -67,6 +67,7 @@ namespace Reports {
         std::vector<VennItem> data;
     };
     using PieMap = std::map<std::string, size_t>;
+    constexpr const char* OtherGroup = "Other";
     struct BreakdownReport {
         std::vector<std::string> keys;
         std::vector<VennSet>     issueViews;
@@ -76,6 +77,7 @@ namespace Reports {
         std::vector<PieMap>      pageViews;
         std::vector<PieMap>      pageSpend;
     };
+    std::unique_ptr<BreakdownReport> DoFunderBreakdown(const AdDb& db);
 }
 
 #endif //ELECTIONDATAANAL_REPORTS_H

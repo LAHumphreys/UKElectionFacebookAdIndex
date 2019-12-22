@@ -2,6 +2,7 @@
 // Created by lukeh on 03/11/2019.
 //
 #include <Reports.h>
+#include <set>
 
 using namespace Reports;
 namespace {
@@ -20,6 +21,12 @@ namespace {
         } else {
             const size_t diff = (qty.upper_bound - qty.lower_bound);
             return (qty.lower_bound + (diff / 2));
+        }
+    }
+    void AddFlooredMidPoint(size_t& base, const BoundedQuantity& qty) {
+        size_t mid = MidPoint(qty, MidPointMode::FLOOR_ZERO_BAND);
+        if (mid > 1 || base == 0) {
+            base += mid;
         }
     }
 
@@ -254,4 +261,48 @@ std::unique_ptr<Reports::TimeSeriesReport> Reports::DoTimeSeries(const std::vect
     }
 
     return result;
+}
+
+std::unique_ptr<BreakdownReport> Reports::DoFunderBreakdown(const AdDb &db) {
+    auto report = std::make_unique<BreakdownReport>();
+    struct FunderDetails {
+        size_t totalPageSpend = 0;
+        PieMap pageSpend;
+    };
+    std::map<std::string, FunderDetails> funders;
+    db.ForEachAd([&] (std::shared_ptr<const FacebookAd> ad) {
+        FunderDetails& details = funders[ad->fundingEntity];
+        AddFlooredMidPoint(details.pageSpend[ad->pageName], ad->spend);
+        AddFlooredMidPoint(details.totalPageSpend, ad->spend);
+        return AdDb::DbScanOp::CONTINUE;
+    });
+
+    report->keys.reserve(funders.size());
+    report->pageSpend.reserve(funders.size());
+    size_t i = 0;
+    for (auto it = funders.begin(); it != funders.end(); ) {
+        const size_t pageSpendThreshold = 0.01 * it->second.totalPageSpend;
+        size_t otherSpend = 0;
+
+        for (auto spit = it->second.pageSpend.begin(); spit != it->second.pageSpend.end();)  {
+            if (spit->second < pageSpendThreshold) {
+                otherSpend += spit->second;
+                spit = it->second.pageSpend.erase(spit);
+            } else {
+                ++spit;
+            }
+        }
+        if (otherSpend > 0) {
+            it->second.pageSpend[OtherGroup] = otherSpend;
+        }
+        report->pageSpend.emplace_back(std::move(it->second.pageSpend));
+
+        std::string& f = const_cast<std::string&>(it->first);
+        report->keys.emplace_back(std::move(f));
+
+        it = funders.erase(it);
+        ++i;
+    }
+
+    return report;
 }

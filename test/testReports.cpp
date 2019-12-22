@@ -1041,3 +1041,220 @@ TEST_F(TimeSeriesTest, ItemRegressesToOther) {
 
     });
 }
+
+const std::string breakdownDbConfig = R"JSON(
+{
+  "consituencies": [
+    {
+         "id": "Con1",
+         "keys": ["con1"]
+    }, {
+         "id": "Con2",
+         "keys": ["con2"]
+    }, {
+         "id": "Con3",
+         "keys": ["con3"]
+    }],
+
+    "issues": [{
+         "id": "Issue1",
+         "keys": ["issue1"]
+    }, {
+         "id": "Issue2",
+         "keys": ["issue2"]
+    }]
+}
+)JSON";
+
+class BreakdownReportTest: public ::testing::Test {
+protected:
+    BreakdownReportTest(): db(dbConfig) {}
+    const std::vector<std::string> funders = {
+            "Funder 1",
+            "Funder 2",
+            "Funder 3",
+    };
+    const std::vector<std::string> pages = {
+            "Page 1",
+            "Page 2",
+            "Page 3",
+            "Page 4",
+    };
+
+    auto SpendSetter(size_t mid) {
+        if (mid < 100) {
+            throw "Mid too small";
+        }
+        return [mid] (FacebookAd& ad) {
+            ad.spend.lower_bound = (mid - 50);
+            ad.spend.upper_bound = (mid + 50);
+        };
+    }
+    auto ZeroSpendSetter(size_t top) {
+        return [top] (FacebookAd& ad) {
+            ad.spend.lower_bound = 0;
+            ad.spend.upper_bound = top;
+        };
+    }
+
+    std::unique_ptr<Reports::BreakdownReport> GetReport() {
+        return Reports::DoFunderBreakdown(db);
+    }
+    using ExpPie = std::map<std::string, std::map<std::string, size_t>>;
+    using PieDataAccess = std::function<Reports::PieMap& (Reports::BreakdownReport& rpt, const size_t& idx)>;
+    void TestPie(ExpPie& expected, const PieDataAccess& GetData) {
+        auto report = GetReport();
+        ASSERT_EQ(report->keys.size(), expected.size());
+        size_t i = 0;
+        for (const auto& fpair: expected ) {
+            ASSERT_EQ(report->keys[i], fpair.first) << "Funder: " << fpair.first;
+            const auto& data = GetData(*report, i);
+            ASSERT_EQ(data.size(), fpair.second.size()) << "Funder: " << fpair.first;
+            for (const auto& ppair: fpair.second) {
+                auto it = data.find(ppair.first);
+                ASSERT_NE(it, data.end()) << "Funder: " << fpair.first << ", Page: " << ppair.first;
+                ASSERT_EQ(it->second, ppair.second)<< "Funder: " << fpair.first << ", Page: " << ppair.first;
+            }
+            ++i;
+        }
+    }
+
+
+    using AdUpdater = std::function<void (FacebookAd& ad)>;
+    void NewAd(std::string funder, std::string pageName, const AdUpdater& upd) {
+        FacebookAd ad;
+        ad.id = ++nextId;
+        ad.fundingEntity = std::move(funder);
+        ad.pageName = pageName;
+
+        upd(ad);
+
+        auto item = std::make_unique<FacebookAd>(ad);
+        db.Store(std::move(item));
+
+    }
+    void NewAd(std::string funder, const AdUpdater& upd) {
+        NewAd(std::move(funder), "", upd);
+    }
+    void NewAd(std::string funder) {
+        NewAd(std::move(funder), [] (FacebookAd& ad) {});
+    }
+private:
+    size_t nextId = 0;
+    AdDb db;
+
+};
+
+TEST_F(BreakdownReportTest, Funders_EmptyDb) {
+    auto report = GetReport();
+    ASSERT_EQ(report->keys.size(), 0);
+}
+
+TEST_F(BreakdownReportTest, Funders_KeyNames) {
+    NewAd(funders[0]);
+    NewAd(funders[1]);
+    NewAd(funders[2]);
+    NewAd(funders[1]);
+    NewAd(funders[0]);
+    auto report = GetReport();
+    ASSERT_EQ(report->keys.size(), 3);
+}
+
+TEST_F(BreakdownReportTest, Funders_PageSpend) {
+    NewAd(funders[0], pages[0], SpendSetter(100));
+    NewAd(funders[0], pages[0], SpendSetter(200));
+    NewAd(funders[0], pages[1], SpendSetter(100));
+
+    std::map<std::string, std::map<std::string, size_t>> expected = {
+        {
+            funders[0], {
+                {pages[0], 300},
+                {pages[1], 100},
+            }
+        }
+    };
+    auto GetData = [&] (Reports::BreakdownReport& rpt, const size_t& idx) -> auto& {
+        return rpt.pageSpend[idx];
+    };
+    TestPie(expected, GetData);
+}
+
+TEST_F(BreakdownReportTest, Funders_ZeroBase) {
+    NewAd(funders[0], pages[0], ZeroSpendSetter(100));
+    NewAd(funders[0], pages[0], ZeroSpendSetter(200));
+    NewAd(funders[0], pages[1], ZeroSpendSetter(100));
+
+    std::map<std::string, std::map<std::string, size_t>> expected = {
+            {
+                funders[0], {
+                    {pages[0], 1},
+                    {pages[1], 1},
+                }
+            }
+    };
+    auto GetData = [&] (Reports::BreakdownReport& rpt, const size_t& idx) -> auto& {
+        return rpt.pageSpend[idx];
+    };
+    TestPie(expected, GetData);
+}
+
+TEST_F(BreakdownReportTest, Funders_GroupSmallToOther) {
+    NewAd(funders[0], pages[0], SpendSetter(10000));
+    NewAd(funders[0], pages[0], SpendSetter(20000));
+    NewAd(funders[0], pages[1], SpendSetter(10000));
+    NewAd(funders[0], pages[2], SpendSetter(100));
+    NewAd(funders[0], pages[3], SpendSetter(100));
+    NewAd(funders[0], pages[3], SpendSetter(100));
+
+    std::map<std::string, std::map<std::string, size_t>> expected = {
+            {
+                funders[0], {
+                    {pages[0], 30000},
+                    {pages[1], 10000},
+                    {Reports::OtherGroup, 300}
+                }
+            }
+    };
+    auto GetData = [&] (Reports::BreakdownReport& rpt, const size_t& idx) -> auto& {
+        return rpt.pageSpend[idx];
+    };
+    TestPie(expected, GetData);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
