@@ -13,7 +13,7 @@ public:
          std::vector<IndexConfig::Item>{
             {
                 "Woking",
-                {"Woking", "Zoëy", "Forster"}
+                {"Woking", "Zoëy", "Forster", "Two Words"}
             }, {
                 "Other",
                 {"Other", "Corbyn"}
@@ -27,7 +27,7 @@ public:
                                 {"Wokingham"}
                         }, {
                                 "Woking",
-                                {"Woking", "Zoëy", "Forster"}
+                                {"Woking", "Zoëy", "Forster", "Two Words"}
                         }, {
                                 "Other",
                                 {"Other", "Corbyn"}
@@ -82,24 +82,37 @@ protected:
     };
 
     void DoWokingTest() {
-        GenerateMatch("Everything's happening in Woking!");
-        GenerateMatch("Everything's happening in wokIng!");
-        GenerateMatch("Unicode check time: Zoëy");
-        GenerateMatch("Woking at the start!");
-        GenerateMatch("At the end: Woking");
-
-        GenerateNonMatch("Not an interesting one at all!");
-
-        GenerateNonMatch("Attempted trap: Wokingham");
+        GenerateMatch("Everything's happening in Woking!"); // 0
+        GenerateMatch("Everything's happening in wokIng!"); // 1
+        GenerateMatch("Everything's happening in wokIng!"); // 2
+        GenerateMatch("Multi Word key: Two Words!");        // 3
+        GenerateMatch("Multi Word decoy [later match]: Two decoy Woking!");
+        GenerateMatch("Unicode check time: Zoëy");          // 5
+        GenerateMatch("Woking at the start!");              // 6
+        GenerateMatch("At the end: Woking");                // 7
         GenerateMatch("But don't throw the Wokingham baby out with the Woking bathwater");
 
-        GenerateNonMatch("Attempted trap: prefixWoking");
+        GenerateNonMatch("No an interesting one at all!");  // 9
+        GenerateNonMatch("Multi Word decoy [no match]: Two decoy not a key!");
+        GenerateNonMatch("Attempted trap: Wokingham");       // 11
+        GenerateNonMatch("Attempted trap: prefixWoking [but not the end]");
+        GenerateNonMatch("Attempted trap: prefixWoking");    // 13
 
         auto wokingHits = index->Get("Woking");
-        ASSERT_EQ(expectedWokingKeys.size(), wokingHits.size());
+        std::stringstream hits;
+        hits << "Expected: ";
+        for (const auto& hit: expectedWokingKeys) {
+            hits << "[" << hit << "] ";
+        }
+        hits << std::endl
+             << "Actual:   ";
+        for (const auto& hit: wokingHits) {
+            hits << "[" << hit << "] ";
+        }
+        ASSERT_EQ(expectedWokingKeys.size(), wokingHits.size()) << hits.str();
 
         for (size_t i = 0; i < expectedWokingKeys.size(); ++i) {
-            ASSERT_EQ(expectedWokingKeys[i], wokingHits[i]);
+            ASSERT_EQ(expectedWokingKeys[i], wokingHits[i]) << hits.str();
         }
 
         auto serialization = index->Serialize();
@@ -255,3 +268,4 @@ TEST_F(IndexMatchTest, PageName) {
 
     DoWokingTest();
 }
+

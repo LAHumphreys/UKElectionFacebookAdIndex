@@ -395,11 +395,13 @@ TEST(DbUtilsTest, WokingData) {
 
     ASSERT_EQ(results.size(), 2);
 
-    const auto& libDemAd = *results[0];
-    const auto& conAd = *results[1];
+    std::sort(results.begin(), results.end(), [&] (const auto& lhs, const auto& rhs) -> bool {
+        return (lhs->fundingEntity < rhs->fundingEntity);
+    });
 
-    // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
-    // welcome to pull request a fix for this test only problem
+    const auto& libDemAd = *results[1];
+    const auto& conAd = *results[0];
+
     ASSERT_EQ(libDemAd.fundingEntity, "Woking Liberal Democrats");
     ASSERT_EQ(conAd.fundingEntity, "Woking Conservative Association");
 }
@@ -417,12 +419,14 @@ TEST(DbUtilsTest, RestoreWokingData) {
         auto results = dbToTest.GetConstituency("Woking");
         ASSERT_EQ(results.size(), 3);
 
-        const auto* libDemAd = results[0].get();
-        const auto* conAd = results[1].get();
+        std::sort(results.begin(), results.end(), [&] (const auto& lhs, const auto& rhs) -> bool {
+            return (lhs->fundingEntity < rhs->fundingEntity);
+        });
+
+        const auto* libDemAd = results[1].get();
+        const auto* conAd = results[0].get();
         const auto* testAd = results[2].get();
 
-        // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
-        // welcome to pull request a fix for this test only problem
         ASSERT_EQ(libDemAd->fundingEntity, "Woking Liberal Democrats");
         ASSERT_EQ(libDemAd->impressions.lower_bound, libDemLower);
         ASSERT_EQ(libDemAd->id, 1572697905);
@@ -455,12 +459,14 @@ TEST(DbUtilsTest, RestoreWokingData_Reindex) {
         auto results = dbToTest.GetConstituency(conn);
         ASSERT_EQ(results.size(), 3);
 
+        std::sort(results.begin(), results.end(), [&] (const auto& lhs, const auto& rhs) -> bool {
+            return (lhs->fundingEntity < rhs->fundingEntity);
+        });
+
         const auto* libDemAd = results[1].get();
         const auto* conAd = results[0].get();
         const auto* testAd = results[2].get();
 
-        // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
-        // welcome to pull request a fix for this test only problem
         ASSERT_EQ(libDemAd->fundingEntity, "Woking Liberal Democrats");
         ASSERT_EQ(libDemAd->impressions.lower_bound, libDemLower);
         ASSERT_EQ(libDemAd->id, 1572697905);
@@ -491,12 +497,14 @@ TEST(DbUtilsTest, RestoreAndUpdateWokingData) {
         auto results = dbToTest.GetConstituency("Woking");
         ASSERT_EQ(results.size(), 3);
 
-        const auto* libDemAd = results[0].get();
-        const auto* conAd = results[1].get();
+        std::sort(results.begin(), results.end(), [&] (const auto& lhs, const auto& rhs) -> bool {
+            return (lhs->fundingEntity < rhs->fundingEntity);
+        });
+
+        const auto* libDemAd = results[1].get();
+        const auto* conAd = results[0].get();
         const auto* testAd = results[2].get();
 
-        // Whilst sort order is LOCALE defined, if someone's system is so obtuse as to sort 2 before 1, they're
-        // welcome to pull request a fix for this test only problem
         ASSERT_EQ(libDemAd->fundingEntity, "Woking Liberal Democrats");
         ASSERT_EQ(libDemAd->impressions.lower_bound, libDemLower);
         ASSERT_EQ(libDemAd->id, 1572697905);

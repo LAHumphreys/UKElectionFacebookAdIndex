@@ -45,6 +45,7 @@ add_library(Db STATIC
     internal_includes/IndexJSON.h
     internal_includes/DbJSON.h
     internal_includes/TimeSeriesConfigJSON.h
+    internal_includes/StringSearch.h
     include/FacebookAdKey.h
     include/FacebookAdStore.h
     include/Index.h
@@ -62,6 +63,7 @@ target_link_libraries(Db PUBLIC
     AdParser
     FixedJSON::FixedJSON
     DevToolsLog::Log
+    tbb
 )
 target_include_directories(Db PUBLIC
     $<BUILD_INTERFACE:${ElectionDataAnal_SOURCE_DIR}/include>
@@ -123,6 +125,7 @@ add_executable(store test/store.cpp internal_includes/test_utils.h)
 add_executable(adDb test/dbTests.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h internal_includes/test_BreakdownParser.h)
 add_executable(configPurify test/testPurify.cpp internal_includes/test_utils.h internal_includes/SummmaryJSON.h internal_includes/ReportAdsJSON.h)
 add_executable(testReports test/testReports.cpp internal_includes/test_utils.h)
+add_executable(stringSearch test/stringSearchUtils.cpp internal_includes/test_utils.h internal_includes/StringSearch.h)
 
 #
 # NOTE: Valgrind must be configured *before* testing is imported
@@ -138,6 +141,7 @@ add_test(store store)
 add_test(adDb adDb)
 add_test(configPurify configPurify)
 add_test(testReports testReports)
+add_test(stringSearch stringSearch)
 
 target_compile_features(ad_parser PRIVATE cxx_std_17)
 target_link_libraries(ad_parser PUBLIC AdParser GTest::GTest GTest::Main)
@@ -156,6 +160,9 @@ target_link_libraries(configPurify PUBLIC ConfigUtils Db AdParser GTest::GTest G
 
 target_compile_features(testReports PRIVATE cxx_std_17)
 target_link_libraries(testReports PUBLIC AdParser Db GTest::GTest GTest::Main)
+
+target_compile_features(stringSearch PRIVATE cxx_std_17)
+target_link_libraries(stringSearch PUBLIC AdParser Db GTest::GTest GTest::Main)
 
 #
 # Configure Coverage Build

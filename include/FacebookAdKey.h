@@ -18,6 +18,8 @@ public:
 
     bool HasKey(const StoredFacebookAd& item, const std::string& key) const override final;
 
+    bool HasKey(const StoredFacebookAd& item, const std::vector<std::string>& key) const override final;
+
     std::string Serialize(
         const std::vector<std::string>& names,
         const std::vector<std::vector<KeyType>>& ids);

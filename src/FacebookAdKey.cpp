@@ -7,6 +7,9 @@
 
 using namespace DbUtils;
 
+namespace {
+}
+
 bool FacebookAdKey::HasKey(const StoredFacebookAd &item, const std::string &key) const {
     bool match = false;
     if (!item.IsNull()) {
@@ -14,13 +17,33 @@ bool FacebookAdKey::HasKey(const StoredFacebookAd &item, const std::string &key)
             match = true;
         } else if (Search(item.CachedUppers().fundingEntity, key)) {
             match = true;
-        } else if (Search(item.CachedUppers().pageName, key )) {
+        } else if (Search(item.CachedUppers().pageName, key)) {
             match = true;
-        } else if (Search(item.CachedUppers().body, key )) {
+        } else if (Search(item.CachedUppers().body, key)) {
             match = true;
-        } else if (Search(item.CachedUppers().linkDescription, key )) {
+        } else if (Search(item.CachedUppers().linkDescription, key)) {
             match = true;
         } else if (Search(item.CachedUppers().linkCaption, key)) {
+            match = true;
+        }
+    }
+    return match;
+}
+
+bool FacebookAdKey::HasKey(const StoredFacebookAd &item, const std::vector<std::string> &keys) const {
+    bool match = false;
+    if (!item.IsNull()) {
+        if (SearchForOneOf(item.CachedUppers().linkTitle.c_str(), keys)) {
+            match = true;
+        } else if (SearchForOneOf(item.CachedUppers().fundingEntity.c_str(), keys)) {
+            match = true;
+        } else if (SearchForOneOf(item.CachedUppers().pageName.c_str(), keys )) {
+            match = true;
+        } else if (SearchForOneOf(item.CachedUppers().body.c_str(), keys )) {
+            match = true;
+        } else if (SearchForOneOf(item.CachedUppers().linkDescription.c_str(), keys )) {
+            match = true;
+        } else if (SearchForOneOf(item.CachedUppers().linkCaption.c_str(), keys)) {
             match = true;
         }
     }
@@ -64,3 +87,4 @@ void FacebookAdKey::DeSerialize(
     }
 
 }
+

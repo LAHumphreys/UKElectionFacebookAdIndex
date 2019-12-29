@@ -3,11 +3,14 @@
 //
 #include "../internal_includes/DbUtils.h"
 #include "../internal_includes/SummmaryJSON.h"
+#include "../internal_includes/StringSearch.h"
 #include <fstream>
 #include <OSTools.h>
 #include <FacebookParser.h>
 #include <Reports.h>
 #include <logger.h>
+#include <algorithm>
+#include <execution>
 
 using namespace DbUtils;
 using namespace nstimestamp;
@@ -20,7 +23,22 @@ namespace {
             return false;
         }
     }
+
+    const char* AdvanceToNextWord(const char* str) {
+        if (IsWordChar(*str)) {
+            while (*str != 0 && IsWordChar(*str)) {
+                ++str;
+            }
+        }
+        while (*str != 0 && !IsWordChar(*str)) {
+            ++str;
+        }
+
+        return str;
+    }
+
 }
+
 bool DbUtils::Search(const std::string& toSearch, const std::string& key) {
     size_t pos = 0;
     bool found = false;
@@ -51,6 +69,60 @@ bool DbUtils::Search(const std::string& toSearch, const std::string& key) {
     }
 
     return found;
+}
+
+bool DbUtils::SearchForOneOf(const char* toSearch, const std::vector<std::string>& k) {
+    // TODO: Don't bother
+    auto keys = k;
+    std::sort(keys.begin(), keys.end());
+    bool match = false;
+
+    const char* spt = toSearch;
+    const char* nextWordStart = nullptr;
+
+    ValidKeys searchState(keys);
+
+    const auto NoMatch_DoReset = [&] () {
+        if (nextWordStart == nullptr) {
+            spt = AdvanceToNextWord(spt);
+        } else {
+            spt = AdvanceToNextWord(nextWordStart);
+            nextWordStart = nullptr;
+        }
+        searchState.Reset();
+    };
+
+    while (!match && *spt != 0) {
+        const char& c = *spt;
+        if (!IsWordChar(c)) {
+            if (searchState.State() == ValidKeys::MatchState::EXACT_MATCH) {
+                match = true;
+            } else {
+                searchState.Refine(c);
+                if (searchState.State() == ValidKeys::MatchState::NO_MATCH) {
+                    NoMatch_DoReset();
+                } else if (searchState.State() == ValidKeys::MatchState::SUB_MATCH && nextWordStart == nullptr) {
+                    nextWordStart = spt;
+                    ++spt;
+                } else {
+                    ++spt;
+                }
+            }
+        } else {
+            searchState.Refine(c);
+            if (searchState.State() == ValidKeys::MatchState::NO_MATCH) {
+                NoMatch_DoReset();
+            } else {
+                ++spt;
+            }
+        }
+    }
+
+    if (!match && searchState.State() == ValidKeys::MatchState::EXACT_MATCH) {
+        match = true;
+    }
+
+        return match;
 }
 
 std::unique_ptr<AdDb>
@@ -101,10 +173,10 @@ DbUtils::LoadDb(
 
         size_t i = 0;
         Time lastReport;
-        for (auto& ad: ads) {
+        std::for_each(std::execution::par_unseq, ads.begin(), ads.end(), [&] (auto& ad) -> void {
             result->Store(std::move(ad));
 
-            if (i %10 == 0) {
+            if (i %100 == 0) {
                 Time now;
                 if (now.DiffSecs(lastReport) >= 10) {
                     SLOG_FROM(LOG_OVERVIEW, __func__,
@@ -114,7 +186,7 @@ DbUtils::LoadDb(
             }
 
             ++i;
-        }
+        });
 
         Time storeEnd;
         SLOG_FROM(LOG_OVERVIEW, __func__,

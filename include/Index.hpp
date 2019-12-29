@@ -38,18 +38,12 @@ void Index<Key>::Update(const typename Key::ItemType& update) {
     for (size_t i = 0; i < config->items.size(); ++i) {
         const auto& check = config->items[i];
 
-        bool match = false;
-        for (auto it = check.keys.begin();
-             !match && it != check.keys.end();
-             ++it )
-        {
-            const std::string& searchString = *it;
-            if (key->HasKey(update, searchString)) {
-                match = true;
-            }
-        }
+        bool match = key->HasKey(update, check.keys);
+
         if (match) {
+            _m.lock();
             matches.Get(i).emplace_back(key->GetKey(update));
+            _m.unlock();
         }
     }
 

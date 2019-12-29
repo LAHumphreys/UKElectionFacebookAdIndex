@@ -110,11 +110,14 @@ const StoredFacebookAd &FacebookAdStore::Get(const StoredFacebookAd::KeyType& ke
 const StoredFacebookAd &FacebookAdStore::Store(std::unique_ptr<FacebookAd> ad) {
     StoredFacebookAd* result = &NullAdd;
     auto storedAd = std::make_unique<StoredFacebookAd>(std::move(ad));
+    _m.lock();
     auto it = ads.find(storedAd->Key());
     if (it != ads.end()) {
         it->second->PatchStoredValues(std::move(*(storedAd->item)));
+        _m.unlock();
     } else {
         result = ads.try_emplace(storedAd->Key(), std::move(storedAd)).first->second.get();
+        _m.unlock();
     }
     return *result;
 }

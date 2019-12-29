@@ -8,6 +8,7 @@
 #include <string>
 #include <SimpleJSON.h>
 #include <IndexConfig.h>
+#include <mutex>
 
 template <class Item, class Key>
 class IndexKey {
@@ -20,6 +21,8 @@ public:
     virtual const KeyType& GetKey(const Item& item) const = 0;
 
     virtual bool HasKey(const Item& item, const std::string& key) const = 0;
+
+    virtual bool HasKey(const StoredFacebookAd& item, const std::vector<std::string>& key) const = 0;
 private:
 };
 
@@ -69,6 +72,7 @@ private:
         std::vector<MatchList> lists;
     };
     MatchListStore matches;
+    std::mutex _m;
 };
 
 #include <Index.hpp>

@@ -8,6 +8,7 @@
 #include <map>
 #include <FacebookAd.h>
 #include <functional>
+#include <mutex>
 
 class StoredFacebookAd {
 public:
@@ -91,6 +92,7 @@ public:
 private:
     std::map<const StoredFacebookAd::KeyType, std::unique_ptr<StoredFacebookAd>> ads;
     StoredFacebookAd NullAdd;
+    std::mutex _m;
 };
 
 #endif //ELECTIONDATAANAL_FACEBOOKADSTORE_H
