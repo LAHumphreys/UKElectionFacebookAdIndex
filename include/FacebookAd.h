@@ -74,10 +74,10 @@ struct  FacebookAd {
     std::string pageName;
 
     std::string currency;
-    std::string linkTitle;
-    std::string linkDescription;
-    std::string linkCaption;
-    std::string body;
+    std::vector<std::string> linkTitles;
+    std::vector<std::string> linkDescriptions;
+    std::vector<std::string> linkCaptions;
+    std::vector<std::string> bodies;
 
     std::map<RegionCode, double> regionDist;
     std::map<Demographic, double> demographicDist;

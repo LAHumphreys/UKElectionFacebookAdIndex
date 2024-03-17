@@ -7,25 +7,44 @@
 const std::string json = R"JSON(
 {
     "data": [
+        {},
         {
             "ad_snapshot_url": "https://www.facebook.com/ads/archive/render_ad/?id=2556409461271942&access_token=EAAi1Yrtc0qIBOxpW58loZA841eceB8LKyyXSmrEyjLX2dLQ4F3hNFZCjFspykugzSXn5UcZCFfrPZCQPpziPMeijyVDU7husrXKAQfpUORbkM0Yv6BR0MpRaxwN75gyzET9JzfZAxuKRbgWZCoykgaULDrFxvDzu0FTFWCgPpi6FUZBvJmfYtrYHyRjvMl84jq3HyqdpOT5YTyZBYpZBVOXOUVZAo906RmIddgtBEdZBrurLyhm8WteTrpK0gXutoCYazEZD",
             "bylines": "Woking Liberal Democrats",
             "delivery_by_region": [
                 {
-                    "percentage": "1",
+                    "percentage": "0.984687",
                     "region": "England"
+                },
+                {
+                  "percentage": "0.010652",
+                  "region": "Wales"
+                },
+                {
+                  "percentage": "0.003995",
+                  "region": "Scotland"
+                },
+                {
+                  "percentage": "0.000666",
+                  "region": "Northern Ireland"
                 }
             ],
             "ad_delivery_start_time": "2019-10-29",
             "ad_delivery_stop_time": "2019-11-01",
+            "ad_creative_link_descriptions" : [
+                 "<TEST>", "<TEST> 2"
+            ],
             "ad_creative_link_titles": [
-                "We will stop Brexit, invest in public services like our NHS and take action to fight climate change"
+                "We will stop Brexit, invest in public services like our NHS and take action to fight climate change",
+                 "Test Title"
             ],
             "ad_creative_link_captions": [
-                "wokinglibdems.org.uk"
+                "wokinglibdems.org.uk",
+                 "Test caption"
             ],
             "ad_creative_bodies": [
-                "Local Councillor, former Mayor and life-long resident 𝗪𝗶𝗹𝗹 𝗙𝗼𝗿𝘀𝘁𝗲𝗿 is the Lib Dem candidate 𝘁𝗼 𝗯𝗲 𝗪𝗼𝗸𝗶𝗻𝗴'𝘀 𝗻𝗲𝘄 𝗠𝗣!  👏👏👏"
+                "Local Councillor, former Mayor and life-long resident 𝗪𝗶𝗹𝗹 𝗙𝗼𝗿𝘀𝘁𝗲𝗿 is the Lib Dem candidate 𝘁𝗼 𝗯𝗲 𝗪𝗼𝗸𝗶𝗻𝗴'𝘀 𝗻𝗲𝘄 𝗠𝗣!  👏👏👏",
+                 "Test body"
             ],
             "ad_creation_time": "2019-10-29",
             "spend": {
@@ -132,7 +151,13 @@ const std::string json = R"JSON(
                 "facebook",
                 "instagram"
             ],
+            "currency":"GBP",
             "id": "2556409461271942"
+        },
+        {
+            "impressions": {
+                "lower_bound": "1000000"
+            }
         }
     ],
     "paging": {
@@ -201,7 +226,7 @@ TEST_F(AdParserTest, InvalidSerialization) {
     std::unique_ptr<FacebookAd> ad;
     ASSERT_EQ(parser.DeSerialize("{", ad), ParseResult::PARSE_ERROR);
 }
-
+// TODO: Publisher Platforms needs to be captured as anum value.
 TEST_F(AdParserTest, ValidData) {
     std::vector<std::unique_ptr<FacebookAd>> ads;
     ASSERT_EQ(parser.ParseFacebookAdQuery(json.c_str(), ads), ParseResult::VALID);
@@ -210,25 +235,36 @@ TEST_F(AdParserTest, ValidData) {
 
 TEST_F(AdParserTest, LinkTitle) {
     WithTheAd([&] (FacebookAd& ad) -> void {
-        ASSERT_STREQ(ad.linkTitle.c_str(), "We will stop Brexit, invest in public services like our NHS and take action to fight climate change");
+        ASSERT_EQ(ad.linkTitles.size(), 2);
+        ASSERT_STREQ(ad.linkTitles[0].c_str(), "We will stop Brexit, invest in "
+                                               "public services like our NHS and take action to fight climate change");
+        ASSERT_STREQ(ad.linkTitles[1].c_str(), "Test Title");
     });
 }
 
 TEST_F(AdParserTest, LinkCaption) {
     WithTheAd([&] (FacebookAd& ad) -> void {
-        ASSERT_STREQ(ad.linkCaption.c_str(), "wokinglibdems.org.uk");
+        ASSERT_EQ(ad.linkCaptions.size(), 2);
+        ASSERT_STREQ(ad.linkCaptions[0].c_str(), "wokinglibdems.org.uk");
+        ASSERT_STREQ(ad.linkCaptions[1].c_str(), "Test caption");
     });
 }
 
 TEST_F(AdParserTest, LinkDescription) {
     WithTheAd([&] (FacebookAd& ad) -> void {
-        ASSERT_STREQ(ad.linkDescription.c_str(), "<TEST>");
+        ASSERT_EQ(ad.linkDescriptions.size(), 2);
+        ASSERT_STREQ(ad.linkDescriptions[0].c_str(), "<TEST>");
+        ASSERT_STREQ(ad.linkDescriptions[1].c_str(), "<TEST> 2");
     });
 }
 
 TEST_F(AdParserTest, Body) {
     WithTheAd([&] (FacebookAd& ad) -> void {
-        ASSERT_STREQ(ad.body.c_str(), "Local Councillor, former Mayor and life-long resident Will Forster is the Lib Dem candidate to be Woking's new MP!");
+        ASSERT_EQ(ad.bodies.size(), 2);
+        ASSERT_STREQ(ad.bodies[0].c_str(), "Local Councillor, former Mayor "
+                                           "and life-long resident 𝗪𝗶𝗹𝗹 "
+                                           "𝗙𝗼𝗿𝘀𝘁𝗲𝗿 is the Lib Dem candidate 𝘁𝗼 𝗯𝗲 𝗪𝗼𝗸𝗶𝗻𝗴'𝘀 𝗻𝗲𝘄 𝗠𝗣!  👏👏👏");
+        ASSERT_STREQ(ad.bodies[1].c_str(), "Test body");
     });
 }
 
@@ -237,9 +273,9 @@ TEST_F(AdParserTest, CreationTime) {
         ASSERT_EQ(ad.creationTime.Year(), 2019);
         ASSERT_EQ(ad.creationTime.Month(), 10);
         ASSERT_EQ(ad.creationTime.MDay(), 29);
-        ASSERT_EQ(ad.creationTime.Hour(), 17);
-        ASSERT_EQ(ad.creationTime.Minute(), 16);
-        ASSERT_EQ(ad.creationTime.Second(), 59);
+        ASSERT_EQ(ad.creationTime.Hour(), 0);
+        ASSERT_EQ(ad.creationTime.Minute(), 0);
+        ASSERT_EQ(ad.creationTime.Second(), 0);
     });
 }
 
@@ -248,9 +284,9 @@ TEST_F(AdParserTest, StartTime) {
         ASSERT_EQ(ad.deliveryStartTime.Year(), 2019);
         ASSERT_EQ(ad.deliveryStartTime.Month(), 10);
         ASSERT_EQ(ad.deliveryStartTime.MDay(), 29);
-        ASSERT_EQ(ad.deliveryStartTime.Hour(), 18);
-        ASSERT_EQ(ad.deliveryStartTime.Minute(), 00);
-        ASSERT_EQ(ad.deliveryStartTime.Second(), 56);
+        ASSERT_EQ(ad.deliveryStartTime.Hour(), 0);
+        ASSERT_EQ(ad.deliveryStartTime.Minute(), 0);
+        ASSERT_EQ(ad.deliveryStartTime.Second(), 0);
     });
 }
 
@@ -259,9 +295,9 @@ TEST_F(AdParserTest, StopTime) {
         ASSERT_EQ(ad.deliveryEndTime.Year(), 2019);
         ASSERT_EQ(ad.deliveryEndTime.Month(), 11);
         ASSERT_EQ(ad.deliveryEndTime.MDay(), 1);
-        ASSERT_EQ(ad.deliveryEndTime.Hour(), 16);
+        ASSERT_EQ(ad.deliveryEndTime.Hour(), 0);
         ASSERT_EQ(ad.deliveryEndTime.Minute(), 00);
-        ASSERT_EQ(ad.deliveryEndTime.Second(), 56);
+        ASSERT_EQ(ad.deliveryEndTime.Second(), 0);
     });
 }
 
@@ -278,8 +314,8 @@ TEST_F(AdParserTest, StopTime_Default) {
 
 TEST_F(AdParserTest, Impressions) {
     WithTheAd([&] (FacebookAd& ad) -> void {
-        ASSERT_EQ(ad.impressions.lower_bound, 8000);
-        ASSERT_EQ(ad.impressions.upper_bound, 8999);
+        ASSERT_EQ(ad.impressions.lower_bound, 10000);
+        ASSERT_EQ(ad.impressions.upper_bound, 14999);
     });
 }
 
@@ -302,7 +338,7 @@ TEST_F(AdParserTest, Url) {
 TEST_F(AdParserTest, Id) {
     // Extract the Id from the url
     WithTheAd([&] (FacebookAd& ad) -> void {
-        ASSERT_EQ(ad.id, 1428050904019116);
+        ASSERT_EQ(ad.id, 2556409461271942);
     });
 }
 

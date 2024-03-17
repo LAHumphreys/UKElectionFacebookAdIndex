@@ -35,7 +35,7 @@ facebookurl+="&ad_type=POLITICAL_AND_ISSUE_ADS"
 facebookurl+="&ad_active_status=ALL"
 //TODO: Need to programatically calculate this date
 facebookurl+="&ad_delivery_date_min=2019-10-29&ad_delivery_date_max=2019-11-01"
-facebookurl+="&fields=ad_snapshot_url,bylines,delivery_by_region,ad_delivery_start_time,ad_delivery_stop_time,ad_creative_link_descriptions,ad_creative_link_titles,ad_creative_link_captions,ad_creative_bodies,ad_creation_time,spend,impressions,demographic_distribution,publisher_platforms,estimated_audience_size"
+facebookurl+="&fields=ad_snapshot_url,bylines,delivery_by_region,ad_delivery_start_time,ad_delivery_stop_time,ad_creative_link_descriptions,ad_creative_link_titles,ad_creative_link_captions,ad_creative_bodies,ad_creation_time,spend,impressions,demographic_distribution,publisher_platforms,estimated_audience_size,currency"
 facebookurl+="&limit=250"
 function Timestamp() {
     let date = new Date()

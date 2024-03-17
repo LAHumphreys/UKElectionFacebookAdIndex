@@ -150,10 +150,10 @@ namespace {
     void ParseAd(size_t adIndex, vector<std::unique_ptr<FacebookAd>> &into, ParserData &parserData) {
         auto& ad = *into.emplace_back(std::make_unique<FacebookAd>());
         parserData.MoveField<ad_creation_time>(adIndex, ad.creationTime);
-        parserData.MoveField<ad_creative_body>(adIndex, ad.body);
-        parserData.MoveField<ad_creative_link_caption>(adIndex, ad.linkCaption);
-        parserData.MoveField<ad_creative_link_description>(adIndex, ad.linkDescription);
-        parserData.MoveField<ad_creative_link_title>(adIndex, ad.linkTitle);
+        parserData.MoveField<ad_creative_bodies>(adIndex, ad.bodies);
+        parserData.MoveField<ad_creative_link_captions>(adIndex, ad .linkCaptions);
+        parserData.MoveField<ad_creative_link_descriptions>(adIndex, ad .linkDescriptions);
+        parserData.MoveField<ad_creative_link_titles>(adIndex, ad.linkTitles);
         parserData.MoveField<ad_delivery_start_time>(adIndex, ad.deliveryStartTime);
         parserData.MoveField<ad_delivery_stop_time>(adIndex, ad.deliveryEndTime);
         parserData.MoveField<currency>(adIndex, ad.currency);
@@ -231,10 +231,10 @@ std::string FacebookAdParser::Serialize(const FacebookAd &ad) {
     auto& parserData = GetParser(*this->internalData);
     parserData.parser.Clear();
     auto& next = parserData.parser.Get<FacebookAdJSON::data>().emplace_back();
-    next->Get<ad_creative_link_title>() = ad.linkTitle;
-    next->Get<ad_creative_link_caption>() = ad.linkCaption;
-    next->Get<ad_creative_link_description>() = ad.linkDescription;
-    next->Get<ad_creative_body>() = ad.body;
+    next->Get<ad_creative_link_titles>() = ad.linkTitles;
+    next->Get<ad_creative_link_captions>() = ad.linkCaptions;
+    next->Get<ad_creative_link_descriptions>() = ad.linkDescriptions;
+    next->Get<ad_creative_bodies>() = ad.bodies;
     next->Get<ad_creation_time>() = ad.creationTime;
     next->Get<ad_delivery_start_time>() = ad.deliveryStartTime;
     next->Get<ad_delivery_stop_time>() = ad.deliveryEndTime;
