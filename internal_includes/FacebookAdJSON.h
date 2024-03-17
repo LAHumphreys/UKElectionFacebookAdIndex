@@ -49,7 +49,7 @@ namespace FacebookAdJSON {
         NewStringField(ad_snapshot_url);
 
         NewStringField(currency);
-        NewStringField(funding_entity);
+        NewStringField(bylines);
         NewStringField(page_name);
 
         NewStringField(lower_bound);
@@ -81,7 +81,7 @@ namespace FacebookAdJSON {
                     region
             > JSON;
         }
-        NewObjectArray(region_distribution, region_distribution_fields::JSON);
+        NewObjectArray(delivery_by_region, region_distribution_fields::JSON);
 
         namespace demographic_distribution_fields {
             typedef SimpleParsedJSON<
@@ -103,10 +103,10 @@ namespace FacebookAdJSON {
             ad_delivery_stop_time,
             ad_snapshot_url,
             currency,
-            funding_entity,
+            bylines,
             impressions,
             spend,
-            region_distribution,
+            delivery_by_region,
             demographic_distribution,
             page_name
         > JSON;

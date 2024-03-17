@@ -6,122 +6,141 @@
 
 const std::string json = R"JSON(
 {
-  "data": [
-    {
-    },
-    {
-      "ad_creative_link_title": "We will stop Brexit, invest in public services like our NHS and take action to fight climate change",
-      "ad_creative_link_caption": "wokinglibdems.org.uk",
-      "ad_creative_link_description": "<TEST>",
-      "ad_creative_body": "Local Councillor, former Mayor and life-long resident Will Forster is the Lib Dem candidate to be Woking's new MP!",
-      "ad_creation_time": "2019-10-29T17:16:59+0000",
-      "ad_delivery_start_time": "2019-10-29T18:00:56+0000",
-      "ad_delivery_stop_time": "2019-11-01T16:00:56+0000",
-      "ad_snapshot_url": "https:\/\/www.facebook.com\/ads\/archive\/render_ad\/?id=1428050904019116&access_token=EAAi1Yrtc0qIBAPxQq0NvUiYkKA7uZCNEGNCO4kShUVzTbmKSPrA3GAzBeimRAHJUPuIZC1ZBDB5TmTENgGkaPA3OGTLJsnnb6pHo37k4tXby9SG4wA41JEYELf4Bv5F5TVZBLmfogW6tIO3C0yOPTOMm7yNwtG8fap3Ffp84bgzNp0Qiffiad1kZCcX8zZBrcOMa9LX1sU5AZDZD",
-      "impressions": {
-        "lower_bound": "8000",
-        "upper_bound": "8999"
-      },
-      "spend": {
-        "lower_bound": "0",
-        "upper_bound": "99"
-      },
-      "region_distribution": [
+    "data": [
         {
-          "percentage": "0.984687",
-          "region": "England"
-        },
-        {
-          "percentage": "0.010652",
-          "region": "Wales"
-        },
-        {
-          "percentage": "0.003995",
-          "region": "Scotland"
-        },
-        {
-          "percentage": "0.000666",
-          "region": "Northern Ireland"
+            "ad_snapshot_url": "https://www.facebook.com/ads/archive/render_ad/?id=2556409461271942&access_token=EAAi1Yrtc0qIBOxpW58loZA841eceB8LKyyXSmrEyjLX2dLQ4F3hNFZCjFspykugzSXn5UcZCFfrPZCQPpziPMeijyVDU7husrXKAQfpUORbkM0Yv6BR0MpRaxwN75gyzET9JzfZAxuKRbgWZCoykgaULDrFxvDzu0FTFWCgPpi6FUZBvJmfYtrYHyRjvMl84jq3HyqdpOT5YTyZBYpZBVOXOUVZAo906RmIddgtBEdZBrurLyhm8WteTrpK0gXutoCYazEZD",
+            "bylines": "Woking Liberal Democrats",
+            "delivery_by_region": [
+                {
+                    "percentage": "1",
+                    "region": "England"
+                }
+            ],
+            "ad_delivery_start_time": "2019-10-29",
+            "ad_delivery_stop_time": "2019-11-01",
+            "ad_creative_link_titles": [
+                "We will stop Brexit, invest in public services like our NHS and take action to fight climate change"
+            ],
+            "ad_creative_link_captions": [
+                "wokinglibdems.org.uk"
+            ],
+            "ad_creative_bodies": [
+                "Local Councillor, former Mayor and life-long resident 𝗪𝗶𝗹𝗹 𝗙𝗼𝗿𝘀𝘁𝗲𝗿 is the Lib Dem candidate 𝘁𝗼 𝗯𝗲 𝗪𝗼𝗸𝗶𝗻𝗴'𝘀 𝗻𝗲𝘄 𝗠𝗣!  👏👏👏"
+            ],
+            "ad_creation_time": "2019-10-29",
+            "spend": {
+                "lower_bound": "0",
+                "upper_bound": "99"
+            },
+            "impressions": {
+                "lower_bound": "10000",
+                "upper_bound": "14999"
+            },
+            "demographic_distribution": [
+                {
+                    "percentage": "0.063901",
+                    "age": "45-54",
+                    "gender": "female"
+                },
+                {
+                    "percentage": "0.004338",
+                    "age": "35-44",
+                    "gender": "unknown"
+                },
+                {
+                    "percentage": "0.002711",
+                    "age": "25-34",
+                    "gender": "unknown"
+                },
+                {
+                    "percentage": "0.000362",
+                    "age": "18-24",
+                    "gender": "unknown"
+                },
+                {
+                    "percentage": "0.002892",
+                    "age": "45-54",
+                    "gender": "unknown"
+                },
+                {
+                    "percentage": "0.000452",
+                    "age": "65+",
+                    "gender": "unknown"
+                },
+                {
+                    "percentage": "0.01419",
+                    "age": "65+",
+                    "gender": "female"
+                },
+                {
+                    "percentage": "0.011388",
+                    "age": "65+",
+                    "gender": "male"
+                },
+                {
+                    "percentage": "0.01898",
+                    "age": "55-64",
+                    "gender": "male"
+                },
+                {
+                    "percentage": "0.14633",
+                    "age": "18-24",
+                    "gender": "female"
+                },
+                {
+                    "percentage": "0.085683",
+                    "age": "35-44",
+                    "gender": "male"
+                },
+                {
+                    "percentage": "0.047632",
+                    "age": "45-54",
+                    "gender": "male"
+                },
+                {
+                    "percentage": "0.107466",
+                    "age": "18-24",
+                    "gender": "male"
+                },
+                {
+                    "percentage": "0.151392",
+                    "age": "25-34",
+                    "gender": "male"
+                },
+                {
+                    "percentage": "0.031363",
+                    "age": "55-64",
+                    "gender": "female"
+                },
+                {
+                    "percentage": "0.193239",
+                    "age": "25-34",
+                    "gender": "female"
+                },
+                {
+                    "percentage": "0.116594",
+                    "age": "35-44",
+                    "gender": "female"
+                },
+                {
+                    "percentage": "0.001085",
+                    "age": "55-64",
+                    "gender": "unknown"
+                }
+            ],
+            "publisher_platforms": [
+                "facebook",
+                "instagram"
+            ],
+            "id": "2556409461271942"
         }
-      ],
-      "demographic_distribution": [
-        {
-          "percentage": "0.159091",
-          "age": "55-64",
-          "gender": "male"
+    ],
+    "paging": {
+        "cursors": {
+            "after": "c2NyYXBpbmdfY3Vyc29yOk1UVTNNak0zTWpBMU5qb3lOVFUyTkRBNU5EWXhNamN4T1RReQZDZD"
         },
-        {
-          "percentage": "0.045455",
-          "age": "35-44",
-          "gender": "male"
-        },
-        {
-          "percentage": "0.068182",
-          "age": "25-34",
-          "gender": "male"
-        },
-        {
-          "percentage": "0.159091",
-          "age": "55-64",
-          "gender": "female"
-        },
-        {
-          "percentage": "0.136364",
-          "age": "65+",
-          "gender": "male"
-        },
-        {
-          "percentage": "0.045455",
-          "age": "45-54",
-          "gender": "male"
-        },
-        {
-          "percentage": "0.204545",
-          "age": "65+",
-          "gender": "female"
-        },
-        {
-          "percentage": "0.045455",
-          "age": "25-34",
-          "gender": "female"
-        },
-        {
-          "percentage": "0.022727",
-          "age": "35-44",
-          "gender": "female"
-        },
-        {
-          "percentage": "0.090909",
-          "age": "45-54",
-          "gender": "female"
-        },
-        {
-          "percentage": "0.022727",
-          "age": "18-24",
-          "gender": "female"
-        }
-      ],
-      "currency": "GBP",
-      "funding_entity": "Woking Liberal Democrats",
-      "page_name": "> Woking Liberal Democrats"
-    }, {
-      "ad_creative_link_title": "We will stop Brexit, invest in public services like our NHS and take action to fight climate change",
-      "ad_creative_link_caption": "wokinglibdems.org.uk",
-      "ad_creative_link_description": "<TEST>",
-      "ad_creative_body": "Local Councillor, former Mayor and life-long resident Will Forster is the Lib Dem candidate to be Woking's new MP!",
-      "ad_creation_time": "2020-10-29T17:16:59+0000",
-      "ad_delivery_start_time": "2020-10-29T18:00:56+0000",
-      "impressions": {
-        "lower_bound": "1000000"
-      }
+        "next": "https://graph.facebook.com/v19.0/ads_archive?access_token=EAAi1Yrtc0qIBOxpW58loZA841eceB8LKyyXSmrEyjLX2dLQ4F3hNFZCjFspykugzSXn5UcZCFfrPZCQPpziPMeijyVDU7husrXKAQfpUORbkM0Yv6BR0MpRaxwN75gyzET9JzfZAxuKRbgWZCoykgaULDrFxvDzu0FTFWCgPpi6FUZBvJmfYtrYHyRjvMl84jq3HyqdpOT5YTyZBYpZBVOXOUVZAo906RmIddgtBEdZBrurLyhm8WteTrpK0gXutoCYazEZD&ad_reached_countries=[%27GB%27]&search_terms=%27Will%20Forster%27&ad_type=POLITICAL_AND_ISSUE_ADS&ad_active_status=ALL&ad_delivery_date_min=2019-10-29&ad_delivery_date_max=2019-11-01&fields=ad_snapshot_url,bylines,delivery_by_region,ad_delivery_start_time,ad_delivery_stop_time,ad_creative_link_descriptions,ad_creative_link_titles,ad_creative_link_captions,ad_creative_bodies,ad_creation_time,spend,impressions,demographic_distribution,publisher_platforms,estimated_audience_size&limit=250&after=c2NyYXBpbmdfY3Vyc29yOk1UVTNNak0zTWpBMU5qb3lOVFUyTkRBNU5EWXhNamN4T1RReQZDZD"
     }
-  ],
-  "paging": {
-    "cursors": {
-      "after": "c2NyYXBpbmdfY3Vyc29yOk1UVTNNak0zTWpBMU5qb3lOVFUyTkRBNU5EWXhNamN4T1RReQZDZD"
-    },
-    "next": "https://graph.facebook.com/v5.0/ads_archive?access_token=EAAi1Yrtc0qIBAJxNetTgTTBaZBa2Kgk1ovk4ZCEGbljZANF5kV9rHoBQnqUgA6uetPik2VtoRPNkfMyZAhqg7ZAXrEDOsYbJ9iIglDTnZBdWAxoavZCPKdZAUJiDMIJ4FKx9JYaRsMGq0uUimimDteRBZBTmVDZCJiLINgk0FnrSXD0ZA7pB809zsGZCqVXSIai6M6WadaiZBlasKnyreAKkJ0hJl&pretty=0&fields=ad_creative_link_title%2Cad_creative_link_description%2Cad_creative_link_caption%2Cad_creative_body%2Cad_creation_time%2Cad_delivery_start_time%2Cad_delivery_stop_time%2Cimpressions%2Cspend%2Ccurrency%2Cfunding_entity%2Cpage_name&search_terms=%27Forster%27&ad_active_status=ALL&ad_reached_countries=%5B%27GB%27%5D&impression_condition=HAS_IMPRESSIONS_LAST_7_DAYS&limit=10&after=c2NyYXBpbmdfY3Vyc29yOk1UVTNNak0zTWpBMU5qb3lOVFUyTkRBNU5EWXhNamN4T1RReQZDZD"
-  }
 }
 )JSON";
 const std::string url = "https://www.facebook.com/ads/archive/render_ad/?id=1428050904019116&access_token=EAAi1Yrtc0qIBAPxQq0NvUiYkKA7uZCNEGNCO4kShUVzTbmKSPrA3GAzBeimRAHJUPuIZC1ZBDB5TmTENgGkaPA3OGTLJsnnb6pHo37k4tXby9SG4wA41JEYELf4Bv5F5TVZBLmfogW6tIO3C0yOPTOMm7yNwtG8fap3Ffp84bgzNp0Qiffiad1kZCcX8zZBrcOMa9LX1sU5AZDZD";

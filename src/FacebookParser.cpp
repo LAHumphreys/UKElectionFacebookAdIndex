@@ -79,7 +79,7 @@ namespace {
     }
 
     void ParseRegions(size_t adIndex, ParserData& parserData, FacebookAd& destination) {
-        auto& regionList = parserData.GetAdField<region_distribution>(adIndex);
+        auto& regionList = parserData .GetAdField<delivery_by_region>(adIndex);
         for (auto& reg: regionList) {
             RegionCode code = ParseRegionCode(reg->Get<data_fields::region>());
             std::string numericDist = reg->Get<data_fields::percentage>();
@@ -157,7 +157,7 @@ namespace {
         parserData.MoveField<ad_delivery_start_time>(adIndex, ad.deliveryStartTime);
         parserData.MoveField<ad_delivery_stop_time>(adIndex, ad.deliveryEndTime);
         parserData.MoveField<currency>(adIndex, ad.currency);
-        parserData.MoveField<funding_entity>(adIndex, ad.fundingEntity);
+        parserData.MoveField<bylines>(adIndex, ad.fundingEntity);
         parserData.MoveField<page_name>(adIndex, ad.pageName);
 
 
@@ -239,7 +239,7 @@ std::string FacebookAdParser::Serialize(const FacebookAd &ad) {
     next->Get<ad_delivery_start_time>() = ad.deliveryStartTime;
     next->Get<ad_delivery_stop_time>() = ad.deliveryEndTime;
     next->Get<page_name>() = ad.pageName;
-    next->Get<funding_entity>() = ad.fundingEntity;
+    next->Get<bylines>() = ad.fundingEntity;
     next->Get<id>() = ad.id;
 
     parserData.GetAdObjectField<impressions, data_fields::lower_bound>(0) = ToString(ad.impressions.lower_bound);
@@ -258,7 +258,7 @@ std::string FacebookAdParser::Serialize(const FacebookAd &ad) {
         dnext->Get<percentage>() = ToString(pair.second);
     }
 
-    auto& regions = next->Get<region_distribution>();
+    auto& regions = next->Get<delivery_by_region>();
     regions.reserve(ad.regionDist.size());
     for (const auto& pair: ad.regionDist) {
         auto& rnext = regions.emplace_back();
